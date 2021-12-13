@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="cio-MedicationContraIndication" />
+  <url value="http://nictiz.nl/fhir/StructureDefinition/cio-MedicationContraIndication" />
+  <name value="CioMedicationContraIndication" />
+  <status value="draft" />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="cio-v2-0-0" />
+    <uri value="https://decor.nictiz.nl/art-decor/decor-datasets--cio-?id=&amp;effectiveDate=&amp;conceptId=&amp;conceptEffectiveDate=" />
+    <comment value="CiO v2.0.0-beta" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Flag" />
+  <baseDefinition value="http://nictiz.nl/fhir/StructureDefinition/nl-core-MedicationContraIndication" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Flag.identifier">
+      <path value="Flag.identifier" />
+      <mapping>
+        <identity value="cio-v2-0-0" />
+        <map value="cio-dataelement-20-288" />
+        <comment value="IdentificationNumber" />
+      </mapping>
+    </element>
+  </differential>
+</StructureDefinition>
