@@ -27,21 +27,21 @@
       </slicing>
       <min value="1" />
     </element>
-    <element id="AllergyIntolerance.extension:registrationDateTime">
+    <element id="AllergyIntolerance.extension:startMonitoringDateTime">
       <path value="AllergyIntolerance.extension" />
-      <sliceName value="registrationDateTime" />
+      <sliceName value="startMonitoringDateTime" />
       <min value="1" />
       <type>
         <code value="Extension" />
         <profile value="http://hl7.org/fhir/StructureDefinition/allergyintolerance-assertedDate" />
       </type>
     </element>
-    <element id="AllergyIntolerance.extension:registrationDateTime.value[x]">
+    <element id="AllergyIntolerance.extension:startMonitoringDateTime.value[x]">
       <path value="AllergyIntolerance.extension.value[x]" />
       <mapping>
         <identity value="cio-v2-0-0" />
         <map value="cio-dataelement-20-472" />
-        <comment value="RegistrationDateTime" />
+        <comment value="StartMonitoringDateTime" />
       </mapping>
     </element>
     <element id="AllergyIntolerance.extension:methodOfEstablishment">
@@ -64,11 +64,19 @@
         <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-cio-HypersensitivityDisposition.DescriptionSource" />
       </type>
     </element>
+    <element id="AllergyIntolerance.extension:dateTimeExpiration">
+      <path value="AllergyIntolerance.extension" />
+      <sliceName value="dateTimeExpiration" />
+      <min value="0" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-cio-HypersensitivityDisposition.DateTimeExpiration" />
+      </type>
+    </element>
     <element id="AllergyIntolerance.extension:reasonForExpiration">
       <path value="AllergyIntolerance.extension" />
       <sliceName value="reasonForExpiration" />
       <min value="0" />
-      <max value="1" />
       <type>
         <code value="Extension" />
         <profile value="http://hl7.org/fhir/StructureDefinition/allergyintolerance-reasonRefuted" />
@@ -96,16 +104,7 @@
       <mapping>
         <identity value="cio-v2-0-0" />
         <map value="cio-dataelement-20-459" />
-        <comment value="AllergyStatus" />
-      </mapping>
-    </element>
-    <element id="AllergyIntolerance.verificationStatus">
-      <path value="AllergyIntolerance.verificationStatus" />
-      <comment value="KNOWN ISSUE: The CiO ValueSet extends the zib ValueSet. Does not seem compabile with the zib mapping." />
-      <mapping>
-        <identity value="cio-v2-0-0" />
-        <map value="cio-dataelement-20-459" />
-        <comment value="AllergyStatus" />
+        <comment value="HypersensitivityStatus" />
       </mapping>
     </element>
     <element id="AllergyIntolerance.category">
@@ -114,7 +113,7 @@
       <mapping>
         <identity value="cio-v2-0-0" />
         <map value="cio-dataelement-20-458" />
-        <comment value="AllergyCategory" />
+        <comment value="HypersensitivityCategory" />
       </mapping>
     </element>
     <element id="AllergyIntolerance.criticality">
@@ -123,16 +122,16 @@
       <mapping>
         <identity value="cio-v2-0-0" />
         <map value="cio-dataelement-20-461" />
-        <comment value="Criticality" />
+        <comment value="RiskEvaluation" />
       </mapping>
     </element>
     <element id="AllergyIntolerance.code">
       <path value="AllergyIntolerance.code" />
-      <comment value="KNOWN ISSUE: The CiO dataset uses an 'extensible' ValueSet binding to allow for an OTH code. Because the zib AllergyIntolerance has a ValueSet binding of 'required', this would be imcompatible with the zib." />
+      <comment value="KNOWN ISSUE: The CiO dataset uses an 'extensible' ValueSet binding. Because the zib AllergyIntolerance has a ValueSet binding of 'required', this would be imcompatible with the zib." />
       <mapping>
         <identity value="cio-v2-0-0" />
         <map value="cio-dataelement-20-457" />
-        <comment value="CausativeAgent" />
+        <comment value="Substance" />
       </mapping>
     </element>
     <element id="AllergyIntolerance.onset[x]:onsetDateTime">
@@ -141,30 +140,7 @@
       <mapping>
         <identity value="cio-v2-0-0" />
         <map value="cio-dataelement-20-460" />
-        <comment value="StartDateTime" />
-      </mapping>
-    </element>
-    <element id="AllergyIntolerance.onset[x]:onsetPeriod">
-      <path value="AllergyIntolerance.onset[x]" />
-      <sliceName value="onsetPeriod" />
-      <type>
-        <code value="Period" />
-      </type>
-    </element>
-    <element id="AllergyIntolerance.onset[x]:onsetPeriod.start">
-      <path value="AllergyIntolerance.onset[x].start" />
-      <mapping>
-        <identity value="cio-v2-0-0" />
-        <map value="cio-dataelement-20-460" />
-        <comment value="StartDateTime" />
-      </mapping>
-    </element>
-    <element id="AllergyIntolerance.onset[x]:onsetPeriod.end">
-      <path value="AllergyIntolerance.onset[x].end" />
-      <mapping>
-        <identity value="cio-v2-0-0" />
-        <map value="cio-dataelement-20-538" />
-        <comment value="DateTimeExpiration" />
+        <comment value="OnsetDateTime" />
       </mapping>
     </element>
     <element id="AllergyIntolerance.recorder">
@@ -179,6 +155,11 @@
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/RelatedPerson" />
         <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole" />
       </type>
+      <mapping>
+        <identity value="cio-v2-0-0" />
+        <map value="cio-dataelement-20-473" />
+        <comment value="FirstAuthor" />
+      </mapping>
     </element>
     <element id="AllergyIntolerance.note.text">
       <path value="AllergyIntolerance.note.text" />
@@ -192,8 +173,142 @@
       <path value="AllergyIntolerance.reaction" />
       <mapping>
         <identity value="cio-v2-0-0" />
+        <map value="cio-dataelement-20-464" />
+        <comment value="Reaction" />
+      </mapping>
+      <mapping>
+        <identity value="cio-v2-0-0" />
         <map value="cio-dataelement-20-549" />
         <comment value="Reaction" />
+      </mapping>
+    </element>
+    <element id="AllergyIntolerance.reaction.extension">
+      <path value="AllergyIntolerance.reaction.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="2" />
+    </element>
+    <element id="AllergyIntolerance.reaction.extension:identificationNumber">
+      <path value="AllergyIntolerance.reaction.extension" />
+      <sliceName value="identificationNumber" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-cio-Reaction.IdentificationNumber" />
+      </type>
+    </element>
+    <element id="AllergyIntolerance.reaction.extension:registrationDateTime">
+      <path value="AllergyIntolerance.reaction.extension" />
+      <sliceName value="registrationDateTime" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-cio-Reaction.RegistrationDateTime" />
+      </type>
+    </element>
+    <element id="AllergyIntolerance.reaction.extension:endDateTime">
+      <path value="AllergyIntolerance.reaction.extension" />
+      <sliceName value="endDateTime" />
+      <min value="0" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-cio-Reaction.EndDateTime" />
+      </type>
+    </element>
+    <element id="AllergyIntolerance.reaction.extension:duration">
+      <path value="AllergyIntolerance.reaction.extension" />
+      <sliceName value="duration" />
+      <min value="0" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/allergyintolerance-duration" />
+      </type>
+      <mapping>
+        <identity value="cio-v2-0-0" />
+        <map value="cio-dataelement-20-583" />
+        <comment value="Duration" />
+      </mapping>
+    </element>
+    <element id="AllergyIntolerance.reaction.substance">
+      <path value="AllergyIntolerance.reaction.substance" />
+      <mapping>
+        <identity value="cio-v2-0-0" />
+        <map value="cio-dataelement-20-567" />
+        <comment value="CausativeAgent" />
+      </mapping>
+      <mapping>
+        <identity value="cio-v2-0-0" />
+        <map value="cio-dataelement-20-466" />
+        <comment value="CausativeSubstance" />
+      </mapping>
+    </element>
+    <element id="AllergyIntolerance.reaction.substance.extension">
+      <path value="AllergyIntolerance.reaction.substance.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="0" />
+    </element>
+    <element id="AllergyIntolerance.reaction.substance.extension:radiation">
+      <path value="AllergyIntolerance.reaction.substance.extension" />
+      <sliceName value="radiation" />
+      <min value="0" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-cio-Reaction.Radiation" />
+      </type>
+    </element>
+    <element id="AllergyIntolerance.reaction.manifestation">
+      <path value="AllergyIntolerance.reaction.manifestation" />
+      <mapping>
+        <identity value="cio-v2-0-0" />
+        <map value="cio-dataelement-20-465" />
+        <comment value="ReactionManifestation" />
+      </mapping>
+    </element>
+    <element id="AllergyIntolerance.reaction.description">
+      <path value="AllergyIntolerance.reaction.description" />
+      <mapping>
+        <identity value="cio-v2-0-0" />
+        <map value="cio-dataelement-20-661" />
+        <comment value="ReactionDescription" />
+      </mapping>
+    </element>
+    <element id="AllergyIntolerance.reaction.onset">
+      <path value="AllergyIntolerance.reaction.onset" />
+      <mapping>
+        <identity value="cio-v2-0-0" />
+        <map value="cio-dataelement-20-581" />
+        <comment value="startDateTime" />
+      </mapping>
+    </element>
+    <element id="AllergyIntolerance.reaction.severity">
+      <path value="AllergyIntolerance.reaction.severity" />
+      <mapping>
+        <identity value="cio-v2-0-0" />
+        <map value="cio-dataelement-20-468" />
+        <comment value="Severity" />
+      </mapping>
+    </element>
+    <element id="AllergyIntolerance.reaction.exposureRoute">
+      <path value="AllergyIntolerance.reaction.exposureRoute" />
+      <mapping>
+        <identity value="cio-v2-0-0" />
+        <map value="cio-dataelement-20-469" />
+        <comment value="RouteOfExposure" />
       </mapping>
     </element>
   </differential>
