@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="ext-cio-Reaction.EndDateTime" />
+  <url value="http://nictiz.nl/fhir/StructureDefinition/ext-cio-Reaction.EndDateTime" />
+  <name value="ExtCioReactionEndDateTime" />
+  <status value="draft" />
+    <description value="Datum en tijd waarop de reactie niet meer optrad. Dit mag ook alleen een datum of een gedeeltelijke datum zijn, indien dit niet nauwkeuriger bekend is." />
+  <purpose value="This extension represents the EndDateTime concept of the information standard CiO v2.0.0-beta." />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="cio-v2-0-0" />
+    <uri value="https://decor.nictiz.nl/art-decor/decor-datasets--cio-?id=&amp;effectiveDate=&amp;conceptId=&amp;conceptEffectiveDate=" />
+    <comment value="CiO v2.0.0-beta" />
+  </mapping>
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <context>
+    <type value="element" />
+    <expression value="AllergyIntolerance.reaction" />
+  </context>
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="http://nictiz.nl/fhir/StructureDefinition/ext-cio-Reaction.EndDateTime" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <type>
+        <code value="dateTime" />
+      </type>
+      <mapping>
+        <identity value="cio-v2-0-0" />
+        <map value="cio-dataelement-20-582" />
+        <comment value="EndDateTime" />
+      </mapping>
+    </element>
+  </differential>
+</StructureDefinition>
