@@ -4,7 +4,7 @@ This repository contains HL7 FHIR R4 compliant profiles and related conformance 
 
 This repository has a dependency on the [zib2020 package](https://simplifier.net/Nictiz-R4-Zib2020/~packages).
 
-This repository is maintained by the Dutch National Intitute for ICT in Healthcare (Nictiz).
+This repository is maintained by the Dutch National Institute for ICT in Healthcare (Nictiz).
 
 ## Official releases
 
