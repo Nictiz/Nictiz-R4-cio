@@ -3,9 +3,20 @@
   <id value="ext-cio-Reaction.RegistrationDateTime" />
   <url value="http://nictiz.nl/fhir/StructureDefinition/ext-cio-Reaction.RegistrationDateTime" />
   <name value="ExtCioReactionRegistrationDateTime" />
+  <title value="ext Reaction.RegistrationDateTime" />
   <status value="draft" />
-    <description value="De datum en tijd waarop de reactie is vastgelegd." />
+  <publisher value="Nictiz" />
+  <contact>
+    <name value="Nictiz" />
+    <telecom>
+      <system value="url" />
+      <value value="https://www.nictiz.nl" />
+      <use value="work" />
+    </telecom>
+  </contact>
+  <description value="De datum en tijd waarop de reactie is vastgelegd." />
   <purpose value="This extension represents the RegistrationDateTime concept of the information standard CiO v2.0.0-beta." />
+  <copyright value="Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise." />
   <fhirVersion value="4.0.1" />
   <mapping>
     <identity value="cio-v2-0-0" />
