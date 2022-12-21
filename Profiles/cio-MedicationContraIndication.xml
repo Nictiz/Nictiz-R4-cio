@@ -18,7 +18,7 @@
   <fhirVersion value="4.0.1" />
   <mapping>
     <identity value="cio-v2-0-0" />
-    <uri value="https://decor.nictiz.nl/art-decor/decor-datasets--cio-?id=&amp;effectiveDate=&amp;conceptId=&amp;conceptEffectiveDate=" />
+    <uri value="https://decor.nictiz.nl/ad/#/cio-/datasets/dataset/2.16.840.1.113883.2.4.3.11.60.26.1.2/2020-04-02T00:00:00" />
     <comment value="CiO v2.0.0-beta" />
   </mapping>
   <kind value="resource" />
