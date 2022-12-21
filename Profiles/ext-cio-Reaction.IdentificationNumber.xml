@@ -14,7 +14,7 @@
       <use value="work" />
     </telecom>
   </contact>
-  <description value="Nummer dat de instantiatie van de bouwsteen wereldwijd uniek identificeert. Het nummer is samengesteld uit een identificatie van de uitgevende organisatie en een door deze organisatie toegekend uniek nummer." />
+  <description value="An extension to provide the identification number of a reaction." />
   <purpose value="This extension represents the IdentificationNumber concept of the information standard CiO v2.0.0-beta." />
   <copyright value="Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise." />
   <fhirVersion value="4.0.1" />
@@ -39,13 +39,15 @@
     </element>
     <element id="Extension.value[x]">
       <path value="Extension.value[x]" />
-      <min value="1" />
+      <short value="IdentificationNumber" />
+      <definition value="Globally unique number that identifies the instantiation of the information model. The number is composed of an identification of the issuer organization and a unique number assigned by this organization." />
+      <alias value="Identificatienummer" />
       <type>
         <code value="Identifier" />
       </type>
       <mapping>
         <identity value="cio-v2-0-0" />
-        <map value="cio-dataelement-20-464" />
+        <map value="cio-dataelement-20-584" />
         <comment value="IdentificationNumber" />
       </mapping>
     </element>

@@ -14,7 +14,7 @@
       <use value="work" />
     </telecom>
   </contact>
-  <description value="De datum en tijd waarop de reactie is vastgelegd." />
+  <description value="An extension to provide the date and time at which the reaction has been entered." />
   <purpose value="This extension represents the RegistrationDateTime concept of the information standard CiO v2.0.0-beta." />
   <copyright value="Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise." />
   <fhirVersion value="4.0.1" />
@@ -39,12 +39,15 @@
     </element>
     <element id="Extension.value[x]">
       <path value="Extension.value[x]" />
+      <short value="RegistrationDateTime" />
+      <definition value="The date and time at which the reaction has been entered." />
+      <alias value="DatumTijdVastlegging" />
       <type>
         <code value="dateTime" />
       </type>
       <mapping>
         <identity value="cio-v2-0-0" />
-        <map value="cio-dataelement-20-582" />
+        <map value="cio-dataelement-20-568" />
         <comment value="RegistrationDateTime" />
       </mapping>
     </element>
