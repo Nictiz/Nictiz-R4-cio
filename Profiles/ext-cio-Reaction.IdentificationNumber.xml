@@ -40,7 +40,7 @@
     <element id="Extension.value[x]">
       <path value="Extension.value[x]" />
       <short value="IdentificationNumber" />
-      <definition value="Globally unique number that identifies the instantiation of the information model. The number is composed of an identification of the issuer organization and a unique number assigned by this organization." />
+      <definition value="Business identifier assigned to this reaction by the performer or other systems which remains constant as the resource is updated and propagates from server to server." />
       <alias value="Identificatienummer" />
       <type>
         <code value="Identifier" />

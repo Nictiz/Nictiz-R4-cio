@@ -28,6 +28,14 @@
   <baseDefinition value="http://nictiz.nl/fhir/StructureDefinition/nl-core-AllergyIntolerance" />
   <derivation value="constraint" />
   <differential>
+    <element id="AllergyIntolerance">
+      <path value="AllergyIntolerance" />
+      <mapping>
+        <identity value="cio-v2-0-0" />
+        <map value="cio-dataelement-20-456" />
+        <comment value="HypersensitivityDisposition" />
+      </mapping>
+    </element>
     <element id="AllergyIntolerance.extension">
       <path value="AllergyIntolerance.extension" />
       <slicing>
@@ -50,6 +58,9 @@
     </element>
     <element id="AllergyIntolerance.extension:startMonitoringDateTime.value[x]">
       <path value="AllergyIntolerance.extension.value[x]" />
+      <short value="StartMonitoringDateTime" />
+      <definition value="The date and time at which the first author has started the monitoring." />
+      <alias value="StartBewakingDatumTijd" />
       <mapping>
         <identity value="cio-v2-0-0" />
         <map value="cio-dataelement-20-472" />
@@ -96,6 +107,9 @@
     </element>
     <element id="AllergyIntolerance.extension:reasonForExpiration.value[x].text">
       <path value="AllergyIntolerance.extension.value[x].text" />
+      <short value="ReasonForExpiration" />
+      <definition value="Reason for closing the hypersensitivity." />
+      <alias value="RedenVanAfsluiten" />
       <mapping>
         <identity value="cio-v2-0-0" />
         <map value="cio-dataelement-20-539" />
@@ -104,6 +118,9 @@
     </element>
     <element id="AllergyIntolerance.identifier">
       <path value="AllergyIntolerance.identifier" />
+      <short value="IdentificationNumber" />
+      <alias value="Identificatienummer" />
+      <min value="1" />
       <mapping>
         <identity value="cio-v2-0-0" />
         <map value="cio-dataelement-20-471" />
@@ -112,7 +129,9 @@
     </element>
     <element id="AllergyIntolerance.clinicalStatus">
       <path value="AllergyIntolerance.clinicalStatus" />
-      <comment value="KNOWN ISSUE: The CiO ValueSet extends the zib ValueSet. Does not seem compabile with the zib mapping.&#xD;&#xA;TODO: Dataset cardinality is 1..1. When ValueSets are known, an extra constraint could be made." />
+      <short value="HypersensitivityStatus" />
+      <comment value="KNOWN ISSUE: The CiO ValueSet extends the zib ValueSet. Does not seem compatible with the zib mapping.&#xD;&#xA;TODO: Data set cardinality is 1..1. When ValueSets are known, an extra constraint could be made." />
+      <alias value="OvergevoeligheidStatus" />
       <mapping>
         <identity value="cio-v2-0-0" />
         <map value="cio-dataelement-20-459" />
@@ -121,7 +140,11 @@
     </element>
     <element id="AllergyIntolerance.category">
       <path value="AllergyIntolerance.category" />
-      <comment value="KNOWN ISSUE: The CiO AllergyCategory ValueSet extends the zib ValueSet, while its binding is 'Required'." />
+      <short value="HypersensitivityCategory" />
+      <definition value="Identifies the hypersensitivity category." />
+      <comment value="KNOWN ISSUE: The CiO AllergyCategory ValueSet extends the zib ValueSet, while its binding is 'Required'.&#xD;&#xA;KNOWN ISSUE: The CiO AllergyCategory has cardinality 1..*, which is incompatible with FHIR." />
+      <alias value="OvergevoeligheidCategorie" />
+      <min value="1" />
       <mapping>
         <identity value="cio-v2-0-0" />
         <map value="cio-dataelement-20-458" />
@@ -130,7 +153,10 @@
     </element>
     <element id="AllergyIntolerance.criticality">
       <path value="AllergyIntolerance.criticality" />
-      <comment value="POSSIBLE KNOWN ISSUE: The CiO ValueSet differs from the zib ValueSet. However, it seems to match the core ValueSet better. This means we can map the CiO data-element to `criticality`, while keeping the ext-CodeSpecification around for zib-compliance. Maybe an extra ConceptMap should be added?" />
+      <short value="RiskEvaluation" />
+      <comment value="POSSIBLE KNOWN ISSUE: The CiO ValueSet differs from the zib ValueSet. However, it seems to match the core ValueSet better. This means we can map the CiO data element to `criticality`, while keeping the ext-CodeSpecification around for zib compliance. Maybe an extra ConceptMap should be added?" />
+      <alias value="RisicoInschatting" />
+      <min value="1" />
       <mapping>
         <identity value="cio-v2-0-0" />
         <map value="cio-dataelement-20-461" />
@@ -139,7 +165,11 @@
     </element>
     <element id="AllergyIntolerance.code">
       <path value="AllergyIntolerance.code" />
+      <short value="Substance" />
+      <definition value="Substance or group of substances which is monitored." />
       <comment value="KNOWN ISSUE: The CiO dataset uses an 'extensible' ValueSet binding. Because the zib AllergyIntolerance has a ValueSet binding of 'required', this would be imcompatible with the zib." />
+      <alias value="TeBewakenStof" />
+      <min value="1" />
       <mapping>
         <identity value="cio-v2-0-0" />
         <map value="cio-dataelement-20-457" />
@@ -149,14 +179,30 @@
     <element id="AllergyIntolerance.onset[x]:onsetDateTime">
       <path value="AllergyIntolerance.onset[x]" />
       <sliceName value="onsetDateTime" />
+      <short value="OnsetDateTime" />
+      <definition value="The date and time of onset of the hypersensitivity, defined by the first reaction manifestation. This can be an exact date and time, or a rough indication of the date (such as only the year, or the month and the year)." />
       <mapping>
         <identity value="cio-v2-0-0" />
         <map value="cio-dataelement-20-460" />
         <comment value="OnsetDateTime" />
       </mapping>
     </element>
+    <element id="AllergyIntolerance.recordedDate">
+      <path value="AllergyIntolerance.recordedDate" />
+      <short value="RegistrationDateTime" />
+      <definition value="The date and time at which the hypersensitivity has been entered." />
+      <alias value="RegistratieDatumTijd" />
+      <mapping>
+        <identity value="cio-v2-0-0" />
+        <map value="cio-dataelement-20-713" />
+        <comment value="RegistrationDateTime" />
+      </mapping>
+    </element>
     <element id="AllergyIntolerance.recorder">
       <path value="AllergyIntolerance.recorder" />
+      <short value="Author" />
+      <definition value="The health professional who is author of this registration. This health professional recorded the hypersensitivity, edited data elements of the recorded hypersensitivity (adjusted, removed and/or added information), or inactivated the recorded hypersensitivity." />
+      <alias value="Auteur" />
       <min value="1" />
       <type>
         <code value="Reference" />
@@ -170,7 +216,28 @@
       <mapping>
         <identity value="cio-v2-0-0" />
         <map value="cio-dataelement-20-473" />
-        <comment value="FirstAuthor" />
+        <comment value="Author" />
+      </mapping>
+    </element>
+    <element id="AllergyIntolerance.asserter">
+      <path value="AllergyIntolerance.asserter" />
+      <short value="AuthorInitialRegistration" />
+      <definition value="The health professional who started the monitoring on this substance or group of substances." />
+      <alias value="EersteAuteur" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <profile value="http://nictiz.nl/fhir/StructureDefinition/pattern-NlCoreHealthProfessionalReference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Patient" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/RelatedPerson" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Practitioner" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/PractitionerRole" />
+        <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole" />
+      </type>
+      <mapping>
+        <identity value="cio-v2-0-0" />
+        <map value="cio-dataelement-20-709" />
+        <comment value="AuthorInitialRegistration" />
       </mapping>
     </element>
     <element id="AllergyIntolerance.note.text">
@@ -249,13 +316,23 @@
         <comment value="Duration" />
       </mapping>
     </element>
-    <element id="AllergyIntolerance.reaction.substance">
-      <path value="AllergyIntolerance.reaction.substance" />
+    <element id="AllergyIntolerance.reaction.extension:duration.value[x]">
+      <path value="AllergyIntolerance.reaction.extension.value[x]" />
+      <short value="Duration" />
+      <definition value="Duur van de reactie in een gewenste tijdseenheid (bv. dagen of uren, etc.)." />
+      <comment value="TODO: Change definition to English." />
+      <alias value="TijdsDuur" />
       <mapping>
         <identity value="cio-v2-0-0" />
-        <map value="cio-dataelement-20-567" />
-        <comment value="CausativeAgent" />
+        <map value="cio-dataelement-20-583" />
+        <comment value="Duration" />
       </mapping>
+    </element>
+    <element id="AllergyIntolerance.reaction.substance">
+      <path value="AllergyIntolerance.reaction.substance" />
+      <short value="CausativeSubstance" />
+      <definition value="The substance which (suspectedly) caused the reaction." />
+      <alias value="MetReactieGeassocieerdeStof" />
       <mapping>
         <identity value="cio-v2-0-0" />
         <map value="cio-dataelement-20-466" />
@@ -285,6 +362,9 @@
     </element>
     <element id="AllergyIntolerance.reaction.manifestation">
       <path value="AllergyIntolerance.reaction.manifestation" />
+      <short value="ReactionManifestation" />
+      <definition value="The content specifications of the reaction that takes place when the patient is exposed to the causative substance or radiation." />
+      <alias value="ReactieVerschijnsel" />
       <mapping>
         <identity value="cio-v2-0-0" />
         <map value="cio-dataelement-20-465" />
@@ -301,14 +381,17 @@
     </element>
     <element id="AllergyIntolerance.reaction.onset">
       <path value="AllergyIntolerance.reaction.onset" />
+      <short value="StartDateTime" />
+      <alias value="BeginDatumTijd" />
       <mapping>
         <identity value="cio-v2-0-0" />
         <map value="cio-dataelement-20-581" />
-        <comment value="startDateTime" />
+        <comment value="StartDateTime" />
       </mapping>
     </element>
     <element id="AllergyIntolerance.reaction.severity">
       <path value="AllergyIntolerance.reaction.severity" />
+      <definition value="The severity of the reaction as a result of exposure to the causative substance or radiation." />
       <mapping>
         <identity value="cio-v2-0-0" />
         <map value="cio-dataelement-20-468" />
@@ -317,6 +400,8 @@
     </element>
     <element id="AllergyIntolerance.reaction.exposureRoute">
       <path value="AllergyIntolerance.reaction.exposureRoute" />
+      <definition value="Way in which the patient came into contact with the causative substance or the way in which the substance was administered." />
+      <comment value="KNOWN ISSUE: ValueSet binding from zib is Required, but CiO defines other ValueSet (G-standaard instead of SNOMED CT)" />
       <mapping>
         <identity value="cio-v2-0-0" />
         <map value="cio-dataelement-20-469" />

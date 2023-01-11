@@ -15,6 +15,7 @@
     </telecom>
   </contact>
   <description value="A Flag resource as used within the Contraindications and intolerances (Dutch: Contra-indicaties en overgevoeligheden, abbreviated as CiO) information standard." />
+  <purpose value="This Flag resource represents the Dutch [zib ('Zorginformatiebouwsteen', i.e. Health and Care Information Model) MedicationContraIndication v1.0 (2020)](https://zibs.nl/wiki/MedicationContraIndication-v1.0(2020EN)), and also contains augmentations to the zib with elements found in the transactions of CiO." />
   <copyright value="Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise." />
   <fhirVersion value="4.0.1" />
   <mapping>
@@ -28,12 +29,109 @@
   <baseDefinition value="http://nictiz.nl/fhir/StructureDefinition/nl-core-MedicationContraIndication" />
   <derivation value="constraint" />
   <differential>
+    <element id="Flag">
+      <path value="Flag" />
+      <mapping>
+        <identity value="cio-v2-0-0" />
+        <map value="cio-dataelement-20-2" />
+        <comment value="MedicationContraIndication" />
+      </mapping>
+    </element>
+    <element id="Flag.extension">
+      <path value="Flag.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="0" />
+    </element>
+    <element id="Flag.extension:comment">
+      <path value="Flag.extension" />
+      <sliceName value="comment" />
+      <min value="0" />
+    </element>
+    <element id="Flag.extension:comment.value[x]">
+      <path value="Flag.extension.value[x]" />
+      <mapping>
+        <identity value="cio-v2-0-0" />
+        <map value="cio-dataelement-20-286" />
+        <comment value="Comment" />
+      </mapping>
+    </element>
+    <element id="Flag.extension:reasonClosure">
+      <path value="Flag.extension" />
+      <sliceName value="reasonClosure" />
+      <min value="0" />
+    </element>
+    <element id="Flag.extension:reasonClosure.value[x]">
+      <path value="Flag.extension.value[x]" />
+      <mapping>
+        <identity value="cio-v2-0-0" />
+        <map value="cio-dataelement-20-301" />
+        <comment value="ReasonClosure" />
+      </mapping>
+    </element>
     <element id="Flag.identifier">
       <path value="Flag.identifier" />
+      <short value="IdentificationNumber" />
+      <alias value="Identificatienummer" />
+      <min value="1" />
       <mapping>
         <identity value="cio-v2-0-0" />
         <map value="cio-dataelement-20-288" />
         <comment value="IdentificationNumber" />
+      </mapping>
+    </element>
+    <element id="Flag.status">
+      <path value="Flag.status" />
+      <short value="MedicationContraIndicationStatus" />
+      <definition value="Statement on the status of the contraindication." />
+      <alias value="MedicatieContraIndicatieStatus" />
+      <mapping>
+        <identity value="cio-v2-0-0" />
+        <map value="cio-dataelement-20-715" />
+        <comment value="MedicationContraIndicationStatus" />
+      </mapping>
+    </element>
+    <element id="Flag.code">
+      <path value="Flag.code" />
+      <mapping>
+        <identity value="cio-v2-0-0" />
+        <map value="cio-dataelement-20-283" />
+        <comment value="MedicationContraIndicationName" />
+      </mapping>
+    </element>
+    <element id="Flag.period.start">
+      <path value="Flag.period.start" />
+      <alias value="StartBewakingDatumTijd" />
+      <mapping>
+        <identity value="cio-v2-0-0" />
+        <map value="cio-dataelement-20-284" />
+        <comment value="StartDate" />
+      </mapping>
+    </element>
+    <element id="Flag.period.end">
+      <path value="Flag.period.end" />
+      <alias value="DatumTijdAfsluiten" />
+      <mapping>
+        <identity value="cio-v2-0-0" />
+        <map value="cio-dataelement-20-287" />
+        <comment value="EndDate" />
+      </mapping>
+    </element>
+    <element id="Flag.author">
+      <path value="Flag.author" />
+      <short value="Reporter" />
+      <definition value="The health professional who takes responsibility for registering the contraindication." />
+      <alias value="Auteur" />
+      <min value="1" />
+      <mapping>
+        <identity value="cio-v2-0-0" />
+        <map value="cio-dataelement-20-289" />
+        <comment value="Reporter" />
       </mapping>
     </element>
   </differential>

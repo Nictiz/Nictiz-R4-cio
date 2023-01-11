@@ -40,7 +40,8 @@
     <element id="Extension.value[x]">
       <path value="Extension.value[x]" />
       <short value="EndDateTime" />
-      <definition value="The end date and time of the interval." />
+      <definition value="Datum en tijd waarop de reactie niet meer optrad. Dit mag ook alleen een datum of een gedeeltelijke datum zijn, indien dit niet nauwkeuriger bekend is." />
+      <comment value="TODO: Change Definition to English." />
       <alias value="EindDatumTijd" />
       <type>
         <code value="dateTime" />
