@@ -14,7 +14,7 @@
       <use value="work" />
     </telecom>
   </contact>
-  <description value="A contra-indication (CI) for medication safety is a condition or characteristic of a patient where healthcare professionals are not allowed to subscribe certain medicines, or only under certain conditions." />
+  <description value="A contraindication (CI) for medication safety is a condition or characteristic of a patient where healthcare professionals are not allowed to subscribe certain medicines, or only under certain conditions." />
   <purpose value="A derived profile from [zib-MedicationContraIndication](http://nictiz.nl/fhir/StructureDefinition/zib-MedicationContraIndication) to provide a version better suited for implementation purposes. This profile augments the base profile with elements found in the various use cases that have adopted the zib." />
   <copyright value="Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise." />
   <fhirVersion value="4.0.1" />
