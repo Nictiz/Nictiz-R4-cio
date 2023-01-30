@@ -151,18 +151,6 @@
         <comment value="HypersensitivityCategory" />
       </mapping>
     </element>
-    <element id="AllergyIntolerance.criticality">
-      <path value="AllergyIntolerance.criticality" />
-      <short value="RiskEvaluation" />
-      <comment value="POSSIBLE KNOWN ISSUE: The CiO ValueSet differs from the zib ValueSet. However, it seems to match the core ValueSet better. This means we can map the CiO data element to `criticality`, while keeping the ext-CodeSpecification around for zib compliance. Maybe an extra ConceptMap should be added?" />
-      <alias value="RisicoInschatting" />
-      <min value="1" />
-      <mapping>
-        <identity value="cio-v2-0-0" />
-        <map value="cio-dataelement-20-461" />
-        <comment value="RiskEvaluation" />
-      </mapping>
-    </element>
     <element id="AllergyIntolerance.code">
       <path value="AllergyIntolerance.code" />
       <short value="Substance" />
