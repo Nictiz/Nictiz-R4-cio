@@ -130,8 +130,12 @@
     <element id="AllergyIntolerance.clinicalStatus">
       <path value="AllergyIntolerance.clinicalStatus" />
       <short value="HypersensitivityStatus" />
-      <comment value="KNOWN ISSUE: The CiO ValueSet extends the zib ValueSet. Does not seem compatible with the zib mapping.&#xD;&#xA;TODO: Data set cardinality is 1..1. When ValueSets are known, an extra constraint could be made." />
       <alias value="OvergevoeligheidStatus" />
+      <min value="1" />
+      <binding>
+        <strength value="required" />
+        <description value="Use ConceptMap OvergevoeligheidStatusCodelijst_to_AllergyIntoleranceClinicalStatusCodes to translate terminology from the functional model to profile terminology in ValueSet AllergyIntoleranceClinicalStatusCodes" />
+      </binding>
       <mapping>
         <identity value="cio-v2-0-0" />
         <map value="cio-dataelement-20-459" />
