@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
-  <id value="ext-cio-Reaction.Radiation" />
-  <url value="http://nictiz.nl/fhir/StructureDefinition/ext-cio-Reaction.Radiation" />
-  <name value="ExtCioReactionRadiation" />
-  <title value="ext Reaction.Radiation" />
+  <id value="ext-HypersensitivityDisposition.SourceDescription" />
+  <url value="http://nictiz.nl/fhir/StructureDefinition/ext-HypersensitivityDisposition.SourceDescription" />
+  <name value="ExtHypersensitivityDispositionSourceDescription" />
+  <title value="ext HypersensitivityDisposition.SourceDescription" />
   <status value="draft" />
   <publisher value="Nictiz" />
   <contact>
@@ -14,41 +14,45 @@
       <use value="work" />
     </telecom>
   </contact>
-  <description value="An extension to indicate whether the reaction is (suspectedly) caused by radiation." />
-  <purpose value="This extension represents the Radiation concept of the information standard CiO v2.0.0-beta." />
+  <description value="An extension to provide the description of the source of the information, for example a letter of a medical specialist or a patient interview." />
+  <purpose value="This extension represents the SourceDescription concept for implementations following the information standard CiO." />
   <copyright value="Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise." />
   <fhirVersion value="4.0.1" />
   <mapping>
-    <identity value="cio-v2-0-0" />
+    <identity value="cio-dataset-200-beta1-20200402" />
     <uri value="https://decor.nictiz.nl/ad/#/cio-/datasets/dataset/2.16.840.1.113883.2.4.3.11.60.26.1.2/2020-04-02T00:00:00" />
-    <comment value="CiO v2.0.0-beta" />
+    <name value="ART-DECOR Dataset Contraindications and intolerances 2.0.0-beta.1 20200402" />
   </mapping>
   <kind value="complex-type" />
   <abstract value="false" />
   <context>
     <type value="element" />
-    <expression value="AllergyIntolerance.reaction.substance" />
+    <expression value="AllergyIntolerance" />
   </context>
   <type value="Extension" />
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
   <derivation value="constraint" />
   <differential>
+    <element id="Extension">
+      <path value="Extension" />
+      <max value="1" />
+    </element>
     <element id="Extension.url">
       <path value="Extension.url" />
-      <fixedUri value="http://nictiz.nl/fhir/StructureDefinition/ext-cio-Reaction.Radiation" />
+      <fixedUri value="http://nictiz.nl/fhir/StructureDefinition/ext-HypersensitivityDisposition.SourceDescription" />
     </element>
     <element id="Extension.value[x]">
       <path value="Extension.value[x]" />
-      <short value="Radiation" />
-      <definition value="Indicates whether the reaction is (suspectedly) caused by radiation." />
-      <alias value="Straling" />
+      <short value="SourceDescription" />
+      <definition value="The description of the source of the information, for example a letter of a medical specialist or a patient interview." />
+      <alias value="OmschrijvingBron" />
       <type>
-        <code value="boolean" />
+        <code value="string" />
       </type>
       <mapping>
-        <identity value="cio-v2-0-0" />
-        <map value="cio-dataelement-20-570" />
-        <comment value="Radiation" />
+        <identity value="cio-dataset-200-beta1-20200402" />
+        <map value="cio-dataelement-20-550" />
+        <comment value="SourceDescription" />
       </mapping>
     </element>
   </differential>

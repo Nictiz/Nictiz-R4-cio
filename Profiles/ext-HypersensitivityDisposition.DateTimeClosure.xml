@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
-  <id value="ext-cio-HypersensitivityDisposition.DescriptionSource" />
-  <url value="http://nictiz.nl/fhir/StructureDefinition/ext-cio-HypersensitivityDisposition.DescriptionSource" />
-  <name value="ExtCioHypersensitivityDispositionDescriptionSource" />
-  <title value="ext HypersensitivityDisposition.DescriptionSource" />
+  <id value="ext-HypersensitivityDisposition.DateTimeClosure" />
+  <url value="http://nictiz.nl/fhir/StructureDefinition/ext-HypersensitivityDisposition.DateTimeClosure" />
+  <name value="ExtHypersensitivityDispositionDateTimeClosure" />
+  <title value="ext HypersensitivityDisposition.DateTimeClosure" />
   <status value="draft" />
   <publisher value="Nictiz" />
   <contact>
@@ -14,14 +14,14 @@
       <use value="work" />
     </telecom>
   </contact>
-  <description value="An extension to provide the description of the source of the information, for example a letter of a medical specialist or a patient interview." />
-  <purpose value="This extension represents the DescriptionSource concept of the information standard CiO v2.0.0-beta." />
+  <description value="An extension to provide the date and time at which it is decided to stop the monitoring.​" />
+  <purpose value="This extension represents the DateTimeClosure concept for implementations following the information standard CiO." />
   <copyright value="Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise." />
   <fhirVersion value="4.0.1" />
   <mapping>
-    <identity value="cio-v2-0-0" />
+    <identity value="cio-dataset-200-beta1-20200402" />
     <uri value="https://decor.nictiz.nl/ad/#/cio-/datasets/dataset/2.16.840.1.113883.2.4.3.11.60.26.1.2/2020-04-02T00:00:00" />
-    <comment value="CiO v2.0.0-beta" />
+    <name value="ART-DECOR Dataset Contraindications and intolerances 2.0.0-beta.1 20200402" />
   </mapping>
   <kind value="complex-type" />
   <abstract value="false" />
@@ -33,22 +33,32 @@
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
   <derivation value="constraint" />
   <differential>
+    <element id="Extension">
+      <path value="Extension" />
+      <max value="1" />
+    </element>
     <element id="Extension.url">
       <path value="Extension.url" />
-      <fixedUri value="http://nictiz.nl/fhir/StructureDefinition/ext-cio-HypersensitivityDisposition.DescriptionSource" />
+      <fixedUri value="http://nictiz.nl/fhir/StructureDefinition/ext-HypersensitivityDisposition.DateTimeClosure" />
     </element>
     <element id="Extension.value[x]">
       <path value="Extension.value[x]" />
-      <short value="DescriptionSource" />
-      <definition value="The description of the source of the information, for example a letter of a medical specialist or a patient interview." />
-      <alias value="OmschrijvingBron" />
+      <short value="DateTimeClosure" />
+      <definition value="The date (and time) to stop the monitoring." />
+      <alias value="DatumTijdAfsluiten" />
       <type>
-        <code value="string" />
+        <code value="dateTime" />
       </type>
+      <constraint>
+        <key value="hsd-03" />
+        <severity value="error" />
+        <human value="DateTimeClosure should include date and time." />
+        <expression value="$this.toString().length() &gt;= 25" />
+      </constraint>
       <mapping>
-        <identity value="cio-v2-0-0" />
-        <map value="cio-dataelement-20-550" />
-        <comment value="DescriptionSource" />
+        <identity value="cio-dataset-200-beta1-20200402" />
+        <map value="cio-dataelement-20-538" />
+        <comment value="DateTimeClosure" />
       </mapping>
     </element>
   </differential>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
-  <id value="ext-cio-HypersensitivityDisposition.MethodOfEstablishment" />
-  <url value="http://nictiz.nl/fhir/StructureDefinition/ext-cio-HypersensitivityDisposition.MethodOfEstablishment" />
-  <name value="ExtCioHypersensitivityDispositionMethodOfEstablishment" />
-  <title value="ext HypersensitivityDisposition.MethodOfEstablishment" />
+  <id value="ext-HypersensitivityDisposition.ReasonForClosure" />
+  <url value="http://nictiz.nl/fhir/StructureDefinition/ext-HypersensitivityDisposition.ReasonForClosure" />
+  <name value="ExtHypersensitivityDispositionReasonForClosure" />
+  <title value="ext HypersensitivityDisposition.ReasonForClosure" />
   <status value="draft" />
   <publisher value="Nictiz" />
   <contact>
@@ -14,14 +14,14 @@
       <use value="work" />
     </telecom>
   </contact>
-  <description value="An extension to provide the method by which the hypersensitivity is established." />
-  <purpose value="This extension represents the MethodOfEstablishment concept of the information standard CiO v2.0.0-beta." />
+  <description value="An extension to provide the reason why the monitoring for the hypersensitivity has been closed." />
+  <purpose value="This extension represents the ReasonForClosure concept for implementations following the information standard CiO." />
   <copyright value="Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise." />
   <fhirVersion value="4.0.1" />
   <mapping>
-    <identity value="cio-v2-0-0" />
+    <identity value="cio-dataset-200-beta1-20200402" />
     <uri value="https://decor.nictiz.nl/ad/#/cio-/datasets/dataset/2.16.840.1.113883.2.4.3.11.60.26.1.2/2020-04-02T00:00:00" />
-    <comment value="CiO v2.0.0-beta" />
+    <name value="ART-DECOR Dataset Contraindications and intolerances 2.0.0-beta.1 20200402" />
   </mapping>
   <kind value="complex-type" />
   <abstract value="false" />
@@ -33,26 +33,26 @@
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
   <derivation value="constraint" />
   <differential>
+    <element id="Extension">
+      <path value="Extension" />
+      <max value="1" />
+    </element>
     <element id="Extension.url">
       <path value="Extension.url" />
-      <fixedUri value="http://nictiz.nl/fhir/StructureDefinition/ext-cio-HypersensitivityDisposition.MethodOfEstablishment" />
+      <fixedUri value="http://nictiz.nl/fhir/StructureDefinition/ext-HypersensitivityDisposition.ReasonForClosure" />
     </element>
     <element id="Extension.value[x]">
       <path value="Extension.value[x]" />
-      <short value="MethodOfEstablishment" />
-      <definition value="The method by which the hypersensitivity is established." />
-      <alias value="ManierVanVaststellen" />
+      <short value="ReasonForClosure" />
+      <definition value="Reason why the monitoring for the hypersensitivity has been closed." />
+      <alias value="RedenVanAfsluiten" />
       <type>
-        <code value="CodeableConcept" />
+        <code value="string" />
       </type>
-      <binding>
-        <strength value="required" />
-        <valueSet value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.26.11.6--20210715104903" />
-      </binding>
       <mapping>
-        <identity value="cio-v2-0-0" />
-        <map value="cio-dataelement-20-555" />
-        <comment value="MethodOfEstablishment" />
+        <identity value="cio-dataset-200-beta1-20200402" />
+        <map value="cio-dataelement-20-539" />
+        <comment value="ReasonForClosure" />
       </mapping>
     </element>
   </differential>

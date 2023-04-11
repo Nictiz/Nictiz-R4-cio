@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
-  <id value="ext-cio-HypersensitivityDisposition.DateTimeExpiration" />
-  <url value="http://nictiz.nl/fhir/StructureDefinition/ext-cio-HypersensitivityDisposition.DateTimeExpiration" />
-  <name value="ExtCioHypersensitivityDispositionDateTimeExpiration" />
-  <title value="ext HypersensitivityDisposition.DateTimeExpiration" />
+  <id value="ext-HypersensitivityDisposition.MethodOfEstablishment" />
+  <url value="http://nictiz.nl/fhir/StructureDefinition/ext-HypersensitivityDisposition.MethodOfEstablishment" />
+  <name value="ExtHypersensitivityDispositionMethodOfEstablishment" />
+  <title value="ext HypersensitivityDisposition.MethodOfEstablishment" />
   <status value="draft" />
   <publisher value="Nictiz" />
   <contact>
@@ -14,14 +14,14 @@
       <use value="work" />
     </telecom>
   </contact>
-  <description value="An extension to provide the date and time at which it is decided to stop the monitoring.​" />
-  <purpose value="This extension represents the DateTimeExpiration concept of the information standard CiO v2.0.0-beta." />
+  <description value="An extension to provide the method by which the hypersensitivity is established." />
+  <purpose value="This extension represents the MethodOfEstablishment concept for implementations following the information standard CiO." />
   <copyright value="Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise." />
   <fhirVersion value="4.0.1" />
   <mapping>
-    <identity value="cio-v2-0-0" />
+    <identity value="cio-dataset-200-beta1-20200402" />
     <uri value="https://decor.nictiz.nl/ad/#/cio-/datasets/dataset/2.16.840.1.113883.2.4.3.11.60.26.1.2/2020-04-02T00:00:00" />
-    <comment value="CiO v2.0.0-beta" />
+    <name value="ART-DECOR Dataset Contraindications and intolerances 2.0.0-beta.1 20200402" />
   </mapping>
   <kind value="complex-type" />
   <abstract value="false" />
@@ -33,22 +33,30 @@
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
   <derivation value="constraint" />
   <differential>
+    <element id="Extension">
+      <path value="Extension" />
+      <max value="1" />
+    </element>
     <element id="Extension.url">
       <path value="Extension.url" />
-      <fixedUri value="http://nictiz.nl/fhir/StructureDefinition/ext-cio-HypersensitivityDisposition.DateTimeExpiration" />
+      <fixedUri value="http://nictiz.nl/fhir/StructureDefinition/ext-HypersensitivityDisposition.MethodOfEstablishment" />
     </element>
     <element id="Extension.value[x]">
       <path value="Extension.value[x]" />
-      <short value="DateTimeExpiration" />
-      <definition value="The date and time at which it is decided to stop the monitoring." />
-      <alias value="DatumTijdAfsluiten" />
+      <short value="MethodOfEstablishment" />
+      <definition value="The method by which the hypersensitivity is established." />
+      <alias value="ManierVanVaststellen" />
       <type>
-        <code value="dateTime" />
+        <code value="CodeableConcept" />
       </type>
+      <binding>
+        <strength value="required" />
+        <valueSet value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.26.11.6--20210715104903" />
+      </binding>
       <mapping>
-        <identity value="cio-v2-0-0" />
-        <map value="cio-dataelement-20-538" />
-        <comment value="DateTimeExpiration" />
+        <identity value="cio-dataset-200-beta1-20200402" />
+        <map value="cio-dataelement-20-555" />
+        <comment value="MethodOfEstablishment" />
       </mapping>
     </element>
   </differential>

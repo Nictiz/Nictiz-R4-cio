@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
-  <id value="ext-cio-Reaction.EndDateTime" />
-  <url value="http://nictiz.nl/fhir/StructureDefinition/ext-cio-Reaction.EndDateTime" />
-  <name value="ExtCioReactionEndDateTime" />
+  <id value="ext-Reaction.EndDateTime" />
+  <url value="http://nictiz.nl/fhir/StructureDefinition/ext-Reaction.EndDateTime" />
+  <name value="ExtReactionEndDateTime" />
   <title value="ext Reaction.EndDateTime" />
   <status value="draft" />
   <publisher value="Nictiz" />
@@ -14,14 +14,14 @@
       <use value="work" />
     </telecom>
   </contact>
-  <description value="Datum en tijd waarop de reactie niet meer optrad. Dit mag ook alleen een datum of een gedeeltelijke datum zijn, indien dit niet nauwkeuriger bekend is." />
-  <purpose value="This extension represents the EndDateTime concept of the information standard CiO v2.0.0-beta." />
+  <description value="An extension to provide the date and time when the response stopped occurring. This may only be a date or a partial date, if this is not known more precisely." />
+  <purpose value="This extension represents the EndDateTime concept for implementations following the information standard CiO." />
   <copyright value="Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise." />
   <fhirVersion value="4.0.1" />
   <mapping>
-    <identity value="cio-v2-0-0" />
+    <identity value="cio-dataset-200-beta1-20200402" />
     <uri value="https://decor.nictiz.nl/ad/#/cio-/datasets/dataset/2.16.840.1.113883.2.4.3.11.60.26.1.2/2020-04-02T00:00:00" />
-    <comment value="CiO v2.0.0-beta" />
+    <name value="ART-DECOR Dataset Contraindications and intolerances 2.0.0-beta.1 20200402" />
   </mapping>
   <kind value="complex-type" />
   <abstract value="false" />
@@ -33,21 +33,24 @@
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
   <derivation value="constraint" />
   <differential>
+    <element id="Extension">
+      <path value="Extension" />
+      <max value="1" />
+    </element>
     <element id="Extension.url">
       <path value="Extension.url" />
-      <fixedUri value="http://nictiz.nl/fhir/StructureDefinition/ext-cio-Reaction.EndDateTime" />
+      <fixedUri value="http://nictiz.nl/fhir/StructureDefinition/ext-Reaction.EndDateTime" />
     </element>
     <element id="Extension.value[x]">
       <path value="Extension.value[x]" />
       <short value="EndDateTime" />
-      <definition value="Datum en tijd waarop de reactie niet meer optrad. Dit mag ook alleen een datum of een gedeeltelijke datum zijn, indien dit niet nauwkeuriger bekend is." />
-      <comment value="TODO: Change Definition to English." />
+      <definition value="Date and time when the response stopped occurring. This may only be a date or a partial date, if this is not known more precisely." />
       <alias value="EindDatumTijd" />
       <type>
         <code value="dateTime" />
       </type>
       <mapping>
-        <identity value="cio-v2-0-0" />
+        <identity value="cio-dataset-200-beta1-20200402" />
         <map value="cio-dataelement-20-582" />
         <comment value="EndDateTime" />
       </mapping>

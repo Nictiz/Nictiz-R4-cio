@@ -18,7 +18,7 @@
             <use value="work"/>
         </telecom>
     </contact>
-    <description value="Maps HypersensitivityStatus codes as found in the CiO information standard to &lt;http://hl7.org/fhir/ValueSet/allergyintolerance-clinical&gt; as found in `AllergyIntolerance.clinicalStatus` in FHIR R4."/>
+    <description value="Maps HypersensitivityStatus codes as found in the Contraindications and intolerances (Dutch: Contra-indicaties en overgevoeligheden, abbreviated as CiO) information standard to &lt;http://hl7.org/fhir/ValueSet/allergyintolerance-clinical&gt; as found in `AllergyIntolerance.clinicalStatus` in FHIR R4."/>
     <copyright value="Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise." />
     <sourceCanonical value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.26.11.4--20210715104607" />
     <targetCanonical value="http://hl7.org/fhir/ValueSet/allergyintolerance-clinical"/>

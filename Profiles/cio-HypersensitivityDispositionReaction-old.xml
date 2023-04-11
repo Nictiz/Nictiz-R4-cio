@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
-  <id value="cio-HypersensitivityDispositionReaction" />
-  <url value="http://nictiz.nl/fhir/StructureDefinition/cio-HypersensitivityDispositionReaction" />
-  <name value="CioHypersensitivityDispositionReaction" />
+  <id value="cio-HypersensitivityDispositionReaction-old" />
+  <url value="http://nictiz.nl/fhir/StructureDefinition/cio-HypersensitivityDispositionReaction-old" />
+  <name value="CioHypersensitivityDispositionReactionOld" />
   <title value="cio HypersensitivityDispositionReaction" />
   <status value="draft" />
   <publisher value="Nictiz" />
@@ -71,29 +71,27 @@
       <path value="AllergyIntolerance.extension" />
       <sliceName value="methodOfEstablishment" />
       <min value="0" />
-      <max value="1" />
       <type>
         <code value="Extension" />
-        <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-cio-HypersensitivityDisposition.MethodOfEstablishment" />
+        <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-HypersensitivityDisposition.MethodOfEstablishment" />
       </type>
     </element>
-    <element id="AllergyIntolerance.extension:descriptionSource">
+    <element id="AllergyIntolerance.extension:sourceDescription">
       <path value="AllergyIntolerance.extension" />
-      <sliceName value="descriptionSource" />
-      <min value="0" />
-      <max value="1" />
-      <type>
-        <code value="Extension" />
-        <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-cio-HypersensitivityDisposition.DescriptionSource" />
-      </type>
-    </element>
-    <element id="AllergyIntolerance.extension:dateTimeExpiration">
-      <path value="AllergyIntolerance.extension" />
-      <sliceName value="dateTimeExpiration" />
+      <sliceName value="sourceDescription" />
       <min value="0" />
       <type>
         <code value="Extension" />
-        <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-cio-HypersensitivityDisposition.DateTimeExpiration" />
+        <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-HypersensitivityDisposition.SourceDescription" />
+      </type>
+    </element>
+    <element id="AllergyIntolerance.extension:dateTimeClosure">
+      <path value="AllergyIntolerance.extension" />
+      <sliceName value="dateTimeClosure" />
+      <min value="0" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-HypersensitivityDisposition.DateTimeClosure" />
       </type>
     </element>
     <element id="AllergyIntolerance.extension:reasonForExpiration">
@@ -130,6 +128,7 @@
     <element id="AllergyIntolerance.clinicalStatus">
       <path value="AllergyIntolerance.clinicalStatus" />
       <short value="HypersensitivityStatus" />
+      <comment value="KNOWN ISSUE: The CiO ValueSet extends the zib ValueSet. Does not seem compatible with the zib mapping.&#xD;&#xA;TODO: Data set cardinality is 1..1. When ValueSets are known, an extra constraint could be made." />
       <alias value="OvergevoeligheidStatus" />
       <min value="1" />
       <binding>
@@ -146,7 +145,7 @@
       <path value="AllergyIntolerance.category" />
       <short value="HypersensitivityCategory" />
       <definition value="Identifies the hypersensitivity category." />
-      <comment value="KNOWN ISSUE: The CiO AllergyCategory ValueSet extends the zib ValueSet, while its binding is 'Required'.&#xD;&#xA;KNOWN ISSUE: The CiO AllergyCategory has cardinality 1..*, which is incompatible with FHIR." />
+      <comment value="KNOWN ISSUE: The CiO AllergyCategory ValueSet extends the zib ValueSet, while its binding is 'Required'.&#xD;&#xA;KNOWN ISSUE: The CiO AllergyCategory has cardinality 0..*, which is incompatible with the zib." />
       <alias value="OvergevoeligheidCategorie" />
       <min value="1" />
       <mapping>
@@ -159,7 +158,7 @@
       <path value="AllergyIntolerance.code" />
       <short value="Substance" />
       <definition value="Substance or group of substances which is monitored." />
-      <comment value="KNOWN ISSUE: The CiO dataset uses an 'extensible' ValueSet binding. Because the zib AllergyIntolerance has a ValueSet binding of 'required', this would be imcompatible with the zib." />
+      <comment value="KNOWN ISSUE: The CiO dataset uses an 'extensible' ValueSet binding. Because the zib AllergyIntolerance has a ValueSet binding of 'required', this would be incompatible with the zib." />
       <alias value="TeBewakenStof" />
       <min value="1" />
       <mapping>
@@ -268,30 +267,27 @@
       <path value="AllergyIntolerance.reaction.extension" />
       <sliceName value="identificationNumber" />
       <min value="1" />
-      <max value="1" />
       <type>
         <code value="Extension" />
-        <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-cio-Reaction.IdentificationNumber" />
+        <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-Reaction.Identification" />
       </type>
     </element>
     <element id="AllergyIntolerance.reaction.extension:registrationDateTime">
       <path value="AllergyIntolerance.reaction.extension" />
       <sliceName value="registrationDateTime" />
       <min value="1" />
-      <max value="1" />
       <type>
         <code value="Extension" />
-        <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-cio-Reaction.RegistrationDateTime" />
+        <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-Reaction.RegistrationDateTime" />
       </type>
     </element>
     <element id="AllergyIntolerance.reaction.extension:endDateTime">
       <path value="AllergyIntolerance.reaction.extension" />
       <sliceName value="endDateTime" />
       <min value="0" />
-      <max value="1" />
       <type>
         <code value="Extension" />
-        <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-cio-Reaction.EndDateTime" />
+        <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-Reaction.EndDateTime" />
       </type>
     </element>
     <element id="AllergyIntolerance.reaction.extension:duration">
@@ -330,27 +326,6 @@
         <map value="cio-dataelement-20-466" />
         <comment value="CausativeSubstance" />
       </mapping>
-    </element>
-    <element id="AllergyIntolerance.reaction.substance.extension">
-      <path value="AllergyIntolerance.reaction.substance.extension" />
-      <slicing>
-        <discriminator>
-          <type value="value" />
-          <path value="url" />
-        </discriminator>
-        <rules value="open" />
-      </slicing>
-      <min value="0" />
-    </element>
-    <element id="AllergyIntolerance.reaction.substance.extension:radiation">
-      <path value="AllergyIntolerance.reaction.substance.extension" />
-      <sliceName value="radiation" />
-      <min value="0" />
-      <max value="1" />
-      <type>
-        <code value="Extension" />
-        <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-cio-Reaction.Radiation" />
-      </type>
     </element>
     <element id="AllergyIntolerance.reaction.manifestation">
       <path value="AllergyIntolerance.reaction.manifestation" />
