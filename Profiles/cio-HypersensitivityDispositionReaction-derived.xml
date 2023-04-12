@@ -28,6 +28,14 @@
   <baseDefinition value="http://nictiz.nl/fhir/StructureDefinition/nl-core-AllergyIntolerance" />
   <derivation value="constraint" />
   <differential>
+    <element id="AllergyIntolerance">
+      <path value="AllergyIntolerance" />
+      <mapping>
+        <identity value="cio-dataset-200-beta1-20200402" />
+        <map value="cio-dataelement-20-456" />
+        <comment value="HypersensitivityDisposition" />
+      </mapping>
+    </element>
     <element id="AllergyIntolerance.extension">
       <path value="AllergyIntolerance.extension" />
       <slicing>
@@ -92,13 +100,13 @@
         <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-HypersensitivityDisposition.DateTimeClosure" />
       </type>
     </element>
-    <element id="AllergyIntolerance.extension:reasonForClosure">
+    <element id="AllergyIntolerance.extension:reasonClosure">
       <path value="AllergyIntolerance.extension" />
-      <sliceName value="reasonForClosure" />
+      <sliceName value="reasonClosure" />
       <min value="0" />
       <type>
         <code value="Extension" />
-        <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-HypersensitivityDisposition.ReasonForClosure" />
+        <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-HypersensitivityDisposition.ReasonClosure" />
       </type>
     </element>
     <element id="AllergyIntolerance.extension:relationHypersensitivityDisposition">

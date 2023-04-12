@@ -28,6 +28,14 @@
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/AllergyIntolerance" />
   <derivation value="constraint" />
   <differential>
+    <element id="AllergyIntolerance">
+      <path value="AllergyIntolerance" />
+      <mapping>
+        <identity value="cio-dataset-200-beta1-20200402" />
+        <map value="cio-dataelement-20-456" />
+        <comment value="HypersensitivityDisposition" />
+      </mapping>
+    </element>
     <element id="AllergyIntolerance.extension">
       <path value="AllergyIntolerance.extension" />
       <slicing>
@@ -92,13 +100,13 @@
         <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-HypersensitivityDisposition.DateTimeClosure" />
       </type>
     </element>
-    <element id="AllergyIntolerance.extension:reasonForClosure">
+    <element id="AllergyIntolerance.extension:reasonClosure">
       <path value="AllergyIntolerance.extension" />
-      <sliceName value="reasonForClosure" />
+      <sliceName value="reasonClosure" />
       <min value="0" />
       <type>
         <code value="Extension" />
-        <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-HypersensitivityDisposition.ReasonForClosure" />
+        <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-HypersensitivityDisposition.ReasonClosure" />
       </type>
     </element>
     <element id="AllergyIntolerance.extension:relationHypersensitivityDisposition">
@@ -246,7 +254,7 @@
       <path value="AllergyIntolerance.recordedDate" />
       <short value="RegistrationDateTime" />
       <definition value="The date and time at which the hypersensitivity has been entered. Date and time are required (order of the registrations must be clear in cases with multiple registrations on one day)." />
-      <comment value="RegistratieDatumTijd" />
+      <alias value="RegistratieDatumTijd" />
       <min value="1" />
       <constraint>
         <key value="hsd-01" />

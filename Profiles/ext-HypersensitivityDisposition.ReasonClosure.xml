@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
-  <id value="ext-HypersensitivityDisposition.ReasonForClosure" />
-  <url value="http://nictiz.nl/fhir/StructureDefinition/ext-HypersensitivityDisposition.ReasonForClosure" />
-  <name value="ExtHypersensitivityDispositionReasonForClosure" />
-  <title value="ext HypersensitivityDisposition.ReasonForClosure" />
+  <id value="ext-HypersensitivityDisposition.ReasonClosure" />
+  <url value="http://nictiz.nl/fhir/StructureDefinition/ext-HypersensitivityDisposition.ReasonClosure" />
+  <name value="ExtHypersensitivityDispositionReasonClosure" />
+  <title value="ext HypersensitivityDisposition.ReasonClosure" />
   <status value="draft" />
   <publisher value="Nictiz" />
   <contact>
@@ -15,7 +15,7 @@
     </telecom>
   </contact>
   <description value="An extension to provide the reason why the monitoring for the hypersensitivity has been closed." />
-  <purpose value="This extension represents the ReasonForClosure concept for implementations following the information standard CiO." />
+  <purpose value="This extension represents the ReasonClosure concept for implementations following the information standard CiO." />
   <copyright value="Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise." />
   <fhirVersion value="4.0.1" />
   <mapping>
@@ -39,11 +39,11 @@
     </element>
     <element id="Extension.url">
       <path value="Extension.url" />
-      <fixedUri value="http://nictiz.nl/fhir/StructureDefinition/ext-HypersensitivityDisposition.ReasonForClosure" />
+      <fixedUri value="http://nictiz.nl/fhir/StructureDefinition/ext-HypersensitivityDisposition.ReasonClosure" />
     </element>
     <element id="Extension.value[x]">
       <path value="Extension.value[x]" />
-      <short value="ReasonForClosure" />
+      <short value="ReasonClosure" />
       <definition value="Reason why the monitoring for the hypersensitivity has been closed." />
       <alias value="RedenVanAfsluiten" />
       <type>
@@ -52,7 +52,7 @@
       <mapping>
         <identity value="cio-dataset-200-beta1-20200402" />
         <map value="cio-dataelement-20-539" />
-        <comment value="ReasonForClosure" />
+        <comment value="ReasonClosure" />
       </mapping>
     </element>
   </differential>
