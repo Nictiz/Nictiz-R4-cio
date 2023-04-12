@@ -218,8 +218,6 @@
         <profile value="http://nictiz.nl/fhir/StructureDefinition/pattern-NlCoreHealthProfessionalReference" />
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/Practitioner" />
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/PractitionerRole" />
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Patient" />
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/RelatedPerson" />
         <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole" />
       </type>
       <mapping>
@@ -238,8 +236,6 @@
       <type>
         <code value="Reference" />
         <profile value="http://nictiz.nl/fhir/StructureDefinition/pattern-NlCoreHealthProfessionalReference" />
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Patient" />
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/RelatedPerson" />
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/Practitioner" />
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/PractitionerRole" />
         <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole" />
