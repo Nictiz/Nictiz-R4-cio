@@ -280,6 +280,8 @@
         <profile value="http://nictiz.nl/fhir/StructureDefinition/pattern-NlCoreHealthProfessionalReference" />
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/Practitioner" />
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/PractitionerRole" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Patient" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/RelatedPerson" />
         <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole" />
       </type>
       <mapping>
@@ -298,6 +300,8 @@
       <type>
         <code value="Reference" />
         <profile value="http://nictiz.nl/fhir/StructureDefinition/pattern-NlCoreHealthProfessionalReference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Patient" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/RelatedPerson" />
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/Practitioner" />
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/PractitionerRole" />
         <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole" />
@@ -307,6 +311,10 @@
         <map value="cio-dataelement-20-709" />
         <comment value="FirstAuthor" />
       </mapping>
+    </element>
+    <element id="AllergyIntolerance.note">
+      <path value="AllergyIntolerance.note" />
+      <max value="1" />
     </element>
     <element id="AllergyIntolerance.note.text">
       <path value="AllergyIntolerance.note.text" />
@@ -341,7 +349,7 @@
         </discriminator>
         <rules value="open" />
       </slicing>
-      <min value="2" />
+      <min value="3" />
     </element>
     <element id="AllergyIntolerance.reaction.extension:identification">
       <path value="AllergyIntolerance.reaction.extension" />
@@ -402,7 +410,7 @@
     <element id="AllergyIntolerance.reaction.extension:author">
       <path value="AllergyIntolerance.reaction.extension" />
       <sliceName value="author" />
-      <min value="0" />
+      <min value="1" />
       <type>
         <code value="Extension" />
         <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-Reaction.Author" />
