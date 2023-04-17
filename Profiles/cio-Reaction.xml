@@ -97,9 +97,17 @@
     </element>
     <element id="Observation.effective[x]">
       <path value="Observation.effective[x]" />
+      <short value="ReactionTimeInterval" />
+      <definition value="The reaction time which can be defined using StartDateTime, Duration and EndDateTime." />
+      <alias value="ReactiePeriode" />
       <type>
         <code value="Period" />
       </type>
+      <mapping>
+        <identity value="cio-dataset-200-beta1-20200402" />
+        <map value="cio-dataelement-20-560" />
+        <comment value="ReactionTimeInterval" />
+      </mapping>
     </element>
     <element id="Observation.effective[x].extension">
       <path value="Observation.effective[x].extension" />
@@ -190,6 +198,16 @@
         <identity value="cio-dataset-200-beta1-20200402" />
         <map value="cio-dataelement-20-556" />
         <comment value="Author" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta1-20200402" />
+        <map value="cio-dataelement-20-557" />
+        <comment value="HealthProfessional" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta1-20200402" />
+        <map value="cio-dataelement-20-738" />
+        <comment value="HealthcareProvider" />
       </mapping>
     </element>
     <element id="Observation.note">

@@ -89,7 +89,7 @@
       <definition value="The date and time at which the first author has started the monitoring." />
       <alias value="StartBewakingDatumTijd" />
       <constraint>
-        <key value="hsd-02" />
+        <key value="hdr-02" />
         <severity value="error" />
         <human value="StartMonitoringDateTime should include date and time." />
         <expression value="$this.toString().length() &gt;= 25" />
@@ -261,7 +261,7 @@
         <code value="dateTime" />
       </type>
       <constraint>
-        <key value="hsd-03" />
+        <key value="hdr-03" />
         <severity value="error" />
         <human value="DateTimeClosure should include date and time." />
         <expression value="$this.toString().length() &gt;= 25" />
@@ -279,7 +279,7 @@
       <alias value="RegistratieDatumTijd" />
       <min value="1" />
       <constraint>
-        <key value="hsd-01" />
+        <key value="hdr-01" />
         <severity value="error" />
         <human value="RegistrationDateTime should include date and time." />
         <expression value="$this.toString().length() &gt;= 25" />
@@ -311,6 +311,16 @@
         <map value="cio-dataelement-20-473" />
         <comment value="Author" />
       </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta1-20200402" />
+        <map value="cio-dataelement-20-590" />
+        <comment value="HealthProfessional" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta1-20200402" />
+        <map value="cio-dataelement-20-735" />
+        <comment value="HealthcareProvider" />
+      </mapping>
     </element>
     <element id="Condition.asserter">
       <path value="Condition.asserter" />
@@ -332,6 +342,16 @@
         <identity value="cio-dataset-200-beta1-20200402" />
         <map value="cio-dataelement-20-709" />
         <comment value="FirstAuthor" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta1-20200402" />
+        <map value="cio-dataelement-20-710" />
+        <comment value="HealthProfessional" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta1-20200402" />
+        <map value="cio-dataelement-20-737" />
+        <comment value="HealthcareProvider" />
       </mapping>
     </element>
     <element id="Condition.evidence">

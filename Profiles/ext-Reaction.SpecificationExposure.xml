@@ -58,6 +58,26 @@
         <map value="cio-dataelement-20-576" />
         <comment value="SpecificationExposure" />
       </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta1-20200402" />
+        <map value="cio-dataelement-20-574" />
+        <comment value="RelationMedicationAgreement" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta1-20200402" />
+        <map value="cio-dataelement-20-577" />
+        <comment value="RelationAdministrationAgreement" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta1-20200402" />
+        <map value="cio-dataelement-20-578" />
+        <comment value="RelationMedicationDispense" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta1-20200402" />
+        <map value="cio-dataelement-20-585" />
+        <comment value="RelationMedicationUse" />
+      </mapping>
     </element>
   </differential>
 </StructureDefinition>

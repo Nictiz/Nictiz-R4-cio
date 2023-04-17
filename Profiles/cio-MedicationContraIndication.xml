@@ -199,6 +199,16 @@
         <map value="cio-dataelement-20-289" />
         <comment value="Author" />
       </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta1-20200402" />
+        <map value="cio-dataelement-20-292" />
+        <comment value="HealthProfessional" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta1-20200402" />
+        <map value="cio-dataelement-20-736" />
+        <comment value="HealthcareProvider" />
+      </mapping>
     </element>
   </differential>
 </StructureDefinition>
