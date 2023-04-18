@@ -216,6 +216,20 @@
         </coding>
       </patternCodeableConcept>
     </element>
+    <element id="Condition.subject">
+      <path value="Condition.subject" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Patient" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Group" />
+        <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient" />
+      </type>
+      <mapping>
+        <identity value="cio-dataset-200-beta1-20200402" />
+        <map value="cio-dataelement-20-302" />
+        <comment value="Patient" />
+      </mapping>
+    </element>
     <element id="Condition.onset[x]">
       <path value="Condition.onset[x]" />
       <slicing>
