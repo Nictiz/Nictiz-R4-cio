@@ -156,7 +156,7 @@
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/MedicationAdministration" />
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/Immunization" />
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/MedicationStatement" />
-        <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/cio-HypersensitivityDispositionReaction" />
+        <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/cio-HypersensitivityDisposition" />
       </type>
       <mapping>
         <identity value="cio-dataset-200-beta1-20200402" />
