@@ -137,6 +137,11 @@
       <binding>
         <strength value="required" />
         <description value="Use ConceptMap OvergevoeligheidStatusCodelijst_to_AllergyIntoleranceClinicalStatusCodes to translate terminology from the functional model to profile terminology in ValueSet AllergyIntoleranceClinicalStatusCodes" />
+        <valueSet value="http://hl7.org/fhir/ValueSet/allergyintolerance-clinical|4.0.1">
+          <extension url="http://hl7.org/fhir/StructureDefinition/11179-permitted-value-conceptmap">
+            <valueCanonical value="http://nictiz.nl/fhir/ConceptMap/OvergevoeligheidStatusCodelijst-to-AllergyIntoleranceClinicalStatusCodes" />
+          </extension>
+        </valueSet>
       </binding>
       <mapping>
         <identity value="cio-dataset-200-beta1-20200402" />
@@ -153,6 +158,11 @@
       <binding>
         <strength value="required" />
         <description value="Use ConceptMap OvergevoeligheidCategorieCodelijst_to_AllergyIntoleranceCategory to translate terminology from the functional model to profile terminology in ValueSet AllergyIntoleranceCategory" />
+        <valueSet value="http://hl7.org/fhir/ValueSet/allergy-intolerance-category|4.0.1">
+          <extension url="http://hl7.org/fhir/StructureDefinition/11179-permitted-value-conceptmap">
+            <valueCanonical value="http://nictiz.nl/fhir/ConceptMap/OvergevoeligheidCategorieCodelijst-to-AllergyIntoleranceCategory" />
+          </extension>
+        </valueSet>
       </binding>
       <mapping>
         <identity value="cio-dataset-200-beta1-20200402" />
@@ -514,6 +524,11 @@
       <binding>
         <strength value="required" />
         <description value="Use ConceptMap ErnstCodelijst_to_AllergyIntoleranceSeverity to translate terminology from the functional model to profile terminology in ValueSet AllergyIntoleranceSeverity" />
+        <valueSet value="http://hl7.org/fhir/ValueSet/reaction-event-severity|4.0.1">
+          <extension url="http://hl7.org/fhir/StructureDefinition/11179-permitted-value-conceptmap">
+            <valueCanonical value="http://nictiz.nl/fhir/ConceptMap/ErnstCodelijst-to-AllergyIntoleranceSeverity" />
+          </extension>
+        </valueSet>
       </binding>
       <mapping>
         <identity value="cio-dataset-200-beta1-20200402" />

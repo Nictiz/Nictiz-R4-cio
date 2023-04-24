@@ -183,6 +183,11 @@
       <binding>
         <strength value="required" />
         <description value="Use ConceptMap OvergevoeligheidStatusCodelijst_to_ConditionClinicalStatusCodes to translate terminology from the functional model to profile terminology in ValueSet ConditionClinicalStatusCodes" />
+        <valueSet value="http://hl7.org/fhir/ValueSet/condition-clinical|4.0.1">
+          <extension url="http://hl7.org/fhir/StructureDefinition/11179-permitted-value-conceptmap">
+            <valueCanonical value="http://nictiz.nl/fhir/ConceptMap/OvergevoeligheidStatusCodelijst-to-ConditionClinicalStatusCodes" />
+          </extension>
+        </valueSet>
       </binding>
       <mapping>
         <identity value="cio-dataset-200-beta1-20200402" />
