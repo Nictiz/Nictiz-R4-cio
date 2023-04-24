@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ConceptMap xmlns="http://hl7.org/fhir">
-    <id value="OvergevoeligheidStatusCodelijst-to-AllergyIntoleranceClinicalStatusCodes"/>
+    <id value="OvergevoeligheidStatusCodelijst-to-AllergyIntClinicalStatusCodes"/>
     <extension url="http://hl7.org/fhir/StructureDefinition/concept-bidirectional">
         <valueBoolean value="false"/>
     </extension>
