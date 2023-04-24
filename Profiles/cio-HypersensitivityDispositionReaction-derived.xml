@@ -3,7 +3,7 @@
   <id value="cio-HypersensitivityDispositionReaction-derived" />
   <url value="http://nictiz.nl/fhir/StructureDefinition/cio-HypersensitivityDispositionReaction-derived" />
   <name value="CioHypersensitivityDispositionReactionDerived" />
-  <title value="cio HypersensitivityDispositionReaction" />
+  <title value="cio HypersensitivityDispositionReaction Derived" />
   <status value="draft" />
   <publisher value="Nictiz" />
   <contact>
