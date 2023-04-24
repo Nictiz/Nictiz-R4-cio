@@ -19,9 +19,9 @@
   <copyright value="Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise." />
   <fhirVersion value="4.0.1" />
   <mapping>
-    <identity value="cio-dataset-200-beta1-20200402" />
-    <uri value="https://decor.nictiz.nl/ad/#/cio-/datasets/dataset/2.16.840.1.113883.2.4.3.11.60.26.1.2/2020-04-02T00:00:00" />
-    <name value="ART-DECOR Dataset Contraindications and intolerances 2.0.0-beta.1 20200402" />
+    <identity value="cio-dataset-200-beta1-20230424" />
+    <uri value="https://decor.nictiz.nl/pub/cio/cio-html-20230424T150542/ds-2.16.840.1.113883.2.4.3.11.60.26.1.2-2020-04-02T000000.html" />
+    <name value="ART-DECOR Dataset Contraindications and intolerances 2.0.0-beta.1 20230424" />
   </mapping>
   <kind value="resource" />
   <abstract value="false" />
@@ -32,7 +32,7 @@
     <element id="Flag">
       <path value="Flag" />
       <mapping>
-        <identity value="cio-dataset-200-beta1-20200402" />
+        <identity value="cio-dataset-200-beta1-20230424" />
         <map value="cio-dataelement-20-2" />
         <comment value="MedicationContraIndication" />
       </mapping>
@@ -56,7 +56,7 @@
     <element id="Flag.extension:comment.value[x]">
       <path value="Flag.extension.value[x]" />
       <mapping>
-        <identity value="cio-dataset-200-beta1-20200402" />
+        <identity value="cio-dataset-200-beta1-20230424" />
         <map value="cio-dataelement-20-286" />
         <comment value="Comment" />
       </mapping>
@@ -70,7 +70,7 @@
       <path value="Flag.extension.value[x]" />
       <definition value="Reason to stop medication monitoring for this contraindication." />
       <mapping>
-        <identity value="cio-dataset-200-beta1-20200402" />
+        <identity value="cio-dataset-200-beta1-20230424" />
         <map value="cio-dataelement-20-301" />
         <comment value="ReasonClosure" />
       </mapping>
@@ -99,7 +99,7 @@
       <alias value="Identificatie" />
       <min value="1" />
       <mapping>
-        <identity value="cio-dataset-200-beta1-20200402" />
+        <identity value="cio-dataset-200-beta1-20230424" />
         <map value="cio-dataelement-20-288" />
         <comment value="Identification" />
       </mapping>
@@ -120,7 +120,7 @@
         </valueSet>
       </binding>
       <mapping>
-        <identity value="cio-dataset-200-beta1-20200402" />
+        <identity value="cio-dataset-200-beta1-20230424" />
         <map value="cio-dataelement-20-715" />
         <comment value="MedicationContraIndicationStatus" />
       </mapping>
@@ -128,7 +128,7 @@
     <element id="Flag.code">
       <path value="Flag.code" />
       <mapping>
-        <identity value="cio-dataset-200-beta1-20200402" />
+        <identity value="cio-dataset-200-beta1-20230424" />
         <map value="cio-dataelement-20-283" />
         <comment value="MedicationContraIndicationName" />
       </mapping>
@@ -136,7 +136,7 @@
     <element id="Flag.subject">
       <path value="Flag.subject" />
       <mapping>
-        <identity value="cio-dataset-200-beta1-20200402" />
+        <identity value="cio-dataset-200-beta1-20230424" />
         <map value="cio-dataelement-20-302" />
         <comment value="Patient" />
       </mapping>
@@ -158,7 +158,7 @@
         <expression value="$this.toString().length() &gt;= 25" />
       </constraint>
       <mapping>
-        <identity value="cio-dataset-200-beta1-20200402" />
+        <identity value="cio-dataset-200-beta1-20230424" />
         <map value="cio-dataelement-20-284" />
         <comment value="StartMonitoringDateTime" />
       </mapping>
@@ -175,7 +175,7 @@
         <expression value="$this.toString().length() &gt;= 25" />
       </constraint>
       <mapping>
-        <identity value="cio-dataset-200-beta1-20200402" />
+        <identity value="cio-dataset-200-beta1-20230424" />
         <map value="cio-dataelement-20-287" />
         <comment value="DateTimeClosure" />
       </mapping>
@@ -198,17 +198,17 @@
         <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization" />
       </type>
       <mapping>
-        <identity value="cio-dataset-200-beta1-20200402" />
+        <identity value="cio-dataset-200-beta1-20230424" />
         <map value="cio-dataelement-20-289" />
         <comment value="Author" />
       </mapping>
       <mapping>
-        <identity value="cio-dataset-200-beta1-20200402" />
+        <identity value="cio-dataset-200-beta1-20230424" />
         <map value="cio-dataelement-20-292" />
         <comment value="HealthProfessional" />
       </mapping>
       <mapping>
-        <identity value="cio-dataset-200-beta1-20200402" />
+        <identity value="cio-dataset-200-beta1-20230424" />
         <map value="cio-dataelement-20-736" />
         <comment value="HealthcareProvider" />
       </mapping>

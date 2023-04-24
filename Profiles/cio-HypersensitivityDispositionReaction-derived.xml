@@ -18,9 +18,9 @@
   <copyright value="Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise." />
   <fhirVersion value="4.0.1" />
   <mapping>
-    <identity value="cio-dataset-200-beta1-20200402" />
-    <uri value="https://decor.nictiz.nl/ad/#/cio-/datasets/dataset/2.16.840.1.113883.2.4.3.11.60.26.1.2/2020-04-02T00:00:00" />
-    <name value="ART-DECOR Dataset Contraindications and intolerances 2.0.0-beta.1 20200402" />
+    <identity value="cio-dataset-200-beta1-20230424" />
+    <uri value="https://decor.nictiz.nl/pub/cio/cio-html-20230424T150542/ds-2.16.840.1.113883.2.4.3.11.60.26.1.2-2020-04-02T000000.html" />
+    <name value="ART-DECOR Dataset Contraindications and intolerances 2.0.0-beta.1 20230424" />
   </mapping>
   <kind value="resource" />
   <abstract value="false" />
@@ -31,7 +31,7 @@
     <element id="AllergyIntolerance">
       <path value="AllergyIntolerance" />
       <mapping>
-        <identity value="cio-dataset-200-beta1-20200402" />
+        <identity value="cio-dataset-200-beta1-20230424" />
         <map value="cio-dataelement-20-456" />
         <comment value="HypersensitivityDisposition" />
       </mapping>
@@ -68,7 +68,7 @@
         <expression value="$this.toString().length() &gt;= 25" />
       </constraint>
       <mapping>
-        <identity value="cio-dataset-200-beta1-20200402" />
+        <identity value="cio-dataset-200-beta1-20230424" />
         <map value="cio-dataelement-20-472" />
         <comment value="StartMonitoringDateTime" />
       </mapping>
@@ -124,7 +124,7 @@
       <alias value="Identificatie" />
       <min value="1" />
       <mapping>
-        <identity value="cio-dataset-200-beta1-20200402" />
+        <identity value="cio-dataset-200-beta1-20230424" />
         <map value="cio-dataelement-20-471" />
         <comment value="Identification" />
       </mapping>
@@ -135,7 +135,7 @@
       <comment value="KNOWN ISSUE: Reference to ConceptMap needs to be changed as another ValueSet is used in the CiO data set than in the zib." />
       <alias value="OvergevoeligheidStatus" />
       <mapping>
-        <identity value="cio-dataset-200-beta1-20200402" />
+        <identity value="cio-dataset-200-beta1-20230424" />
         <map value="cio-dataelement-20-459" />
         <comment value="HypersensitivityStatus" />
       </mapping>
@@ -148,7 +148,7 @@
       <alias value="OvergevoeligheidCategorie" />
       <min value="1" />
       <mapping>
-        <identity value="cio-dataset-200-beta1-20200402" />
+        <identity value="cio-dataset-200-beta1-20230424" />
         <map value="cio-dataelement-20-458" />
         <comment value="HypersensitivityCategory" />
       </mapping>
@@ -164,7 +164,7 @@
         <valueSet value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.26.11.10--20230406110820" />
       </binding>
       <mapping>
-        <identity value="cio-dataset-200-beta1-20200402" />
+        <identity value="cio-dataset-200-beta1-20230424" />
         <map value="cio-dataelement-20-457" />
         <comment value="SubstanceToMonitor" />
       </mapping>
@@ -172,7 +172,7 @@
     <element id="AllergyIntolerance.patient">
       <path value="AllergyIntolerance.patient" />
       <mapping>
-        <identity value="cio-dataset-200-beta1-20200402" />
+        <identity value="cio-dataset-200-beta1-20230424" />
         <map value="cio-dataelement-20-302" />
         <comment value="Patient" />
       </mapping>
@@ -183,7 +183,7 @@
       <short value="OnsetDateTime" />
       <definition value="The date and time of onset of the hypersensitivity, defined by the first reaction manifestation. This can be an exact date and time, or a rough indication of the date (such as only the year, or the month and the year)." />
       <mapping>
-        <identity value="cio-dataset-200-beta1-20200402" />
+        <identity value="cio-dataset-200-beta1-20230424" />
         <map value="cio-dataelement-20-460" />
         <comment value="OnsetDateTime" />
       </mapping>
@@ -201,7 +201,7 @@
         <expression value="$this.toString().length() &gt;= 25" />
       </constraint>
       <mapping>
-        <identity value="cio-dataset-200-beta1-20200402" />
+        <identity value="cio-dataset-200-beta1-20230424" />
         <map value="cio-dataelement-20-713" />
         <comment value="RegistrationDateTime" />
       </mapping>
@@ -223,17 +223,17 @@
         <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole" />
       </type>
       <mapping>
-        <identity value="cio-dataset-200-beta1-20200402" />
+        <identity value="cio-dataset-200-beta1-20230424" />
         <map value="cio-dataelement-20-473" />
         <comment value="Author" />
       </mapping>
       <mapping>
-        <identity value="cio-dataset-200-beta1-20200402" />
+        <identity value="cio-dataset-200-beta1-20230424" />
         <map value="cio-dataelement-20-590" />
         <comment value="HealthProfessional" />
       </mapping>
       <mapping>
-        <identity value="cio-dataset-200-beta1-20200402" />
+        <identity value="cio-dataset-200-beta1-20230424" />
         <map value="cio-dataelement-20-735" />
         <comment value="HealthcareProvider" />
       </mapping>
@@ -255,17 +255,17 @@
         <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole" />
       </type>
       <mapping>
-        <identity value="cio-dataset-200-beta1-20200402" />
+        <identity value="cio-dataset-200-beta1-20230424" />
         <map value="cio-dataelement-20-709" />
         <comment value="FirstAuthor" />
       </mapping>
       <mapping>
-        <identity value="cio-dataset-200-beta1-20200402" />
+        <identity value="cio-dataset-200-beta1-20230424" />
         <map value="cio-dataelement-20-710" />
         <comment value="HealthProfessional" />
       </mapping>
       <mapping>
-        <identity value="cio-dataset-200-beta1-20200402" />
+        <identity value="cio-dataset-200-beta1-20230424" />
         <map value="cio-dataelement-20-737" />
         <comment value="HealthcareProvider" />
       </mapping>
@@ -273,7 +273,7 @@
     <element id="AllergyIntolerance.note.text">
       <path value="AllergyIntolerance.note.text" />
       <mapping>
-        <identity value="cio-dataset-200-beta1-20200402" />
+        <identity value="cio-dataset-200-beta1-20230424" />
         <map value="cio-dataelement-20-463" />
         <comment value="Comment" />
       </mapping>
@@ -281,12 +281,12 @@
     <element id="AllergyIntolerance.reaction">
       <path value="AllergyIntolerance.reaction" />
       <mapping>
-        <identity value="cio-dataset-200-beta1-20200402" />
+        <identity value="cio-dataset-200-beta1-20230424" />
         <map value="cio-dataelement-20-464" />
         <comment value="Reaction" />
       </mapping>
       <mapping>
-        <identity value="cio-dataset-200-beta1-20200402" />
+        <identity value="cio-dataset-200-beta1-20230424" />
         <map value="cio-dataelement-20-549" />
         <comment value="Reaction" />
       </mapping>
@@ -344,7 +344,7 @@
       <definition value="Duration of the reaction." />
       <alias value="TijdsDuur" />
       <mapping>
-        <identity value="cio-dataset-200-beta1-20200402" />
+        <identity value="cio-dataset-200-beta1-20230424" />
         <map value="cio-dataelement-20-583" />
         <comment value="TimeDuration" />
       </mapping>
@@ -379,7 +379,7 @@
     <element id="AllergyIntolerance.reaction.extension:copyIndicator.value[x]">
       <path value="AllergyIntolerance.reaction.extension.value[x]" />
       <mapping>
-        <identity value="cio-dataset-200-beta1-20200402" />
+        <identity value="cio-dataset-200-beta1-20230424" />
         <map value="cio-dataelement-20-714" />
         <comment value="CopyIndicator" />
       </mapping>
@@ -394,7 +394,7 @@
         <valueSet value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.26.11.11--20230407113754" />
       </binding>
       <mapping>
-        <identity value="cio-dataset-200-beta1-20200402" />
+        <identity value="cio-dataset-200-beta1-20230424" />
         <map value="cio-dataelement-20-466" />
         <comment value="CausativeSubstance" />
       </mapping>
@@ -409,7 +409,7 @@
         <valueSet value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.26.11.3--20210715104207" />
       </binding>
       <mapping>
-        <identity value="cio-dataset-200-beta1-20200402" />
+        <identity value="cio-dataset-200-beta1-20230424" />
         <map value="cio-dataelement-20-465" />
         <comment value="ReactionPhenomenon" />
       </mapping>
@@ -419,7 +419,7 @@
       <definition value="Textual description of the reaction as a whole including the reaction phenomena (symptoms)." />
       <min value="1" />
       <mapping>
-        <identity value="cio-dataset-200-beta1-20200402" />
+        <identity value="cio-dataset-200-beta1-20230424" />
         <map value="cio-dataelement-20-661" />
         <comment value="ReactionDescription" />
       </mapping>
@@ -430,7 +430,7 @@
       <definition value="Date and time the response started. This may only be a date or a partial date, if not known more precisely." />
       <alias value="BeginDatumTijd" />
       <mapping>
-        <identity value="cio-dataset-200-beta1-20200402" />
+        <identity value="cio-dataset-200-beta1-20230424" />
         <map value="cio-dataelement-20-581" />
         <comment value="StartDateTime" />
       </mapping>
@@ -439,7 +439,7 @@
       <path value="AllergyIntolerance.reaction.severity" />
       <definition value="The severity of the reaction as a result of exposure to the substance." />
       <mapping>
-        <identity value="cio-dataset-200-beta1-20200402" />
+        <identity value="cio-dataset-200-beta1-20230424" />
         <map value="cio-dataelement-20-468" />
         <comment value="Severity" />
       </mapping>
@@ -449,7 +449,7 @@
       <definition value="Way in which the patient came into contact with the causative substance or the way in which the substance was administered." />
       <comment value="KNOWN ISSUE: Terminology used in CiO and the zib is incompatible (or the mapping between these is at least not trivial and needs to be analyzed on code level)." />
       <mapping>
-        <identity value="cio-dataset-200-beta1-20200402" />
+        <identity value="cio-dataset-200-beta1-20230424" />
         <map value="cio-dataelement-20-469" />
         <comment value="RouteOfExposure" />
       </mapping>

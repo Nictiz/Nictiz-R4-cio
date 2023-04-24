@@ -18,9 +18,9 @@
   <copyright value="Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise." />
   <fhirVersion value="4.0.1" />
   <mapping>
-    <identity value="cio-dataset-200-beta1-20200402" />
-    <uri value="https://decor.nictiz.nl/ad/#/cio-/datasets/dataset/2.16.840.1.113883.2.4.3.11.60.26.1.2/2020-04-02T00:00:00" />
-    <name value="ART-DECOR Dataset Contraindications and intolerances 2.0.0-beta.1 20200402" />
+    <identity value="cio-dataset-200-beta1-20230424" />
+    <uri value="https://decor.nictiz.nl/pub/cio/cio-html-20230424T150542/ds-2.16.840.1.113883.2.4.3.11.60.26.1.2-2020-04-02T000000.html" />
+    <name value="ART-DECOR Dataset Contraindications and intolerances 2.0.0-beta.1 20230424" />
   </mapping>
   <kind value="resource" />
   <abstract value="false" />
@@ -31,7 +31,7 @@
     <element id="Observation">
       <path value="Observation" />
       <mapping>
-        <identity value="cio-dataset-200-beta1-20200402" />
+        <identity value="cio-dataset-200-beta1-20230424" />
         <map value="Reaction" />
         <comment value="cio-dataelement-20-464" />
       </mapping>
@@ -70,7 +70,7 @@
     <element id="Observation.extension:copyIndicator.value[x]">
       <path value="Observation.extension.value[x]" />
       <mapping>
-        <identity value="cio-dataset-200-beta1-20200402" />
+        <identity value="cio-dataset-200-beta1-20230424" />
         <map value="cio-dataelement-20-714" />
         <comment value="CopyIndicator" />
       </mapping>
@@ -81,7 +81,7 @@
       <alias value="Identificatie" />
       <min value="1" />
       <mapping>
-        <identity value="cio-dataset-200-beta1-20200402" />
+        <identity value="cio-dataset-200-beta1-20230424" />
         <map value="cio-dataelement-20-584" />
         <comment value="Identification" />
       </mapping>
@@ -107,7 +107,7 @@
         <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient" />
       </type>
       <mapping>
-        <identity value="cio-dataset-200-beta1-20200402" />
+        <identity value="cio-dataset-200-beta1-20230424" />
         <map value="cio-dataelement-20-302" />
         <comment value="Patient" />
       </mapping>
@@ -121,7 +121,7 @@
         <code value="Period" />
       </type>
       <mapping>
-        <identity value="cio-dataset-200-beta1-20200402" />
+        <identity value="cio-dataset-200-beta1-20230424" />
         <map value="cio-dataelement-20-560" />
         <comment value="ReactionTimeInterval" />
       </mapping>
@@ -153,7 +153,7 @@
       <definition value="Duration of the reaction." />
       <alias value="TijdsDuur" />
       <mapping>
-        <identity value="cio-dataset-200-beta1-20200402" />
+        <identity value="cio-dataset-200-beta1-20230424" />
         <map value="cio-dataelement-20-583" />
         <comment value="TimeDuration" />
       </mapping>
@@ -164,7 +164,7 @@
       <definition value="Date and time the response started. This may only be a date or a partial date, if not known more precisely." />
       <alias value="BeginDatumTijd" />
       <mapping>
-        <identity value="cio-dataset-200-beta1-20200402" />
+        <identity value="cio-dataset-200-beta1-20230424" />
         <map value="cio-dataelement-20-581" />
         <comment value="StartDateTime" />
       </mapping>
@@ -175,7 +175,7 @@
       <definition value="Date and time when the response stopped occurring. This may only be a date or a partial date, if this is not known more precisely." />
       <alias value="EindDatumTijd" />
       <mapping>
-        <identity value="cio-dataset-200-beta1-20200402" />
+        <identity value="cio-dataset-200-beta1-20230424" />
         <map value="cio-dataelement-20-582" />
         <comment value="EndDateTime" />
       </mapping>
@@ -187,7 +187,7 @@
       <alias value="DatumTijdVastlegging" />
       <min value="1" />
       <mapping>
-        <identity value="cio-dataset-200-beta1-20200402" />
+        <identity value="cio-dataset-200-beta1-20230424" />
         <map value="cio-dataelement-20-568" />
         <comment value="RegistrationDateTime" />
       </mapping>
@@ -213,17 +213,17 @@
         <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization" />
       </type>
       <mapping>
-        <identity value="cio-dataset-200-beta1-20200402" />
+        <identity value="cio-dataset-200-beta1-20230424" />
         <map value="cio-dataelement-20-556" />
         <comment value="Author" />
       </mapping>
       <mapping>
-        <identity value="cio-dataset-200-beta1-20200402" />
+        <identity value="cio-dataset-200-beta1-20230424" />
         <map value="cio-dataelement-20-557" />
         <comment value="HealthProfessional" />
       </mapping>
       <mapping>
-        <identity value="cio-dataset-200-beta1-20200402" />
+        <identity value="cio-dataset-200-beta1-20230424" />
         <map value="cio-dataelement-20-738" />
         <comment value="HealthcareProvider" />
       </mapping>
@@ -239,7 +239,7 @@
       <definition value="Textual description of the reaction as a whole including the reaction phenomena (symptoms)." />
       <alias value="ReactieBeschrijving" />
       <mapping>
-        <identity value="cio-dataset-200-beta1-20200402" />
+        <identity value="cio-dataset-200-beta1-20230424" />
         <map value="cio-dataelement-20-661" />
         <comment value="ReactionDescription" />
       </mapping>
@@ -281,7 +281,7 @@
         <valueSet value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.26.11.11--20230407113754" />
       </binding>
       <mapping>
-        <identity value="cio-dataset-200-beta1-20200402" />
+        <identity value="cio-dataset-200-beta1-20230424" />
         <map value="cio-dataelement-20-466" />
         <comment value="CausativeSubstance" />
       </mapping>
@@ -312,7 +312,7 @@
         <valueSet value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.26.11.3--20210715104207" />
       </binding>
       <mapping>
-        <identity value="cio-dataset-200-beta1-20200402" />
+        <identity value="cio-dataset-200-beta1-20230424" />
         <map value="cio-dataelement-20-465" />
         <comment value="ReactionPhenomenon" />
       </mapping>
@@ -344,7 +344,7 @@
         <valueSet value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.8.2.6--20200901000000" />
       </binding>
       <mapping>
-        <identity value="cio-dataset-200-beta1-20200402" />
+        <identity value="cio-dataset-200-beta1-20230424" />
         <map value="cio-dataelement-20-468" />
         <comment value="Severity" />
       </mapping>
@@ -376,7 +376,7 @@
         <valueSet value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.9.12.1--20200901000000" />
       </binding>
       <mapping>
-        <identity value="cio-dataset-200-beta1-20200402" />
+        <identity value="cio-dataset-200-beta1-20230424" />
         <map value="cio-dataelement-20-469" />
         <comment value="RouteOfExposure" />
       </mapping>
