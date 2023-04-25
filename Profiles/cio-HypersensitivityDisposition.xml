@@ -350,20 +350,11 @@
         <comment value="HealthcareProvider" />
       </mapping>
     </element>
-    <element id="Condition.evidence">
-      <path value="Condition.evidence" />
-      <short value="Reaction" />
-      <alias value="Reactie" />
-      <mapping>
-        <identity value="cio-dataset-200-beta1-20230424" />
-        <map value="cio-dataelement-20-549" />
-        <comment value="Reaction" />
-      </mapping>
-    </element>
     <element id="Condition.evidence.code">
       <path value="Condition.evidence.code" />
       <short value="ReactionPhenomenon" />
       <definition value="The substantive specifications of the reaction (symptoms) that occurs when the patient is exposed to the substance." />
+      <comment value="The concept ReactionPhenomenon (cio-dataelement-20-465) is also mapped on `Observation.component:reactionPhenomenon.valueCodeableConcept` in the cio-Reaction profile. Whenever a Reaction has one or more ReactionPhenomenon elements that need to be exchanged, these SHALL be present in the aforementioned element within the cio-Reaction profile, and they MAY also be included here. However, if both elements are used, they should align with each other, which means that all reaction phenomena present in cio-Reaction instances linked via `.evidence.detail` should also be included here." />
       <alias value="ReactieVerschijnsel" />
       <binding>
         <strength value="extensible" />
@@ -377,11 +368,26 @@
     </element>
     <element id="Condition.evidence.detail">
       <path value="Condition.evidence.detail" />
+      <slicing>
+        <discriminator>
+          <type value="profile" />
+          <path value="resolve()" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Condition.evidence.detail:reaction">
+      <path value="Condition.evidence.detail" />
+      <sliceName value="reaction" />
       <type>
         <code value="Reference" />
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Resource" />
         <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/cio-Reaction" />
       </type>
+      <mapping>
+        <identity value="cio-dataset-200-beta1-20230424" />
+        <map value="cio-dataelement-20-549" />
+        <comment value="Reaction" />
+      </mapping>
     </element>
     <element id="Condition.note">
       <path value="Condition.note" />

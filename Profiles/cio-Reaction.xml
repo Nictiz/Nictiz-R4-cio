@@ -297,6 +297,7 @@
       <path value="Observation.component.value[x]" />
       <short value="ReactionPhenomenon" />
       <definition value="The substantive specifications of the reaction (symptoms) that occurs when the patient is exposed to the substance." />
+      <comment value="The concept ReactionPhenomenon (cio-dataelement-20-465) is also mapped on `Condition.evidence.code` in the cio-HypersensitivityDisposition profile. Whenever a Reaction has one or more ReactionPhenomenon elements that need to be exchanged, these SHALL be present here, and they MAY also be included in the aforementioned element within the cio-HypersensitivityDisposition profile. However, if both elements are used, they should align with each other, which means that all reaction phenomena present in a cio-Reaction instance should also be included in cio-HypersensitivityDisposition instances that link to such an instance via `.evidence.detail`." />
       <alias value="ReactieVerschijnsel" />
       <type>
         <code value="CodeableConcept" />
