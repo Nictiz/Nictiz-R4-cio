@@ -49,12 +49,6 @@
       <type>
         <code value="dateTime" />
       </type>
-      <constraint>
-        <key value="hdr-04" />
-        <severity value="error" />
-        <human value="RegistrationDateTime should include date and time." />
-        <expression value="$this.toString().length() &gt;= 25" />
-      </constraint>
       <mapping>
         <identity value="cio-dataset-200-beta1-20230424" />
         <map value="cio-dataelement-20-568" />

@@ -151,12 +151,6 @@
       <definition value="The date and time when the decision was taken to do medication monitoring for this contraindication." />
       <alias value="StartBewakingDatumTijd" />
       <min value="1" />
-      <constraint>
-        <key value="mci-02" />
-        <severity value="error" />
-        <human value="StartMonitoringDateTime should include date and time." />
-        <expression value="$this.toString().length() &gt;= 25" />
-      </constraint>
       <mapping>
         <identity value="cio-dataset-200-beta1-20230424" />
         <map value="cio-dataelement-20-284" />
@@ -168,12 +162,6 @@
       <short value="DateTimeClosure" />
       <definition value="The date and time when the decision was taken to stop medication monitoring for this contraindication." />
       <alias value="DatumTijdAfsluiten" />
-      <constraint>
-        <key value="mci-03" />
-        <severity value="error" />
-        <human value="DateTimeClosure should include date and time." />
-        <expression value="$this.toString().length() &gt;= 25" />
-      </constraint>
       <mapping>
         <identity value="cio-dataset-200-beta1-20230424" />
         <map value="cio-dataelement-20-287" />

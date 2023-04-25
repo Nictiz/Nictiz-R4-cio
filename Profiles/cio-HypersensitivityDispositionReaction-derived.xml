@@ -61,12 +61,6 @@
       <short value="StartMonitoringDateTime" />
       <definition value="The date and time at which the first author has started the monitoring." />
       <alias value="StartBewakingDatumTijd" />
-      <constraint>
-        <key value="hdr-02" />
-        <severity value="error" />
-        <human value="StartMonitoringDateTime should include date and time." />
-        <expression value="$this.toString().length() &gt;= 25" />
-      </constraint>
       <mapping>
         <identity value="cio-dataset-200-beta1-20230424" />
         <map value="cio-dataelement-20-472" />
@@ -194,12 +188,6 @@
       <definition value="The date and time at which the hypersensitivity has been entered. Date and time are required (order of the registrations must be clear in cases with multiple registrations on one day)." />
       <alias value="RegistratieDatumTijd" />
       <min value="1" />
-      <constraint>
-        <key value="hdr-01" />
-        <severity value="error" />
-        <human value="RegistrationDateTime should include date and time." />
-        <expression value="$this.toString().length() &gt;= 25" />
-      </constraint>
       <mapping>
         <identity value="cio-dataset-200-beta1-20230424" />
         <map value="cio-dataelement-20-713" />
