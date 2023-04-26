@@ -40,12 +40,12 @@
       </searchParam>
       <searchParam>
         <name value="category"/>
-        <definition value="http://nictiz.nl/fhir/SearchParameter/flag-category"/>
+        <definition value="http://nictiz.nl/fhir/SearchParameter/Flag-category"/>
         <type value="token"/>
       </searchParam>
       <searchParam>
         <name value="recorded-date"/>
-        <definition value="http://nictiz.nl/fhir/SearchParameter/flag-recorded-date"/>
+        <definition value="http://nictiz.nl/fhir/SearchParameter/Flag-registration-date-time"/>
         <type value="date"/>
       </searchParam>
     </resource>
@@ -104,12 +104,12 @@
       </searchParam>
       <searchParam>
         <name value="category"/>
-        <definition value="http://nictiz.nl/fhir/SearchParameter/flag-category"/>
+        <definition value="http://nictiz.nl/fhir/SearchParameter/Flag-category"/>
         <type value="token"/>
       </searchParam>
       <searchParam>
         <name value="recorded-date"/>
-        <definition value="http://nictiz.nl/fhir/SearchParameter/flag-recorded-date"/>
+        <definition value="http://nictiz.nl/fhir/SearchParameter/Flag-registration-date-time"/>
         <type value="date"/>
       </searchParam>
     </resource>
