@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="cio-MedicationContraIndication" />
+  <url value="http://nictiz.nl/fhir/StructureDefinition/cio-MedicationContraIndication" />
+  <name value="CioMedicationContraIndication" />
+  <title value="cio MedicationContraIndication" />
+  <status value="draft" />
+  <publisher value="Nictiz" />
+  <contact>
+    <name value="Nictiz" />
+    <telecom>
+      <system value="url" />
+      <value value="https://www.nictiz.nl" />
+      <use value="work" />
+    </telecom>
+  </contact>
+  <description value="A Flag resource as used within the Contraindications and intolerances (Dutch: Contra-indicaties en overgevoeligheden, abbreviated as CiO) information standard." />
+  <purpose value="This Flag resource represents the Dutch [zib ('Zorginformatiebouwsteen', i.e. Health and Care Information Model) MedicationContraIndication v1.0 (2020)](https://zibs.nl/wiki/MedicationContraIndication-v1.0(2020EN)), and also contains augmentations to the zib with elements found in the transactions of CiO." />
+  <copyright value="Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise." />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="cio-dataset-200-beta1-20230424" />
+    <uri value="https://decor.nictiz.nl/pub/cio/cio-html-20230424T150542/ds-2.16.840.1.113883.2.4.3.11.60.26.1.2-2020-04-02T000000.html" />
+    <name value="ART-DECOR Dataset Contraindications and intolerances 2.0.0-beta.1 20230424" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Flag" />
+  <baseDefinition value="http://nictiz.nl/fhir/StructureDefinition/nl-core-MedicationContraIndication" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Flag">
+      <path value="Flag" />
+      <mapping>
+        <identity value="cio-dataset-200-beta1-20230424" />
+        <map value="cio-dataelement-20-2" />
+        <comment value="MedicationContraIndication" />
+      </mapping>
+    </element>
+    <element id="Flag.extension">
+      <path value="Flag.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="1" />
+    </element>
+    <element id="Flag.extension:comment">
+      <path value="Flag.extension" />
+      <sliceName value="comment" />
+      <min value="0" />
+    </element>
+    <element id="Flag.extension:comment.value[x]">
+      <path value="Flag.extension.value[x]" />
+      <mapping>
+        <identity value="cio-dataset-200-beta1-20230424" />
+        <map value="cio-dataelement-20-286" />
+        <comment value="Comment" />
+      </mapping>
+    </element>
+    <element id="Flag.extension:reasonClosure">
+      <path value="Flag.extension" />
+      <sliceName value="reasonClosure" />
+      <min value="0" />
+    </element>
+    <element id="Flag.extension:reasonClosure.value[x]">
+      <path value="Flag.extension.value[x]" />
+      <definition value="Reason to stop medication monitoring for this contraindication." />
+      <mapping>
+        <identity value="cio-dataset-200-beta1-20230424" />
+        <map value="cio-dataelement-20-301" />
+        <comment value="ReasonClosure" />
+      </mapping>
+    </element>
+    <element id="Flag.extension:registrationDateTime">
+      <path value="Flag.extension" />
+      <sliceName value="registrationDateTime" />
+      <min value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-MedicationContraIndication.RegistrationDateTime" />
+      </type>
+    </element>
+    <element id="Flag.extension:relationMedicationContraIndication">
+      <path value="Flag.extension" />
+      <sliceName value="relationMedicationContraIndication" />
+      <min value="0" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-MedicationContraIndication.RelationContraIndication" />
+      </type>
+    </element>
+    <element id="Flag.identifier">
+      <path value="Flag.identifier" />
+      <short value="Identification" />
+      <alias value="Identificatie" />
+      <min value="1" />
+      <mapping>
+        <identity value="cio-dataset-200-beta1-20230424" />
+        <map value="cio-dataelement-20-288" />
+        <comment value="Identification" />
+      </mapping>
+    </element>
+    <element id="Flag.status">
+      <path value="Flag.status" />
+      <short value="MedicationContraIndicationStatus" />
+      <definition value="Statement on the status of the contraindication." />
+      <comment value="The mapping guidance given in the nl-core profile w.r.t. `.status` SHOULD be ignored, as there is a direct functional counterpart of this element present within the data set of CiO. The ConceptMap mentioned in the ValueSet binding SHOULD be used instead." />
+      <alias value="MedicatieContraIndicatieStatus" />
+      <binding>
+        <strength value="required" />
+        <description value="Use ConceptMap MedicatieContraIndicatieStatusCodelijst_to_FlagStatus to translate terminology from the functional model to profile terminology in ValueSet FlagStatus" />
+        <valueSet value="http://hl7.org/fhir/ValueSet/flag-status|4.0.1">
+          <extension url="http://hl7.org/fhir/StructureDefinition/11179-permitted-value-conceptmap">
+            <valueCanonical value="http://nictiz.nl/fhir/ConceptMap/MedicatieContraIndicatieStatusCodelijst-to-FlagStatus" />
+          </extension>
+        </valueSet>
+      </binding>
+      <mapping>
+        <identity value="cio-dataset-200-beta1-20230424" />
+        <map value="cio-dataelement-20-715" />
+        <comment value="MedicationContraIndicationStatus" />
+      </mapping>
+    </element>
+    <element id="Flag.code">
+      <path value="Flag.code" />
+      <mapping>
+        <identity value="cio-dataset-200-beta1-20230424" />
+        <map value="cio-dataelement-20-283" />
+        <comment value="MedicationContraIndicationName" />
+      </mapping>
+    </element>
+    <element id="Flag.subject">
+      <path value="Flag.subject" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Patient" />
+        <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient" />
+      </type>
+      <mapping>
+        <identity value="cio-dataset-200-beta1-20230424" />
+        <map value="cio-dataelement-20-302" />
+        <comment value="Patient" />
+      </mapping>
+    </element>
+    <element id="Flag.period">
+      <path value="Flag.period" />
+      <min value="1" />
+    </element>
+    <element id="Flag.period.start">
+      <path value="Flag.period.start" />
+      <short value="StartMonitoringDateTime" />
+      <definition value="The date and time when the decision was taken to do medication monitoring for this contraindication." />
+      <alias value="StartBewakingDatumTijd" />
+      <min value="1" />
+      <mapping>
+        <identity value="cio-dataset-200-beta1-20230424" />
+        <map value="cio-dataelement-20-284" />
+        <comment value="StartMonitoringDateTime" />
+      </mapping>
+    </element>
+    <element id="Flag.period.end">
+      <path value="Flag.period.end" />
+      <short value="DateTimeClosure" />
+      <definition value="The date and time when the decision was taken to stop medication monitoring for this contraindication." />
+      <alias value="DatumTijdAfsluiten" />
+      <mapping>
+        <identity value="cio-dataset-200-beta1-20230424" />
+        <map value="cio-dataelement-20-287" />
+        <comment value="DateTimeClosure" />
+      </mapping>
+    </element>
+    <element id="Flag.author">
+      <path value="Flag.author" />
+      <short value="Author" />
+      <definition value="The health professional or the healthcare provider who is responsible for the registration." />
+      <comment value="Each occurrence of the zib HealthProfessional is normally represented by _two_ FHIR resources: a PractitionerRole resource (instance of [nl-core-HealthProfessional-PractitionerRole](http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole)) and a Practitioner resource (instance of [nl-core-HealthProfessional-Practitioner](http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-Practitioner)). The Practitioner resource is referenced from the PractitionerRole instance. For this reason, sending systems should fill the reference to the PractitionerRole instance here, and not the Practitioner resource. Receiving systems can then retrieve the reference to the Practitioner resource from that PractitionerRole instance.&#xD;&#xA;&#xD;&#xA;In rare circumstances, there is only a Practitioner instance, in which case it is that instance which will be referenced here. However, since this should be the exception, the nl-core-HealthProfessional-Practitioner profile is not explicitly mentioned as a target profile.&#xD;&#xA;&#xD;&#xA;Note that, although the nl-core-HealthcareProvider profile (with resource type Location) is the focal profile of the zib HealthcareProvider, the reference to the nl-core-HealthcareProvider-Organization profile is sufficient, because the concept is concerned with the organizational information of the author." />
+      <alias value="Auteur" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Organization" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Practitioner" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/PractitionerRole" />
+        <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole" />
+        <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization" />
+      </type>
+      <mapping>
+        <identity value="cio-dataset-200-beta1-20230424" />
+        <map value="cio-dataelement-20-289" />
+        <comment value="Author" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta1-20230424" />
+        <map value="cio-dataelement-20-292" />
+        <comment value="HealthProfessional" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta1-20230424" />
+        <map value="cio-dataelement-20-736" />
+        <comment value="HealthcareProvider" />
+      </mapping>
+    </element>
+  </differential>
+</StructureDefinition>

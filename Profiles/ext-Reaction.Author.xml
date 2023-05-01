@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="ext-Reaction.Author" />
+  <url value="http://nictiz.nl/fhir/StructureDefinition/ext-Reaction.Author" />
+  <name value="ExtReactionAuthor" />
+  <title value="ext Reaction.Author" />
+  <status value="draft" />
+  <publisher value="Nictiz" />
+  <contact>
+    <name value="Nictiz" />
+    <telecom>
+      <system value="url" />
+      <value value="https://www.nictiz.nl" />
+      <use value="work" />
+    </telecom>
+  </contact>
+  <description value="An extension to provide the health professional or the healthcare provider who is responsible for the registration of the reaction." />
+  <purpose value="This extension represents the Author concept for implementations following the information standard CiO." />
+  <copyright value="Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise." />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="cio-dataset-200-beta1-20230424" />
+    <uri value="https://decor.nictiz.nl/pub/cio/cio-html-20230424T150542/ds-2.16.840.1.113883.2.4.3.11.60.26.1.2-2020-04-02T000000.html" />
+    <name value="ART-DECOR Dataset Contraindications and intolerances 2.0.0-beta.1 20230424" />
+  </mapping>
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <context>
+    <type value="element" />
+    <expression value="AllergyIntolerance.reaction" />
+  </context>
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension">
+      <path value="Extension" />
+      <max value="1" />
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="http://nictiz.nl/fhir/StructureDefinition/ext-Reaction.Author" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <short value="Author" />
+      <definition value="The health professional or the healthcare provider who is responsible for the registration of the reaction." />
+      <comment value="Each occurrence of the zib HealthProfessional is normally represented by _two_ FHIR resources: a PractitionerRole resource (instance of [nl-core-HealthProfessional-PractitionerRole](http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole)) and a Practitioner resource (instance of [nl-core-HealthProfessional-Practitioner](http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-Practitioner)). The Practitioner resource is referenced from the PractitionerRole instance. For this reason, sending systems should fill the reference to the PractitionerRole instance here, and not the Practitioner resource. Receiving systems can then retrieve the reference to the Practitioner resource from that PractitionerRole instance.&#xD;&#xA;&#xD;&#xA;In rare circumstances, there is only a Practitioner instance, in which case it is that instance which will be referenced here. However, since this should be the exception, the nl-core-HealthProfessional-Practitioner profile is not explicitly mentioned as a target profile.&#xD;&#xA;&#xD;&#xA;Note that, although the nl-core-HealthcareProvider profile (with resource type Location) is the focal profile of the zib HealthcareProvider, the reference to the nl-core-HealthcareProvider-Organization profile is sufficient, because the concept is concerned with the organizational information of the author." />
+      <alias value="Auteur" />
+      <type>
+        <code value="Reference" />
+        <profile value="http://nictiz.nl/fhir/StructureDefinition/pattern-NlCoreHealthProfessionalReference" />
+        <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole" />
+        <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization" />
+      </type>
+      <mapping>
+        <identity value="cio-dataset-200-beta1-20230424" />
+        <map value="cio-dataelement-20-556" />
+        <comment value="Author" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta1-20230424" />
+        <map value="cio-dataelement-20-557" />
+        <comment value="HealthProfessional" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta1-20230424" />
+        <map value="cio-dataelement-20-738" />
+        <comment value="HealthcareProvider" />
+      </mapping>
+    </element>
+  </differential>
+</StructureDefinition>

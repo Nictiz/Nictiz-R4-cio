@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="ext-Reaction.EndDateTime" />
+  <url value="http://nictiz.nl/fhir/StructureDefinition/ext-Reaction.EndDateTime" />
+  <name value="ExtReactionEndDateTime" />
+  <title value="ext Reaction.EndDateTime" />
+  <status value="draft" />
+  <publisher value="Nictiz" />
+  <contact>
+    <name value="Nictiz" />
+    <telecom>
+      <system value="url" />
+      <value value="https://www.nictiz.nl" />
+      <use value="work" />
+    </telecom>
+  </contact>
+  <description value="An extension to provide the date and time when the response stopped occurring. This may only be a date or a partial date, if this is not known more precisely." />
+  <purpose value="This extension represents the EndDateTime concept for implementations following the information standard CiO." />
+  <copyright value="Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise." />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="cio-dataset-200-beta1-20230424" />
+    <uri value="https://decor.nictiz.nl/pub/cio/cio-html-20230424T150542/ds-2.16.840.1.113883.2.4.3.11.60.26.1.2-2020-04-02T000000.html" />
+    <name value="ART-DECOR Dataset Contraindications and intolerances 2.0.0-beta.1 20230424" />
+  </mapping>
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <context>
+    <type value="element" />
+    <expression value="AllergyIntolerance.reaction" />
+  </context>
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension">
+      <path value="Extension" />
+      <max value="1" />
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="http://nictiz.nl/fhir/StructureDefinition/ext-Reaction.EndDateTime" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <short value="EndDateTime" />
+      <definition value="Date and time when the response stopped occurring. This may only be a date or a partial date, if this is not known more precisely." />
+      <alias value="EindDatumTijd" />
+      <type>
+        <code value="dateTime" />
+      </type>
+      <mapping>
+        <identity value="cio-dataset-200-beta1-20230424" />
+        <map value="cio-dataelement-20-582" />
+        <comment value="EndDateTime" />
+      </mapping>
+    </element>
+  </differential>
+</StructureDefinition>

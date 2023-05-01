@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="cio-Reaction" />
+  <url value="http://nictiz.nl/fhir/StructureDefinition/cio-Reaction" />
+  <name value="CioReaction" />
+  <title value="cio Reaction" />
+  <status value="draft" />
+  <publisher value="Nictiz" />
+  <contact>
+    <name value="Nictiz" />
+    <telecom>
+      <system value="url" />
+      <value value="https://www.nictiz.nl" />
+      <use value="work" />
+    </telecom>
+  </contact>
+  <description value="An Observation resource as used within the Contraindications and intolerances (Dutch: Contra-indicaties en overgevoeligheden, abbreviated as CiO) information standard." />
+  <copyright value="Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise." />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="cio-dataset-200-beta1-20230424" />
+    <uri value="https://decor.nictiz.nl/pub/cio/cio-html-20230424T150542/ds-2.16.840.1.113883.2.4.3.11.60.26.1.2-2020-04-02T000000.html" />
+    <name value="ART-DECOR Dataset Contraindications and intolerances 2.0.0-beta.1 20230424" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Observation" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Observation" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Observation">
+      <path value="Observation" />
+      <mapping>
+        <identity value="cio-dataset-200-beta1-20230424" />
+        <map value="Reaction" />
+        <comment value="cio-dataelement-20-464" />
+      </mapping>
+    </element>
+    <element id="Observation.extension">
+      <path value="Observation.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="0" />
+    </element>
+    <element id="Observation.extension:specificationExposure">
+      <path value="Observation.extension" />
+      <sliceName value="specificationExposure" />
+      <min value="0" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-Reaction.SpecificationExposure" />
+      </type>
+      <isModifier value="false" />
+    </element>
+    <element id="Observation.extension:copyIndicator">
+      <path value="Observation.extension" />
+      <sliceName value="copyIndicator" />
+      <min value="0" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-CopyIndicator" />
+      </type>
+      <isModifier value="false" />
+    </element>
+    <element id="Observation.extension:copyIndicator.value[x]">
+      <path value="Observation.extension.value[x]" />
+      <mapping>
+        <identity value="cio-dataset-200-beta1-20230424" />
+        <map value="cio-dataelement-20-714" />
+        <comment value="CopyIndicator" />
+      </mapping>
+    </element>
+    <element id="Observation.identifier">
+      <path value="Observation.identifier" />
+      <short value="Identification" />
+      <alias value="Identificatie" />
+      <min value="1" />
+      <mapping>
+        <identity value="cio-dataset-200-beta1-20230424" />
+        <map value="cio-dataelement-20-584" />
+        <comment value="Identification" />
+      </mapping>
+    </element>
+    <element id="Observation.code">
+      <path value="Observation.code" />
+      <patternCodeableConcept>
+        <coding>
+          <system value="http://snomed.info/sct" />
+          <code value="281647001" />
+        </coding>
+      </patternCodeableConcept>
+    </element>
+    <element id="Observation.subject">
+      <path value="Observation.subject" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Patient" />
+        <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient" />
+      </type>
+      <mapping>
+        <identity value="cio-dataset-200-beta1-20230424" />
+        <map value="cio-dataelement-20-302" />
+        <comment value="Patient" />
+      </mapping>
+    </element>
+    <element id="Observation.effective[x]">
+      <path value="Observation.effective[x]" />
+      <short value="ReactionTimeInterval" />
+      <definition value="The reaction time which can be defined using StartDateTime, Duration and EndDateTime." />
+      <alias value="ReactiePeriode" />
+      <type>
+        <code value="Period" />
+      </type>
+      <mapping>
+        <identity value="cio-dataset-200-beta1-20230424" />
+        <map value="cio-dataelement-20-560" />
+        <comment value="ReactionTimeInterval" />
+      </mapping>
+    </element>
+    <element id="Observation.effective[x].extension">
+      <path value="Observation.effective[x].extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="0" />
+    </element>
+    <element id="Observation.effective[x].extension:duration">
+      <path value="Observation.effective[x].extension" />
+      <sliceName value="duration" />
+      <min value="0" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-TimeInterval.Duration" />
+      </type>
+      <isModifier value="false" />
+    </element>
+    <element id="Observation.effective[x].extension:duration.value[x]">
+      <path value="Observation.effective[x].extension.value[x]" />
+      <short value="TimeDuration" />
+      <definition value="Duration of the reaction." />
+      <alias value="TijdsDuur" />
+      <mapping>
+        <identity value="cio-dataset-200-beta1-20230424" />
+        <map value="cio-dataelement-20-583" />
+        <comment value="TimeDuration" />
+      </mapping>
+    </element>
+    <element id="Observation.effective[x].start">
+      <path value="Observation.effective[x].start" />
+      <short value="StartDateTime" />
+      <definition value="Date and time the response started. This may only be a date or a partial date, if not known more precisely." />
+      <alias value="BeginDatumTijd" />
+      <mapping>
+        <identity value="cio-dataset-200-beta1-20230424" />
+        <map value="cio-dataelement-20-581" />
+        <comment value="StartDateTime" />
+      </mapping>
+    </element>
+    <element id="Observation.effective[x].end">
+      <path value="Observation.effective[x].end" />
+      <short value="EndDateTime" />
+      <definition value="Date and time when the response stopped occurring. This may only be a date or a partial date, if this is not known more precisely." />
+      <alias value="EindDatumTijd" />
+      <mapping>
+        <identity value="cio-dataset-200-beta1-20230424" />
+        <map value="cio-dataelement-20-582" />
+        <comment value="EndDateTime" />
+      </mapping>
+    </element>
+    <element id="Observation.issued">
+      <path value="Observation.issued" />
+      <short value="RegistrationDateTime" />
+      <definition value="The date and time at which the reaction has been entered." />
+      <alias value="DatumTijdVastlegging" />
+      <min value="1" />
+      <mapping>
+        <identity value="cio-dataset-200-beta1-20230424" />
+        <map value="cio-dataelement-20-568" />
+        <comment value="RegistrationDateTime" />
+      </mapping>
+    </element>
+    <element id="Observation.performer">
+      <path value="Observation.performer" />
+      <short value="Author" />
+      <definition value="The health professional or the healthcare provider who is responsible for the registration of the reaction." />
+      <comment value="Each occurrence of the zib HealthProfessional is normally represented by _two_ FHIR resources: a PractitionerRole resource (instance of [nl-core-HealthProfessional-PractitionerRole](http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole)) and a Practitioner resource (instance of [nl-core-HealthProfessional-Practitioner](http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-Practitioner)). The Practitioner resource is referenced from the PractitionerRole instance. For this reason, sending systems should fill the reference to the PractitionerRole instance here, and not the Practitioner resource. Receiving systems can then retrieve the reference to the Practitioner resource from that PractitionerRole instance.&#xD;&#xA;&#xD;&#xA;In rare circumstances, there is only a Practitioner instance, in which case it is that instance which will be referenced here. However, since this should be the exception, the nl-core-HealthProfessional-Practitioner profile is not explicitly mentioned as a target profile.&#xD;&#xA;&#xD;&#xA;Note that, although the nl-core-HealthcareProvider profile (with resource type Location) is the focal profile of the zib HealthcareProvider, the reference to the nl-core-HealthcareProvider-Organization profile is sufficient, because the concept is concerned with the organizational information of the author." />
+      <alias value="Auteur" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Reference" />
+        <profile value="http://nictiz.nl/fhir/StructureDefinition/pattern-NlCoreHealthProfessionalReference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Practitioner" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/PractitionerRole" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Organization" />
+        <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole" />
+        <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization" />
+      </type>
+      <mapping>
+        <identity value="cio-dataset-200-beta1-20230424" />
+        <map value="cio-dataelement-20-556" />
+        <comment value="Author" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta1-20230424" />
+        <map value="cio-dataelement-20-557" />
+        <comment value="HealthProfessional" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta1-20230424" />
+        <map value="cio-dataelement-20-738" />
+        <comment value="HealthcareProvider" />
+      </mapping>
+    </element>
+    <element id="Observation.note">
+      <path value="Observation.note" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Observation.note.text">
+      <path value="Observation.note.text" />
+      <short value="ReactionDescription" />
+      <definition value="Textual description of the reaction as a whole including the reaction phenomena (symptoms)." />
+      <alias value="ReactieBeschrijving" />
+      <mapping>
+        <identity value="cio-dataset-200-beta1-20230424" />
+        <map value="cio-dataelement-20-661" />
+        <comment value="ReactionDescription" />
+      </mapping>
+    </element>
+    <element id="Observation.component">
+      <path value="Observation.component" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="code" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Observation.component:causativeSubstance">
+      <path value="Observation.component" />
+      <sliceName value="causativeSubstance" />
+      <max value="1" />
+    </element>
+    <element id="Observation.component:causativeSubstance.code">
+      <path value="Observation.component.code" />
+      <patternCodeableConcept>
+        <coding>
+          <system value="http://snomed.info/sct" />
+          <code value="246075003" />
+        </coding>
+      </patternCodeableConcept>
+    </element>
+    <element id="Observation.component:causativeSubstance.value[x]">
+      <path value="Observation.component.value[x]" />
+      <short value="CausativeSubstance" />
+      <definition value="The substance that (presumably) caused the reaction." />
+      <alias value="VeroorzakendeStof" />
+      <type>
+        <code value="CodeableConcept" />
+      </type>
+      <binding>
+        <strength value="required" />
+        <valueSet value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.26.11.11--20230407113754" />
+      </binding>
+      <mapping>
+        <identity value="cio-dataset-200-beta1-20230424" />
+        <map value="cio-dataelement-20-466" />
+        <comment value="CausativeSubstance" />
+      </mapping>
+    </element>
+    <element id="Observation.component:reactionPhenomenon">
+      <path value="Observation.component" />
+      <sliceName value="reactionPhenomenon" />
+    </element>
+    <element id="Observation.component:reactionPhenomenon.code">
+      <path value="Observation.component.code" />
+      <patternCodeableConcept>
+        <coding>
+          <system value="http://snomed.info/sct" />
+          <code value="157481000146103" />
+        </coding>
+      </patternCodeableConcept>
+    </element>
+    <element id="Observation.component:reactionPhenomenon.value[x]">
+      <path value="Observation.component.value[x]" />
+      <short value="ReactionPhenomenon" />
+      <definition value="The substantive specifications of the reaction (symptoms) that occurs when the patient is exposed to the substance." />
+      <comment value="The concept ReactionPhenomenon (cio-dataelement-20-465) is also mapped on `Condition.evidence.code` in the cio-HypersensitivityDisposition profile. Whenever a Reaction has one or more ReactionPhenomenon elements that need to be exchanged, these SHALL be present here, and they MAY also be included in the aforementioned element within the cio-HypersensitivityDisposition profile. However, if both elements are used, they should align with each other, which means that all reaction phenomena present in a cio-Reaction instance should also be included in cio-HypersensitivityDisposition instances that link to such an instance via `.evidence.detail`." />
+      <alias value="ReactieVerschijnsel" />
+      <type>
+        <code value="CodeableConcept" />
+      </type>
+      <binding>
+        <strength value="extensible" />
+        <valueSet value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.26.11.3--20210715104207" />
+      </binding>
+      <mapping>
+        <identity value="cio-dataset-200-beta1-20230424" />
+        <map value="cio-dataelement-20-465" />
+        <comment value="ReactionPhenomenon" />
+      </mapping>
+    </element>
+    <element id="Observation.component:severity">
+      <path value="Observation.component" />
+      <sliceName value="severity" />
+      <max value="1" />
+    </element>
+    <element id="Observation.component:severity.code">
+      <path value="Observation.component.code" />
+      <patternCodeableConcept>
+        <coding>
+          <system value="http://snomed.info/sct" />
+          <code value="246112005" />
+        </coding>
+      </patternCodeableConcept>
+    </element>
+    <element id="Observation.component:severity.value[x]">
+      <path value="Observation.component.value[x]" />
+      <short value="Severity" />
+      <definition value="The severity of the reaction as a result of exposure to the substance." />
+      <alias value="Ernst" />
+      <type>
+        <code value="CodeableConcept" />
+      </type>
+      <binding>
+        <strength value="required" />
+        <valueSet value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.8.2.6--20200901000000" />
+      </binding>
+      <mapping>
+        <identity value="cio-dataset-200-beta1-20230424" />
+        <map value="cio-dataelement-20-468" />
+        <comment value="Severity" />
+      </mapping>
+    </element>
+    <element id="Observation.component:routeOfExposure">
+      <path value="Observation.component" />
+      <sliceName value="routeOfExposure" />
+      <max value="1" />
+    </element>
+    <element id="Observation.component:routeOfExposure.code">
+      <path value="Observation.component.code" />
+      <patternCodeableConcept>
+        <coding>
+          <system value="http://snomed.info/sct" />
+          <code value="284009009" />
+        </coding>
+      </patternCodeableConcept>
+    </element>
+    <element id="Observation.component:routeOfExposure.value[x]">
+      <path value="Observation.component.value[x]" />
+      <short value="RouteOfExposure" />
+      <definition value="Way in which the patient came into contact with the causative substance or the way in which the substance was administered." />
+      <alias value="WijzeVanBlootstelling" />
+      <type>
+        <code value="CodeableConcept" />
+      </type>
+      <binding>
+        <strength value="required" />
+        <valueSet value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.9.12.1--20200901000000" />
+      </binding>
+      <mapping>
+        <identity value="cio-dataset-200-beta1-20230424" />
+        <map value="cio-dataelement-20-469" />
+        <comment value="RouteOfExposure" />
+      </mapping>
+    </element>
+  </differential>
+</StructureDefinition>

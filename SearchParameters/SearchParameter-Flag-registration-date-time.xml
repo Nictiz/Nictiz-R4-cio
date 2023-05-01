@@ -1,0 +1,22 @@
+<SearchParameter xmlns="http://hl7.org/fhir">
+  <id value="Flag-registration-date-time" />
+  <url value="http://nictiz.nl/fhir/SearchParameter/Flag-registration-date-time" />
+  <name value="Flag_registrationdatetime" />
+  <status value="active" />
+  <publisher value="Nictiz" />
+  <contact>
+    <name value="Nictiz" />
+    <telecom>
+      <system value="url" />
+      <value value="https://www.nictiz.nl" />
+      <use value="work" />
+    </telecom>
+  </contact>
+  <description value="Searches on the date the flag has been recorded." />
+  <purpose value="To search Flag resources on the value of the ext-MedicationContraIndication.RegistrationDateTime extension." />
+  <code value="registration-date-time" />
+  <base value="Flag" />
+  <type value="date" />
+  <expression value="Flag.extension('http://nictiz.nl/fhir/StructureDefinition/ext-MedicationContraIndication.RegistrationDateTime').value" />
+  <comparator value="ge" />
+</SearchParameter>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConceptMap xmlns="http://hl7.org/fhir">
+    <id value="OvergevoeligheidCategorieCodelijst-to-AllergyIntoleranceCategory"/>
+    <extension url="http://hl7.org/fhir/StructureDefinition/concept-bidirectional">
+        <valueBoolean value="false"/>
+    </extension>
+    <url value="http://nictiz.nl/fhir/ConceptMap/OvergevoeligheidCategorieCodelijst-to-AllergyIntoleranceCategory"/>
+    <version value="0.0.1"/>
+    <name value="OvergevoeligheidCategorieCodelijst_to_AllergyIntoleranceCategory"/>
+    <title value="OvergevoeligheidCategorieCodelijst to AllergyIntoleranceCategory"/>
+    <status value="draft"/>
+    <publisher value="Nictiz"/>
+    <contact>
+        <name value="Nictiz"/>
+        <telecom>
+            <system value="url"/>
+            <value value="https://www.nictiz.nl"/>
+            <use value="work"/>
+        </telecom>
+    </contact>
+    <description value="Maps HypersensitivityCategory codes as found in the Contraindications and intolerances (Dutch: Contra-indicaties en overgevoeligheden, abbreviated as CiO) information standard to &lt;http://hl7.org/fhir/ValueSet/allergy-intolerance-category&gt; as found in `AllergyIntolerance.category` in FHIR R4. The correctness of this ConceptMap is still discussed in &lt;https://bits.nictiz.nl/browse/TER-15&gt;."/>
+    <copyright value="Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise."/>
+    <sourceCanonical value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.26.11.7--20211028090253"/>
+    <targetCanonical value="http://hl7.org/fhir/ValueSet/allergy-intolerance-category"/>
+    <group>
+        <source value="http://snomed.info/sct"/>
+        <target value="http://hl7.org/fhir/allergy-intolerance-category"/>
+        <element>
+            <code value="418471000"/>
+            <display value="neiging tot ongewenste reactie op voedsel (bevinding)"/>
+            <target>
+                <code value="food"/>
+                <display value="Food"/>
+                <equivalence value="equal"/>
+            </target>
+        </element>
+        <element>
+            <code value="419511003"/>
+            <display value="neiging tot ongewenste reactie op medicatie en/of drug (bevinding)"/>
+            <target>
+                <code value="medication"/>
+                <display value="Medication"/>
+                <equivalence value="equal"/>
+            </target>
+        </element>
+        <element>
+            <code value="157531000146101"/>
+            <display value="neiging tot ongewenste reactie op contactallergeen (bevinding)"/>
+            <target>
+                <code value="environment"/>
+                <display value="Environment"/>
+                <equivalence value="subsumes"/>
+            </target>
+        </element>
+        <element>
+            <code value="157521000146103"/>
+            <display value="neiging tot ongewenste reactie op inhalatieallergeen (bevinding)"/>
+            <target>
+                <code value="environment"/>
+                <display value="Environment"/>
+                <equivalence value="subsumes"/>
+            </target>
+        </element>
+        <element>
+            <code value="157541000146109"/>
+            <display value="neiging tot ongewenste reactie op beroepsallergeen (bevinding)"/>
+            <target>
+                <code value="environment"/>
+                <display value="Environment"/>
+                <equivalence value="subsumes"/>
+            </target>
+        </element>
+        <element>
+            <code value="157511000146108"/>
+            <display value="neiging tot ongewenste reactie op insectengif (bevinding)"/>
+            <target>
+                <code value="environment"/>
+                <display value="Environment"/>
+                <equivalence value="subsumes"/>
+            </target>
+        </element>
+    </group>
+</ConceptMap>
