@@ -44,7 +44,7 @@
         <type value="token"/>
       </searchParam>
       <searchParam>
-        <name value="recorded-date"/>
+        <name value="registration-date-time"/>
         <definition value="http://nictiz.nl/fhir/SearchParameter/Flag-registration-date-time"/>
         <type value="date"/>
       </searchParam>
@@ -108,7 +108,7 @@
         <type value="token"/>
       </searchParam>
       <searchParam>
-        <name value="recorded-date"/>
+        <name value="registration-date-time"/>
         <definition value="http://nictiz.nl/fhir/SearchParameter/Flag-registration-date-time"/>
         <type value="date"/>
       </searchParam>
