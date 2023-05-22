@@ -18,7 +18,7 @@
             <use value="work"/>
         </telecom>
     </contact>
-    <description value="Maps HypersensitivityCategory codes as found in the Contraindications and intolerances (Dutch: Contra-indicaties en overgevoeligheden, abbreviated as CiO) information standard to &lt;http://hl7.org/fhir/ValueSet/allergy-intolerance-category&gt; as found in `AllergyIntolerance.category` in FHIR R4. The correctness of this ConceptMap is still discussed in &lt;https://bits.nictiz.nl/browse/TER-15&gt;."/>
+    <description value="Maps HypersensitivityCategory codes as found in the Contraindications and intolerances (Dutch: Contra-indicaties en overgevoeligheden, abbreviated as CiO) information standard to &lt;http://hl7.org/fhir/ValueSet/allergy-intolerance-category&gt; as found in `AllergyIntolerance.category` in FHIR R4. This ConceptMap is based on the discussion in &lt;https://bits.nictiz.nl/browse/TER-15&gt;."/>
     <copyright value="Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise."/>
     <sourceCanonical value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.26.11.7--20211028090253"/>
     <targetCanonical value="http://hl7.org/fhir/ValueSet/allergy-intolerance-category"/>
@@ -49,7 +49,9 @@
             <target>
                 <code value="environment"/>
                 <display value="Environment"/>
-                <equivalence value="subsumes"/>
+                <equivalence value="inexact"/>
+                <comment value="In general allergens within this category belong to the FHIR category 'environment', as these allergens are mostly used to indicate that someone had an allergic reaction to that substance. However, if such an allergen would be used during e.g. a skin or provocation test, it is prepared and used as a diagnostic agent, hence it should be categorized by the FHIR category 'biologic'. Thus it is advised to map this category on 'environment' by default, unless it is known that the category 'biologic' applies."/>
+            </target>
             </target>
         </element>
         <element>
@@ -58,7 +60,9 @@
             <target>
                 <code value="environment"/>
                 <display value="Environment"/>
-                <equivalence value="subsumes"/>
+                <equivalence value="inexact"/>
+                <comment value="In general allergens within this category belong to the FHIR category 'environment', as these allergens are mostly used to indicate that someone had an allergic reaction to that substance. However, if such an allergen would be used during e.g. a skin or provocation test, it is prepared and used as a diagnostic agent, hence it should be categorized by the FHIR category 'biologic'. Thus it is advised to map this category on 'environment' by default, unless it is known that the category 'biologic' applies."/>
+            </target>
             </target>
         </element>
         <element>
@@ -67,7 +71,8 @@
             <target>
                 <code value="environment"/>
                 <display value="Environment"/>
-                <equivalence value="subsumes"/>
+                <equivalence value="inexact"/>
+                <comment value="In general allergens within this category belong to the FHIR category 'environment', as these allergens are mostly used to indicate that someone had an allergic reaction to that substance. However, if such an allergen would be used during e.g. a skin or provocation test, it is prepared and used as a diagnostic agent, hence it should be categorized by the FHIR category 'biologic'. Thus it is advised to map this category on 'environment' by default, unless it is known that the category 'biologic' applies."/>
             </target>
         </element>
         <element>
@@ -76,7 +81,9 @@
             <target>
                 <code value="environment"/>
                 <display value="Environment"/>
-                <equivalence value="subsumes"/>
+                <equivalence value="inexact"/>
+                <comment value="In general allergens within this category belong to the FHIR category 'environment', as these allergens are mostly used to indicate that someone had an allergic reaction to that substance. However, if such an allergen would be used during e.g. a skin or provocation test, it is prepared and used as a diagnostic agent, hence it should be categorized by the FHIR category 'biologic'. Thus it is advised to map this category on 'environment' by default, unless it is known that the category 'biologic' applies."/>
+            </target>
             </target>
         </element>
     </group>
