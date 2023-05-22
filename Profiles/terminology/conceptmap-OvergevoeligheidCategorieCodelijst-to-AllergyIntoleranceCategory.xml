@@ -50,8 +50,7 @@
                 <code value="environment"/>
                 <display value="Environment"/>
                 <equivalence value="inexact"/>
-                <comment value="In general allergens within this category belong to the FHIR category 'environment', as these allergens are mostly used to indicate that someone had an allergic reaction to that substance. However, if such an allergen would be used during e.g. a skin or provocation test, it is prepared and used as a diagnostic agent, hence it should be categorized by the FHIR category 'biologic'. Thus it is advised to map this category on 'environment' by default, unless it is known that the category 'biologic' applies."/>
-            </target>
+                <comment value="In general allergens within this category belong to the FHIR category 'environment', as these allergens are mostly used to indicate that someone had an allergic reaction to that substance. However, if such an allergen would be used during e.g. a skin or provocation test, it is prepared and used as a diagnostic agent, hence it could be categorized by the FHIR category 'biologic'. Thus it is advised to map this category on 'environment' by default, unless it is known that the category 'biologic' applies."/>
             </target>
         </element>
         <element>
@@ -61,8 +60,7 @@
                 <code value="environment"/>
                 <display value="Environment"/>
                 <equivalence value="inexact"/>
-                <comment value="In general allergens within this category belong to the FHIR category 'environment', as these allergens are mostly used to indicate that someone had an allergic reaction to that substance. However, if such an allergen would be used during e.g. a skin or provocation test, it is prepared and used as a diagnostic agent, hence it should be categorized by the FHIR category 'biologic'. Thus it is advised to map this category on 'environment' by default, unless it is known that the category 'biologic' applies."/>
-            </target>
+                <comment value="In general allergens within this category belong to the FHIR category 'environment', as these allergens are mostly used to indicate that someone had an allergic reaction to that substance. However, if such an allergen would be used during e.g. a skin or provocation test, it is prepared and used as a diagnostic agent, hence it could be categorized by the FHIR category 'biologic'. Thus it is advised to map this category on 'environment' by default, unless it is known that the category 'biologic' applies."/>
             </target>
         </element>
         <element>
@@ -72,7 +70,7 @@
                 <code value="environment"/>
                 <display value="Environment"/>
                 <equivalence value="inexact"/>
-                <comment value="In general allergens within this category belong to the FHIR category 'environment', as these allergens are mostly used to indicate that someone had an allergic reaction to that substance. However, if such an allergen would be used during e.g. a skin or provocation test, it is prepared and used as a diagnostic agent, hence it should be categorized by the FHIR category 'biologic'. Thus it is advised to map this category on 'environment' by default, unless it is known that the category 'biologic' applies."/>
+                <comment value="In general allergens within this category belong to the FHIR category 'environment', as these allergens are mostly used to indicate that someone had an allergic reaction to that substance. However, if such an allergen would be used during e.g. a skin or provocation test, it is prepared and used as a diagnostic agent, hence it could be categorized by the FHIR category 'biologic'. Thus it is advised to map this category on 'environment' by default, unless it is known that the category 'biologic' applies."/>
             </target>
         </element>
         <element>
@@ -82,8 +80,7 @@
                 <code value="environment"/>
                 <display value="Environment"/>
                 <equivalence value="inexact"/>
-                <comment value="In general allergens within this category belong to the FHIR category 'environment', as these allergens are mostly used to indicate that someone had an allergic reaction to that substance. However, if such an allergen would be used during e.g. a skin or provocation test, it is prepared and used as a diagnostic agent, hence it should be categorized by the FHIR category 'biologic'. Thus it is advised to map this category on 'environment' by default, unless it is known that the category 'biologic' applies."/>
-            </target>
+                <comment value="In general allergens within this category belong to the FHIR category 'environment', as these allergens are mostly used to indicate that someone had an allergic reaction to that substance. However, if such an allergen would be used during e.g. a skin or provocation test, it is prepared and used as a diagnostic agent, hence it could be categorized by the FHIR category 'biologic'. Thus it is advised to map this category on 'environment' by default, unless it is known that the category 'biologic' applies."/>
             </target>
         </element>
     </group>
