@@ -56,7 +56,6 @@
         <code value="Extension" />
         <profile value="http://hl7.org/fhir/StructureDefinition/condition-dueTo" />
       </type>
-      <isModifier value="false" />
     </element>
     <element id="Condition.extension:substanceToMonitor.value[x]">
       <path value="Condition.extension.value[x]" />
@@ -81,7 +80,6 @@
         <code value="Extension" />
         <profile value="http://hl7.org/fhir/StructureDefinition/condition-assertedDate" />
       </type>
-      <isModifier value="false" />
     </element>
     <element id="Condition.extension:startMonitoringDateTime.value[x]">
       <path value="Condition.extension.value[x]" />
@@ -102,7 +100,6 @@
         <code value="Extension" />
         <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-HypersensitivityDisposition.MethodOfEstablishment" />
       </type>
-      <isModifier value="false" />
     </element>
     <element id="Condition.extension:sourceDescription">
       <path value="Condition.extension" />
@@ -112,7 +109,6 @@
         <code value="Extension" />
         <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-HypersensitivityDisposition.SourceDescription" />
       </type>
-      <isModifier value="false" />
     </element>
     <element id="Condition.extension:reasonClosure">
       <path value="Condition.extension" />
@@ -122,7 +118,6 @@
         <code value="Extension" />
         <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-HypersensitivityDisposition.ReasonClosure" />
       </type>
-      <isModifier value="false" />
     </element>
     <element id="Condition.extension:relationHypersensitivityDisposition">
       <path value="Condition.extension" />
@@ -133,7 +128,6 @@
         <code value="Extension" />
         <profile value="http://hl7.org/fhir/StructureDefinition/condition-occurredFollowing" />
       </type>
-      <isModifier value="false" />
     </element>
     <element id="Condition.extension:relationHypersensitivityDisposition.value[x]">
       <path value="Condition.extension.value[x]" />
