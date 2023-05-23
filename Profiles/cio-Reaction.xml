@@ -55,7 +55,6 @@
         <code value="Extension" />
         <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-Reaction.SpecificationExposure" />
       </type>
-      <isModifier value="false" />
     </element>
     <element id="Observation.extension:copyIndicator">
       <path value="Observation.extension" />
@@ -65,7 +64,6 @@
         <code value="Extension" />
         <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-CopyIndicator" />
       </type>
-      <isModifier value="false" />
     </element>
     <element id="Observation.extension:copyIndicator.value[x]">
       <path value="Observation.extension.value[x]" />
@@ -142,7 +140,6 @@
         <code value="Extension" />
         <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-TimeInterval.Duration" />
       </type>
-      <isModifier value="false" />
     </element>
     <element id="Observation.effective[x].extension:duration.value[x]">
       <path value="Observation.effective[x].extension.value[x]" />
