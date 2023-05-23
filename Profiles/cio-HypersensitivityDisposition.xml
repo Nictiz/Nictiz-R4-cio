@@ -59,9 +59,23 @@
     </element>
     <element id="Condition.extension:substanceToMonitor.value[x]">
       <path value="Condition.extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Condition.extension:substanceToMonitor.value[x]:valueCodeableConcept">
+      <path value="Condition.extension.value[x]" />
+      <sliceName value="valueCodeableConcept" />
       <short value="SubstanceToMonitor" />
       <definition value="Substance or group of substances which is monitored." />
       <alias value="TeBewakenStof" />
+      <type>
+        <code value="CodeableConcept" />
+      </type>
       <binding>
         <strength value="required" />
         <valueSet value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.26.11.10--20230406110820" />
@@ -131,19 +145,22 @@
     </element>
     <element id="Condition.extension:relationHypersensitivityDisposition.value[x]">
       <path value="Condition.extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Condition.extension:relationHypersensitivityDisposition.value[x]:valueReference">
+      <path value="Condition.extension.value[x]" />
+      <sliceName value="valueReference" />
       <short value="RelationHypersensitivityDisposition" />
       <definition value="Relation to the hypersensitivity which was used to create a new, modified registration (as a result of changing one or more data elements or inactivating the hypersensitivity)." />
       <alias value="RelatieOvergevoeligheid" />
       <type>
-        <code value="CodeableConcept" />
-      </type>
-      <type>
         <code value="Reference" />
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Condition" />
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Procedure" />
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/MedicationAdministration" />
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Immunization" />
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/MedicationStatement" />
         <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/cio-HypersensitivityDisposition" />
       </type>
       <mapping>
