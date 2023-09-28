@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConceptMap xmlns="http://hl7.org/fhir">
+    <id value="AandoeningStatusCodelijst-to-ConditionClinicalStatusCodes"/>
+    <extension url="http://hl7.org/fhir/StructureDefinition/concept-bidirectional">
+        <valueBoolean value="false"/>
+    </extension>
+    <url value="http://nictiz.nl/fhir/ConceptMap/AandoeningStatusCodelijst-to-ConditionClinicalStatusCodes"/>
+    <version value="0.0.1"/>
+    <name value="AandoeningStatusCodelijst_to_ConditionClinicalStatusCodes"/>
+    <title value="AandoeningStatusCodelijst to ConditionClinicalStatusCodes"/>
+    <status value="draft"/>
+    <publisher value="Nictiz"/>
+    <contact>
+        <name value="Nictiz"/>
+        <telecom>
+            <system value="url" />
+            <value value="https://www.nictiz.nl" />
+            <use value="work"/>
+        </telecom>
+    </contact>
+    <description value="Maps ConditionStatus codes as found in the Dutch [zib ('Zorginformatiebouwsteen', i.e. Health and Care Information Model) Condition v1.0 (2023)](https://zibs.nl/wiki/Condition-v1.0(2023EN)) to ConditionClinicalStatusCodes codes as found in FHIR R4."/>
+    <copyright value="Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise."/>
+    <sourceCanonical value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.99.98.1--20240101000000"/>
+    <targetCanonical value="http://hl7.org/fhir/ValueSet/condition-clinical"/>
+    <group>
+        <source value="http://snomed.info/sct"/>
+        <target value="http://terminology.hl7.org/CodeSystem/condition-clinical"/>
+        <element>
+            <code value="NTB"/>
+            <display value="Present"/>
+            <target>
+                <code value="active"/>
+                <display value="Active"/>
+                <equivalence value="equal"/>
+            </target>
+        </element>
+        <element>
+            <code value="370996005"/>
+            <display value="Patient condition resolved"/>
+            <target>
+                <code value="resolved"/>
+                <display value="Resolved"/>
+                <equivalence value="equal"/>
+            </target>
+        </element>
+        <element>
+            <code value="84387000"/>
+            <display value="Asymptomatic"/>
+            <target>
+                <code value="active"/>
+                <display value="Active"/>
+                <equivalence value="subsumes"/>
+            </target>
+        </element>
+        <element>
+            <code value="268910001"/>
+            <display value="Patient's condition improved"/>
+            <target>
+                <code value="active"/>
+                <display value="Active"/>
+                <equivalence value="subsumes"/>
+            </target>
+        </element>
+        <element>
+            <code value="271299001"/>
+            <display value="Patient's condition worsened"/>
+            <target>
+                <code value="active"/>
+                <display value="Actove"/>
+                <equivalence value="subsumes"/>
+            </target>
+        </element>
+        <element>
+            <code value="359748005"/>
+            <display value="Patient condition unchanged"/>
+            <target>
+                <code value="active"/>
+                <display value="Active"/>
+                <equivalence value="subsumes"/>
+            </target>
+        </element>
+        <element>
+            <code value="385633008"/>
+            <display value="Improving"/>
+            <target>
+                <code value="active"/>
+                <display value="Active"/>
+                <equivalence value="subsumes"/>
+            </target>
+        </element>
+        <element>
+            <code value="371001000"/>
+            <display value="Patient cured"/>
+            <target>
+                <code value="resolved"/>
+                <display value="Resolved"/>
+                <equivalence value="equal"/>
+            </target>
+        </element>
+        <element>
+            <code value="359746009"/>
+            <display value="Patient's condition stable"/>
+            <target>
+                <code value="active"/>
+                <display value="Active"/>
+                <equivalence value="subsumes"/>
+            </target>
+        </element>
+        <element>
+            <code value="162668006"/>
+            <display value="Patient's condition unstable"/>
+            <target>
+                <code value="active"/>
+                <display value="Active"/>
+                <equivalence value="subsumes"/>
+            </target>
+        </element>
+        <element>
+            <code value="180761000146106"/>
+            <display value="Progressive disease"/>
+            <target>
+                <code value="active"/>
+                <display value="Active"/>
+                <equivalence value="subsumes"/>
+            </target>
+        </element>
+        <element>
+            <code value="399204005"/>
+            <display value="Partial therapeutic response"/>
+            <target>
+                <code value="active"/>
+                <display value="Active"/>
+                <equivalence value="subsumes"/>
+            </target>
+        </element>
+        <element>
+            <code value="399056007"/>
+            <display value="Complete therapeutic response"/>
+            <target>
+                <code value="remission"/>
+                <display value="Remission"/>
+                <equivalence value="subsumes"/>
+            </target>
+        </element>
+        <element>
+            <code value="NTB"/>
+            <display value="Exacerbation"/>
+            <target>
+                <code value="active"/>
+                <display value="Active"/>
+                <equivalence value="subsumes"/>
+            </target>
+        </element>
+        <element>
+            <code value="NTB"/>
+            <display value="Not present"/>
+            <target>
+                <code value="inactive"/>
+                <display value="Inactive"/>
+                <equivalence value="equal"/>
+            </target>
+        </element>
+    </group>
+    <group>
+        <source value="http://terminology.hl7.org/CodeSystem/v3-NullFlavor" />
+        <element>
+            <code value="OTH" />
+            <display value="Other" />
+            <target>
+                <equivalence value="unmatched" />
+                <comment value="If there is a textual description of the status available, it should be mapped to the appropriate value from the ConditionClinicalStatusCodes ValueSet manually. Otherwise default to 'active'." />
+            </target>
+        </element>
+    </group>
+</ConceptMap>

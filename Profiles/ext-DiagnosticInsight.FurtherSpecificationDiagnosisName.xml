@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="ext-DiagnosticInsight.FurtherSpecificationDiagnosisName" />
+  <url value="http://nictiz.nl/fhir/StructureDefinition/ext-DiagnosticInsight.FurtherSpecificationDiagnosisName" />
+  <name value="ExtDiagnosticInsightFurtherSpecificationDiagnosisName" />
+  <title value="ext DiagnosticInsight.FurtherSpecificationDiagnosisName" />
+  <status value="draft" />
+  <publisher value="Nictiz" />
+  <contact>
+    <name value="Nictiz" />
+    <telecom>
+      <system value="url" />
+      <value value="https://www.nictiz.nl" />
+      <use value="work" />
+    </telecom>
+  </contact>
+  <description value="An extension to specify the diagnosis name. The extension can be seen as an addition to the DiagnosisName concept mapped to the code element." />
+  <purpose value="This extension represents the FurtherSpecificationDiagnosisName concept of the Dutch [zib ('Zorginformatiebouwsteen', i.e. Health and Care Information Model) DiagnosticInsight v1.0(2023)](https://zibs.nl/wiki/DiagnosticInsight-v1.0(2023EN))." />
+  <copyright value="Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise." />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="zib-diagnosticinsight-v1.0-2023EN" />
+    <uri value="https://zibs.nl/wiki/DiagnosticInsight-v1.0(2023EN)" />
+    <name value="zib DiagnosticInsight-v1.0(2023EN)" />
+  </mapping>
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <context>
+    <type value="element" />
+    <expression value="Condition.code" />
+  </context>
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="http://nictiz.nl/fhir/StructureDefinition/ext-DiagnosticInsight.FurtherSpecificationDiagnosisName" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <short value="FurtherSpecificationDiagnosisName" />
+      <definition value="A more detailed description of the DiagnosisName in free text, when this detail is not available in the used code list." />
+      <alias value="NadereSpecificatieDiagnoseNaam" />
+      <type>
+        <code value="string" />
+      </type>
+      <mapping>
+        <identity value="zib-diagnosticinsight-v1.0-2023EN" />
+        <map value="NL-CM:99.99.15" />
+        <comment value="FurtherSpecificationDiagnosisName" />
+      </mapping>
+    </element>
+  </differential>
+</StructureDefinition>
