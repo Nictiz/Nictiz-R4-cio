@@ -38,13 +38,6 @@
     </element>
     <element id="AllergyIntolerance.extension">
       <path value="AllergyIntolerance.extension" />
-      <slicing>
-        <discriminator>
-          <type value="value" />
-          <path value="url" />
-        </discriminator>
-        <rules value="open" />
-      </slicing>
       <min value="1" />
     </element>
     <element id="AllergyIntolerance.extension:startMonitoringDateTime">
@@ -70,7 +63,6 @@
     <element id="AllergyIntolerance.extension:methodOfEstablishment">
       <path value="AllergyIntolerance.extension" />
       <sliceName value="methodOfEstablishment" />
-      <min value="0" />
       <type>
         <code value="Extension" />
         <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-HypersensitivityDisposition.MethodOfEstablishment" />
@@ -79,7 +71,6 @@
     <element id="AllergyIntolerance.extension:sourceDescription">
       <path value="AllergyIntolerance.extension" />
       <sliceName value="sourceDescription" />
-      <min value="0" />
       <type>
         <code value="Extension" />
         <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-HypersensitivityDisposition.SourceDescription" />
@@ -88,7 +79,6 @@
     <element id="AllergyIntolerance.extension:dateTimeClosure">
       <path value="AllergyIntolerance.extension" />
       <sliceName value="dateTimeClosure" />
-      <min value="0" />
       <type>
         <code value="Extension" />
         <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-HypersensitivityDisposition.DateTimeClosure" />
@@ -97,7 +87,6 @@
     <element id="AllergyIntolerance.extension:reasonClosure">
       <path value="AllergyIntolerance.extension" />
       <sliceName value="reasonClosure" />
-      <min value="0" />
       <type>
         <code value="Extension" />
         <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-HypersensitivityDisposition.ReasonClosure" />
@@ -106,7 +95,6 @@
     <element id="AllergyIntolerance.extension:relationHypersensitivityDisposition">
       <path value="AllergyIntolerance.extension" />
       <sliceName value="relationHypersensitivityDisposition" />
-      <min value="0" />
       <type>
         <code value="Extension" />
         <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-HypersensitivityDisposition.RelationHypersensitivity" />
@@ -164,21 +152,9 @@
         <comment value="HypersensitivityCategory" />
       </mapping>
     </element>
-    <element id="AllergyIntolerance.category.extension">
-      <path value="AllergyIntolerance.category.extension" />
-      <slicing>
-        <discriminator>
-          <type value="value" />
-          <path value="url" />
-        </discriminator>
-        <rules value="open" />
-      </slicing>
-      <min value="0" />
-    </element>
     <element id="AllergyIntolerance.category.extension:hypersensitivityCategoryCodelist">
       <path value="AllergyIntolerance.category.extension" />
       <sliceName value="hypersensitivityCategoryCodelist" />
-      <min value="0" />
       <max value="1" />
       <type>
         <code value="Extension" />
@@ -356,13 +332,6 @@
     </element>
     <element id="AllergyIntolerance.reaction.extension">
       <path value="AllergyIntolerance.reaction.extension" />
-      <slicing>
-        <discriminator>
-          <type value="value" />
-          <path value="url" />
-        </discriminator>
-        <rules value="open" />
-      </slicing>
       <min value="3" />
     </element>
     <element id="AllergyIntolerance.reaction.extension:identification">
@@ -386,7 +355,6 @@
     <element id="AllergyIntolerance.reaction.extension:endDateTime">
       <path value="AllergyIntolerance.reaction.extension" />
       <sliceName value="endDateTime" />
-      <min value="0" />
       <type>
         <code value="Extension" />
         <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-Reaction.EndDateTime" />
@@ -395,7 +363,6 @@
     <element id="AllergyIntolerance.reaction.extension:duration">
       <path value="AllergyIntolerance.reaction.extension" />
       <sliceName value="duration" />
-      <min value="0" />
       <type>
         <code value="Extension" />
         <profile value="http://hl7.org/fhir/StructureDefinition/allergyintolerance-duration" />
@@ -415,7 +382,6 @@
     <element id="AllergyIntolerance.reaction.extension:specificationExposure">
       <path value="AllergyIntolerance.reaction.extension" />
       <sliceName value="specificationExposure" />
-      <min value="0" />
       <type>
         <code value="Extension" />
         <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-Reaction.SpecificationExposure" />
@@ -433,7 +399,6 @@
     <element id="AllergyIntolerance.reaction.extension:copyIndicator">
       <path value="AllergyIntolerance.reaction.extension" />
       <sliceName value="copyIndicator" />
-      <min value="0" />
       <type>
         <code value="Extension" />
         <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-CopyIndicator" />

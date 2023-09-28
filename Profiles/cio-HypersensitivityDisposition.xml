@@ -38,13 +38,6 @@
     </element>
     <element id="Condition.extension">
       <path value="Condition.extension" />
-      <slicing>
-        <discriminator>
-          <type value="value" />
-          <path value="url" />
-        </discriminator>
-        <rules value="open" />
-      </slicing>
       <min value="2" />
     </element>
     <element id="Condition.extension:substanceToMonitor">
@@ -109,7 +102,6 @@
     <element id="Condition.extension:methodOfEstablishment">
       <path value="Condition.extension" />
       <sliceName value="methodOfEstablishment" />
-      <min value="0" />
       <type>
         <code value="Extension" />
         <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-HypersensitivityDisposition.MethodOfEstablishment" />
@@ -118,7 +110,6 @@
     <element id="Condition.extension:sourceDescription">
       <path value="Condition.extension" />
       <sliceName value="sourceDescription" />
-      <min value="0" />
       <type>
         <code value="Extension" />
         <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-HypersensitivityDisposition.SourceDescription" />
@@ -127,7 +118,6 @@
     <element id="Condition.extension:reasonClosure">
       <path value="Condition.extension" />
       <sliceName value="reasonClosure" />
-      <min value="0" />
       <type>
         <code value="Extension" />
         <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-HypersensitivityDisposition.ReasonClosure" />
@@ -136,7 +126,6 @@
     <element id="Condition.extension:relationHypersensitivityDisposition">
       <path value="Condition.extension" />
       <sliceName value="relationHypersensitivityDisposition" />
-      <min value="0" />
       <max value="1" />
       <type>
         <code value="Extension" />
