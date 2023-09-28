@@ -36,21 +36,9 @@
         <comment value="cio-dataelement-20-464" />
       </mapping>
     </element>
-    <element id="Observation.extension">
-      <path value="Observation.extension" />
-      <slicing>
-        <discriminator>
-          <type value="value" />
-          <path value="url" />
-        </discriminator>
-        <rules value="open" />
-      </slicing>
-      <min value="0" />
-    </element>
     <element id="Observation.extension:specificationExposure">
       <path value="Observation.extension" />
       <sliceName value="specificationExposure" />
-      <min value="0" />
       <type>
         <code value="Extension" />
         <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-Reaction.SpecificationExposure" />
@@ -59,7 +47,6 @@
     <element id="Observation.extension:copyIndicator">
       <path value="Observation.extension" />
       <sliceName value="copyIndicator" />
-      <min value="0" />
       <type>
         <code value="Extension" />
         <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-CopyIndicator" />
@@ -121,21 +108,9 @@
         <comment value="ReactionTimeInterval" />
       </mapping>
     </element>
-    <element id="Observation.effective[x].extension">
-      <path value="Observation.effective[x].extension" />
-      <slicing>
-        <discriminator>
-          <type value="value" />
-          <path value="url" />
-        </discriminator>
-        <rules value="open" />
-      </slicing>
-      <min value="0" />
-    </element>
     <element id="Observation.effective[x].extension:duration">
       <path value="Observation.effective[x].extension" />
       <sliceName value="duration" />
-      <min value="0" />
       <type>
         <code value="Extension" />
         <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-TimeInterval.Duration" />
