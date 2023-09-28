@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="ext-Symptom.FurtherSpecificationSymptomName" />
+  <url value="http://nictiz.nl/fhir/StructureDefinition/ext-Symptom.FurtherSpecificationSymptomName" />
+  <name value="ExtSymptomFurtherSpecificationSymptomName" />
+  <title value="ext Symptom.FurtherSpecificationSymptomName" />
+  <status value="draft" />
+  <publisher value="Nictiz" />
+  <contact>
+    <name value="Nictiz" />
+    <telecom>
+      <system value="url" />
+      <value value="https://www.nictiz.nl" />
+      <use value="work" />
+    </telecom>
+  </contact>
+  <description value="An extension to specify the symptom name. The extension can be seen as an addition to the SymptomName concept mapped to the code element." />
+  <purpose value="This extension represents the FurtherSpecificationSymptomName concept of the Dutch [zib ('Zorginformatiebouwsteen', i.e. Health and Care Information Model) Symptom v1.0(2023)](https://zibs.nl/wiki/Symptom-v1.0(2023EN))." />
+  <copyright value="Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise." />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="zib-symptom-v1.0-2023EN" />
+    <uri value="https://zibs.nl/wiki/Symptom-v1.0(2023EN)" />
+    <name value="zib Symptom-v1.0(2023EN)" />
+  </mapping>
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <context>
+    <type value="element" />
+    <expression value="Observation.code" />
+  </context>
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="http://nictiz.nl/fhir/StructureDefinition/ext-Symptom.FurtherSpecificationSymptomName" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <short value="FurtherSpecificationSymptomName" />
+      <definition value="More detailed specification of the SymptomName that has been selected from the code list when that list does not (yet) contain the required level of detail." />
+      <alias value="NadereSpecificatieSymptoomNaam" />
+      <type>
+        <code value="string" />
+      </type>
+      <mapping>
+        <identity value="zib-symptom-v1.0-2023EN" />
+        <map value="NL-CM:99.97.11" />
+        <comment value="FurtherSpecificationSymptomName" />
+      </mapping>
+    </element>
+  </differential>
+</StructureDefinition>
