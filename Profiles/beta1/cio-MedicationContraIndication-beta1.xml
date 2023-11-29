@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
-  <id value="cio-MedicationContraIndication" />
-  <url value="http://nictiz.nl/fhir/StructureDefinition/cio-MedicationContraIndication" />
+  <id value="cio-MedicationContraIndication-beta1" />
+  <url value="http://nictiz.nl/fhir/StructureDefinition/cio-MedicationContraIndication-beta1" />
   <name value="CioMedicationContraIndication" />
   <title value="cio MedicationContraIndication" />
   <status value="draft" />
