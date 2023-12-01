@@ -6,7 +6,7 @@
    </meta>
    <extension url="http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod">
       <valuePeriod>
-         <start value="2021-10-28T09:02:53+00:00"/>
+         <start value="2021-10-28T09:02:53Z"/>
       </valuePeriod>
    </extension>
    <url value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.26.11.7--20211028090253"/>
@@ -68,9 +68,6 @@
             </designation>
          </concept>
          <concept>
-            <extension url="http://hl7.org/fhir/StructureDefinition/valueset-deprecated">
-               <valueBoolean value="true"/>
-            </extension>
             <code value="157521000146103"/>
             <display value="neiging tot ongewenste reactie op inhalatieallergeen (bevinding)"/>
             <designation>
@@ -81,22 +78,6 @@
                   <display value="Synonym"/>
                </use>
                <value value="inhalatieallergenen"/>
-            </designation>
-         </concept>
-         <concept>
-            <extension url="http://hl7.org/fhir/StructureDefinition/valueset-deprecated">
-               <valueBoolean value="true"/>
-            </extension>
-            <code value="157541000146109"/>
-            <display value="neiging tot ongewenste reactie op beroepsallergeen (bevinding)"/>
-            <designation>
-               <language value="nl-NL"/>
-               <use>
-                  <system value="http://snomed.info/sct"/>
-                  <code value="900000000000013009"/>
-                  <display value="Synonym"/>
-               </use>
-               <value value="beroepsallergenen"/>
             </designation>
          </concept>
          <concept>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConceptMap xmlns="http://hl7.org/fhir">
+    <id value="AandoeningAanwezigheidCodelijst-to-ConditionClinicalStatusCodes"/>
+    <extension url="http://hl7.org/fhir/StructureDefinition/concept-bidirectional">
+        <valueBoolean value="false"/>
+    </extension>
+    <url value="http://nictiz.nl/fhir/ConceptMap/AandoeningAanwezigheidCodelijst-to-ConditionClinicalStatusCodes"/>
+    <version value="1.0.0-beta.2"/>
+    <name value="AandoeningAanwezigheidCodelijst_to_ConditionClinicalStatusCodes"/>
+    <title value="AandoeningAanwezigheidCodelijst to ConditionClinicalStatusCodes"/>
+    <status value="draft"/>
+    <publisher value="Nictiz"/>
+    <contact>
+        <name value="Nictiz"/>
+        <telecom>
+            <system value="url" />
+            <value value="https://www.nictiz.nl" />
+            <use value="work"/>
+        </telecom>
+    </contact>
+    <description value="Maps ConditionPresence codes as found in the Contraindications and hypersensitivities (Dutch: Contra-indicaties en overgevoeligheden, abbreviated as CiO) information standard to &lt;http://hl7.org/fhir/ValueSet/condition-clinical&gt; as found in `Condition.clinicalStatus` in FHIR R4."/>
+    <copyright value="Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise."/>
+    <sourceCanonical value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.26.11.20--20231120132919"/>
+    <targetCanonical value="http://hl7.org/fhir/ValueSet/condition-clinical"/>
+    <group>
+        <source value="http://snomed.info/sct"/>
+        <target value="http://terminology.hl7.org/CodeSystem/condition-clinical"/>
+        <element>
+            <code value="52101004"/>
+            <display value="Present"/>
+            <target>
+                <code value="active"/>
+                <display value="Active"/>
+                <equivalence value="equal"/>
+            </target>
+        </element>
+        <element>
+            <code value="370996005"/>
+            <display value="Patient condition resolved"/>
+            <target>
+                <code value="resolved"/>
+                <display value="Resolved"/>
+                <equivalence value="equal"/>
+            </target>
+        </element>
+        <element>
+            <code value="410516002"/>
+            <display value="Known absent"/>
+            <target>
+                <code value="inactive"/>
+                <display value="Inactive"/>
+                <equivalence value="equal"/>
+            </target>
+        </element>
+    </group>
+    <group>
+        <source value="http://terminology.hl7.org/CodeSystem/v3-NullFlavor" />
+        <element>
+            <code value="OTH" />
+            <display value="Other" />
+            <target>
+                <equivalence value="unmatched" />
+                <comment value="If there is a textual description of the status available, it should be mapped to the appropriate value from the ConditionClinicalStatusCodes ValueSet manually. Otherwise default to 'active'." />
+            </target>
+        </element>
+    </group>
+</ConceptMap>

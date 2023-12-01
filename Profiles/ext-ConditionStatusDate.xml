@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="ext-ConditionStatusDate" />
+  <url value="http://nictiz.nl/fhir/StructureDefinition/ext-ConditionStatusDate" />
+  <version value="1.0.0-beta.2" />
+  <name value="ExtConditionStatusDate" />
+  <title value="ext ConditionStatusDate" />
+  <status value="draft" />
+  <publisher value="Nictiz" />
+  <contact>
+    <name value="Nictiz" />
+    <telecom>
+      <system value="url" />
+      <value value="https://www.nictiz.nl" />
+      <use value="work" />
+    </telecom>
+  </contact>
+  <description value="An extension to provide the moment from when the data regarding the condition apply. It may be a vague moment." />
+  <purpose value="This extension represents the ConditionStatusDate concept for implementations following the information standard [CiO](https://informatiestandaarden.nictiz.nl/wiki/Landingspagina_Contra-indicaties_en_Overgevoeligheden)." />
+  <copyright value="Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise." />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="cio-dataset-200-beta2-20231215" />
+    <uri value="https://decor.nictiz.nl/pub/cio/cio-html-20231215T150542/ds-2.16.840.1.113883.2.4.3.11.60.26.1.2-2020-04-02T000000.html" />
+    <name value="ART-DECOR Dataset Contraindications and hypersensitivities 2.0.0-beta.2 20231215" />
+  </mapping>
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <context>
+    <type value="element" />
+    <expression value="Condition" />
+  </context>
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension">
+      <path value="Extension" />
+      <max value="1" />
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="http://nictiz.nl/fhir/StructureDefinition/ext-ConditionStatusDate" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <short value="ConditionStatusDate" />
+      <definition value="The moment from when the data regarding the condition apply. It may be a vague moment." />
+      <comment value="Note that the ConditionStatusDate has some overlap with other concepts:&#xD;&#xA;* For initial Hypersensitivities and Reactions with `.clinicalStatus` equal to _active_, the ConditionStatusDate is always equal to the DiagnosticInsightDate, which is mapped on the [assertedDate core extension](http://hl7.org/fhir/StructureDefinition/condition-assertedDate) of the Condition resource (as well as the [assertedDate core extension](http://hl7.org/fhir/StructureDefinition/allergyintolerance-assertedDate) of the AllergyIntolerance resource).&#xD;&#xA;* For updated Hypersensitivities and Reactions with `.clinicalStatus` equal to _active_, there is no counterpart of the ConditionStatusDate concept present in the Condition resource. However, in most cases it will be equal to the RegistrationDateTime, which is mapped on `.recordedDate`.&#xD;&#xA;* For Hypersensitivities and Reactions with `.clinicalStatus` equal to _inactive_ or _resolved_, the ConditionStatusDate corresponds to the abatement date, which is represented by `.abatement`.&#xD;&#xA;&#xD;&#xA;Even though the ConditionStatusDate could have been (partly and implicitly) mapped to other elements/extensions within the Condition resource, it has been chosen to include it separately via this extension." />
+      <alias value="AandoeningStatusDatum" />
+      <type>
+        <code value="dateTime" />
+      </type>
+      <mapping>
+        <identity value="cio-dataset-200-beta2-20231215" />
+        <map value="cio-dataelement-20-807" />
+        <comment value="ConditionStatusDate" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta2-20231215" />
+        <map value="cio-dataelement-20-791" />
+        <comment value="ConditionStatusDate" />
+      </mapping>
+    </element>
+  </differential>
+</StructureDefinition>

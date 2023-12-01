@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConceptMap xmlns="http://hl7.org/fhir">
+    <id value="ZekerheidStatusCodelijst-to-AllergyIntoleranceVerificationStatusCodes"/>
+    <extension url="http://hl7.org/fhir/StructureDefinition/concept-bidirectional">
+        <valueBoolean value="false"/>
+    </extension>
+    <url value="http://nictiz.nl/fhir/ConceptMap/ZekerheidStatusCodelijst-to-AllergyIntoleranceVerificationStatusCodes"/>
+    <version value="1.0.0-beta.2"/>
+    <name value="ZekerheidStatusCodelijst_to_AllergyIntoleranceVerificationStatusCodes"/>
+    <title value="ZekerheidStatusCodelijst to AllergyIntoleranceVerificationStatusCodes"/>
+    <status value="draft"/>
+    <publisher value="Nictiz"/>
+    <contact>
+        <name value="Nictiz"/>
+        <telecom>
+            <system value="url" />
+            <value value="https://www.nictiz.nl" />
+            <use value="work"/>
+        </telecom>
+    </contact>
+    <description value="Maps CertaintyStatus codes as found in the Contraindications and hypersensitivities (Dutch: Contra-indicaties en overgevoeligheden, abbreviated as CiO) information standard to &lt;http://hl7.org/fhir/ValueSet/allergyintolerance-verification&gt; as found in `AllergyIntolerance.verificationStatus` in FHIR R4."/>
+    <copyright value="Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise."/>
+    <sourceCanonical value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.26.11.15--20231120120828"/>
+    <targetCanonical value="http://hl7.org/fhir/ValueSet/allergyintolerance-verification"/>
+    <group>
+        <source value="http://snomed.info/sct"/>
+        <target value="http://terminology.hl7.org/CodeSystem/allergyintolerance-verification"/>
+        <element>
+            <code value="415684004"/>
+            <display value="Suspected"/>
+            <target>
+                <code value="unconfirmed"/>
+                <display value="Unconfirmed"/>
+                <equivalence value="subsumes"/>
+                <comment value="In R5 the code 'presumed' has been added to the AllergyIntoleranceVerificationStatusCodes, which would have been a better match."/>
+            </target>
+        </element>
+        <element>
+            <code value="410590009"/>
+            <display value="Known possible"/>
+            <target>
+                <code value="unconfirmed"/>
+                <display value="Unconfirmed"/>
+                <equivalence value="subsumes"/>
+                <comment value="In R5 the code 'presumed' has been added to the AllergyIntoleranceVerificationStatusCodes, which would have been a better match."/>
+            </target>
+        </element>
+        <element>
+            <code value="410605003"/>
+            <display value="Confirmed present"/>
+            <target>
+                <code value="confirmed"/>
+                <display value="Confirmed"/>
+                <equivalence value="equal"/>
+            </target>
+        </element>
+        <element>
+            <code value="410516002"/>
+            <display value="Known absent"/>
+            <target>
+                <code value="refuted"/>
+                <display value="Refuted"/>
+                <equivalence value="equal"/>
+            </target>
+        </element>
+    </group>
+    <group>
+        <source value="http://terminology.hl7.org/CodeSystem/v3-NullFlavor"/>
+        <target value="http://terminology.hl7.org/CodeSystem/condition-ver-status"/>
+        <element>
+            <code value="UNK"/>
+            <display value="Unknown"/>
+            <target>
+                <code value="unconfirmed"/>
+                <display value="Unconfirmed"/>
+                <equivalence value="narrower"/>
+                <comment value="Unknown doesn't specify any relevant clinical information and means that nothing is known of the verificationStatus while unconfirmed provides some clinical meaning, namely that the condition is not yet confirmed."/>
+            </target>
+        </element>
+    </group>
+</ConceptMap>

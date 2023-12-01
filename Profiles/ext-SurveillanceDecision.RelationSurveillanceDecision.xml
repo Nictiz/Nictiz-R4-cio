@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="ext-SurveillanceDecision.RelationSurveillanceDecision" />
+  <url value="http://nictiz.nl/fhir/StructureDefinition/ext-SurveillanceDecision.RelationSurveillanceDecision" />
+  <version value="1.0.0-beta.2" />
+  <name value="ExtSurveillanceDecisionRelationSurveillanceDecision" />
+  <title value="ext SurveillanceDecision.RelationSurveillanceDecision" />
+  <status value="draft" />
+  <publisher value="Nictiz" />
+  <contact>
+    <name value="Nictiz" />
+    <telecom>
+      <system value="url" />
+      <value value="https://www.nictiz.nl" />
+      <use value="work" />
+    </telecom>
+  </contact>
+  <description value="An extension to provide a relation to the surveillance decision which was used to create a new, modified registration or to the surveillance decision being stopped." />
+  <purpose value="This extension represents the RelationSurveillanceDecision concept for implementations following the information standard [CiO](https://informatiestandaarden.nictiz.nl/wiki/Landingspagina_Contra-indicaties_en_Overgevoeligheden)." />
+  <copyright value="Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise." />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="cio-dataset-200-beta2-20231215" />
+    <uri value="https://decor.nictiz.nl/pub/cio/cio-html-20231215T150542/ds-2.16.840.1.113883.2.4.3.11.60.26.1.2-2020-04-02T000000.html" />
+    <name value="ART-DECOR Dataset Contraindications and hypersensitivities 2.0.0-beta.2 20231215" />
+  </mapping>
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <context>
+    <type value="element" />
+    <expression value="Flag" />
+  </context>
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension">
+      <path value="Extension" />
+      <max value="1" />
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="http://nictiz.nl/fhir/StructureDefinition/ext-SurveillanceDecision.RelationSurveillanceDecision" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <short value="RelationSurveillanceDecision" />
+      <definition value="Relation to the surveillance decision which was used to create a new, modified registration or to the surveillance decision being stopped." />
+      <alias value="RelatieBewakingBesluit" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/cio-SurveillanceDecision" />
+      </type>
+      <mapping>
+        <identity value="cio-dataset-200-beta2-20231215" />
+        <map value="cio-dataelement-20-828" />
+        <comment value="RelationSurveillanceDecision" />
+      </mapping>
+    </element>
+  </differential>
+</StructureDefinition>

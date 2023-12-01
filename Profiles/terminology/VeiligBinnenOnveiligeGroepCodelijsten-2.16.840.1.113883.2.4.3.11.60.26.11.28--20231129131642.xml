@@ -1,0 +1,36 @@
+<ValueSet xmlns="http://hl7.org/fhir">
+    <id value="2.16.840.1.113883.2.4.3.11.60.26.11.28--20231129131642"/>
+    <meta>
+        <profile value="http://hl7.org/fhir/StructureDefinition/shareablevalueset"/><!--<profile value="http://hl7.org/fhir/4.0/StructureDefinition/ValueSet"/>-->
+    </meta>
+    <extension url="http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod">
+        <valuePeriod>
+            <start value="2023-11-29T13:16:42Z"/>
+        </valuePeriod>
+    </extension>
+    <url value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.26.11.28--20231129131642"/>
+    <identifier>
+        <use value="official"/>
+        <system value="urn:ietf:rfc:3986"/>
+        <value value="urn:oid:2.16.840.1.113883.2.4.3.11.60.26.11.28"/>
+    </identifier>
+    <version value="2023-11-29T13:16:42"/>
+    <name value="VeiligBinnenOnveiligeGroepCodelijsten"/>
+    <title value="VeiligBinnenOnveiligeGroepCodelijsten"/>
+    <status value="draft"/>
+    <experimental value="false"/>
+    <publisher value="Nictiz"/>
+    <description value="Value set combining the distinct value sets that the standard CiO binds to SafeWithinUnsafeGroup (cio-dataelement-20-762). This value set as such does not exist within the standard CiO but facilitates referencing all these value sets at the same time."/>
+    <immutable value="false"/>
+    <compose>
+        <include>
+            <valueSet value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.26.11.23--20231129121746"/>
+        </include>
+        <include>
+            <valueSet value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.26.11.24--20231129122218"/>
+        </include>
+        <include>
+            <valueSet value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.26.11.25--20231129130344"/>
+        </include>
+    </compose>
+</ValueSet>
