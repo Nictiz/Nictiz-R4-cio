@@ -4,8 +4,7 @@
   "description": "Put a description here",
   "dependencies": {
     "hl7.fhir.r4.core": "4.0.1",
-    "nictiz.fhir.nl.r4.nl-core": "0.9.0-beta.1",
-    "nictiz.fhir.nl.r4.medicationprocess9": "2.0.0-beta.1"
+    "nictiz.fhir.nl.r4.nl-core": "0.10.0-beta.1"
   },
   "fhirVersions": [
     "4.0.0"
