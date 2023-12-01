@@ -42,16 +42,16 @@
         <expression value="(status = 'inactive') implies period.end.exists()" />
       </constraint>
       <constraint>
-        <key value="cio-SurveillanceDecision-3" />
-        <severity value="error" />
-        <human value="A decision basis SHALL be given, either as a reference to a hypersensitivity or reaction in Flag.extension:decisionBasis, or as text in Flag.extension:comment." />
-        <expression value="extension('http://hl7.org/fhir/StructureDefinition/flag-detail').exists() or extension('http://nictiz.nl/fhir/StructureDefinition/ext-Comment').exists()" />
-      </constraint>
-      <constraint>
         <key value="cio-SurveillanceDecision-2" />
         <severity value="error" />
         <human value="When the surveillance is stopped (i.e. Flag.status is 'inactive'), a reference to the SurveillanceDecision that was active SHALL be present in Flag.extension:relationSurveillanceDecision." />
         <expression value="(status = 'inactive') implies extension('http://nictiz.nl/fhir/StructureDefinition/ext-SurveillanceDecision.RelationSurveillanceDecision').exists()" />
+      </constraint>
+      <constraint>
+        <key value="cio-SurveillanceDecision-3" />
+        <severity value="error" />
+        <human value="A decision basis SHALL be given, either as a reference to a hypersensitivity or reaction in Flag.extension:decisionBasis, or as text in Flag.extension:comment." />
+        <expression value="extension('http://hl7.org/fhir/StructureDefinition/flag-detail').exists() or extension('http://nictiz.nl/fhir/StructureDefinition/ext-Comment').exists()" />
       </constraint>
       <mapping>
         <identity value="cio-dataset-200-beta2-20231215" />
