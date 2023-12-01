@@ -85,10 +85,6 @@
         <comment value="DiagnosticInsightDate" />
       </mapping>
     </element>
-    <element id="Condition.identifier">
-      <path value="Condition.identifier" />
-      <comment value="TODO - relatie met cio-Hypersensitivity/Reaction&#xD;&#xA;- zelfde identifier&#xD;&#xA;- relatie-element toevoegen (zit niet in dataset)&#xD;&#xA;- via Provenance aan elkaar koppelen" />
-    </element>
     <element id="Condition.clinicalStatus">
       <path value="Condition.clinicalStatus" />
       <short value="ConditionPresence" />
