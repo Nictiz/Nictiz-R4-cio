@@ -82,6 +82,15 @@
         <comment value="WayOfDetermination" />
       </mapping>
     </element>
+    <element id="AllergyIntolerance.extension:relationCondition">
+      <path value="AllergyIntolerance.extension" />
+      <sliceName value="relationCondition" />
+      <min value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-RelationCondition" />
+      </type>
+    </element>
     <element id="AllergyIntolerance.extension:relationHypersensitivity">
       <path value="AllergyIntolerance.extension" />
       <sliceName value="relationHypersensitivity" />
