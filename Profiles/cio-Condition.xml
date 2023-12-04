@@ -174,13 +174,21 @@
         <comment value="DiagnosisName" />
       </mapping>
     </element>
-    <element id="Condition.code.extension:furtherSpecificationDiagnosisName">
-      <path value="Condition.code.extension" />
-      <sliceName value="furtherSpecificationDiagnosisName" />
-      <type>
-        <code value="Extension" />
-        <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-FurtherSpecificationDiagnosisName" />
-      </type>
+    <element id="Condition.code.text">
+      <path value="Condition.code.text" />
+      <short value="FurtherSpecificationDiagnosisName" />
+      <definition value="A more detailed description of the name of the hypersensitivity or reaction in free text, when this detail is not available in the used code list." />
+      <alias value="NadereSpecificatieDiagnoseNaam" />
+      <mapping>
+        <identity value="cio-dataset-200-beta2-20231215" />
+        <map value="cio-dataelement-20-797" />
+        <comment value="FurtherSpecificationDiagnosisName" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta2-20231215" />
+        <map value="cio-dataelement-20-816" />
+        <comment value="FurtherSpecificationDiagnosisName" />
+      </mapping>
     </element>
     <element id="Condition.subject">
       <path value="Condition.subject" />
