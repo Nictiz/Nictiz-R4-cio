@@ -33,7 +33,7 @@
     <element id="AllergyIntolerance">
       <path value="AllergyIntolerance" />
       <short value="Hypersensitivity" />
-      <comment value="Note that not all concepts within the Hypersensitivity building block are mapped to elements within this profile. To convey the complete Hypersensitivity building block, an AllergyIntolerance resource conforming to this profile should always be used together with an instance of the [cio-Condition](http://nictiz.nl/fhir/StructureDefinition/cio-Condition) profile, as well as an instance of the [cio-RegistrationData](http://nictiz.nl/fhir/StructureDefinition/cio-RegistrationData) profile wherein `Provenance.target` refers to the AllergyIntolerance and Condition resources." />
+      <comment value="Note that not all concepts within the Hypersensitivity building block are mapped to elements within this profile. To convey the complete Hypersensitivity building block, an AllergyIntolerance resource conforming to this profile SHOULD always be used together with an instance of the [cio-Condition](http://nictiz.nl/fhir/StructureDefinition/cio-Condition) profile, as well as an instance of the [cio-RegistrationData](http://nictiz.nl/fhir/StructureDefinition/cio-RegistrationData) profile wherein `Provenance.target` refers to the AllergyIntolerance and Condition resources." />
       <alias value="Overgevoeligheid" />
       <mapping>
         <identity value="cio-dataset-200-beta2-20231215" />

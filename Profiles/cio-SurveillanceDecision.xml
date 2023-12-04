@@ -33,7 +33,7 @@
     <element id="Flag">
       <path value="Flag" />
       <short value="SurveillanceDecision" />
-      <comment value="Note that not all concepts within the SurveillanceDecision building block are mapped to elements within this profile. To convey the complete SurveillanceDecision building block, a Flag resource conforming to this profile should always be used together with an instance of the [cio-RegistrationData](http://nictiz.nl/fhir/StructureDefinition/cio-RegistrationData) profile wherein `Provenance.target` refers to the Flag resource." />
+      <comment value="Note that not all concepts within the SurveillanceDecision building block are mapped to elements within this profile. To convey the complete SurveillanceDecision building block, a Flag resource conforming to this profile SHOULD always be used together with an instance of the [cio-RegistrationData](http://nictiz.nl/fhir/StructureDefinition/cio-RegistrationData) profile wherein `Provenance.target` refers to the Flag resource." />
       <alias value="BewakingBesluit" />
       <constraint>
         <key value="cio-SurveillanceDecision-1" />
