@@ -2,12 +2,12 @@
 <CapabilityStatement xmlns="http://hl7.org/fhir"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://hl7.org/fhir http://hl7.org/fhir/R4/capabilitystatement.xsd">
-  <id value="cio-HypersensitivityDispositions.RetrieveServe"/>
-  <url value="http://nictiz.nl/fhir/CapabilityStatement/cio-HypersensitivityDispositions.RetrieveServe"/>
-  <version value="1.0.0" />
-  <name value="cio HypersensitivityDispositions.RetrieveServe"/>
+  <id value="cio-MedicationHypersensitivities.RetrieveServe"/>
+  <url value="http://nictiz.nl/fhir/CapabilityStatement/cio-MedicationHypersensitivities.RetrieveServe"/>
+  <version value="1.0.0-beta.2" />
+  <name value="cio MedicationHypersensitivities.RetrieveServe"/>
   <status value="active"/>
-  <date value="2023-05-01"/>
+  <date value="2023-12-15"/>
   <publisher value="Nictiz"/>
   <contact>
     <name value="Nictiz"/>
@@ -17,7 +17,7 @@
       <use value="work"/>
     </telecom>
   </contact>
-  <description value="This CapabilityStatement describes the minimal requirements for a client/server to fulfill the 'Retrieve/Serve hypersensitivity dispositions' transaction within CiO version 2.0.0. See [Landingspagina CiO](https://informatiestandaarden.nictiz.nl/wiki/cio:Landingspagina_Contra-indicaties_en_Overgevoeligheden) for additional information."/>
+  <description value="This CapabilityStatement describes the minimal requirements for a client/server to fulfill the 'Retrieve/Serve medication hypersensitivities' transaction within CiO version 2.0.0. See [Landingspagina CiO](https://informatiestandaarden.nictiz.nl/wiki/cio:Landingspagina_Contra-indicaties_en_Overgevoeligheden) for additional information."/>
   <purpose value="This CapabilityStatement is informative in nature and does not represent the minimum or maximum set of capabilities the client or server should support. The aim is to design the CapabilityStatement as complete as possible, however for the exact set of capabilities the implementation guide of the corresponding information standard should be consulted."/>
   <copyright value="Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise."/>
   <kind value="requirements"/>
@@ -26,54 +26,55 @@
   <format value="json"/>
   <rest>
     <mode value="client"/>
-    <documentation value="Minimal requirements for a client to fulfill the 'Retrieve hypersensitivity dispositions' transaction (system role: CIO-OVR)."/>
+    <documentation value="Minimal requirements for a client to fulfill the 'Retrieve medication hypersensitivities' transaction (system role: CIO-BBR)."/>
     <resource>
-      <type value="AllergyIntolerance"/>
-      <supportedProfile value="http://nictiz.nl/fhir/StructureDefinition/cio-HypersensitivityDispositionReaction"/>
+      <type value="Flag"/>
+      <supportedProfile value="http://nictiz.nl/fhir/StructureDefinition/cio-SurveillanceDecision"/>
       <interaction>
         <code value="search-type"/>
       </interaction>
-      <searchInclude value="AllergyIntolerance:patient"/>
+      <searchInclude value="Flag:detail"/>
+      <searchInclude value="Flag:patient"/>
+      <searchRevInclude value="Provenance:target"/>
       <searchParam>
         <name value="patient"/>
         <type value="reference"/>
+      </searchParam>
+      <searchParam>
+        <name value="category"/>
+        <definition value="http://nictiz.nl/fhir/SearchParameter/Flag-category"/>
+        <type value="token"/>
       </searchParam>
       <searchParam>
         <name value="date"/>
         <type value="date"/>
       </searchParam>
+      <searchParam>
+        <name value="detail"/>
+        <definition value="http://nictiz.nl/fhir/SearchParameter/Flag-detail"/>
+        <type value="reference"/>
+        <documentation value="This search parameter does not need to be supported on its own, only in conjunction with an `_include`. It has been added here to indicate its definition."/>
+      </searchParam>
+    </resource>
+    <resource>
+      <type value="Provenance"/>
+      <supportedProfile value="http://nictiz.nl/fhir/StructureDefinition/cio-RegistrationData"/>
+      <searchParam>
+        <name value="target"/>
+        <type value="reference"/>
+        <documentation value="This search parameter does not need to be supported on its own, only in conjunction with a `_revInclude` on the Flag resource. It has been added here for completeness."/>
+      </searchParam>
+    </resource>
+    <resource>
+      <type value="AllergyIntolerance"/>
+      <supportedProfile value="http://nictiz.nl/fhir/StructureDefinition/cio-Hypersensitivity"/>
+      <supportedProfile value="http://nictiz.nl/fhir/StructureDefinition/cio-Reaction"/>
+      <documentation value="This resource needs to be resolvable by explicitly including it in the Bundle (via the `detail` search parameter on Flag)."/>
     </resource>
     <resource>
       <type value="Condition"/>
-      <supportedProfile value="http://nictiz.nl/fhir/StructureDefinition/cio-HypersensitivityDisposition"/>
-      <interaction>
-        <code value="search-type"/>
-      </interaction>
-      <searchInclude value="Condition:patient"/>
-      <searchInclude value="Condition:evidence-detail"/>
-      <searchParam>
-        <name value="patient"/>
-        <type value="reference"/>
-      </searchParam>
-      <searchParam>
-        <name value="recorded-date"/>
-        <type value="date"/>
-      </searchParam>
-      <searchParam>
-        <name value="code"/>
-        <type value="token"/>
-      </searchParam>
-      <searchParam>
-        <name value="evidence-detail"/>
-        <type value="reference"/>
-      </searchParam>
-    </resource>
-    <resource>
-      <type value="Observation"/>
-      <supportedProfile value="http://nictiz.nl/fhir/StructureDefinition/cio-Reaction"/>
-      <interaction>
-        <code value="search-type"/>
-      </interaction>
+      <supportedProfile value="http://nictiz.nl/fhir/StructureDefinition/cio-Condition"/>
+      <documentation value="TODO"/>
     </resource>
     <resource>
       <type value="Patient"/>
@@ -105,31 +106,6 @@
     <resource>
       <type value="Organization"/>
       <supportedProfile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization"/>
-      <documentation value="This is a secondary resource that needs to be resolvable, either by supporting a read interaction or explicitly including it in the Bundle. For a client support of the read interaction is mandatory."/>
-      <interaction>
-        <code value="read"/>
-      </interaction>
-    </resource>
-    <resource>
-      <type value="MedicationRequest"/>
-      <supportedProfile value="http://nictiz.nl/fhir/StructureDefinition/mp-MedicationAgreement"/>
-      <documentation value="This is a secondary resource that needs to be resolvable, either by supporting a read interaction or explicitly including it in the Bundle. For a client support of the read interaction is mandatory."/>
-      <interaction>
-        <code value="read"/>
-      </interaction>
-    </resource>
-    <resource>
-      <type value="MedicationDispense"/>
-      <supportedProfile value="http://nictiz.nl/fhir/StructureDefinition/mp-AdministrationAgreement"/>
-      <supportedProfile value="http://nictiz.nl/fhir/StructureDefinition/mp-MedicationDispense"/>
-      <documentation value="This is a secondary resource that needs to be resolvable, either by supporting a read interaction or explicitly including it in the Bundle. For a client support of the read interaction is mandatory."/>
-      <interaction>
-        <code value="read"/>
-      </interaction>
-    </resource>
-    <resource>
-      <type value="MedicationStatement"/>
-      <supportedProfile value="http://nictiz.nl/fhir/StructureDefinition/mp-MedicationUse2"/>
       <documentation value="This is a secondary resource that needs to be resolvable, either by supporting a read interaction or explicitly including it in the Bundle. For a client support of the read interaction is mandatory."/>
       <interaction>
         <code value="read"/>
@@ -141,54 +117,55 @@
   </rest>
   <rest>
     <mode value="server"/>
-    <documentation value="Minimal requirements for a server to fulfill the 'Serve hypersensitivity dispositions' transaction (system role: CIO-OVB)."/>
+    <documentation value="Minimal requirements for a server to fulfill the 'Serve medication hypersensitivities' transaction (system role: CIO-BBB)."/>
     <resource>
-      <type value="AllergyIntolerance"/>
-      <supportedProfile value="http://nictiz.nl/fhir/StructureDefinition/cio-HypersensitivityDispositionReaction"/>
+      <type value="Flag"/>
+      <supportedProfile value="http://nictiz.nl/fhir/StructureDefinition/cio-SurveillanceDecision"/>
       <interaction>
         <code value="search-type"/>
       </interaction>
-      <searchInclude value="AllergyIntolerance:patient"/>
+      <searchInclude value="Flag:detail"/>
+      <searchInclude value="Flag:patient"/>
+      <searchRevInclude value="Provenance:target"/>
       <searchParam>
         <name value="patient"/>
         <type value="reference"/>
+      </searchParam>
+      <searchParam>
+        <name value="category"/>
+        <definition value="http://nictiz.nl/fhir/SearchParameter/Flag-category"/>
+        <type value="token"/>
       </searchParam>
       <searchParam>
         <name value="date"/>
         <type value="date"/>
       </searchParam>
+      <searchParam>
+        <name value="detail"/>
+        <definition value="http://nictiz.nl/fhir/SearchParameter/Flag-detail"/>
+        <type value="reference"/>
+        <documentation value="This search parameter does not need to be supported on its own, only in conjunction with an `_include`. It has been added here to indicate its definition."/>
+      </searchParam>
+    </resource>
+    <resource>
+      <type value="Provenance"/>
+      <supportedProfile value="http://nictiz.nl/fhir/StructureDefinition/cio-RegistrationData"/>
+      <searchParam>
+        <name value="target"/>
+        <type value="reference"/>
+        <documentation value="This search parameter does not need to be supported on its own, only in conjunction with a `_revInclude` on the Flag resource. It has been added here for completeness."/>
+      </searchParam>
+    </resource>
+    <resource>
+      <type value="AllergyIntolerance"/>
+      <supportedProfile value="http://nictiz.nl/fhir/StructureDefinition/cio-Hypersensitivity"/>
+      <supportedProfile value="http://nictiz.nl/fhir/StructureDefinition/cio-Reaction"/>
+      <documentation value="This resource needs to be resolvable by explicitly including it in the Bundle (via the `detail` search parameter on Flag)."/>
     </resource>
     <resource>
       <type value="Condition"/>
-      <supportedProfile value="http://nictiz.nl/fhir/StructureDefinition/cio-HypersensitivityDisposition"/>
-      <interaction>
-        <code value="search-type"/>
-      </interaction>
-      <searchInclude value="Condition:patient"/>
-      <searchInclude value="Condition:evidence-detail"/>
-      <searchParam>
-        <name value="patient"/>
-        <type value="reference"/>
-      </searchParam>
-      <searchParam>
-        <name value="recorded-date"/>
-        <type value="date"/>
-      </searchParam>
-      <searchParam>
-        <name value="code"/>
-        <type value="token"/>
-      </searchParam>
-      <searchParam>
-        <name value="evidence-detail"/>
-        <type value="reference"/>
-      </searchParam>
-    </resource>
-    <resource>
-      <type value="Observation"/>
-      <supportedProfile value="http://nictiz.nl/fhir/StructureDefinition/cio-Reaction"/>
-      <interaction>
-        <code value="search-type"/>
-      </interaction>
+      <supportedProfile value="http://nictiz.nl/fhir/StructureDefinition/cio-Condition"/>
+      <documentation value="TODO"/>
     </resource>
     <resource>
       <type value="Patient"/>
@@ -214,22 +191,6 @@
     <resource>
       <type value="Organization"/>
       <supportedProfile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization"/>
-      <documentation value="This is a secondary resource that needs to be resolvable, either by supporting a read interaction or explicitly including it in the Bundle."/>
-    </resource>
-    <resource>
-      <type value="MedicationRequest"/>
-      <supportedProfile value="http://nictiz.nl/fhir/StructureDefinition/mp-MedicationAgreement"/>
-      <documentation value="This is a secondary resource that needs to be resolvable, either by supporting a read interaction or explicitly including it in the Bundle."/>
-    </resource>
-    <resource>
-      <type value="MedicationDispense"/>
-      <supportedProfile value="http://nictiz.nl/fhir/StructureDefinition/mp-AdministrationAgreement"/>
-      <supportedProfile value="http://nictiz.nl/fhir/StructureDefinition/mp-MedicationDispense"/>
-      <documentation value="This is a secondary resource that needs to be resolvable, either by supporting a read interaction or explicitly including it in the Bundle."/>
-    </resource>
-    <resource>
-      <type value="MedicationStatement"/>
-      <supportedProfile value="http://nictiz.nl/fhir/StructureDefinition/mp-MedicationUse2"/>
       <documentation value="This is a secondary resource that needs to be resolvable, either by supporting a read interaction or explicitly including it in the Bundle."/>
     </resource>
     <interaction>
