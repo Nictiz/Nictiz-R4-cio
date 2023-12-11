@@ -47,6 +47,10 @@
             <display value="Confirmed present (qualifier value)"/>
          </concept>
          <concept>
+            <code value="410593006"/>
+            <display value="Probably not present (qualifier value)"/>
+         </concept>
+         <concept>
             <code value="410516002"/>
             <display value="Known absent (qualifier value)"/>
          </concept>
