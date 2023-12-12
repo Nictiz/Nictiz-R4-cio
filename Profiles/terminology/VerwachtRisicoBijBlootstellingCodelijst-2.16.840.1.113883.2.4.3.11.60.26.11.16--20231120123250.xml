@@ -35,6 +35,10 @@
             <code value="24484000"/>
             <display value="Severe (severity modifier) (qualifier value)"/>
          </concept>
+         <concept>
+            <code value="1156316003"/>
+            <display value="Cannot be determined (qualifier value)"/>
+         </concept>
       </include>
    </compose>
 </ValueSet>

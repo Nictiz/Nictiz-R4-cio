@@ -44,12 +44,12 @@
             </target>
         </element>
         <element>
-            <code value="NTB"/>
-            <display value="Geen oordeel"/>
+            <code value="1156316003"/>
+            <display value="Cannot be determined"/>
             <target>
                 <code value="unable-to-assess"/>
                 <display value="Unable to Assess Risk"/>
-                <equivalence value="specializes"/>
+                <equivalence value="equal"/>
             </target>
         </element>
     </group>

@@ -166,14 +166,14 @@
       <sliceName value="medicationContraIndicationCode" />
       <short value="AlertType" />
       <definition value="Indicates the type of alert, meaning a rough description of the cause or origin of the warning." />
-      <comment value="TODO: comment over fixed value versus ValueSet" />
+      <comment value="The concept AlertType is bound to a ValueSet consisting of a single code. Instead of specifying that ValueSet here as well, it has been chosen to add that code as a pattern instead." />
       <alias value="AlertType" />
       <min value="1" />
       <max value="1" />
       <patternCodeableConcept>
         <coding>
           <system value="http://snomed.info/sct" />
-          <code value="TODO" />
+          <code value="350241000146102" />
         </coding>
       </patternCodeableConcept>
       <mapping>
