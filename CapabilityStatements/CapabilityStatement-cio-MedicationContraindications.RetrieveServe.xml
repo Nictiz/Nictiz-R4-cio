@@ -33,7 +33,6 @@
       <interaction>
         <code value="search-type"/>
       </interaction>
-      <searchInclude value="Flag:detail"/>
       <searchInclude value="Flag:patient"/>
       <searchRevInclude value="Provenance:target"/>
       <searchParam>
@@ -48,12 +47,6 @@
       <searchParam>
         <name value="date"/>
         <type value="date"/>
-      </searchParam>
-      <searchParam>
-        <name value="detail"/>
-        <definition value="http://nictiz.nl/fhir/SearchParameter/Flag-detail"/>
-        <type value="reference"/>
-        <documentation value="This search parameter does not need to be supported on its own, only in conjunction with an `_include`. It has been added here to indicate its definition."/>
       </searchParam>
     </resource>
     <resource>
@@ -99,11 +92,6 @@
       <interaction>
         <code value="read"/>
       </interaction>
-    </resource>
-    <resource>
-      <type value="Condition"/>
-      <supportedProfile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-Problem"/>
-      <documentation value="This is a secondary resource that needs to be resolvable by explicitly including it in the Bundle (via the `detail` search parameter on Flag)."/>
     </resource>
     <interaction>
       <code value="search-system"/>
@@ -118,7 +106,6 @@
       <interaction>
         <code value="search-type"/>
       </interaction>
-      <searchInclude value="Flag:detail"/>
       <searchInclude value="Flag:patient"/>
       <searchRevInclude value="Provenance:target"/>
       <searchParam>
@@ -133,12 +120,6 @@
       <searchParam>
         <name value="date"/>
         <type value="date"/>
-      </searchParam>
-      <searchParam>
-        <name value="detail"/>
-        <definition value="http://nictiz.nl/fhir/SearchParameter/Flag-detail"/>
-        <type value="reference"/>
-        <documentation value="This search parameter does not need to be supported on its own, only in conjunction with an `_include`. It has been added here to indicate its definition."/>
       </searchParam>
     </resource>
     <resource>
@@ -175,11 +156,6 @@
       <type value="Organization"/>
       <supportedProfile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization"/>
       <documentation value="This is a secondary resource that needs to be resolvable, either by supporting a read interaction or explicitly including it in the Bundle."/>
-    </resource>
-    <resource>
-      <type value="Condition"/>
-      <supportedProfile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-Problem"/>
-      <documentation value="This is a secondary resource that needs to be resolvable by explicitly including it in the Bundle (via the `detail` search parameter on Flag)."/>
     </resource>
     <interaction>
       <code value="search-system"/>
