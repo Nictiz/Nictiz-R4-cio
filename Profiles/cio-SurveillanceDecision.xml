@@ -184,7 +184,7 @@
       <path value="Flag.code" />
       <short value="UnsafeSubstance" />
       <definition value="The substance or group of substances that must be monitored completely or with exceptions." />
-      <comment value="The message that is be displayed to the user, should indicate the necessity of surveillance on the substance or group of substances present in the UnsafeSubstance concept with the exception of the substances indicated by the SafeWithinUnsafeGroup concept. Since it's semantically not possible to include the content of both concepts within `.code` (e.g. in different `.coding`s), the latter concept is represented by the `.extension:safeWithinUnsafeGroup` on `.code`, and the `.text` element SHOULD be used to convey the textual representation of the SubstanceForSurveillance concept as a whole. The `.text` could read for instance:&#xD;&#xA;* If UnsafeSubstance refers to a single substance: 'Monitor the use of {UnsafeSubstance} as treatment for the patient, since this substance is unsafe for the patient.'&#xD;&#xA;* If UnsafeSubstance refers to a group of substances, and there possibly are several substances specified within SafeWithinUnsafeGroup: 'Monitor the use of {UnsafeSubstance} as treatment for the patient, since this group of substances is unsafe for the patient (with the exception of {SafeWithinUnsafeGroup}).'" />
+      <comment value="The message that is be displayed to the user, should indicate the necessity of surveillance on the substance or group of substances present in the UnsafeSubstance concept with the exception of the substances indicated by the SafeWithinUnsafeGroup concept. Since it's semantically not possible to include the content of both concepts within `.code` (e.g. in different `.code.coding`s), the latter concept is represented by the `.extension:safeWithinUnsafeGroup` on `.code`, and the `.code.text` element SHOULD be used to convey the textual representation of the SubstanceForSurveillance concept as a whole. The `.code.text` could read for instance:&#xD;&#xA;* If UnsafeSubstance refers to a single substance: 'Monitor the use of {UnsafeSubstance} as treatment for the patient, since this substance is unsafe for the patient.'&#xD;&#xA;* If UnsafeSubstance refers to a group of substances, and there possibly are several substances specified within SafeWithinUnsafeGroup: 'Monitor the use of {UnsafeSubstance} as treatment for the patient, since this group of substances is unsafe for the patient (with the exception of {SafeWithinUnsafeGroup}).'" />
       <alias value="OnveiligeStof" />
       <binding>
         <strength value="required" />
@@ -214,6 +214,7 @@
     </element>
     <element id="Flag.code.text">
       <path value="Flag.code.text" />
+      <comment value="For guidance on how to populate this element, see the comment on `.code`." />
       <mapping>
         <identity value="cio-dataset-200-beta2-20231215" />
         <map value="cio-dataelement-20-760" />
