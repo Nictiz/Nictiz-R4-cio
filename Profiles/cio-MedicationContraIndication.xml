@@ -51,7 +51,7 @@
         <key value="cio-MedicationContraIndication-3" />
         <severity value="error" />
         <human value="If Flag.extension:stopReason exists, Flag.period.end SHALL exist." />
-        <expression value="extension('http://nictiz.nl/fhir/StructureDefinition/ext-MedicationContraIndication.StopReason').exists() implies period.end.exists()" />
+        <expression value="extension('http://nictiz.nl/fhir/StructureDefinition/ext-MedicationContraIndication.ReasonForEndingAlert').exists() implies period.end.exists()" />
       </constraint>
       <mapping>
         <identity value="cio-dataset-200-beta2-20231215" />
@@ -93,7 +93,7 @@
       <sliceName value="stopReason" />
       <type>
         <code value="Extension" />
-        <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-MedicationContraIndication.StopReason" />
+        <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-MedicationContraIndication.ReasonForEndingAlert" />
       </type>
       <condition value="cio-MedicationContraIndication-3" />
     </element>

@@ -186,7 +186,7 @@
     <element id="Provenance.agent:performer.who">
       <path value="Provenance.agent.who" />
       <short value="DecisionMaker" />
-      <definition value="The person that carried out the activity, for instance:&#xD;&#xA;* The health professional who is responsible for setting the alert. This health professional has made the decision to set the alert.&#xD;&#xA;* The health professional who made the surveillance decision." />
+      <definition value="The person that carried out the activity, for instance:&#xD;&#xA;* The health professional who is responsible for setting the alert. This health professional has made the decision to set the alert for the patient.&#xD;&#xA;* The health professional who made the surveillance decision." />
       <alias value="Beslisser" />
       <alias value="Vaststeller" />
       <type>
