@@ -105,6 +105,11 @@
     <element id="Flag.extension:relationSurveillanceDecision.value[x]">
       <path value="Flag.extension.value[x]" />
       <condition value="cio-SurveillanceDecision-2" />
+      <mapping>
+        <identity value="cio-dataset-200-beta2-20231215" />
+        <map value="cio-dataelement-20-828" />
+        <comment value="RelationSurveillanceDecision" />
+      </mapping>
     </element>
     <element id="Flag.extension:comment">
       <path value="Flag.extension" />
@@ -198,6 +203,14 @@
         <code value="Extension" />
         <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-SurveillanceDecision.SafeWithinUnsafeGroup" />
       </type>
+    </element>
+    <element id="Flag.code.extension:safeWithinUnsafeGroup.value[x]">
+      <path value="Flag.code.extension.value[x]" />
+      <mapping>
+        <identity value="cio-dataset-200-beta2-20231215" />
+        <map value="cio-dataelement-20-762" />
+        <comment value="SafeWithinUnsafeGroup" />
+      </mapping>
     </element>
     <element id="Flag.code.text">
       <path value="Flag.code.text" />

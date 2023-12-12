@@ -60,6 +60,19 @@
         <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-ConditionStatusDate" />
       </type>
     </element>
+    <element id="Condition.extension:conditionStatusDate.value[x]">
+      <path value="Condition.extension.value[x]" />
+      <mapping>
+        <identity value="cio-dataset-200-beta2-20231215" />
+        <map value="cio-dataelement-20-807" />
+        <comment value="ConditionStatusDate" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta2-20231215" />
+        <map value="cio-dataelement-20-791" />
+        <comment value="ConditionStatusDate" />
+      </mapping>
+    </element>
     <element id="Condition.extension:diagnosticInsightDate">
       <path value="Condition.extension" />
       <sliceName value="diagnosticInsightDate" />

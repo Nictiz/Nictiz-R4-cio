@@ -19,11 +19,6 @@
   <purpose value="This extension represents the ReasonForEndingAlert concept for implementations following the information standard [CiO](https://informatiestandaarden.nictiz.nl/wiki/Landingspagina_Contra-indicaties_en_Overgevoeligheden)." />
   <copyright value="Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise." />
   <fhirVersion value="4.0.1" />
-  <mapping>
-    <identity value="cio-dataset-200-beta2-20231215" />
-    <uri value="https://decor.nictiz.nl/pub/cio/cio-html-20231215T150542/ds-2.16.840.1.113883.2.4.3.11.60.26.1.2-2020-04-02T000000.html" />
-    <name value="ART-DECOR Dataset Contraindications and hypersensitivities 2.0.0-beta.2 20231215" />
-  </mapping>
   <kind value="complex-type" />
   <abstract value="false" />
   <context>
@@ -50,11 +45,6 @@
       <type>
         <code value="string" />
       </type>
-      <mapping>
-        <identity value="cio-dataset-200-beta2-20231215" />
-        <map value="cio-dataelement-20-778" />
-        <comment value="ReasonForEndingAlert" />
-      </mapping>
     </element>
   </differential>
 </StructureDefinition>

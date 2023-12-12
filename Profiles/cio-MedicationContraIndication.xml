@@ -59,6 +59,11 @@
     <element id="Flag.extension:reasonForEndingAlert.value[x]">
       <path value="Flag.extension.value[x]" />
       <condition value="cio-MedicationContraIndication-1" />
+      <mapping>
+        <identity value="cio-dataset-200-beta2-20231215" />
+        <map value="cio-dataelement-20-778" />
+        <comment value="ReasonForEndingAlert" />
+      </mapping>
     </element>
     <element id="Flag.extension:relationAlert">
       <path value="Flag.extension" />
@@ -67,6 +72,14 @@
         <code value="Extension" />
         <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-MedicationContraIndication.RelationAlert" />
       </type>
+    </element>
+    <element id="Flag.extension:relationAlert.value[x]">
+      <path value="Flag.extension.value[x]" />
+      <mapping>
+        <identity value="cio-dataset-200-beta2-20231215" />
+        <map value="cio-dataelement-20-881" />
+        <comment value="RelationAlert" />
+      </mapping>
     </element>
     <element id="Flag.extension:comment">
       <path value="Flag.extension" />
