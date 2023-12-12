@@ -68,19 +68,6 @@
             </designation>
          </concept>
          <concept>
-            <code value="157521000146103"/>
-            <display value="neiging tot ongewenste reactie op inhalatieallergeen (bevinding)"/>
-            <designation>
-               <language value="nl-NL"/>
-               <use>
-                  <system value="http://snomed.info/sct"/>
-                  <code value="900000000000013009"/>
-                  <display value="Synonym"/>
-               </use>
-               <value value="inhalatieallergenen"/>
-            </designation>
-         </concept>
-         <concept>
             <extension url="http://hl7.org/fhir/StructureDefinition/valueset-deprecated">
                <valueBoolean value="true"/>
             </extension>
