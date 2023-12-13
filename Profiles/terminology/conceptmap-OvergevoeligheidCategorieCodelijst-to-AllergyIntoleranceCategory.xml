@@ -27,7 +27,7 @@
         <target value="http://hl7.org/fhir/allergy-intolerance-category"/>
         <element>
             <code value="418471000"/>
-            <display value="neiging tot ongewenste reactie op voedsel (bevinding)"/>
+            <display value="Propensity to adverse reactions to food"/>
             <target>
                 <code value="food"/>
                 <display value="Food"/>
@@ -36,7 +36,7 @@
         </element>
         <element>
             <code value="419511003"/>
-            <display value="neiging tot ongewenste reactie op medicatie en/of drug (bevinding)"/>
+            <display value="Propensity to adverse reactions to drug"/>
             <target>
                 <code value="medication"/>
                 <display value="Medication"/>
@@ -45,37 +45,7 @@
         </element>
         <element>
             <code value="157531000146101"/>
-            <display value="neiging tot ongewenste reactie op contactallergeen (bevinding)"/>
-            <target>
-                <code value="environment"/>
-                <display value="Environment"/>
-                <equivalence value="inexact"/>
-                <comment value="In general allergens within this category belong to the FHIR category 'environment', as these allergens are mostly used to indicate that someone had an allergic reaction to that substance. However, if such an allergen would be used during e.g. a skin or provocation test, it is prepared and used as a diagnostic agent, hence it could be categorized by the FHIR category 'biologic'. Thus it is advised to map this category on 'environment' by default, unless it is known that the category 'biologic' applies."/>
-            </target>
-        </element>
-        <element>
-            <code value="157521000146103"/>
-            <display value="neiging tot ongewenste reactie op inhalatieallergeen (bevinding)"/>
-            <target>
-                <code value="environment"/>
-                <display value="Environment"/>
-                <equivalence value="inexact"/>
-                <comment value="In general allergens within this category belong to the FHIR category 'environment', as these allergens are mostly used to indicate that someone had an allergic reaction to that substance. However, if such an allergen would be used during e.g. a skin or provocation test, it is prepared and used as a diagnostic agent, hence it could be categorized by the FHIR category 'biologic'. Thus it is advised to map this category on 'environment' by default, unless it is known that the category 'biologic' applies."/>
-            </target>
-        </element>
-        <element>
-            <code value="157541000146109"/>
-            <display value="neiging tot ongewenste reactie op beroepsallergeen (bevinding)"/>
-            <target>
-                <code value="environment"/>
-                <display value="Environment"/>
-                <equivalence value="inexact"/>
-                <comment value="In general allergens within this category belong to the FHIR category 'environment', as these allergens are mostly used to indicate that someone had an allergic reaction to that substance. However, if such an allergen would be used during e.g. a skin or provocation test, it is prepared and used as a diagnostic agent, hence it could be categorized by the FHIR category 'biologic'. Thus it is advised to map this category on 'environment' by default, unless it is known that the category 'biologic' applies."/>
-            </target>
-        </element>
-        <element>
-            <code value="157511000146108"/>
-            <display value="neiging tot ongewenste reactie op insectengif (bevinding)"/>
+            <display value="Propensity to adverse reaction to contact allergen"/>
             <target>
                 <code value="environment"/>
                 <display value="Environment"/>

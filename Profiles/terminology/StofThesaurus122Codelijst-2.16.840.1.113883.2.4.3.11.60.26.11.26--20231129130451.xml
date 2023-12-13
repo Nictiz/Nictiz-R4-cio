@@ -1,31 +1,31 @@
 <ValueSet xmlns="http://hl7.org/fhir">
-   <id value="2.16.840.1.113883.2.4.3.11.60.26.11.24--20231129122218"/>
+   <id value="2.16.840.1.113883.2.4.3.11.60.26.11.26--20231129130451"/>
    <meta>
       <profile value="http://hl7.org/fhir/StructureDefinition/shareablevalueset"/>
       <!--<profile value="http://hl7.org/fhir/4.0/StructureDefinition/ValueSet"/>-->
    </meta>
    <extension url="http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod">
       <valuePeriod>
-         <start value="2023-11-29T12:22:18Z"/>
+         <start value="2023-11-29T13:04:51Z"/>
       </valuePeriod>
    </extension>
-   <url value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.26.11.24--20231129122218"/>
+   <url value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.26.11.26--20231129130451"/>
    <identifier>
       <use value="official"/>
       <system value="urn:ietf:rfc:3986"/>
-      <value value="urn:oid:2.16.840.1.113883.2.4.3.11.60.26.11.24"/>
+      <value value="urn:oid:2.16.840.1.113883.2.4.3.11.60.26.11.26"/>
    </identifier>
-   <version value="2023-11-29T12:22:18"/>
-   <name value="SpecifiekeStofSNKCodelijst"/>
-   <title value="StofSNKCodelijst"/>
+   <version value="2023-11-29T13:04:51"/>
+   <name value="StofThesaurus122Codelijst"/>
+   <title value="StofThesaurus122Codelijst"/>
    <status value="draft"/>
    <experimental value="false"/>
    <publisher value="Nictiz"/>
-   <description value="G-standaard Stofnaamcode (SNK) - Alle waarden"/>
+   <description value="G-standaard Ongewenste medicatiegroepen - Alle waarden"/>
    <immutable value="false"/>
    <compose>
       <include>
-         <system value="urn:oid:2.16.840.1.113883.2.4.4.1.750"/>
+         <system value="urn:oid:2.16.840.1.113883.2.4.4.1.902.122"/>
       </include>
    </compose>
 </ValueSet>

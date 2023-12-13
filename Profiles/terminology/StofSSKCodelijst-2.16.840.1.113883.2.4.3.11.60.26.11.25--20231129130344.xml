@@ -16,7 +16,7 @@
       <value value="urn:oid:2.16.840.1.113883.2.4.3.11.60.26.11.25"/>
    </identifier>
    <version value="2023-11-29T13:03:44"/>
-   <name value="SpecifiekeStofSSKCodelijst"/>
+   <name value="StofSSKCodelijst"/>
    <title value="StofSSKCodelijst"/>
    <status value="draft"/>
    <experimental value="false"/>
