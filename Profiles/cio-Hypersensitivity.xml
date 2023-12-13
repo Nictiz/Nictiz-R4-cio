@@ -16,7 +16,7 @@
     </telecom>
   </contact>
   <description value="The diagnostic insight that the patient is predisposed to develop an undesirable reaction when exposed to a specific substance or group of substances on the basis of an allergy or pseudoallergy." />
-  <purpose value="This AllergyIntolerance resource represents the Hypersensitivity building block for implementations following the information standard [CiO](https://informatiestandaarden.nictiz.nl/wiki/Landingspagina_Contra-indicaties_en_Overgevoeligheden). This profile is based on the Dutch zib ('Zorginformatiebouwsteen', i.e. Health and Care Information Model) Hypersensitivity that will be part of the 2024 prepublication. Therefore it has no dependency on a corresponding nl-core profile and mappings to zib concepts are not defined. Instead mappings to the CiO data set have been added." />
+  <purpose value="This AllergyIntolerance resource represents the Hypersensitivity building block for implementations following the information standard [CiO](https://informatiestandaarden.nictiz.nl/wiki/Landingspagina_Contra-indicaties_en_Overgevoeligheden). This profile is based on the Dutch zib ('Zorginformatiebouwsteen', i.e. Health and Care Information Model) Hypersensitivity that will be part of the 2024 prepublication. Therefore it has no dependency on a corresponding nl-core profile and mappings to zib concepts are not defined. Instead mappings to the CiO data set have been added. It is the intention to derive this profile from a more general nl-core-Hypersensitivity profile in the future." />
   <copyright value="Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise." />
   <fhirVersion value="4.0.1" />
   <mapping>
@@ -33,7 +33,7 @@
     <element id="AllergyIntolerance">
       <path value="AllergyIntolerance" />
       <short value="Hypersensitivity" />
-      <comment value="Note that not all concepts within the Hypersensitivity building block are mapped to elements within this profile. To convey the complete Hypersensitivity building block, an AllergyIntolerance resource conforming to this profile SHOULD always be used together with an instance of the [cio-Condition](http://nictiz.nl/fhir/StructureDefinition/cio-Condition) profile, as well as an instance of the [cio-RegistrationData](http://nictiz.nl/fhir/StructureDefinition/cio-RegistrationData) profile wherein `Provenance.target` refers to the AllergyIntolerance and Condition resources." />
+      <comment value="Note that not all concepts within the Hypersensitivity building block are mapped to elements within this profile. To convey the complete Hypersensitivity building block, an AllergyIntolerance resource conforming to this profile SHOULD always be used together with an instance conforming to the [cio-Condition](http://nictiz.nl/fhir/StructureDefinition/cio-Condition) profile, as well as an instance conforming to the [cio-RegistrationData](http://nictiz.nl/fhir/StructureDefinition/cio-RegistrationData) profile wherein `Provenance.target` refers to the AllergyIntolerance and Condition resources." />
       <alias value="Overgevoeligheid" />
       <mapping>
         <identity value="cio-dataset-200-beta2-20231215" />

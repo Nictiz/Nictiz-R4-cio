@@ -16,7 +16,7 @@
     </telecom>
   </contact>
   <description value="The decision to start or end surveillance with respect to a substance or group of substances that is undesirable as treatment for the patient." />
-  <purpose value="This Flag resource represents the SurveillanceDecision building block for implementations following the information standard [CiO](https://informatiestandaarden.nictiz.nl/wiki/Landingspagina_Contra-indicaties_en_Overgevoeligheden). This profile is based on the Dutch zib ('Zorginformatiebouwsteen', i.e. Health and Care Information Model) SurveillanceDecision that will be part of the 2024 prepublication. Therefore it has no dependency on a corresponding nl-core profile and mappings to zib concepts are not defined. Instead mappings to the CiO data set have been added." />
+  <purpose value="This Flag resource represents the SurveillanceDecision building block for implementations following the information standard [CiO](https://informatiestandaarden.nictiz.nl/wiki/Landingspagina_Contra-indicaties_en_Overgevoeligheden). This profile is based on the Dutch zib ('Zorginformatiebouwsteen', i.e. Health and Care Information Model) SurveillanceDecision that will be part of the 2024 prepublication. Therefore it has no dependency on a corresponding nl-core profile and mappings to zib concepts are not defined. Instead mappings to the CiO data set have been added. It is the intention to derive this profile from a more general nl-core-SurveillanceDecision profile in the future." />
   <copyright value="Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise." />
   <fhirVersion value="4.0.1" />
   <mapping>
@@ -33,7 +33,7 @@
     <element id="Flag">
       <path value="Flag" />
       <short value="SurveillanceDecision" />
-      <comment value="Note that not all concepts within the SurveillanceDecision building block are mapped to elements within this profile. To convey the complete SurveillanceDecision building block, a Flag resource conforming to this profile SHOULD always be used together with an instance of the [cio-RegistrationData](http://nictiz.nl/fhir/StructureDefinition/cio-RegistrationData) profile wherein `Provenance.target` refers to the Flag resource." />
+      <comment value="Note that not all concepts within the SurveillanceDecision building block are mapped to elements within this profile. To convey the complete SurveillanceDecision building block, a Flag resource conforming to this profile SHOULD always be used together with an instance conforming to the [cio-RegistrationData](http://nictiz.nl/fhir/StructureDefinition/cio-RegistrationData) profile wherein `Provenance.target` refers to the Flag resource." />
       <alias value="BewakingBesluit" />
       <constraint>
         <key value="cio-SurveillanceDecision-1" />
@@ -148,7 +148,7 @@
     </element>
     <element id="Flag.status">
       <path value="Flag.status" />
-      <comment value="Sending systems that don't record an explicit status, SHOULD use the following guidance to infer a value from EndDateTime:&#xD;&#xA;&#xD;&#xA;* When the value of DecisionType is _385652002_, `.status` will be set to _active_.&#xD;&#xA;* When the value of DecisionType is _410546004_, `.status` will be set to _inactive_." />
+      <comment value="Sending systems that don't record an explicit status, SHOULD use the following guidance to infer a value from DecisionType:&#xD;&#xA;&#xD;&#xA;* When the value of DecisionType is _385652002_, `.status` will be set to _active_.&#xD;&#xA;* When the value of DecisionType is _410546004_, `.status` will be set to _inactive_." />
       <condition value="cio-SurveillanceDecision-1" />
       <condition value="cio-SurveillanceDecision-2" />
       <mapping>
