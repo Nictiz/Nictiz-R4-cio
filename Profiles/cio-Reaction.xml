@@ -203,10 +203,10 @@
       <alias value="ZekerheidStatus" />
       <binding>
         <strength value="required" />
-        <description value="Use ConceptMap ZekerheidStatusCodelijst_to_AllergyIntoleranceVerificationStatusCodes to translate terminology from the functional model to profile terminology in ValueSet AllergyIntoleranceVerificationStatusCodes" />
+        <description value="Use ConceptMap ZekerheidStatusCodelijst_to_AllergyIntoleranceVerificationStatus to translate terminology from the functional model to profile terminology in ValueSet AllergyIntoleranceVerificationStatusCodes" />
         <valueSet value="http://hl7.org/fhir/ValueSet/allergyintolerance-verification|4.0.1">
           <extension url="http://hl7.org/fhir/StructureDefinition/11179-permitted-value-conceptmap">
-            <valueCanonical value="http://nictiz.nl/fhir/ConceptMap/ZekerheidStatusCodelijst-to-AllergyIntoleranceVerificationStatusCodes" />
+            <valueCanonical value="http://nictiz.nl/fhir/ConceptMap/ZekerheidStatusCodelijst-to-AllergyIntoleranceVerificationStatus" />
           </extension>
         </valueSet>
       </binding>
@@ -234,7 +234,7 @@
       <max value="1" />
       <binding>
         <strength value="required" />
-        <description value="In addition to a coding from this ValueSet, the corresponding coding from the FHIR base ValueSet SHALL be communicated. The ConceptMap &lt;http://nictiz.nl/fhir/ConceptMap/ZekerheidStatusCodelijst-to-AllergyIntoleranceVerificationStatusCodes&gt; can be used to relate these two ValueSets." />
+        <description value="In addition to a coding from this ValueSet, the corresponding coding from the FHIR base ValueSet SHALL be communicated. The ConceptMap &lt;http://nictiz.nl/fhir/ConceptMap/ZekerheidStatusCodelijst-to-AllergyIntoleranceVerificationStatus&gt; can be used to relate these two ValueSets." />
         <valueSet value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.26.11.15--20231120120828" />
       </binding>
     </element>

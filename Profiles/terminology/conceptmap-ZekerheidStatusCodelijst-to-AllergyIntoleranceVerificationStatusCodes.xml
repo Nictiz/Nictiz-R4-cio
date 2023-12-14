@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ConceptMap xmlns="http://hl7.org/fhir">
-    <id value="ZekerheidStatusCodelijst-to-AllergyIntoleranceVerificationStatusCodes"/>
+    <id value="ZekerheidStatusCodelijst-to-AllergyIntoleranceVerificationStatus"/>
     <extension url="http://hl7.org/fhir/StructureDefinition/concept-bidirectional">
         <valueBoolean value="false"/>
     </extension>
-    <url value="http://nictiz.nl/fhir/ConceptMap/ZekerheidStatusCodelijst-to-AllergyIntoleranceVerificationStatusCodes"/>
+    <url value="http://nictiz.nl/fhir/ConceptMap/ZekerheidStatusCodelijst-to-AllergyIntoleranceVerificationStatus"/>
     <version value="1.0.0-beta.2"/>
-    <name value="ZekerheidStatusCodelijst_to_AllergyIntoleranceVerificationStatusCodes"/>
-    <title value="ZekerheidStatusCodelijst to AllergyIntoleranceVerificationStatusCodes"/>
+    <name value="ZekerheidStatusCodelijst_to_AllergyIntoleranceVerificationStatus"/>
+    <title value="ZekerheidStatusCodelijst to AllergyIntoleranceVerificationStatus"/>
     <status value="draft"/>
     <publisher value="Nictiz"/>
     <contact>
@@ -18,7 +18,7 @@
             <use value="work"/>
         </telecom>
     </contact>
-    <description value="Maps CertaintyStatus codes as found in the Contraindications and hypersensitivities (Dutch: Contra-indicaties en overgevoeligheden, abbreviated as CiO) information standard to &lt;http://hl7.org/fhir/ValueSet/allergyintolerance-verification&gt; as found in `AllergyIntolerance.verificationStatus` in FHIR R4."/>
+    <description value="Maps CertaintyStatus codes as found in the Contraindications and hypersensitivities (Dutch: Contra-indicaties en overgevoeligheden, abbreviated as CiO) information standard to &lt;http://hl7.org/fhir/ValueSet/allergyintolerance-verification&gt; as found in `AllergyIntolerance.verificationStatus` in FHIR R4.&#xD;&#xA;Note: the name of this ConceptMap slightly deviates from the guidelines, as 'AllergyIntoleranceVerificationStatusCodes' is abbreviated to 'AllergyIntoleranceVerificationStatus', because `ConceptMap.id` would overflow the 64 character limit otherwise."/>
     <copyright value="Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise."/>
     <sourceCanonical value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.26.11.15--20231120120828"/>
     <targetCanonical value="http://hl7.org/fhir/ValueSet/allergyintolerance-verification"/>
