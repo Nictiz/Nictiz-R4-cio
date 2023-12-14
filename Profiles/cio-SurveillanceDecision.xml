@@ -237,7 +237,7 @@
       <path value="Flag.period.start" />
       <short value="DecisionEffectiveDateTime" />
       <definition value="Moment (date and time) when the decision (of type 'start surveillance') should take effect." />
-      <comment value="When the value of DecisionType is _385652002_ the DecisionEffectiveDateTime should be mapped to `.period.start`. Whenever the DecisionType is _410546004_, the DecisionEffectiveDateTime should be mapped to `.period.end`, and the `.period.start` should not change (i.e. it should be the same as in the Flag resource that is referenced via `.extension:relationSurveillanceDecision`)." />
+      <comment value="When the value of DecisionType is _385652002_ the DecisionEffectiveDateTime SHALL be mapped to `.period.start`. Whenever the DecisionType is _410546004_, the DecisionEffectiveDateTime SHALL be mapped to `.period.end`, and the `.period.start` SHALL not change (i.e. it should be the same as in the Flag resource that is referenced via `.extension:relationSurveillanceDecision`)." />
       <alias value="BesluitIngangsDatumTijd" />
       <min value="1" />
       <mapping>
@@ -249,8 +249,8 @@
     <element id="Flag.period.end">
       <path value="Flag.period.end" />
       <short value="DecisionEffectiveDateTime" />
-      <definition value="Moment (date and time) when the decision (of type 'stop surveillance') should take effect." />
-      <comment value="When the value of DecisionType is _385652002_ the DecisionEffectiveDateTime should be mapped to `.period.start`. Whenever the DecisionType is _410546004_, the DecisionEffectiveDateTime should be mapped to `.period.end`, and the `.period.start` should not change (i.e. it should be the same as in the Flag resource that is referenced via `.extension:relationSurveillanceDecision`)." />
+      <definition value="Moment (date and time) when the decision (of type 'discontinue surveillance') should take effect." />
+      <comment value="When the value of DecisionType is _385652002_ the DecisionEffectiveDateTime SHALL be mapped to `.period.start`. Whenever the DecisionType is _410546004_, the DecisionEffectiveDateTime SHALL be mapped to `.period.end`, and the `.period.start` SHALL not change (i.e. it should be the same as in the Flag resource that is referenced via `.extension:relationSurveillanceDecision`)." />
       <alias value="BesluitIngangsDatumTijd" />
       <condition value="cio-SurveillanceDecision-1" />
       <mapping>

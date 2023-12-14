@@ -240,6 +240,7 @@
     </element>
     <element id="AllergyIntolerance.type">
       <path value="AllergyIntolerance.type" />
+      <comment value="Due to the required binding on this element it is not possible to use it to indicate that an AllergyIntolerance resource conforming to this profile represents an instance of the Reaction building block. Therefore the `.type` element from R5 (with a preferred binding) is implicitly pre-adopted via the [AllergyIntolerance-Type extension](http://nictiz.nl/fhir/StructureDefinition/ext-AllergyIntolerance-Type)." />
       <max value="0" />
     </element>
     <element id="AllergyIntolerance.code">
@@ -332,7 +333,7 @@
       <path value="AllergyIntolerance.reaction.extension.value[x]" />
       <short value="ExposureDateTime" />
       <definition value="Moment of exposure to the substance. This may be a vague date.&#xD;&#xA;&#xD;&#xA;If a user would like to provide more information about the chosen moment of exposure, they may use the comment field to do so." />
-      <comment value="Ideally, one would use the [openEHR-exposureDescription extension](http://hl7.org/fhir/StructureDefinition/openEHR-exposureDescription) to convey more information regarding the chosen moment of exposure. However, since there is only one Comment concept within the CiO data set, `.reaction.note.text` should be used instead.&#xD;&#xA;&#xD;&#xA;Note that even though this extension states it's related to the 'first exposure', it has been deemed suitable to represent the ExposureDateTime concept based on [this discussion on openEHR Discoure](https://discourse.openehr.org/t/meaning-of-initial-exposure-in-adverse-reaction-event/4679)." />
+      <comment value="Ideally, one would use the [openEHR-exposureDescription extension](http://hl7.org/fhir/StructureDefinition/openEHR-exposureDescription) to convey more information regarding the chosen moment of exposure. However, since there is only one Comment concept within the CiO data set, `.reaction.note.text` should be used instead.&#xD;&#xA;&#xD;&#xA;Note that even though this extension states it's related to the 'first exposure', it has been deemed suitable to represent the ExposureDateTime concept based on [this discussion on openEHR Discourse](https://discourse.openehr.org/t/meaning-of-initial-exposure-in-adverse-reaction-event/4679)." />
       <mapping>
         <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-817" />

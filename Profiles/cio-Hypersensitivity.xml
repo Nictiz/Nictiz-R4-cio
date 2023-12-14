@@ -224,6 +224,7 @@
     </element>
     <element id="AllergyIntolerance.type">
       <path value="AllergyIntolerance.type" />
+      <comment value="Due to the required binding on this element it is not possible to use it to indicate that an AllergyIntolerance resource conforming to this profile represents an instance of the Hypersensitivity building block. Therefore the `.type` element from R5 (with a preferred binding) is implicitly pre-adopted via the [AllergyIntolerance-Type extension](http://nictiz.nl/fhir/StructureDefinition/ext-AllergyIntolerance-Type)." />
       <max value="0" />
     </element>
     <element id="AllergyIntolerance.category">

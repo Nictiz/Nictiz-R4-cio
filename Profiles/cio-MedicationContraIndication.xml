@@ -157,7 +157,7 @@
     <element id="Flag.code">
       <path value="Flag.code" />
       <short value="AlertName" />
-      <definition value="A warning, other than a condition or problem. For example, a patient can be given an ‘Aggressive patient' alert. The warning can be entered in code (there are codes for frequently used alerts), but seeing the dynamic nature of the warnings cf. SARS and Ebola, these alerts will often be entered as free text." />
+      <definition value="A warning, other than a condition or problem. For example, a patient can be given an 'Aggressive patient' alert. The warning can be entered in code (there are codes for frequently used alerts), but seeing the dynamic nature of the warnings cf. SARS and Ebola, these alerts will often be entered as free text.&#xD;&#xA;&#xD;&#xA;Within the context of the information standard Contraindications and Hypersensitivities the AlertName will always be selected from the NCI list." />
       <alias value="AlertNaam" />
       <binding>
         <strength value="required" />
