@@ -20,9 +20,9 @@
   <copyright value="Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise." />
   <fhirVersion value="4.0.1" />
   <mapping>
-    <identity value="cio-dataset-200-beta2-20231215" />
-    <uri value="https://decor.nictiz.nl/pub/cio/cio-html-20231215T150542/ds-2.16.840.1.113883.2.4.3.11.60.26.1.2-2020-04-02T000000.html" />
-    <name value="ART-DECOR Dataset Contraindications and hypersensitivities 2.0.0-beta.2 20231215" />
+    <identity value="cio-dataset-200-beta2-20231214" />
+    <uri value="https://decor.nictiz.nl/pub/cio/cio-html-20231214T100742/ds-2.16.840.1.113883.2.4.3.11.60.26.1.2-2020-04-02T000000.html" />
+    <name value="ART-DECOR Dataset Contraindications and hypersensitivities 2.0.0-beta.2 20231214" />
   </mapping>
   <kind value="resource" />
   <abstract value="false" />
@@ -54,7 +54,7 @@
         <expression value="extension('http://hl7.org/fhir/StructureDefinition/flag-detail').exists() or extension('http://nictiz.nl/fhir/StructureDefinition/ext-Comment').exists()" />
       </constraint>
       <mapping>
-        <identity value="cio-dataset-200-beta2-20231215" />
+        <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-754" />
         <comment value="SurveillanceDecision" />
       </mapping>
@@ -83,12 +83,12 @@
       </type>
       <condition value="cio-SurveillanceDecision-3" />
       <mapping>
-        <identity value="cio-dataset-200-beta2-20231215" />
+        <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-765" />
         <comment value="Hypersensitivity" />
       </mapping>
       <mapping>
-        <identity value="cio-dataset-200-beta2-20231215" />
+        <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-766" />
         <comment value="Reaction" />
       </mapping>
@@ -106,7 +106,7 @@
       <path value="Flag.extension.value[x]" />
       <condition value="cio-SurveillanceDecision-2" />
       <mapping>
-        <identity value="cio-dataset-200-beta2-20231215" />
+        <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-828" />
         <comment value="RelationSurveillanceDecision" />
       </mapping>
@@ -129,7 +129,7 @@
       <alias value="Toelichting" />
       <condition value="cio-SurveillanceDecision-3" />
       <mapping>
-        <identity value="cio-dataset-200-beta2-20231215" />
+        <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-764" />
         <comment value="Comment" />
       </mapping>
@@ -141,7 +141,7 @@
       <alias value="Identificatienummer" />
       <min value="1" />
       <mapping>
-        <identity value="cio-dataset-200-beta2-20231215" />
+        <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-780" />
         <comment value="IdentificationNumber" />
       </mapping>
@@ -152,7 +152,7 @@
       <condition value="cio-SurveillanceDecision-1" />
       <condition value="cio-SurveillanceDecision-2" />
       <mapping>
-        <identity value="cio-dataset-200-beta2-20231215" />
+        <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-755" />
         <comment value="DecisionType (implicit)" />
       </mapping>
@@ -191,7 +191,7 @@
         <valueSet value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.26.11.27--20231129131119" />
       </binding>
       <mapping>
-        <identity value="cio-dataset-200-beta2-20231215" />
+        <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-761" />
         <comment value="UnsafeSubstance" />
       </mapping>
@@ -207,7 +207,7 @@
     <element id="Flag.code.extension:safeWithinUnsafeGroup.value[x]">
       <path value="Flag.code.extension.value[x]" />
       <mapping>
-        <identity value="cio-dataset-200-beta2-20231215" />
+        <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-762" />
         <comment value="SafeWithinUnsafeGroup" />
       </mapping>
@@ -216,7 +216,7 @@
       <path value="Flag.code.text" />
       <comment value="For guidance on how to populate this element, see the comment on `.code`." />
       <mapping>
-        <identity value="cio-dataset-200-beta2-20231215" />
+        <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-760" />
         <comment value="SubstanceForSurveillance (implicit)" />
       </mapping>
@@ -241,7 +241,7 @@
       <alias value="BesluitIngangsDatumTijd" />
       <min value="1" />
       <mapping>
-        <identity value="cio-dataset-200-beta2-20231215" />
+        <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-757" />
         <comment value="DecisionEffectiveDateTime" />
       </mapping>
@@ -254,7 +254,7 @@
       <alias value="BesluitIngangsDatumTijd" />
       <condition value="cio-SurveillanceDecision-1" />
       <mapping>
-        <identity value="cio-dataset-200-beta2-20231215" />
+        <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-757" />
         <comment value="DecisionEffectiveDateTime" />
       </mapping>
@@ -272,7 +272,7 @@
         <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole" />
       </type>
       <mapping>
-        <identity value="cio-dataset-200-beta2-20231215" />
+        <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-781" />
         <comment value="Author" />
       </mapping>

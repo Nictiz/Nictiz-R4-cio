@@ -20,9 +20,9 @@
   <copyright value="Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise." />
   <fhirVersion value="4.0.1" />
   <mapping>
-    <identity value="cio-dataset-200-beta2-20231215" />
-    <uri value="https://decor.nictiz.nl/pub/cio/cio-html-20231215T150542/ds-2.16.840.1.113883.2.4.3.11.60.26.1.2-2020-04-02T000000.html" />
-    <name value="ART-DECOR Dataset Contraindications and hypersensitivities 2.0.0-beta.2 20231215" />
+    <identity value="cio-dataset-200-beta2-20231214" />
+    <uri value="https://decor.nictiz.nl/pub/cio/cio-html-20231214T100742/ds-2.16.840.1.113883.2.4.3.11.60.26.1.2-2020-04-02T000000.html" />
+    <name value="ART-DECOR Dataset Contraindications and hypersensitivities 2.0.0-beta.2 20231214" />
   </mapping>
   <kind value="resource" />
   <abstract value="false" />
@@ -38,12 +38,12 @@
       <alias value="Overgevoeligheid" />
       <alias value="Reactie" />
       <mapping>
-        <identity value="cio-dataset-200-beta2-20231215" />
+        <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-456" />
         <comment value="Hypersensitivity" />
       </mapping>
       <mapping>
-        <identity value="cio-dataset-200-beta2-20231215" />
+        <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-464" />
         <comment value="Reaction" />
       </mapping>
@@ -63,12 +63,12 @@
     <element id="Condition.extension:conditionStatusDate.value[x]">
       <path value="Condition.extension.value[x]" />
       <mapping>
-        <identity value="cio-dataset-200-beta2-20231215" />
+        <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-807" />
         <comment value="ConditionStatusDate" />
       </mapping>
       <mapping>
-        <identity value="cio-dataset-200-beta2-20231215" />
+        <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-791" />
         <comment value="ConditionStatusDate" />
       </mapping>
@@ -88,12 +88,12 @@
       <definition value="Date (and time) at which the health professional obtained the diagnostic insight." />
       <alias value="DiagnostischInzichtDatum" />
       <mapping>
-        <identity value="cio-dataset-200-beta2-20231215" />
+        <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-799" />
         <comment value="DiagnosticInsightDate" />
       </mapping>
       <mapping>
-        <identity value="cio-dataset-200-beta2-20231215" />
+        <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-811" />
         <comment value="DiagnosticInsightDate" />
       </mapping>
@@ -113,12 +113,12 @@
         </valueSet>
       </binding>
       <mapping>
-        <identity value="cio-dataset-200-beta2-20231215" />
+        <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-806" />
         <comment value="ConditionPresence" />
       </mapping>
       <mapping>
-        <identity value="cio-dataset-200-beta2-20231215" />
+        <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-790" />
         <comment value="ConditionPresence" />
       </mapping>
@@ -155,12 +155,12 @@
         <valueSet value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.26.11.19--20231120131658" />
       </binding>
       <mapping>
-        <identity value="cio-dataset-200-beta2-20231215" />
+        <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-805" />
         <comment value="ConditionSeverity" />
       </mapping>
       <mapping>
-        <identity value="cio-dataset-200-beta2-20231215" />
+        <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-789" />
         <comment value="ConditionSeverity" />
       </mapping>
@@ -177,12 +177,12 @@
         <valueSet value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.26.11.31--20231207101023" />
       </binding>
       <mapping>
-        <identity value="cio-dataset-200-beta2-20231215" />
+        <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-796" />
         <comment value="DiagnosisName" />
       </mapping>
       <mapping>
-        <identity value="cio-dataset-200-beta2-20231215" />
+        <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-815" />
         <comment value="DiagnosisName" />
       </mapping>
@@ -193,12 +193,12 @@
       <definition value="A more detailed description of the name of the hypersensitivity or reaction in free text, when this detail is not available in the used code list." />
       <alias value="NadereSpecificatieDiagnoseNaam" />
       <mapping>
-        <identity value="cio-dataset-200-beta2-20231215" />
+        <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-797" />
         <comment value="FurtherSpecificationDiagnosisName" />
       </mapping>
       <mapping>
-        <identity value="cio-dataset-200-beta2-20231215" />
+        <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-816" />
         <comment value="FurtherSpecificationDiagnosisName" />
       </mapping>
@@ -233,12 +233,12 @@
         <code value="dateTime" />
       </type>
       <mapping>
-        <identity value="cio-dataset-200-beta2-20231215" />
+        <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-804" />
         <comment value="ConditionStartDateTime" />
       </mapping>
       <mapping>
-        <identity value="cio-dataset-200-beta2-20231215" />
+        <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-460" />
         <comment value="ConditionStartDateTime" />
       </mapping>
@@ -249,7 +249,7 @@
       <definition value="Date and time when the information was recorded in the patient's record." />
       <alias value="RegistratieDatumTijd" />
       <mapping>
-        <identity value="cio-dataset-200-beta2-20231215" />
+        <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-783" />
         <comment value="RegistrationDateTime" />
       </mapping>
@@ -267,7 +267,7 @@
         <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole" />
       </type>
       <mapping>
-        <identity value="cio-dataset-200-beta2-20231215" />
+        <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-781" />
         <comment value="Author" />
       </mapping>
@@ -286,12 +286,12 @@
         <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole" />
       </type>
       <mapping>
-        <identity value="cio-dataset-200-beta2-20231215" />
+        <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-800" />
         <comment value="Diagnostician" />
       </mapping>
       <mapping>
-        <identity value="cio-dataset-200-beta2-20231215" />
+        <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-809" />
         <comment value="Diagnostician" />
       </mapping>

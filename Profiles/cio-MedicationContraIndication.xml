@@ -20,9 +20,9 @@
   <copyright value="Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise." />
   <fhirVersion value="4.0.1" />
   <mapping>
-    <identity value="cio-dataset-200-beta2-20231215" />
-    <uri value="https://decor.nictiz.nl/pub/cio/cio-html-20231215T150542/ds-2.16.840.1.113883.2.4.3.11.60.26.1.2-2020-04-02T000000.html" />
-    <name value="ART-DECOR Dataset Contraindications and hypersensitivities 2.0.0-beta.2 20231215" />
+    <identity value="cio-dataset-200-beta2-20231214" />
+    <uri value="https://decor.nictiz.nl/pub/cio/cio-html-20231214T100742/ds-2.16.840.1.113883.2.4.3.11.60.26.1.2-2020-04-02T000000.html" />
+    <name value="ART-DECOR Dataset Contraindications and hypersensitivities 2.0.0-beta.2 20231214" />
   </mapping>
   <kind value="resource" />
   <abstract value="false" />
@@ -42,7 +42,7 @@
         <expression value="extension('http://nictiz.nl/fhir/StructureDefinition/ext-MedicationContraIndication.ReasonForEndingAlert').exists() implies period.end.exists()" />
       </constraint>
       <mapping>
-        <identity value="cio-dataset-200-beta2-20231215" />
+        <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-768" />
         <comment value="Alert" />
       </mapping>
@@ -60,7 +60,7 @@
       <path value="Flag.extension.value[x]" />
       <condition value="cio-MedicationContraIndication-1" />
       <mapping>
-        <identity value="cio-dataset-200-beta2-20231215" />
+        <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-778" />
         <comment value="ReasonForEndingAlert" />
       </mapping>
@@ -76,7 +76,7 @@
     <element id="Flag.extension:relationAlert.value[x]">
       <path value="Flag.extension.value[x]" />
       <mapping>
-        <identity value="cio-dataset-200-beta2-20231215" />
+        <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-881" />
         <comment value="RelationAlert" />
       </mapping>
@@ -96,7 +96,7 @@
       <definition value="Explanatory comments to the alert that can not be expressed in any of the other elements." />
       <alias value="Toelichting" />
       <mapping>
-        <identity value="cio-dataset-200-beta2-20231215" />
+        <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-775" />
         <comment value="Comment" />
       </mapping>
@@ -108,7 +108,7 @@
       <alias value="Identificatienummer" />
       <min value="1" />
       <mapping>
-        <identity value="cio-dataset-200-beta2-20231215" />
+        <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-780" />
         <comment value="IdentificationNumber" />
       </mapping>
@@ -117,7 +117,7 @@
       <path value="Flag.status" />
       <comment value="Sending systems that don't record an explicit status, SHOULD use the following guidance to infer a value from EndDateTime:&#xD;&#xA;&#xD;&#xA;* When EndDateTime is present and in the past, `.status` will be set to _inactive_.&#xD;&#xA;* When EndDateTime is absent, `.status` will be set to _active_.&#xD;&#xA;* When EndDateTime is present and in the future (which actually goes against both FHIR and zib definitions, but in a case where this might occur), `.status` will be set to _active_." />
       <mapping>
-        <identity value="cio-dataset-200-beta2-20231215" />
+        <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-769" />
         <comment value="EndDateTime (implicit, main mapping is on Flag.period.end)" />
       </mapping>
@@ -149,7 +149,7 @@
         </coding>
       </patternCodeableConcept>
       <mapping>
-        <identity value="cio-dataset-200-beta2-20231215" />
+        <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-774" />
         <comment value="AlertType" />
       </mapping>
@@ -164,7 +164,7 @@
         <valueSet value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.9.14.1--20200901000000" />
       </binding>
       <mapping>
-        <identity value="cio-dataset-200-beta2-20231215" />
+        <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-772" />
         <comment value="AlertName" />
       </mapping>
@@ -188,7 +188,7 @@
       <alias value="BeginDatumTijd" />
       <min value="1" />
       <mapping>
-        <identity value="cio-dataset-200-beta2-20231215" />
+        <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-773" />
         <comment value="StartDateTime" />
       </mapping>
@@ -200,7 +200,7 @@
       <alias value="EindDatumTijd" />
       <condition value="cio-MedicationContraIndication-1" />
       <mapping>
-        <identity value="cio-dataset-200-beta2-20231215" />
+        <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-769" />
         <comment value="EndDateTime" />
       </mapping>
@@ -218,7 +218,7 @@
         <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole" />
       </type>
       <mapping>
-        <identity value="cio-dataset-200-beta2-20231215" />
+        <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-781" />
         <comment value="Author" />
       </mapping>
