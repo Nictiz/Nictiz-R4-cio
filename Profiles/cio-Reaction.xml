@@ -161,7 +161,7 @@
       <alias value="AandoeningAanwezigheid" />
       <binding>
         <strength value="required" />
-        <description value="Use ConceptMap AandoeningAanwezigheidCodelijst_to_AllergyIntoleranceClinicalStatusCodes to translate terminology from the functional model to profile terminology in ValueSet AllergyIntoleranceClinicalStatusCodes" />
+        <description value="Use ConceptMap AandoeningAanwezigheidCodelijst_to_AllergyIntoleranceClinicalStatusCodes to translate terminology from the functional model to profile terminology in ValueSet AllergyIntoleranceClinicalStatusCodes." />
         <valueSet value="http://hl7.org/fhir/ValueSet/allergyintolerance-clinical|4.0.1">
           <extension url="http://hl7.org/fhir/StructureDefinition/11179-permitted-value-conceptmap">
             <valueCanonical value="http://nictiz.nl/fhir/ConceptMap/AandoeningAanwezigheidCodelijst-to-AllergyIntoleranceClinicalStatusCodes" />
@@ -203,7 +203,7 @@
       <alias value="ZekerheidStatus" />
       <binding>
         <strength value="required" />
-        <description value="Use ConceptMap ZekerheidStatusCodelijst_to_AllergyIntoleranceVerificationStatus to translate terminology from the functional model to profile terminology in ValueSet AllergyIntoleranceVerificationStatusCodes" />
+        <description value="Use ConceptMap ZekerheidStatusCodelijst_to_AllergyIntoleranceVerificationStatus to translate terminology from the functional model to profile terminology in ValueSet AllergyIntoleranceVerificationStatusCodes." />
         <valueSet value="http://hl7.org/fhir/ValueSet/allergyintolerance-verification|4.0.1">
           <extension url="http://hl7.org/fhir/StructureDefinition/11179-permitted-value-conceptmap">
             <valueCanonical value="http://nictiz.nl/fhir/ConceptMap/ZekerheidStatusCodelijst-to-AllergyIntoleranceVerificationStatus" />

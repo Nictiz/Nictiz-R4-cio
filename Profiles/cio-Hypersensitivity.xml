@@ -145,7 +145,7 @@
       <alias value="AandoeningAanwezigheid" />
       <binding>
         <strength value="required" />
-        <description value="Use ConceptMap AandoeningAanwezigheidCodelijst_to_AllergyIntoleranceClinicalStatusCodes to translate terminology from the functional model to profile terminology in ValueSet AllergyIntoleranceClinicalStatusCodes" />
+        <description value="Use ConceptMap AandoeningAanwezigheidCodelijst_to_AllergyIntoleranceClinicalStatusCodes to translate terminology from the functional model to profile terminology in ValueSet AllergyIntoleranceClinicalStatusCodes." />
         <valueSet value="http://hl7.org/fhir/ValueSet/allergyintolerance-clinical|4.0.1">
           <extension url="http://hl7.org/fhir/StructureDefinition/11179-permitted-value-conceptmap">
             <valueCanonical value="http://nictiz.nl/fhir/ConceptMap/AandoeningAanwezigheidCodelijst-to-AllergyIntoleranceClinicalStatusCodes" />
@@ -187,7 +187,7 @@
       <alias value="ZekerheidStatus" />
       <binding>
         <strength value="required" />
-        <description value="Use ConceptMap ZekerheidStatusCodelijst_to_AllergyIntoleranceVerificationStatus to translate terminology from the functional model to profile terminology in ValueSet AllergyIntoleranceVerificationStatusCodes" />
+        <description value="Use ConceptMap ZekerheidStatusCodelijst_to_AllergyIntoleranceVerificationStatus to translate terminology from the functional model to profile terminology in ValueSet AllergyIntoleranceVerificationStatusCodes." />
         <valueSet value="http://hl7.org/fhir/ValueSet/allergyintolerance-verification|4.0.1">
           <extension url="http://hl7.org/fhir/StructureDefinition/11179-permitted-value-conceptmap">
             <valueCanonical value="http://nictiz.nl/fhir/ConceptMap/ZekerheidStatusCodelijst-to-AllergyIntoleranceVerificationStatus" />
@@ -233,7 +233,7 @@
       <alias value="OvergevoeligheidCategorie" />
       <binding>
         <strength value="required" />
-        <description value="Use ConceptMap OvergevoeligheidCategorieCodelijst_to_AllergyIntoleranceCategory to translate terminology from the functional model to profile terminology in ValueSet AllergyIntoleranceCategory" />
+        <description value="Use ConceptMap OvergevoeligheidCategorieCodelijst_to_AllergyIntoleranceCategory to translate terminology from the functional model to profile terminology in ValueSet AllergyIntoleranceCategory." />
         <valueSet value="http://hl7.org/fhir/ValueSet/allergy-intolerance-category|4.0.1">
           <extension url="http://hl7.org/fhir/StructureDefinition/11179-permitted-value-conceptmap">
             <valueCanonical value="http://nictiz.nl/fhir/ConceptMap/OvergevoeligheidCategorieCodelijst-to-AllergyIntoleranceCategory" />
@@ -277,7 +277,7 @@
       <alias value="VerwachtRisicoBijBlootstelling" />
       <binding>
         <strength value="required" />
-        <description value="Use ConceptMap VerwachtRisicoBijBlootstelling_to_AllergyIntoleranceCriticality to translate terminology from the functional model to profile terminology in ValueSet AllergyIntoleranceCriticality" />
+        <description value="Use ConceptMap VerwachtRisicoBijBlootstelling_to_AllergyIntoleranceCriticality to translate terminology from the functional model to profile terminology in ValueSet AllergyIntoleranceCriticality." />
         <valueSet value="http://hl7.org/fhir/ValueSet/allergy-intolerance-criticality|4.0.1">
           <extension url="http://hl7.org/fhir/StructureDefinition/11179-permitted-value-conceptmap">
             <valueCanonical value="http://nictiz.nl/fhir/ConceptMap/VerwachtRisicoBijBlootstelling-to-AllergyIntoleranceCriticality" />
