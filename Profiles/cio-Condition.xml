@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="cio-Condition" />
+  <url value="http://nictiz.nl/fhir/StructureDefinition/cio-Condition" />
+  <version value="1.0.0-beta.2" />
+  <name value="CioCondition" />
+  <title value="cio Condition" />
+  <status value="draft" />
+  <publisher value="Nictiz" />
+  <contact>
+    <name value="Nictiz" />
+    <telecom>
+      <system value="url" />
+      <value value="https://www.nictiz.nl" />
+      <use value="work" />
+    </telecom>
+  </contact>
+  <description value="A condition is pathological or non-pathological state that presents with symptoms. It is 'that what the patient has'. A health professional can assign a (differential) diagnosis to the condition. The symptoms as well as the diagnostic insight with respect to the same condition may change over time." />
+  <purpose value="This Condition resource represents the Condition related concepts for implementations following the information standard [CiO](https://informatiestandaarden.nictiz.nl/wiki/Landingspagina_Contra-indicaties_en_Overgevoeligheden). This profile is largely based on the Dutch zib ('Zorginformatiebouwsteen', i.e. Health and Care Information Model) Condition that will be part of the 2024 prepublication, but also contains several concepts from the zibs Hypersensitivity and Reaction. Therefore it has no dependency on a corresponding nl-core profile and mappings to zib concepts are not defined. Instead mappings to the CiO data set have been added. It is the intention to derive this profile from a more general nl-core-Condition profile in the future." />
+  <copyright value="Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise." />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="cio-dataset-200-beta2-20231214" />
+    <uri value="https://decor.nictiz.nl/pub/cio/cio-html-20231214T100742/ds-2.16.840.1.113883.2.4.3.11.60.26.1.2-2020-04-02T000000.html" />
+    <name value="ART-DECOR Dataset Contraindications and hypersensitivities 2.0.0-beta.2 20231214" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Condition" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Condition" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Condition">
+      <path value="Condition" />
+      <short value="Condition / Hypersensitivity / Reaction" />
+      <comment value="This profile is always used together with an instance conforming to either the [cio-Hypersensitivity](http://nictiz.nl/fhir/StructureDefinition/cio-Hypersensitivity) or [cio-Reaction](http://nictiz.nl/fhir/StructureDefinition/cio-Reaction) profile. These latter profiles contain more detailed information on the hypersensitivity or reaction, while this Condition profile contains the underlying condition and diagnosis. Note however, that several concepts from the CiO data set are mapped to elements in both this profile and the cio-Hypersensitivity and cio-Reaction profiles, such as the Diagnostician or the RegistrationDateTime. This is done to populate all instances with as much relevant information as possible, hence making instances conforming to these three profiles more valuable to be considered in isolation. If such an overlapping element is present in one of the resources, it SHALL also be present in the other resource, having the same value. Moreover, both the AllergyIntolerance and Condition resources SHALL be linked via the same Provenance resource, as they functionally are considered as a single entity." />
+      <alias value="Aandoening" />
+      <alias value="Overgevoeligheid" />
+      <alias value="Reactie" />
+      <mapping>
+        <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-456" />
+        <comment value="Hypersensitivity" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-464" />
+        <comment value="Reaction" />
+      </mapping>
+    </element>
+    <element id="Condition.extension">
+      <path value="Condition.extension" />
+      <min value="1" />
+    </element>
+    <element id="Condition.extension:conditionStatusDate">
+      <path value="Condition.extension" />
+      <sliceName value="conditionStatusDate" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-ConditionStatusDate" />
+      </type>
+    </element>
+    <element id="Condition.extension:conditionStatusDate.value[x]">
+      <path value="Condition.extension.value[x]" />
+      <mapping>
+        <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-807" />
+        <comment value="ConditionStatusDate" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-791" />
+        <comment value="ConditionStatusDate" />
+      </mapping>
+    </element>
+    <element id="Condition.extension:diagnosticInsightDate">
+      <path value="Condition.extension" />
+      <sliceName value="diagnosticInsightDate" />
+      <min value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/condition-assertedDate" />
+      </type>
+    </element>
+    <element id="Condition.extension:diagnosticInsightDate.value[x]">
+      <path value="Condition.extension.value[x]" />
+      <short value="DiagnosticInsightDate" />
+      <definition value="Date (and time) at which the health professional obtained the diagnostic insight." />
+      <alias value="DiagnostischInzichtDatum" />
+      <mapping>
+        <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-799" />
+        <comment value="DiagnosticInsightDate" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-811" />
+        <comment value="DiagnosticInsightDate" />
+      </mapping>
+    </element>
+    <element id="Condition.clinicalStatus">
+      <path value="Condition.clinicalStatus" />
+      <short value="ConditionPresence" />
+      <definition value="The presence of the condition. This is independent of the diagnostic insight for the condition. The presence status indicates whether the condition is present, no longer present (after having been present) or has been proven not to be present (not having been present)." />
+      <alias value="AandoeningAanwezigheid" />
+      <binding>
+        <strength value="required" />
+        <description value="Use ConceptMap AandoeningAanwezigheidCodelijst_to_ConditionClinicalStatusCodes to translate terminology from the functional model to profile terminology in ValueSet ConditionClinicalStatusCodes." />
+        <valueSet value="http://hl7.org/fhir/ValueSet/condition-clinical|4.0.1">
+          <extension url="http://hl7.org/fhir/StructureDefinition/11179-permitted-value-conceptmap">
+            <valueCanonical value="http://nictiz.nl/fhir/ConceptMap/AandoeningAanwezigheidCodelijst-to-ConditionClinicalStatusCodes" />
+          </extension>
+        </valueSet>
+      </binding>
+      <mapping>
+        <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-806" />
+        <comment value="ConditionPresence" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-790" />
+        <comment value="ConditionPresence" />
+      </mapping>
+    </element>
+    <element id="Condition.clinicalStatus.coding">
+      <path value="Condition.clinicalStatus.coding" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="1" />
+    </element>
+    <element id="Condition.clinicalStatus.coding:conditionPresenceCodelist">
+      <path value="Condition.clinicalStatus.coding" />
+      <sliceName value="conditionPresenceCodelist" />
+      <min value="1" />
+      <max value="1" />
+      <binding>
+        <strength value="required" />
+        <description value="In addition to a coding from this ValueSet, the corresponding coding from the FHIR base ValueSet SHALL be communicated. The ConceptMap &lt;http://nictiz.nl/fhir/ConceptMap/AandoeningAanwezigheidCodelijst-to-ConditionClinicalStatusCodes&gt; can be used to relate these two ValueSets." />
+        <valueSet value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.26.11.20--20231120132919" />
+      </binding>
+    </element>
+    <element id="Condition.severity">
+      <path value="Condition.severity" />
+      <short value="ConditionSeverity" />
+      <definition value="Indication of the severity of the condition. A condition may cause few or mild symptoms and yet be serious, but the reverse is also possible." />
+      <alias value="AandoeningErnst" />
+      <binding>
+        <strength value="required" />
+        <valueSet value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.26.11.19--20231120131658" />
+      </binding>
+      <mapping>
+        <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-805" />
+        <comment value="ConditionSeverity" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-789" />
+        <comment value="ConditionSeverity" />
+      </mapping>
+    </element>
+    <element id="Condition.code">
+      <path value="Condition.code" />
+      <short value="DiagnosisName" />
+      <definition value="The term with associated code that the health professional selects from the used code list. Represents the hypersensitivity as interpretation of the condition." />
+      <comment value="Ideally, in the context of a Hypersensitivity or Reaction the DiagnosisName (cio-dataelement-20-796 and cio-dataelement-20-815, respectively) would be mapped on `AllergyIntolerance.code` (in the cio-Hypersensitivity and cio-Reaction profile, respectively) instead of including it in the Condition resource. However, the cardinality of `AllergyIntolerance.code` is 0..1, and both Substance/CausativeSubstance (cio-dataelement-20-793/cio-dataelement-20-466) and DiagnosisName semantically map to that element in their respective profiles. Moreover these data elements describe the hypersensitivity or reaction from different points of view, namely from the substance that triggers a reaction upon exposure or has triggered a reaction (Substance/CausativeSubstance), and the underlying diagnosis of the hypersensitivity or reaction (DiagnosisName). Therefore they cannot be viewed as representations of the same concept with slightly different granularity and it is thus not allowed to include them both as different `AllergyIntolerance.code.coding`s. As Substance/CausativeSubstance contain more detailed information regarding the nature of the hypersensitivity/reaction, it has been chosen to map these directly to `AllergyIntolerance.code`, while DiagnosisName is mapped to `Condition.code` instead." />
+      <alias value="DiagnoseNaam" />
+      <min value="1" />
+      <binding>
+        <strength value="required" />
+        <valueSet value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.26.11.31--20231207101023" />
+      </binding>
+      <mapping>
+        <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-796" />
+        <comment value="DiagnosisName" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-815" />
+        <comment value="DiagnosisName" />
+      </mapping>
+    </element>
+    <element id="Condition.code.text">
+      <path value="Condition.code.text" />
+      <short value="FurtherSpecificationDiagnosisName" />
+      <definition value="A more detailed description of the name of the hypersensitivity or reaction in free text, when this detail is not available in the used code list." />
+      <alias value="NadereSpecificatieDiagnoseNaam" />
+      <mapping>
+        <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-797" />
+        <comment value="FurtherSpecificationDiagnosisName" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-816" />
+        <comment value="FurtherSpecificationDiagnosisName" />
+      </mapping>
+    </element>
+    <element id="Condition.subject">
+      <path value="Condition.subject" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Patient" />
+        <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient" />
+      </type>
+    </element>
+    <element id="Condition.onset[x]">
+      <path value="Condition.onset[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="1" />
+    </element>
+    <element id="Condition.onset[x]:onsetDateTime">
+      <path value="Condition.onset[x]" />
+      <sliceName value="onsetDateTime" />
+      <short value="ConditionStartDateTime" />
+      <definition value="Date and possibly time when the condition started. One will often use the start date of the first symptom. It may be a vague date." />
+      <alias value="AandoeningBeginDatumTijd" />
+      <min value="1" />
+      <type>
+        <code value="dateTime" />
+      </type>
+      <mapping>
+        <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-804" />
+        <comment value="ConditionStartDateTime" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-460" />
+        <comment value="ConditionStartDateTime" />
+      </mapping>
+    </element>
+    <element id="Condition.recordedDate">
+      <path value="Condition.recordedDate" />
+      <short value="RegistrationDateTime" />
+      <definition value="Date and time when the information was recorded in the patient's record." />
+      <alias value="RegistratieDatumTijd" />
+      <mapping>
+        <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-783" />
+        <comment value="RegistrationDateTime" />
+      </mapping>
+    </element>
+    <element id="Condition.recorder">
+      <path value="Condition.recorder" />
+      <short value="Author" />
+      <definition value="The person who is responsible for entering the information in the patient's record." />
+      <alias value="Auteur" />
+      <type>
+        <code value="Reference" />
+        <profile value="http://nictiz.nl/fhir/StructureDefinition/pattern-NlCoreHealthProfessionalReference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Practitioner" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/PractitionerRole" />
+        <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole" />
+      </type>
+      <mapping>
+        <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-781" />
+        <comment value="Author" />
+      </mapping>
+    </element>
+    <element id="Condition.asserter">
+      <path value="Condition.asserter" />
+      <short value="Diagnostician" />
+      <definition value="The health professional that acquired the diagnostic insight regarding the hypersensitivity or reaction. This can be a different individual than the person who recorded the diagnostic insight." />
+      <alias value="DiagnoseSteller" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <profile value="http://nictiz.nl/fhir/StructureDefinition/pattern-NlCoreHealthProfessionalReference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Practitioner" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/PractitionerRole" />
+        <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole" />
+      </type>
+      <mapping>
+        <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-800" />
+        <comment value="Diagnostician" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-809" />
+        <comment value="Diagnostician" />
+      </mapping>
+    </element>
+  </differential>
+</StructureDefinition>
