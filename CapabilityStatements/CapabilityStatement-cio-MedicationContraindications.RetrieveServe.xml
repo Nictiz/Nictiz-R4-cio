@@ -55,7 +55,7 @@
       <searchParam>
         <name value="target"/>
         <type value="reference"/>
-        <documentation value="This search parameter does not need to be supported on its own, only in conjunction with a `_revInclude` on the Flag resource. It has been added here for completeness."/>
+        <documentation value="This search parameter does not need to be supported on its own, only in conjunction with a `_revinclude` on the Flag resource. It has been added here for completeness."/>
       </searchParam>
     </resource>
     <resource>
@@ -136,7 +136,7 @@
       <searchParam>
         <name value="target"/>
         <type value="reference"/>
-        <documentation value="This search parameter does not need to be supported on its own, only in conjunction with a `_revInclude` on the Flag resource. It has been added here for completeness."/>
+        <documentation value="This search parameter does not need to be supported on its own, only in conjunction with a `_revinclude` on the Flag resource. It has been added here for completeness."/>
       </searchParam>
     </resource>
     <resource>
