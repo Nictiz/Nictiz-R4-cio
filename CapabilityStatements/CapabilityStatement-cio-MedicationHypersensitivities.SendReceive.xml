@@ -84,6 +84,13 @@
         <code value="create"/>
       </interaction>
     </resource>
+    <resource>
+      <type value="RelatedPerson"/>
+      <supportedProfile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-ContactPerson"/>
+      <interaction>
+        <code value="create"/>
+      </interaction>
+    </resource>
     <interaction>
       <code value="search-system"/>
     </interaction>
@@ -144,6 +151,13 @@
     <resource>
       <type value="Organization"/>
       <supportedProfile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization"/>
+      <interaction>
+        <code value="create"/>
+      </interaction>
+    </resource>
+    <resource>
+      <type value="RelatedPerson"/>
+      <supportedProfile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-ContactPerson"/>
       <interaction>
         <code value="create"/>
       </interaction>
