@@ -109,23 +109,6 @@
         <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-RelationCondition" />
       </type>
     </element>
-    <element id="AllergyIntolerance.extension:relationHypersensitivity">
-      <path value="AllergyIntolerance.extension" />
-      <sliceName value="relationHypersensitivity" />
-      <type>
-        <code value="Extension" />
-        <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-RelationHypersensitivity" />
-      </type>
-    </element>
-    <element id="AllergyIntolerance.extension:relationHypersensitivity.value[x]">
-      <path value="AllergyIntolerance.extension.value[x]" />
-      <definition value="Relation to the hypersensitivity which was used to create a new, modified registration (as a result of changing one or more data elements or inactivating the hypersensitivity)." />
-      <mapping>
-        <identity value="cio-dataset-200-beta2-20231214" />
-        <map value="cio-dataelement-20-734" />
-        <comment value="RelationHypersensitivity" />
-      </mapping>
-    </element>
     <element id="AllergyIntolerance.identifier">
       <path value="AllergyIntolerance.identifier" />
       <short value="IdentificationNumber" />

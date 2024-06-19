@@ -98,6 +98,18 @@
         <comment value="DiagnosticInsightDate" />
       </mapping>
     </element>
+    <element id="Condition.identifier">
+      <path value="Condition.identifier" />
+      <short value="IdentificationNumber" />
+      <definition value="Globally unique number that identifies the instantiation of the information model. The number is composed of an identification of the issuer organization and a unique number assigned by this organization." />
+      <alias value="Identificatienummer" />
+      <min value="1" />
+      <mapping>
+        <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-780" />
+        <comment value="IdentificationNumber" />
+      </mapping>
+    </element>
     <element id="Condition.clinicalStatus">
       <path value="Condition.clinicalStatus" />
       <short value="ConditionPresence" />

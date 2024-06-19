@@ -126,22 +126,6 @@
         <comment value="RelationHypersensitivity" />
       </mapping>
     </element>
-    <element id="AllergyIntolerance.extension:relationReaction">
-      <path value="AllergyIntolerance.extension" />
-      <sliceName value="relationReaction" />
-      <type>
-        <code value="Extension" />
-        <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-Reaction.RelationReaction" />
-      </type>
-    </element>
-    <element id="AllergyIntolerance.extension:relationReaction.value[x]">
-      <path value="AllergyIntolerance.extension.value[x]" />
-      <mapping>
-        <identity value="cio-dataset-200-beta2-20231214" />
-        <map value="cio-dataelement-20-879" />
-        <comment value="RelationReaction" />
-      </mapping>
-    </element>
     <element id="AllergyIntolerance.identifier">
       <path value="AllergyIntolerance.identifier" />
       <short value="IdentificationNumber" />
