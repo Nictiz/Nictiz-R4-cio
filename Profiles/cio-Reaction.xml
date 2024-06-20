@@ -140,44 +140,14 @@
     </element>
     <element id="AllergyIntolerance.clinicalStatus">
       <path value="AllergyIntolerance.clinicalStatus" />
-      <short value="ConditionPresence" />
-      <definition value="The presence of the condition. This is independent of the diagnostic insight for the condition. The presence status indicates whether the condition is present, no longer present (after having been present) or has been proven not to be present (not having been present)." />
-      <alias value="AandoeningAanwezigheid" />
+      <max value="0" />
       <binding>
         <strength value="required" />
-        <description value="Use ConceptMap AandoeningAanwezigheidCodelijst_to_AllergyIntoleranceClinicalStatusCodes to translate terminology from the functional model to profile terminology in ValueSet AllergyIntoleranceClinicalStatusCodes." />
         <valueSet value="http://hl7.org/fhir/ValueSet/allergyintolerance-clinical|4.0.1">
           <extension url="http://hl7.org/fhir/StructureDefinition/11179-permitted-value-conceptmap">
             <valueCanonical value="http://nictiz.nl/fhir/ConceptMap/AandoeningAanwezigheidCodelijst-to-AllergyIntoleranceClinicalStatusCodes" />
           </extension>
         </valueSet>
-      </binding>
-      <mapping>
-        <identity value="cio-dataset-200-beta2-20231214" />
-        <map value="cio-dataelement-20-790" />
-        <comment value="ConditionPresence" />
-      </mapping>
-    </element>
-    <element id="AllergyIntolerance.clinicalStatus.coding">
-      <path value="AllergyIntolerance.clinicalStatus.coding" />
-      <slicing>
-        <discriminator>
-          <type value="value" />
-          <path value="$this" />
-        </discriminator>
-        <rules value="open" />
-      </slicing>
-      <min value="1" />
-    </element>
-    <element id="AllergyIntolerance.clinicalStatus.coding:conditionPresenceCodelist">
-      <path value="AllergyIntolerance.clinicalStatus.coding" />
-      <sliceName value="conditionPresenceCodelist" />
-      <min value="1" />
-      <max value="1" />
-      <binding>
-        <strength value="required" />
-        <description value="In addition to a coding from this ValueSet, the corresponding coding from the FHIR base ValueSet SHALL be communicated. The ConceptMap &lt;http://nictiz.nl/fhir/ConceptMap/AandoeningAanwezigheidCodelijst-to-AllergyIntoleranceClinicalStatusCodes&gt; can be used to relate these two ValueSets." />
-        <valueSet value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.26.11.20--20231120132919" />
       </binding>
     </element>
     <element id="AllergyIntolerance.verificationStatus">
