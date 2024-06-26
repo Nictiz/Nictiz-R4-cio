@@ -51,31 +51,6 @@
       <path value="Provenance.target" />
       <condition value="cio-RegistrationData-1" />
     </element>
-    <element id="Provenance.occurred[x]">
-      <path value="Provenance.occurred[x]" />
-      <slicing>
-        <discriminator>
-          <type value="type" />
-          <path value="$this" />
-        </discriminator>
-        <rules value="open" />
-      </slicing>
-    </element>
-    <element id="Provenance.occurred[x]:occurredDateTime">
-      <path value="Provenance.occurred[x]" />
-      <sliceName value="occurredDateTime" />
-      <short value="DecisionDateTime" />
-      <definition value="The date/time on which the activity occurred, for instance:&#xD;&#xA;* Moment (date and time) when the surveillance decision was made." />
-      <alias value="BesluitDatumTijd" />
-      <type>
-        <code value="dateTime" />
-      </type>
-      <mapping>
-        <identity value="cio-dataset-200-beta2-20231214" />
-        <map value="cio-dataelement-20-756" />
-        <comment value="DecisionDateTime" />
-      </mapping>
-    </element>
     <element id="Provenance.recorded">
       <path value="Provenance.recorded" />
       <short value="RegistrationDateTime" />
