@@ -52,24 +52,19 @@
       <path value="Condition.extension" />
       <min value="1" />
     </element>
-    <element id="Condition.extension:conditionStatusDate">
+    <element id="Condition.extension:StatusDate">
       <path value="Condition.extension" />
-      <sliceName value="conditionStatusDate" />
+      <sliceName value="StatusDate" />
       <type>
         <code value="Extension" />
         <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-ConditionStatusDate" />
       </type>
     </element>
-    <element id="Condition.extension:conditionStatusDate.value[x]">
+    <element id="Condition.extension:StatusDate.value[x]">
       <path value="Condition.extension.value[x]" />
       <mapping>
         <identity value="cio-dataset-200-beta2-20231214" />
-        <map value="cio-dataelement-20-807" />
-        <comment value="ConditionStatusDate" />
-      </mapping>
-      <mapping>
-        <identity value="cio-dataset-200-beta2-20231214" />
-        <map value="cio-dataelement-20-791" />
+        <map value="cio-dataelement-20-908" />
         <comment value="ConditionStatusDate" />
       </mapping>
     </element>
@@ -98,12 +93,28 @@
         <comment value="DiagnosticInsightDate" />
       </mapping>
     </element>
+    <element id="Condition.extension:extMedicationHypersensitivityIdentifier">
+      <path value="Condition.extension" />
+      <sliceName value="extMedicationHypersensitivityIdentifier" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-MedicationHypersensitivityIdentifier" />
+      </type>
+      <isModifier value="false" />
+    </element>
+    <element id="Condition.extension:extMedicationHypersensitivityIdentifier.value[x]">
+      <path value="Condition.extension.value[x]" />
+      <mapping>
+        <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-888" />
+        <comment value="Identification" />
+      </mapping>
+    </element>
     <element id="Condition.identifier">
       <path value="Condition.identifier" />
       <short value="IdentificationNumber" />
       <definition value="Globally unique number that identifies the instantiation of the information model. The number is composed of an identification of the issuer organization and a unique number assigned by this organization." />
       <alias value="Identificatienummer" />
-      <min value="1" />
       <mapping>
         <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-780" />
@@ -112,13 +123,13 @@
     </element>
     <element id="Condition.clinicalStatus">
       <path value="Condition.clinicalStatus" />
-      <short value="ConditionPresence" />
-      <definition value="The presence of the condition. This is independent of the diagnostic insight for the condition. The presence status indicates whether the condition is present, no longer present (after having been present) or has been proven not to be present (not having been present)." />
-      <alias value="AandoeningAanwezigheid" />
+      <short value="Course" />
+      <definition value="The course of the condition. This is independent of the diagnostic insight for the condition. The course indicates how the condition is developing: such as stable, progression, remission, etc.." />
+      <alias value="Beloop" />
       <binding>
         <strength value="required" />
-        <description value="Use ConceptMap AandoeningAanwezigheidCodelijst_to_ConditionClinicalStatusCodes to translate terminology from the functional model to profile terminology in ValueSet ConditionClinicalStatusCodes." />
-        <valueSet value="http://hl7.org/fhir/ValueSet/condition-clinical|4.0.1">
+        <description value="Codes defining the course of the condition." />
+        <valueSet value="http://hl7.org/fhir/ValueSet/">
           <extension url="http://hl7.org/fhir/StructureDefinition/11179-permitted-value-conceptmap">
             <valueCanonical value="http://nictiz.nl/fhir/ConceptMap/AandoeningAanwezigheidCodelijst-to-ConditionClinicalStatusCodes" />
           </extension>
@@ -126,13 +137,8 @@
       </binding>
       <mapping>
         <identity value="cio-dataset-200-beta2-20231214" />
-        <map value="cio-dataelement-20-806" />
-        <comment value="ConditionPresence" />
-      </mapping>
-      <mapping>
-        <identity value="cio-dataset-200-beta2-20231214" />
-        <map value="cio-dataelement-20-790" />
-        <comment value="ConditionPresence" />
+        <map value="cio-dataelement-20-909" />
+        <comment value="Course" />
       </mapping>
     </element>
     <element id="Condition.clinicalStatus.coding">
@@ -146,35 +152,30 @@
       </slicing>
       <min value="1" />
     </element>
-    <element id="Condition.clinicalStatus.coding:conditionPresenceCodelist">
+    <element id="Condition.clinicalStatus.coding:CourseCodelist">
       <path value="Condition.clinicalStatus.coding" />
-      <sliceName value="conditionPresenceCodelist" />
+      <sliceName value="CourseCodelist" />
       <min value="1" />
       <max value="1" />
       <binding>
         <strength value="required" />
         <description value="In addition to a coding from this ValueSet, the corresponding coding from the FHIR base ValueSet SHALL be communicated. The ConceptMap &lt;http://nictiz.nl/fhir/ConceptMap/AandoeningAanwezigheidCodelijst-to-ConditionClinicalStatusCodes&gt; can be used to relate these two ValueSets." />
-        <valueSet value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.26.11.20--20231120132919" />
+        <valueSet value="http://hl7.org/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.26.11.37--20240502063006" />
       </binding>
     </element>
     <element id="Condition.severity">
       <path value="Condition.severity" />
-      <short value="ConditionSeverity" />
+      <short value="Severity" />
       <definition value="Indication of the severity of the condition. A condition may cause few or mild symptoms and yet be serious, but the reverse is also possible." />
-      <alias value="AandoeningErnst" />
+      <alias value="Ernst" />
       <binding>
         <strength value="required" />
         <valueSet value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.26.11.19--20231120131658" />
       </binding>
       <mapping>
         <identity value="cio-dataset-200-beta2-20231214" />
-        <map value="cio-dataelement-20-805" />
-        <comment value="ConditionSeverity" />
-      </mapping>
-      <mapping>
-        <identity value="cio-dataset-200-beta2-20231214" />
-        <map value="cio-dataelement-20-789" />
-        <comment value="ConditionSeverity" />
+        <map value="cio-dataelement-20-910" />
+        <comment value="Severity" />
       </mapping>
     </element>
     <element id="Condition.code">
@@ -234,15 +235,15 @@
       </slicing>
       <min value="1" />
     </element>
-    <element id="Condition.onset[x]:onsetDateTime">
+    <element id="Condition.onset[x]:onsetPeriod">
       <path value="Condition.onset[x]" />
-      <sliceName value="onsetDateTime" />
+      <sliceName value="onsetPeriod" />
       <short value="ConditionStartDateTime" />
       <definition value="Date and possibly time when the condition started. One will often use the start date of the first symptom. It may be a vague date." />
       <alias value="AandoeningBeginDatumTijd" />
       <min value="1" />
       <type>
-        <code value="dateTime" />
+        <code value="Period" />
       </type>
       <mapping>
         <identity value="cio-dataset-200-beta2-20231214" />
@@ -253,6 +254,43 @@
         <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-460" />
         <comment value="ConditionStartDateTime" />
+      </mapping>
+    </element>
+    <element id="Condition.onset[x]:onsetPeriod.start">
+      <path value="Condition.onset[x].start" />
+      <short value="startDateTime" />
+      <definition value="The start date and time of the interval." />
+      <alias value="startDatumTijd" />
+      <mapping>
+        <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-954" />
+        <comment value="startDateTime" />
+      </mapping>
+    </element>
+    <element id="Condition.onset[x]:onsetPeriod.end">
+      <path value="Condition.onset[x].end" />
+      <short value="endDateTime" />
+      <definition value="The end date and time of the interval." />
+      <alias value="eindDatumTijd" />
+      <mapping>
+        <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-955" />
+        <comment value="endDateTime" />
+      </mapping>
+    </element>
+    <element id="Condition.onset[x]:onsetString">
+      <path value="Condition.onset[x]" />
+      <sliceName value="onsetString" />
+      <short value="Duration" />
+      <definition value="The duration of the interval in appropriate units of time ( e.g. days or hours, etc." />
+      <alias value="tijdsDuur" />
+      <type>
+        <code value="string" />
+      </type>
+      <mapping>
+        <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-956" />
+        <comment value="Duration" />
       </mapping>
     </element>
     <element id="Condition.recordedDate">
@@ -306,6 +344,21 @@
         <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-809" />
         <comment value="Diagnostician" />
+      </mapping>
+    </element>
+    <element id="Condition.note">
+      <path value="Condition.note" />
+      <max value="1" />
+    </element>
+    <element id="Condition.note.text">
+      <path value="Condition.note.text" />
+      <short value="Comment" />
+      <definition value="A comment in free text with respect to the condition, that is not represented by the other data elements in the information model." />
+      <alias value="Toelichting" />
+      <mapping>
+        <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-911" />
+        <comment value="Comment" />
       </mapping>
     </element>
   </differential>

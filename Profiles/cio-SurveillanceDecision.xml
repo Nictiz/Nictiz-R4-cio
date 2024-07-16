@@ -134,12 +134,25 @@
         <comment value="Comment" />
       </mapping>
     </element>
+    <element id="Flag.extension:extMedicationHypersensitivityIdentifier">
+      <path value="Flag.extension" />
+      <sliceName value="extMedicationHypersensitivityIdentifier" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-MedicationHypersensitivityIdentifier" />
+      </type>
+      <isModifier value="false" />
+      <mapping>
+        <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-888" />
+        <comment value="Identification" />
+      </mapping>
+    </element>
     <element id="Flag.identifier">
       <path value="Flag.identifier" />
       <short value="IdentificationNumber" />
       <definition value="Globally unique number that identifies the instantiation of the information model. The number is composed of an identification of the issuer organization and a unique number assigned by this organization." />
       <alias value="Identificatienummer" />
-      <min value="1" />
       <mapping>
         <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-780" />
