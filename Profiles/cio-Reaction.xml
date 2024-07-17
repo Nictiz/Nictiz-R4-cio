@@ -126,16 +126,16 @@
         <comment value="RelationHypersensitivity" />
       </mapping>
     </element>
-    <element id="AllergyIntolerance.extension:extMedicationHypersensitivityIdentifier">
+    <element id="AllergyIntolerance.extension:medicationHypersensitivityIdentifier">
       <path value="AllergyIntolerance.extension" />
-      <sliceName value="extMedicationHypersensitivityIdentifier" />
+      <sliceName value="medicationHypersensitivityIdentifier" />
       <type>
         <code value="Extension" />
         <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-MedicationHypersensitivityIdentifier" />
       </type>
       <isModifier value="false" />
     </element>
-    <element id="AllergyIntolerance.extension:extMedicationHypersensitivityIdentifier.value[x]">
+    <element id="AllergyIntolerance.extension:medicationHypersensitivityIdentifier.value[x]">
       <path value="AllergyIntolerance.extension.value[x]" />
       <mapping>
         <identity value="cio-dataset-200-beta2-20231214" />

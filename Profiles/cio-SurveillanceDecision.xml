@@ -134,9 +134,9 @@
         <comment value="Comment" />
       </mapping>
     </element>
-    <element id="Flag.extension:extMedicationHypersensitivityIdentifier">
+    <element id="Flag.extension:medicationHypersensitivityIdentifier">
       <path value="Flag.extension" />
-      <sliceName value="extMedicationHypersensitivityIdentifier" />
+      <sliceName value="medicationHypersensitivityIdentifier" />
       <type>
         <code value="Extension" />
         <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-MedicationHypersensitivityIdentifier" />

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
-  <id value="ext-MedicationHypersensitivityIdentifier" />
-  <url value="http://nictiz.nl/fhir/StructureDefinition/ext-MedicationHypersensitivityIdentifier" />
-  <version value="1.0.0-beta.2" />
+  <id value="ext-MedicationHypersensitivity.Identifier" />
+  <url value="http://nictiz.nl/fhir/StructureDefinition/ext-MedicationHypersensitivity.Identifier" />
+  <version value="1.0.0-beta.3" />
   <name value="ExtMedicationHypersensitivityIdentifier" />
-  <title value="ext MedicationHypersensitivityIdentifier" />
+  <title value="ext MedicationHypersensitivity.Identifier" />
   <status value="draft" />
   <publisher value="Nictiz" />
   <contact>
@@ -15,15 +15,23 @@
       <use value="work" />
     </telecom>
   </contact>
-  <description value="An extension to provide the globally unique number that identifies the Medication Hypersensitivity building blocks. The number is composed of an identification of the issuer organization and a unique number assigned by this organization." />
-  <purpose value="This extension represents the Medication Hypersensitivity Identifier concept, as Medication Hypersensitivity lacks an explicit resource representation. It aligns with the implementations following the information standard [CiO](https://informatiestandaarden.nictiz.nl/wiki/Landingspagina_Contra-indicaties_en_Overgevoeligheden)." />
+  <description value="An extension to provide a globally unique identifier that identifies a set of Medication Hypersensitivity building blocks that belong to one medication hypersensitity. The identifier is composed of the system of an issuing organization and a unique identifier assigned by this organization." />
+  <purpose value="This extension represents the MedicationHypersensitivity.Identifier concept, as Medication Hypersensitivity lacks an explicit resource representation. It aligns with the implementations following the information standard [CiO](https://informatiestandaarden.nictiz.nl/wiki/Landingspagina_Contra-indicaties_en_Overgevoeligheden)." />
   <copyright value="Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise." />
   <fhirVersion value="4.0.1" />
   <kind value="complex-type" />
   <abstract value="false" />
   <context>
     <type value="element" />
-    <expression value="Resource" />
+    <expression value="Flag" />
+  </context>
+  <context>
+    <type value="element" />
+    <expression value="AllergyIntollerance" />
+  </context>
+  <context>
+    <type value="element" />
+    <expression value="Condition" />
   </context>
   <type value="Extension" />
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
@@ -35,13 +43,24 @@
     </element>
     <element id="Extension.url">
       <path value="Extension.url" />
-      <fixedUri value="http://nictiz.nl/fhir/StructureDefinition/ext-MedicationHypersensitivityIdentifier" />
+      <fixedUri value="http://nictiz.nl/fhir/StructureDefinition/ext-MedicationHypersensitivity.Identifier" />
     </element>
     <element id="Extension.value[x]">
       <path value="Extension.value[x]" />
+      <short value="Medication Hypersensitivity Identifier" />
+      <definition value="The identifier of the medication hypensensitivity that this resource belongs to. This identifier is used to group the disparate resources that belong to a single medication hypersensitivity." />
+      <alias value="Geneesmiddelovergevoeligheid identificatie" />
       <type>
         <code value="Identifier" />
       </type>
+    </element>
+    <element id="Extension.value[x].system">
+      <path value="Extension.value[x].system" />
+      <min value="1" />
+    </element>
+    <element id="Extension.value[x].value">
+      <path value="Extension.value[x].value" />
+      <min value="1" />
     </element>
   </differential>
 </StructureDefinition>
