@@ -2,7 +2,7 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="cio-MedicationContraIndication" />
   <url value="http://nictiz.nl/fhir/StructureDefinition/cio-MedicationContraIndication" />
-  <version value="1.0.0-beta.2" />
+  <version value="1.0.0-beta.3" />
   <name value="CioMedicationContraIndication" />
   <title value="cio MedicationContraIndication" />
   <status value="draft" />
@@ -38,31 +38,13 @@
       <constraint>
         <key value="cio-MedicationContraIndication-1" />
         <severity value="error" />
-        <human value="If Flag.extension:reasonForEndingAlert exists, Flag.period.end SHALL exist." />
-        <expression value="extension('http://nictiz.nl/fhir/StructureDefinition/ext-MedicationContraIndication.ReasonForEndingAlert').exists() implies period.end.exists()" />
+        <human value="If Flag.period.end exists, Flag.extension:comment SHALL exist." />
+        <expression value="period.end.exists() implies extension('http://nictiz.nl/fhir/StructureDefinition/ext-Comment').exists()" />
       </constraint>
       <mapping>
         <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-768" />
         <comment value="Alert" />
-      </mapping>
-    </element>
-    <element id="Flag.extension:reasonForEndingAlert">
-      <path value="Flag.extension" />
-      <sliceName value="reasonForEndingAlert" />
-      <type>
-        <code value="Extension" />
-        <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-MedicationContraIndication.ReasonForEndingAlert" />
-      </type>
-      <condition value="cio-MedicationContraIndication-1" />
-    </element>
-    <element id="Flag.extension:reasonForEndingAlert.value[x]">
-      <path value="Flag.extension.value[x]" />
-      <condition value="cio-MedicationContraIndication-1" />
-      <mapping>
-        <identity value="cio-dataset-200-beta2-20231214" />
-        <map value="cio-dataelement-20-778" />
-        <comment value="ReasonForEndingAlert" />
       </mapping>
     </element>
     <element id="Flag.extension:relationAlert">
@@ -89,11 +71,12 @@
         <code value="Extension" />
         <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-Comment" />
       </type>
+      <condition value="cio-MedicationContraIndication-1" />
     </element>
     <element id="Flag.extension:comment.value[x]">
       <path value="Flag.extension.value[x]" />
       <short value="Comment" />
-      <definition value="Explanatory comments to the alert that can not be expressed in any of the other elements." />
+      <definition value="Explanatory comments to the alert that can not be expressed in any of the other elements, e.g. reason for ending the alert." />
       <alias value="Toelichting" />
       <mapping>
         <identity value="cio-dataset-200-beta2-20231214" />

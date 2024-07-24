@@ -2,7 +2,7 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="cio-SurveillanceDecision" />
   <url value="http://nictiz.nl/fhir/StructureDefinition/cio-SurveillanceDecision" />
-  <version value="1.0.0-beta.2" />
+  <version value="1.0.0-beta.3" />
   <name value="CioSurveillanceDecision" />
   <title value="cio SurveillanceDecision" />
   <status value="draft" />
@@ -147,6 +147,10 @@
         <map value="cio-dataelement-20-888" />
         <comment value="Identification" />
       </mapping>
+    </element>
+    <element id="Flag.extension:medicationHypersensitivityIdentifier.url">
+      <path value="Flag.extension.url" />
+      <fixedUri value="http://nictiz.nl/fhir/StructureDefinition/ext-MedicationHypersensitivityIdentifier" />
     </element>
     <element id="Flag.identifier">
       <path value="Flag.identifier" />

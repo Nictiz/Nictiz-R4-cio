@@ -2,7 +2,7 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="cio-Reaction" />
   <url value="http://nictiz.nl/fhir/StructureDefinition/cio-Reaction" />
-  <version value="1.0.0-beta.2" />
+  <version value="1.0.0-beta.3" />
   <name value="CioReaction" />
   <title value="cio Reaction" />
   <status value="draft" />
@@ -134,6 +134,10 @@
         <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-MedicationHypersensitivityIdentifier" />
       </type>
       <isModifier value="false" />
+    </element>
+    <element id="AllergyIntolerance.extension:medicationHypersensitivityIdentifier.url">
+      <path value="AllergyIntolerance.extension.url" />
+      <fixedUri value="http://nictiz.nl/fhir/StructureDefinition/ext-MedicationHypersensitivityIdentifier" />
     </element>
     <element id="AllergyIntolerance.extension:medicationHypersensitivityIdentifier.value[x]">
       <path value="AllergyIntolerance.extension.value[x]" />

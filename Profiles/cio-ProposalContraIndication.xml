@@ -2,7 +2,7 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="cio-ProposalContraIndication" />
   <url value="http://nictiz.nl/fhir/StructureDefinition/cio-ProposalContraIndication" />
-  <version value="1.0.0-beta.2" />
+  <version value="1.0.0-beta.3" />
   <name value="CioProposalContraIndication" />
   <title value="cio ProposalContraIndication" />
   <status value="draft" />
@@ -36,10 +36,10 @@
       <comment value="Note that not all concepts within the Alert building block are mapped to elements within this profile. To convey the complete Alert building block, a Flag resource conforming to this profile SHOULD always be used together with an instance conforming to the [cio-RegistrationData](http://nictiz.nl/fhir/StructureDefinition/cio-RegistrationData) profile wherein `Provenance.target` refers to the Flag resource." />
       <alias value="VoorstelContraIndicatie" />
       <constraint>
-        <key value="cio-MedicationContraIndication-1" />
+        <key value="cio-ProposalContraIndication-1" />
         <severity value="error" />
-        <human value="If Flag.extension:reasonForEndingAlert exists, Flag.period.end SHALL exist." />
-        <expression value="extension('http://nictiz.nl/fhir/StructureDefinition/ext-MedicationContraIndication.ReasonForEndingAlert').exists() implies period.end.exists()" />
+        <human value="If Flag.period.end exists, Flag.extension:comment SHALL exist." />
+        <expression value="period.end.exists() implies extension('http://nictiz.nl/fhir/StructureDefinition/ext-Comment').exists()" />
       </constraint>
       <mapping>
         <identity value="cio-dataset-200-beta2-20231214" />
@@ -67,46 +67,6 @@
         <map value="cio-dataelement-20-940" />
       </mapping>
     </element>
-    <element id="Flag.extension:RelationMedicationAgreement">
-      <path value="Flag.extension" />
-      <sliceName value="RelationMedicationAgreement" />
-      <type>
-        <code value="Extension" />
-        <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-ProposalMedicationContraIndication.RelationMedicationAgreement" />
-      </type>
-      <isModifier value="false" />
-    </element>
-    <element id="Flag.extension:RelationMedicationAgreement.url">
-      <path value="Flag.extension.url" />
-      <fixedUri value="http://nictiz.nl/fhir/StructureDefinition/ext-ProposalMedicationContraIndication.RelationMedicationAgreement" />
-    </element>
-    <element id="Flag.extension:RelationMedicationAgreement.value[x]">
-      <path value="Flag.extension.value[x]" />
-      <mapping>
-        <identity value="cio-dataset-200-beta2-20231214" />
-        <map value="cio-dataelement-20-938" />
-        <comment value="RelationMedicationAgreement" />
-      </mapping>
-    </element>
-    <element id="Flag.extension:reasonForEndingAlert">
-      <path value="Flag.extension" />
-      <sliceName value="reasonForEndingAlert" />
-      <type>
-        <code value="Extension" />
-        <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-MedicationContraIndication.ReasonForEndingAlert" />
-      </type>
-      <condition value="cio-MedicationContraIndication-1" />
-      <isModifier value="false" />
-    </element>
-    <element id="Flag.extension:reasonForEndingAlert.value[x]">
-      <path value="Flag.extension.value[x]" />
-      <condition value="cio-MedicationContraIndication-1" />
-      <mapping>
-        <identity value="cio-dataset-200-beta2-20231214" />
-        <map value="cio-dataelement-20-778" />
-        <comment value="ReasonForEndingAlert" />
-      </mapping>
-    </element>
     <element id="Flag.extension:relationAlert">
       <path value="Flag.extension" />
       <sliceName value="relationAlert" />
@@ -124,17 +84,18 @@
         <comment value="RelationAlert" />
       </mapping>
     </element>
-    <element id="Flag.extension:Comment">
+    <element id="Flag.extension:comment">
       <path value="Flag.extension" />
-      <sliceName value="Comment" />
+      <sliceName value="comment" />
       <max value="1" />
       <type>
         <code value="Extension" />
         <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-Comment" />
       </type>
+      <condition value="cio-ProposalContraIndication-1" />
       <isModifier value="false" />
     </element>
-    <element id="Flag.extension:Comment.value[x]">
+    <element id="Flag.extension:comment.value[x]">
       <path value="Flag.extension.value[x]" />
       <short value="Comment" />
       <definition value="Explanatory comments to the alert that can not be expressed in any of the other elements." />
@@ -143,6 +104,23 @@
         <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-775" />
         <comment value="Comment" />
+      </mapping>
+    </element>
+    <element id="Flag.extension:relationMedicationAgreement">
+      <path value="Flag.extension" />
+      <sliceName value="relationMedicationAgreement" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-RelationMedicationAgreement" />
+      </type>
+      <isModifier value="false" />
+    </element>
+    <element id="Flag.extension:relationMedicationAgreement.value[x]">
+      <path value="Flag.extension.value[x]" />
+      <mapping>
+        <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-938" />
+        <comment value="RelationMedicationAgreement" />
       </mapping>
     </element>
     <element id="Flag.identifier">
@@ -240,7 +218,7 @@
       <short value="EndDateTime" />
       <definition value="The date and time at which the described condition was retracted as a warning. This can be an exact date and time, or a rough indication of the date (such as only the year, or the month and the year)." />
       <alias value="EindDatumTijd" />
-      <condition value="cio-MedicationContraIndication-1" />
+      <condition value="cio-ProposalContraIndication-1" />
       <mapping>
         <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-769" />
