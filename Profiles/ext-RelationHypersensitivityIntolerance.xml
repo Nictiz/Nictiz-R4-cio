@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
-  <id value="ext-RelationHypersensitivity" />
-  <url value="http://nictiz.nl/fhir/StructureDefinition/ext-RelationHypersensitivity" />
+  <id value="ext-RelationHypersensitivityIntolerance" />
+  <url value="http://nictiz.nl/fhir/StructureDefinition/ext-RelationHypersensitivityIntolerance" />
   <version value="1.0.0-beta.2" />
-  <name value="ExtRelationHypersensitivity" />
-  <title value="ext RelationHypersensitivity" />
+  <name value="ExtRelationHypersensitivityIntolerance" />
+  <title value="ext RelationHypersensitivityIntolerance" />
   <status value="draft" />
   <publisher value="Nictiz" />
   <contact>
@@ -15,8 +15,8 @@
       <use value="work" />
     </telecom>
   </contact>
-  <description value="An extension to provide a relation from a hypersensitivity to the hypersensitivity which was used to create a new, modified registration (as a result of changing one or more data elements or inactivating the hypersensitivity), or from a reaction to the underlying hypersensitivity." />
-  <purpose value="This extension represents the RelationHypersensitivity concept for implementations following the information standard [CiO](https://informatiestandaarden.nictiz.nl/wiki/Landingspagina_Contra-indicaties_en_Overgevoeligheden)." />
+  <description value="An extension to provide a relation from a hypersensitivity intolerance to the hypersensitivity intolerance which was used to create a new, modified registration (as a result of changing one or more data elements or inactivating the hypersensitivity intolerance), or from a reaction to the underlying hypersensitivity intolerance." />
+  <purpose value="This extension represents the RelationHypersensitivityIntolerance concept for implementations following the information standard [CiO](https://informatiestandaarden.nictiz.nl/wiki/Landingspagina_Contra-indicaties_en_Overgevoeligheden)." />
   <copyright value="Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise." />
   <fhirVersion value="4.0.1" />
   <kind value="complex-type" />
@@ -35,16 +35,16 @@
     </element>
     <element id="Extension.url">
       <path value="Extension.url" />
-      <fixedUri value="http://nictiz.nl/fhir/StructureDefinition/ext-RelationHypersensitivity" />
+      <fixedUri value="http://nictiz.nl/fhir/StructureDefinition/ext-RelationHypersensitivityIntolerance" />
     </element>
     <element id="Extension.value[x]">
       <path value="Extension.value[x]" />
-      <short value="RelationHypersensitivity" />
-      <definition value="Relation from a hypersensitivity to the hypersensitivity which was used to create a new, modified registration (as a result of changing one or more data elements or inactivating the hypersensitivity), or from a reaction to the underlying hypersensitivity." />
+      <short value="RelationHypersensitivityIntolerance" />
+      <definition value="Relation from a hypersensitivity intolerance to the hypersensitivity intolerance which was used to create a new, modified registration (as a result of changing one or more data elements or inactivating the hypersensitivity intolerance), or from a reaction to the underlying hypersensitivity intolerance." />
       <alias value="RelatieOvergevoeligheid" />
       <type>
         <code value="Reference" />
-        <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/cio-Hypersensitivity" />
+        <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/cio-HypersensitivityIntolerance" />
       </type>
     </element>
   </differential>

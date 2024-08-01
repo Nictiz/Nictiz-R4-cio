@@ -43,23 +43,10 @@
     </element>
     <element id="Extension.value[x]">
       <path value="Extension.value[x]" />
-      <short value="TimeInterval" />
-      <definition value="A time period defined by a start and end date and optionally time." />
-      <comment value="A Period specifies a range of time; the context of use will specify whether the entire range applies (e.g. &quot;the patient was an inpatient of the hospital for this time range&quot;) or one value from the range applies (e.g. &quot;give to the patient between these two times&quot;).&#xA;&#xA;Period is not used for a duration (a measure of elapsed time). See [Duration](datatypes.html#Duration)." />
       <type>
         <code value="Period" />
-        <profile value="http://nictiz.nl/fhir/StrcutureDefinition/zib-TimeInterval" />
+        <profile value="http://nictiz.nl/fhir/StructureDefinition/zib-TimeInterval" />
       </type>
-    </element>
-    <element id="Extension.value[x].start">
-      <path value="Extension.value[x].start" />
-      <short value="startDateTime" />
-      <definition value="The start date and time of the interval." />
-    </element>
-    <element id="Extension.value[x].end">
-      <path value="Extension.value[x].end" />
-      <short value="endDateTime" />
-      <definition value="The end date and time of the interval." />
     </element>
   </differential>
 </StructureDefinition>

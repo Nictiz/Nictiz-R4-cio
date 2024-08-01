@@ -2,7 +2,7 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="ext-RelationCondition" />
   <url value="http://nictiz.nl/fhir/StructureDefinition/ext-RelationCondition" />
-  <version value="1.0.0-beta.2" />
+  <version value="1.0.0-beta.3" />
   <name value="ExtRelationCondition" />
   <title value="ext RelationCondition" />
   <status value="draft" />
@@ -15,8 +15,8 @@
       <use value="work" />
     </telecom>
   </contact>
-  <description value="An extension to provide a relation from a hypersensitivity or reaction to the underlying condition and diagnosis." />
-  <purpose value="This extension represents a link from the AllergyIntolerance to the Condition resource, both representing the Hypersensitivity and Reaction building blocks for implementations following the information standard [CiO](https://informatiestandaarden.nictiz.nl/wiki/Landingspagina_Contra-indicaties_en_Overgevoeligheden). The latter resource contains the concepts within the Hypersensitivity and Reaction building blocks related to the underlying condition and diagnosis." />
+  <description value="An extension to provide a relation from a hypersensitivity intolerance, reaction and symptom to the underlying condition and diagnosis." />
+  <purpose value="This extension represents a link from the AllergyIntolerance to the Condition resource, both representing the HypersensitivityIntolerance and Reaction building blocks for implementations following the information standard [CiO](https://informatiestandaarden.nictiz.nl/wiki/Landingspagina_Contra-indicaties_en_Overgevoeligheden). The latter resource contains the concepts within the HypersensitivityIntolerance and Reaction building blocks related to the underlying condition and diagnosis." />
   <copyright value="Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise." />
   <fhirVersion value="4.0.1" />
   <kind value="complex-type" />
@@ -39,7 +39,6 @@
     </element>
     <element id="Extension.value[x]">
       <path value="Extension.value[x]" />
-      <definition value="Relation from a hypersensitivity or reaction to the underlying condition and diagnosis." />
       <type>
         <code value="Reference" />
         <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/cio-Condition" />

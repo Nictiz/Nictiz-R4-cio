@@ -15,7 +15,7 @@
       <use value="work" />
     </telecom>
   </contact>
-  <description value="The decision to start or end surveillance with respect to a substance or group of substances that is undesirable as treatment for the patient." />
+  <description value="The decision to initiate or terminate surveillance for a substance or group of substances that may cause an adverse reaction in the patient." />
   <purpose value="This Flag resource represents the SurveillanceDecision building block for implementations following the information standard [CiO](https://informatiestandaarden.nictiz.nl/wiki/Landingspagina_Contra-indicaties_en_Overgevoeligheden). This profile is based on the Dutch zib ('Zorginformatiebouwsteen', i.e. Health and Care Information Model) SurveillanceDecision that will be part of the 2024 prepublication. Therefore it has no dependency on a corresponding nl-core profile and mappings to zib concepts are not defined. Instead mappings to the CiO data set have been added. It is the intention to derive this profile from a more general nl-core-SurveillanceDecision profile in the future." />
   <copyright value="Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise." />
   <fhirVersion value="4.0.1" />
@@ -50,7 +50,7 @@
       <constraint>
         <key value="cio-SurveillanceDecision-3" />
         <severity value="error" />
-        <human value="A decision basis SHALL be given, either as a reference to a hypersensitivity or reaction in Flag.extension:decisionBasis, or as text in Flag.extension:comment." />
+        <human value="A decision basis SHALL be given, either as a reference to a hypersensitivity intolerance reaction in Flag.extension:decisionBasis, or as text in Flag.extension:comment." />
         <expression value="extension('http://hl7.org/fhir/StructureDefinition/flag-detail').exists() or extension('http://nictiz.nl/fhir/StructureDefinition/ext-Comment').exists()" />
       </constraint>
       <mapping>
@@ -71,14 +71,14 @@
     </element>
     <element id="Flag.extension:decisionBasis.value[x]">
       <path value="Flag.extension.value[x]" />
-      <short value="Hypersensitivity / Reaction" />
-      <definition value="The hypersensitivity or reaction in the patient as reason for the surveillance decision." />
-      <comment value="Whenever the surveillance decision has been taken on another basis than a hypersensitivity or reaction, that basis SHALL be communicated via `.extension:comment`." />
+      <short value="HypersensitivityIntolerance / Reaction" />
+      <definition value="The hypersensitivity intolerance reaction in the patient as reason for the surveillance decision." />
+      <comment value="Whenever the surveillance decision has been taken on another basis than a hypersensitivity intolerance reaction, that basis SHALL be communicated via `.extension:comment`." />
       <alias value="Overgevoeligheid" />
       <alias value="Reactie" />
       <type>
         <code value="Reference" />
-        <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/cio-Hypersensitivity" />
+        <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/cio-HypersensitivityIntolerance" />
         <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/cio-Reaction" />
       </type>
       <condition value="cio-SurveillanceDecision-3" />
@@ -125,7 +125,7 @@
       <path value="Flag.extension.value[x]" />
       <short value="Comment" />
       <definition value="Textual explanation of the surveillance decision which cannot be expressed in any of the other fields." />
-      <comment value="Whenever the surveillance decision has been taken on another basis than a hypersensitivity or reaction, that basis SHALL be communicated via this element." />
+      <comment value="Whenever the surveillance decision has been taken on another basis than a hypersensitivity intolerance reaction, that basis SHALL be communicated via this element." />
       <alias value="Toelichting" />
       <condition value="cio-SurveillanceDecision-3" />
       <mapping>
@@ -139,7 +139,7 @@
       <sliceName value="medicationHypersensitivityIdentifier" />
       <type>
         <code value="Extension" />
-        <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-MedicationHypersensitivityIdentifier" />
+        <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-MedicationHypersensitivity.Identifier" />
       </type>
       <isModifier value="false" />
       <mapping>
@@ -151,6 +151,23 @@
     <element id="Flag.extension:medicationHypersensitivityIdentifier.url">
       <path value="Flag.extension.url" />
       <fixedUri value="http://nictiz.nl/fhir/StructureDefinition/ext-MedicationHypersensitivityIdentifier" />
+    </element>
+    <element id="Flag.extension:surveillanceDecision">
+      <path value="Flag.extension" />
+      <sliceName value="surveillanceDecision" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-SurveillanceDecision.SurveillanceDecision" />
+      </type>
+      <isModifier value="false" />
+    </element>
+    <element id="Flag.extension:surveillanceDecision.value[x]">
+      <path value="Flag.extension.value[x]" />
+      <mapping>
+        <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-916" />
+        <comment value="SurveillanceDecision" />
+      </mapping>
     </element>
     <element id="Flag.identifier">
       <path value="Flag.identifier" />

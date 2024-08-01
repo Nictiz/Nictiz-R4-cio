@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
-  <id value="ext-MedicationContraIndication.ReasonForEndingAlert" />
-  <url value="http://nictiz.nl/fhir/StructureDefinition/ext-MedicationContraIndication.ReasonForEndingAlert" />
-  <version value="1.0.0-beta.2" />
-  <name value="ExtMedicationContraIndicationReasonForEndingAlert" />
-  <title value="ext MedicationContraIndication.ReasonForEndingAlert" />
+  <id value="ext-Communication.Payload.ContentCodeableConcept" />
+  <url value="https://example.org/fhir/StructureDefinition/ext-Communication.Payload.ContentCodeableConcept" />
+  <version value="1.0.0-beta.3" />
+  <name value="ExtCommunicationPayloadContentCodeableConcept" />
+  <title value="ext Communication.Payload.ContentCodeableConcept" />
   <status value="draft" />
   <publisher value="Nictiz" />
   <contact>
@@ -15,35 +15,28 @@
       <use value="work" />
     </telecom>
   </contact>
-  <description value="An extension to provide a reason for ending the alert." />
-  <purpose value="This extension represents the ReasonForEndingAlert concept for implementations following the information standard [CiO](https://informatiestandaarden.nictiz.nl/wiki/Landingspagina_Contra-indicaties_en_Overgevoeligheden)." />
+  <description value="An extension that pre-adopts R5, changing the string data type of .payload.content to a CodeableConcept." />
+  <purpose value="This extension represents the PayloadContentCodeableConcept concept for implementations following the information standard [CiO](https://informatiestandaarden.nictiz.nl/wiki/Landingspagina_Contra-indicaties_en_Overgevoeligheden)." />
   <copyright value="Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise." />
   <fhirVersion value="4.0.1" />
   <kind value="complex-type" />
   <abstract value="false" />
   <context>
     <type value="element" />
-    <expression value="Flag" />
+    <expression value="Communication.payload.content[x]" />
   </context>
   <type value="Extension" />
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
   <derivation value="constraint" />
   <differential>
-    <element id="Extension">
-      <path value="Extension" />
-      <max value="1" />
-    </element>
     <element id="Extension.url">
       <path value="Extension.url" />
-      <fixedUri value="http://nictiz.nl/fhir/StructureDefinition/ext-MedicationContraIndication.ReasonForEndingAlert" />
+      <fixedUri value="https://example.org/fhir/StructureDefinition/ext-Communication.Payload.ContentCodeableConcept" />
     </element>
     <element id="Extension.value[x]">
       <path value="Extension.value[x]" />
-      <short value="ReasonForEndingAlert" />
-      <definition value="Reason for ending the alert." />
-      <alias value="RedenBeëindigingAlert" />
       <type>
-        <code value="string" />
+        <code value="CodeableConcept" />
       </type>
     </element>
   </differential>

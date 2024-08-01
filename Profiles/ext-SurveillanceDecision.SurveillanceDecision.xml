@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
-  <id value="ext-Reaction.RelationReaction" />
-  <url value="http://nictiz.nl/fhir/StructureDefinition/ext-Reaction.RelationReaction" />
-  <version value="1.0.0-beta.2" />
-  <name value="ExtReactionRelationReaction" />
-  <title value="ext Reaction.RelationReaction" />
+  <id value="ext-SurveillanceDecision.SurveillanceDecision" />
+  <url value="http://nictiz.nl/fhir/StructureDefinition/ext-SurveillanceDecision.SurveillanceDecision" />
+  <version value="1.0.0-beta.3" />
+  <name value="ExtSurveillanceDecisionSurveillanceDecision" />
+  <title value="ext SurveillanceDecision.SurveillanceDecision" />
   <status value="draft" />
   <publisher value="Nictiz" />
   <contact>
@@ -15,15 +15,15 @@
       <use value="work" />
     </telecom>
   </contact>
-  <description value="An extension to provide a relation to the reaction which was used to create a new, modified registration (as a result of changing one or more data elements or inactivating the reaction)." />
-  <purpose value="This extension represents the RelationReaction concept for implementations following the information standard [CiO](https://informatiestandaarden.nictiz.nl/wiki/Landingspagina_Contra-indicaties_en_Overgevoeligheden)." />
+  <description value="An extension to provide a reason for the surveillance decision: to start or end the surveillance." />
+  <purpose value="This extension represents the SurveillanceDecision concept for implementations following the information standard [CiO](https://informatiestandaarden.nictiz.nl/wiki/Landingspagina_Contra-indicaties_en_Overgevoeligheden)." />
   <copyright value="Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise." />
   <fhirVersion value="4.0.1" />
   <kind value="complex-type" />
   <abstract value="false" />
   <context>
     <type value="element" />
-    <expression value="AllergyIntolerance" />
+    <expression value="Flag" />
   </context>
   <type value="Extension" />
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
@@ -35,16 +35,15 @@
     </element>
     <element id="Extension.url">
       <path value="Extension.url" />
-      <fixedUri value="http://nictiz.nl/fhir/StructureDefinition/ext-Reaction.RelationReaction" />
+      <fixedUri value="http://nictiz.nl/fhir/StructureDefinition/ext-SurveillanceDecision.SurveillanceDecision" />
     </element>
     <element id="Extension.value[x]">
       <path value="Extension.value[x]" />
-      <short value="RelationReaction" />
-      <definition value="Relation to the reaction which was used to create a new, modified registration (as a result of changing one or more data elements or inactivating the reaction)." />
-      <alias value="RelatieReactie" />
+      <short value="SurveillanceDecision" />
+      <definition value="Reason for the surveillance decision: to start or end the surveillance." />
+      <alias value="BesluitReden" />
       <type>
-        <code value="Reference" />
-        <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/cio-Reaction" />
+        <code value="code" />
       </type>
     </element>
   </differential>

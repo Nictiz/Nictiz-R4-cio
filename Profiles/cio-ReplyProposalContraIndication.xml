@@ -94,15 +94,35 @@
     </element>
     <element id="Communication.payload.content[x]">
       <path value="Communication.payload.content[x]" />
-      <short value="ResponseProposalContraIndication" />
-      <definition value="A response to a proposal for registering, retracting, or modifying a medication contraindication. The proposed medication contraindication is either accepted or rejected." />
-      <alias value="BeantwoordingVoorstelContraIndicatie" />
       <type>
         <code value="string" />
       </type>
+    </element>
+    <element id="Communication.payload.content[x].extension">
+      <path value="Communication.payload.content[x].extension" />
+      <min value="1" />
+    </element>
+    <element id="Communication.payload.content[x].extension:contentContentCodeableConcept">
+      <path value="Communication.payload.content[x].extension" />
+      <sliceName value="contentContentCodeableConcept" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="https://example.org/fhir/StructureDefinition/ext-Communication.Payload.ContentCodeableConcept" />
+      </type>
+      <isModifier value="false" />
+    </element>
+    <element id="Communication.payload.content[x].extension:contentContentCodeableConcept.value[x]">
+      <path value="Communication.payload.content[x].extension.value[x]" />
+      <short value="ResponseProposalContraIndication" />
+      <definition value="A response to a proposal for registering, retracting, or modifying a medication contraindication. The proposed medication contraindication is either accepted or rejected." />
+      <alias value="BeantwoordingVoorstelContraIndicatie" />
+      <min value="1" />
       <binding>
         <strength value="required" />
         <description value="Detail codes identifying specific communication issues." />
+        <valueSet value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.26.11.38--20240709000000" />
       </binding>
       <mapping>
         <identity value="cio-dataset-200-beta2-20231214" />

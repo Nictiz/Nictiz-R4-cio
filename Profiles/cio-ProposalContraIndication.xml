@@ -117,6 +117,10 @@
     </element>
     <element id="Flag.extension:relationMedicationAgreement.value[x]">
       <path value="Flag.extension.value[x]" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/mp-MedicationAgreement" />
+      </type>
       <mapping>
         <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-938" />
@@ -155,17 +159,19 @@
       </slicing>
       <min value="1" />
     </element>
-    <element id="Flag.category:ProposalContraIndicationCode">
+    <element id="Flag.category:medicationContraIndicationCode">
       <path value="Flag.category" />
-      <sliceName value="ProposalContraIndicationCode" />
+      <sliceName value="medicationContraIndicationCode" />
       <short value="AlertType" />
       <definition value="Indicates the type of alert, meaning a rough description of the cause or origin of the warning." />
-      <comment value="The concept AlertType is bound to a ValueSet consisting of two codes." />
+      <comment value="The concept AlertType is bound to a ValueSet consisting of a single code. Instead of specifying that ValueSet here as well, it has been chosen to add its only code as a pattern instead." />
       <alias value="AlertType" />
+      <min value="1" />
       <max value="1" />
       <patternCodeableConcept>
         <coding>
           <system value="http://snomed.info/sct" />
+          <code value="350241000146102" />
         </coding>
       </patternCodeableConcept>
       <mapping>
@@ -194,7 +200,7 @@
       <type>
         <code value="Reference" />
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/Patient" />
-        <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient" />
+        <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-patient" />
       </type>
     </element>
     <element id="Flag.period">

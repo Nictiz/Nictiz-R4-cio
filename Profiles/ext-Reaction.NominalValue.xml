@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
-  <id value="ext-Reaction.LatencyReaction" />
-  <url value="http://nictiz.nl/fhir/StructureDefinition/ext-Reaction.LatencyReaction" />
-  <version value="1.0.0-beta.2" />
-  <name value="ExtReactionLatencyReaction" />
-  <title value="ext Reaction.LatencyReaction" />
+  <id value="ext-Reaction.NominalValue" />
+  <url value="http://nictiz.nl/fhir/StructureDefinition/ext-Reaction.NominalValue" />
+  <version value="1.0.0-beta.3" />
+  <name value="ExtReactionNominalValue" />
+  <title value="ext Reaction.NominalValue" />
   <status value="draft" />
   <publisher value="Nictiz" />
   <contact>
@@ -15,8 +15,8 @@
       <use value="work" />
     </telecom>
   </contact>
-  <description value="An extension to provide the time between the moment of exposure and start of symptoms of the reaction." />
-  <purpose value="This extension represents the LatencyReaction concept for implementations following the information standard [CiO](https://informatiestandaarden.nictiz.nl/wiki/Landingspagina_Contra-indicaties_en_Overgevoeligheden)." />
+  <description value="An extension to provide the nominal value of the quantity. This element can not be used in combination with a minimum and maximum value." />
+  <purpose value="This extension represents the NominalValue concept for implementations following the information standard [CiO](https://informatiestandaarden.nictiz.nl/wiki/Landingspagina_Contra-indicaties_en_Overgevoeligheden)." />
   <copyright value="Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise." />
   <fhirVersion value="4.0.1" />
   <kind value="complex-type" />
@@ -35,15 +35,15 @@
     </element>
     <element id="Extension.url">
       <path value="Extension.url" />
-      <fixedUri value="http://nictiz.nl/fhir/StructureDefinition/ext-Reaction.LatencyReaction" />
+      <fixedUri value="http://nictiz.nl/fhir/StructureDefinition/ext-Reaction.NominalValue" />
     </element>
     <element id="Extension.value[x]">
       <path value="Extension.value[x]" />
-      <short value="LatencyReaction" />
-      <definition value="Time between the moment of exposure and start of symptoms of the reaction." />
-      <alias value="LatentietijdReactie" />
+      <short value="NominalValue" />
+      <definition value="The nominal value of the quantity. This element can not be used in combination with a minimum and maximum value." />
+      <alias value="NominaleWaarde" />
       <type>
-        <code value="Duration" />
+        <code value="Quantity" />
       </type>
     </element>
   </differential>
