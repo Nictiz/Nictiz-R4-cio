@@ -22,7 +22,7 @@
   <mapping>
     <identity value="cio-dataset-200-beta2-20231214" />
     <uri value="https://decor.nictiz.nl/pub/cio/cio-html-20231214T100742/ds-2.16.840.1.113883.2.4.3.11.60.26.1.2-2020-04-02T000000.html" />
-    <name value="ART-DECOR Dataset Contraindications and hypersensitivities 2.0.0-beta.2 20231214" />
+    <name value="ART-DECOR Dataset Contraindications and hypersensitivities 2.0.0-beta.3 20231214" />
   </mapping>
   <kind value="resource" />
   <abstract value="false" />
@@ -33,7 +33,7 @@
     <element id="AllergyIntolerance">
       <path value="AllergyIntolerance" />
       <short value="Reaction" />
-      <comment value="Note that not all concepts within the Reaction building block are mapped to elements within this profile. To convey the complete Reaction building block, an AllergyIntolerance resource conforming to this profile SHOULD always be used together with an instance conforming to the [cio-Condition](http://nictiz.nl/fhir/StructureDefinition/cio-Condition) profile, as well as an instance conforming to the [cio-RegistrationData](http://nictiz.nl/fhir/StructureDefinition/cio-RegistrationData) profile wherein `Provenance.target` refers to the AllergyIntolerance and Condition resources." />
+      <comment value="Note that not all concepts within the Reaction building block are mapped to elements within this profile. To convey the complete Reaction building block, an AllergyIntolerance resource conforming to this profile SHOULD always be used together with an instance conforming to the [cio-Condition](http://nictiz.nl/fhir/StructureDefinition/cio-Condition) profile, as well as an instance conforming to the [cio-RegistrationInformation](http://nictiz.nl/fhir/StructureDefinition/cio-RegistrationInformation) profile wherein `Provenance.target` refers to the AllergyIntolerance and Condition resources." />
       <alias value="Reactie" />
       <mapping>
         <identity value="cio-dataset-200-beta2-20231214" />
@@ -130,7 +130,7 @@
     </element>
     <element id="AllergyIntolerance.extension:RelationHypersensitivityIntolerance.value[x]">
       <path value="AllergyIntolerance.extension.value[x]" />
-      <definition value="Relation to the underlying hypersensitivity intolerance." />
+      <definition value="Relation to the Hypersensitivity or intolerance underlying the reaction." />
       <mapping>
         <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-823" />
@@ -155,7 +155,7 @@
       <mapping>
         <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-888" />
-        <comment value="Identification" />
+        <comment value="IdentificationGMO" />
       </mapping>
     </element>
     <element id="AllergyIntolerance.identifier">
@@ -171,13 +171,10 @@
     </element>
     <element id="AllergyIntolerance.clinicalStatus">
       <path value="AllergyIntolerance.clinicalStatus" />
-      <max value="0" />
       <binding>
         <strength value="required" />
         <valueSet value="http://hl7.org/fhir/ValueSet/allergyintolerance-clinical|4.0.1">
-          <extension url="http://hl7.org/fhir/StructureDefinition/11179-permitted-value-conceptmap">
-            <valueCanonical value="http://nictiz.nl/fhir/ConceptMap/AandoeningAanwezigheidCodelijst-to-AllergyIntoleranceClinicalStatusCodes" />
-          </extension>
+          <extension url="http://hl7.org/fhir/StructureDefinition/11179-permitted-value-conceptmap" />
         </valueSet>
       </binding>
     </element>
@@ -245,6 +242,17 @@
         <comment value="CausativeSubstance" />
       </mapping>
     </element>
+    <element id="AllergyIntolerance.code.text">
+      <path value="AllergyIntolerance.code.text" />
+      <short value="FurtherSpecificationDiagnosisName" />
+      <definition value="A more detailed description of the name of the reaction in free text, when this detail is not available in the used code list." />
+      <alias value="NadereSpecificatieDiagnoseNaam" />
+      <mapping>
+        <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-816" />
+        <comment value="FurtherSpecificationDiagnosisName" />
+      </mapping>
+    </element>
     <element id="AllergyIntolerance.patient">
       <path value="AllergyIntolerance.patient" />
       <type>
@@ -256,7 +264,7 @@
     <element id="AllergyIntolerance.recordedDate">
       <path value="AllergyIntolerance.recordedDate" />
       <short value="RegistrationDateTime" />
-      <definition value="Date and time when the information was recorded in the patient's record." />
+      <definition value="Date and time when the information about the patient was registered." />
       <alias value="RegistratieDatumTijd" />
       <mapping>
         <identity value="cio-dataset-200-beta2-20231214" />
@@ -267,7 +275,7 @@
     <element id="AllergyIntolerance.recorder">
       <path value="AllergyIntolerance.recorder" />
       <short value="Author" />
-      <definition value="The person who is responsible for entering the information in the patient's record." />
+      <definition value="The person who has registered or had someone else register the information in the patient record." />
       <alias value="Auteur" />
       <type>
         <code value="Reference" />
@@ -349,18 +357,6 @@
         <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-465" />
         <comment value="ReactionPhenomenon" />
-      </mapping>
-    </element>
-    <element id="AllergyIntolerance.reaction.onset">
-      <path value="AllergyIntolerance.reaction.onset" />
-      <short value="ConditionStartDateTime" />
-      <definition value="Date and possibly time when the condition started. One will often use the start date of the first symptom. It may be a vague date." />
-      <alias value="AandoeningBeginDatumTijd" />
-      <min value="1" />
-      <mapping>
-        <identity value="cio-dataset-200-beta2-20231214" />
-        <map value="cio-dataelement-20-460" />
-        <comment value="ConditionStartDateTime" />
       </mapping>
     </element>
     <element id="AllergyIntolerance.reaction.exposureRoute">

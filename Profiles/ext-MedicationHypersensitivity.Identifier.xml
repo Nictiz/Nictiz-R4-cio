@@ -54,6 +54,7 @@
       <short value="Medication Hypersensitivity Identifier" />
       <definition value="The identifier of the medication hypensensitivity that this resource belongs to. This identifier is used to group the disparate resources that belong to a single medication hypersensitivity." />
       <alias value="Geneesmiddelovergevoeligheid identificatie" />
+      <alias value="IdentificationGMO" />
       <type>
         <code value="Identifier" />
       </type>

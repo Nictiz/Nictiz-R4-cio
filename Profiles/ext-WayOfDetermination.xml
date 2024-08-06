@@ -2,7 +2,7 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="ext-WayOfDetermination" />
   <url value="http://nictiz.nl/fhir/StructureDefinition/ext-WayOfDetermination" />
-  <version value="1.0.0-beta.2" />
+  <version value="1.0.0-beta.3" />
   <name value="ExtWayOfDetermination" />
   <title value="ext WayOfDetermination" />
   <status value="draft" />
@@ -15,7 +15,7 @@
       <use value="work" />
     </telecom>
   </contact>
-  <description value="An extension to provide the way in which a hypersensitivity intolerance reaction is determined." />
+  <description value="An extension to provide the way in which a hypersensitivity, intolerance or reaction is determined." />
   <purpose value="This extension represents the WayOfDetermination concept for implementations following the information standard [CiO](https://informatiestandaarden.nictiz.nl/wiki/Landingspagina_Contra-indicaties_en_Overgevoeligheden)." />
   <copyright value="Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise." />
   <fhirVersion value="4.0.1" />
@@ -40,7 +40,7 @@
     <element id="Extension.value[x]">
       <path value="Extension.value[x]" />
       <short value="WayOfDetermination" />
-      <definition value="The way in which the hypersensitivity intolerance reaction is determined." />
+      <definition value="The way in which the hypersensitivity, intolerance or reaction is determined." />
       <alias value="WijzeVanVaststellen" />
       <type>
         <code value="CodeableConcept" />

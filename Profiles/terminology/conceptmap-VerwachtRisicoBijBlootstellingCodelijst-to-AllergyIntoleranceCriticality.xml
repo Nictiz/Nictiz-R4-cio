@@ -5,7 +5,7 @@
         <valueBoolean value="false"/>
     </extension>
     <url value="http://nictiz.nl/fhir/ConceptMap/VerwachtRisicoBijBlootstelling-to-AllergyIntoleranceCriticality"/>
-    <version value="1.0.0-beta.2"/>
+    <version value="1.0.0-beta.3"/>
     <name value="VerwachtRisicoBijBlootstelling_to_AllergyIntoleranceCriticality"/>
     <title value="VerwachtRisicoBijBlootstelling to AllergyIntoleranceCriticality"/>
     <status value="draft"/>

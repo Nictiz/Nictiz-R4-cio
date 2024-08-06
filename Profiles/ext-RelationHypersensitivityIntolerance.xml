@@ -2,7 +2,7 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="ext-RelationHypersensitivityIntolerance" />
   <url value="http://nictiz.nl/fhir/StructureDefinition/ext-RelationHypersensitivityIntolerance" />
-  <version value="1.0.0-beta.2" />
+  <version value="1.0.0-beta.3" />
   <name value="ExtRelationHypersensitivityIntolerance" />
   <title value="ext RelationHypersensitivityIntolerance" />
   <status value="draft" />
@@ -41,7 +41,7 @@
       <path value="Extension.value[x]" />
       <short value="RelationHypersensitivityIntolerance" />
       <definition value="Relation from a hypersensitivity intolerance to the hypersensitivity intolerance which was used to create a new, modified registration (as a result of changing one or more data elements or inactivating the hypersensitivity intolerance), or from a reaction to the underlying hypersensitivity intolerance." />
-      <alias value="RelatieOvergevoeligheid" />
+      <alias value="RelatieOvergevoeligheidIntolerantie" />
       <type>
         <code value="Reference" />
         <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/cio-HypersensitivityIntolerance" />

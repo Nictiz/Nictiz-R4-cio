@@ -22,7 +22,7 @@
   <mapping>
     <identity value="cio-dataset-200-beta2-20231214" />
     <uri value="https://decor.nictiz.nl/pub/cio/cio-html-20231214T100742/ds-2.16.840.1.113883.2.4.3.11.60.26.1.2-2020-04-02T000000.html" />
-    <name value="ART-DECOR Dataset Contraindications and hypersensitivities 2.0.0-beta.2 20231214" />
+    <name value="ART-DECOR Dataset Contraindications and hypersensitivities 2.0.0-beta.3 20231214" />
   </mapping>
   <kind value="resource" />
   <abstract value="false" />
@@ -33,7 +33,7 @@
     <element id="Flag">
       <path value="Flag" />
       <short value="SurveillanceDecision" />
-      <comment value="Note that not all concepts within the SurveillanceDecision building block are mapped to elements within this profile. To convey the complete SurveillanceDecision building block, a Flag resource conforming to this profile SHOULD always be used together with an instance conforming to the [cio-RegistrationData](http://nictiz.nl/fhir/StructureDefinition/cio-RegistrationData) profile wherein `Provenance.target` refers to the Flag resource." />
+      <comment value="Note that not all concepts within the SurveillanceDecision building block are mapped to elements within this profile. To convey the complete SurveillanceDecision building block, a Flag resource conforming to this profile SHOULD always be used together with an instance conforming to the [cio-RegistrationInformation](http://nictiz.nl/fhir/StructureDefinition/cio-RegistrationInformation) profile wherein `Provenance.target` refers to the Flag resource." />
       <alias value="BewakingBesluit" />
       <constraint>
         <key value="cio-SurveillanceDecision-1" />
@@ -59,15 +59,26 @@
         <comment value="SurveillanceDecision" />
       </mapping>
     </element>
+    <element id="Flag.extension">
+      <path value="Flag.extension" />
+      <min value="1" />
+    </element>
     <element id="Flag.extension:decisionBasis">
       <path value="Flag.extension" />
       <sliceName value="decisionBasis" />
+      <alias value="BesluitGrond" />
+      <min value="1" />
       <max value="1" />
       <type>
         <code value="Extension" />
         <profile value="http://hl7.org/fhir/StructureDefinition/flag-detail" />
       </type>
       <condition value="cio-SurveillanceDecision-3" />
+      <mapping>
+        <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-758" />
+        <comment value="DecisionBasis" />
+      </mapping>
     </element>
     <element id="Flag.extension:decisionBasis.value[x]">
       <path value="Flag.extension.value[x]" />
@@ -145,28 +156,29 @@
       <mapping>
         <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-888" />
-        <comment value="Identification" />
+        <comment value="IdentificationGMO" />
       </mapping>
     </element>
     <element id="Flag.extension:medicationHypersensitivityIdentifier.url">
       <path value="Flag.extension.url" />
       <fixedUri value="http://nictiz.nl/fhir/StructureDefinition/ext-MedicationHypersensitivityIdentifier" />
     </element>
-    <element id="Flag.extension:surveillanceDecision">
+    <element id="Flag.extension:decisionReason">
       <path value="Flag.extension" />
-      <sliceName value="surveillanceDecision" />
+      <sliceName value="decisionReason" />
       <type>
         <code value="Extension" />
         <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-SurveillanceDecision.SurveillanceDecision" />
       </type>
       <isModifier value="false" />
     </element>
-    <element id="Flag.extension:surveillanceDecision.value[x]">
+    <element id="Flag.extension:decisionReason.value[x]">
       <path value="Flag.extension.value[x]" />
+      <short value="DecisionReason" />
       <mapping>
         <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-916" />
-        <comment value="SurveillanceDecision" />
+        <comment value="DecisionReason" />
       </mapping>
     </element>
     <element id="Flag.identifier">
@@ -296,7 +308,7 @@
     <element id="Flag.author">
       <path value="Flag.author" />
       <short value="Author" />
-      <definition value="The person who is responsible for entering the information in the patient's record." />
+      <definition value="The person who has registered or had someone else register the information in the patient record." />
       <alias value="Auteur" />
       <type>
         <code value="Reference" />

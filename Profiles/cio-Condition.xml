@@ -22,7 +22,7 @@
   <mapping>
     <identity value="cio-dataset-200-beta2-20231214" />
     <uri value="https://decor.nictiz.nl/pub/cio/cio-html-20231214T100742/ds-2.16.840.1.113883.2.4.3.11.60.26.1.2-2020-04-02T000000.html" />
-    <name value="ART-DECOR Dataset Contraindications and hypersensitivities 2.0.0-beta.2 20231214" />
+    <name value="ART-DECOR Dataset Contraindications and hypersensitivities 2.0.0-beta.3 20231214" />
   </mapping>
   <kind value="resource" />
   <abstract value="false" />
@@ -80,6 +80,7 @@
     <element id="Condition.extension:periodPresent">
       <path value="Condition.extension" />
       <sliceName value="periodPresent" />
+      <alias value="PeriodeAanwezig" />
       <min value="1" />
       <max value="1" />
       <type>
@@ -87,6 +88,31 @@
         <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-PeriodPresent" />
       </type>
       <isModifier value="false" />
+      <mapping>
+        <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-906" />
+        <comment value="PeriodPresent" />
+      </mapping>
+    </element>
+    <element id="Condition.extension:periodPresent.value[x]">
+      <path value="Condition.extension.value[x]" />
+    </element>
+    <element id="Condition.extension:periodPresent.value[x].start">
+      <path value="Condition.extension.value[x].start" />
+      <min value="1" />
+      <mapping>
+        <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-954" />
+        <comment value="startDateTime" />
+      </mapping>
+    </element>
+    <element id="Condition.extension:periodPresent.value[x].end">
+      <path value="Condition.extension.value[x].end" />
+      <mapping>
+        <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-955" />
+        <comment value="endDateTime" />
+      </mapping>
     </element>
     <element id="Condition.extension:medicationHypersensitivityIdentifier">
       <path value="Condition.extension" />
@@ -102,7 +128,7 @@
       <mapping>
         <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-888" />
-        <comment value="Identification" />
+        <comment value="IdentificationGMO" />
       </mapping>
     </element>
     <element id="Condition.identifier">
@@ -121,9 +147,7 @@
       <binding>
         <strength value="required" />
         <valueSet value="http://hl7.org/fhir/ValueSet/condition-clinical|4.0.1">
-          <extension url="http://hl7.org/fhir/StructureDefinition/11179-permitted-value-conceptmap">
-            <valueCanonical value="http://nictiz.nl/fhir/ConceptMap/AandoeningAanwezigheidCodelijst-to-ConditionClinicalStatusCodes" />
-          </extension>
+          <extension url="http://hl7.org/fhir/StructureDefinition/11179-permitted-value-conceptmap" />
         </valueSet>
       </binding>
     </element>
@@ -164,22 +188,6 @@
         <comment value="DiagnosisName" />
       </mapping>
     </element>
-    <element id="Condition.code.text">
-      <path value="Condition.code.text" />
-      <short value="FurtherSpecificationDiagnosisName" />
-      <definition value="A more detailed description of the name of the hypersensitivity intolerance reaction in free text, when this detail is not available in the used code list." />
-      <alias value="NadereSpecificatieDiagnoseNaam" />
-      <mapping>
-        <identity value="cio-dataset-200-beta2-20231214" />
-        <map value="cio-dataelement-20-797" />
-        <comment value="FurtherSpecificationDiagnosisName" />
-      </mapping>
-      <mapping>
-        <identity value="cio-dataset-200-beta2-20231214" />
-        <map value="cio-dataelement-20-816" />
-        <comment value="FurtherSpecificationDiagnosisName" />
-      </mapping>
-    </element>
     <element id="Condition.subject">
       <path value="Condition.subject" />
       <type>
@@ -191,7 +199,7 @@
     <element id="Condition.recordedDate">
       <path value="Condition.recordedDate" />
       <short value="RegistrationDateTime" />
-      <definition value="Date and time when the information was recorded in the patient's record." />
+      <definition value="Date and time when the information about the patient was registered." />
       <alias value="RegistratieDatumTijd" />
       <mapping>
         <identity value="cio-dataset-200-beta2-20231214" />
@@ -202,7 +210,7 @@
     <element id="Condition.recorder">
       <path value="Condition.recorder" />
       <short value="Author" />
-      <definition value="The person who is responsible for entering the information in the patient's record." />
+      <definition value="The person who has registered or had someone else register the information in the patient record." />
       <alias value="Auteur" />
       <type>
         <code value="Reference" />

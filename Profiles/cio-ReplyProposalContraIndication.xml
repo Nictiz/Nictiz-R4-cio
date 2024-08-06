@@ -22,7 +22,7 @@
   <mapping>
     <identity value="cio-dataset-200-beta2-20231214" />
     <uri value="https://decor.nictiz.nl/pub/cio/cio-html-20231214T100742/ds-2.16.840.1.113883.2.4.3.11.60.26.1.2-2020-04-02T000000.html" />
-    <name value="ART-DECOR Dataset Contraindications and hypersensitivities 2.0.0-beta.2 20231214" />
+    <name value="ART-DECOR Dataset Contraindications and hypersensitivities 2.0.0-beta.3 20231214" />
   </mapping>
   <kind value="resource" />
   <abstract value="false" />
@@ -47,6 +47,7 @@
       <short value="RelationProposalContraIndication" />
       <definition value="Relation to the proposal contraindication that caused the reply." />
       <alias value="RelatieVoorstelContraIndicatie" />
+      <min value="1" />
       <max value="1" />
       <type>
         <code value="Reference" />
@@ -61,8 +62,9 @@
     <element id="Communication.sent">
       <path value="Communication.sent" />
       <short value="RegistrationDateTime" />
-      <definition value="Date and time when the information was recorded in the patient's record." />
+      <definition value="Date and time when the information about the patient was registered." />
       <alias value="RegistratieDatumTijd" />
+      <min value="1" />
       <mapping>
         <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-783" />
@@ -72,7 +74,7 @@
     <element id="Communication.sender">
       <path value="Communication.sender" />
       <short value="Author" />
-      <definition value="The person who is responsible for entering the information in the patient's record." />
+      <definition value="The person who has registered or had someone else register the information in the patient record." />
       <alias value="Auteur" />
       <type>
         <code value="Reference" />
