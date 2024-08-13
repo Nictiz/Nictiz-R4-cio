@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="ext-Reaction.LatencyTime" />
+  <url value="http://nictiz.nl/fhir/StructureDefinition/ext-Reaction.LatencyTime" />
+  <version value="1.0.0-beta.3" />
+  <name value="ExtReactionLatencyTime" />
+  <title value="ext Reaction.LatencyTime" />
+  <status value="draft" />
+  <publisher value="Nictiz" />
+  <contact>
+    <name value="Nictiz" />
+    <telecom>
+      <system value="url" />
+      <value value="https://www.nictiz.nl" />
+      <use value="work" />
+    </telecom>
+  </contact>
+  <description value="An extension to provide the period of time between the moment of exposure to the substance and the onset of the undesirable reaction." />
+  <purpose value="This extension represents the LatencyTime concept for implementations following the information standard [CiO](https://informatiestandaarden.nictiz.nl/wiki/Landingspagina_Contra-indicaties_en_Overgevoeligheden)." />
+  <copyright value="Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise." />
+  <fhirVersion value="4.0.1" />
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <context>
+    <type value="element" />
+    <expression value="AllergyIntolerance.reaction" />
+  </context>
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension">
+      <path value="Extension" />
+      <max value="1" />
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="http://nictiz.nl/fhir/StructureDefinition/ext-Reaction.LatencyTime" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <short value="LatencyTime" />
+      <definition value="The period of time between the moment of exposure to the substance and the onset of the undesirable reaction." />
+      <alias value="LatentieTijd" />
+      <type>
+        <code value="Quantity" />
+      </type>
+      <type>
+        <code value="Range" />
+      </type>
+    </element>
+    <element id="Extension.value[x]:valueRange">
+      <path value="Extension.value[x]" />
+      <sliceName value="valueRange" />
+      <type>
+        <code value="Range" />
+      </type>
+    </element>
+    <element id="Extension.value[x]:valueRange.low">
+      <path value="Extension.value[x].low" />
+      <short value="minimumValue" />
+      <definition value="The minimal value of the range. The boundary is inclusive." />
+      <alias value="minimumWaarde" />
+    </element>
+    <element id="Extension.value[x]:valueRange.high">
+      <path value="Extension.value[x].high" />
+      <short value="maximumValue" />
+      <definition value="The maximum value of the range. The boundary is inclusive." />
+    </element>
+    <element id="Extension.value[x]:valueQuantity">
+      <path value="Extension.value[x]" />
+      <sliceName value="valueQuantity" />
+      <type>
+        <code value="Quantity" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/SimpleQuantity" />
+      </type>
+    </element>
+    <element id="Extension.value[x]:valueQuantity.value">
+      <path value="Extension.value[x].value" />
+      <short value="nominalValue" />
+      <definition value="The nominal value of the quantity. This element can not be used in combination with a minimum and maximum value." />
+      <alias value="nominaleWaarde" />
+    </element>
+  </differential>
+</StructureDefinition>
