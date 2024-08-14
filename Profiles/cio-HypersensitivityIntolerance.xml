@@ -16,7 +16,7 @@
     </telecom>
   </contact>
   <description value="The diagnostic insight that the patient is predisposed to develop an undesirable reaction when exposed to a specific substance or group of substances on the basis of an allergy or pseudoallergy." />
-  <purpose value="This AllergyIntolerance resource represents the HypersensitivityIntolerance building block for implementations following the information standard [CiO](https://informatiestandaarden.nictiz.nl/wiki/Landingspagina_Contra-indicaties_en_Overgevoeligheden). This profile is based on the Dutch zib ('Zorginformatiebouwsteen', i.e. Health and Care Information Model) HypersensitivityIntolerance that will be part of the 2024 prepublication. Therefore it has no dependency on a corresponding nl-core profile and mappings to zib concepts are not defined. Instead mappings to the CiO data set have been added. It is the intention to derive this profile from a more general nl-core-HypersensitivityIntolerance profile in the future." />
+  <purpose value="This AllergyIntolerance resource represents the HypersensitivityIntolerance building block for implementations following the information standard [CiO](https://informatiestandaarden.nictiz.nl/wiki/Landingspagina_Contra-indicaties_en_Overgevoeligheden). This profile is based on the Dutch zib ('Zorginformatiebouwsteen', i.e. Health and Care Information Model) HypersensitivityIntolerance that is part of the 2024 prepublication. Therefore it has no dependency on a corresponding nl-core profile and mappings to zib concepts are not defined. Instead mappings to the CiO data set have been added. It is the intention to derive this profile from a more general nl-core-HypersensitivityIntolerance profile in the future." />
   <copyright value="Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise." />
   <fhirVersion value="4.0.1" />
   <mapping>
@@ -164,7 +164,7 @@
     <element id="AllergyIntolerance.verificationStatus">
       <path value="AllergyIntolerance.verificationStatus" />
       <short value="CertaintyStatus" />
-      <definition value="Indicates the conviction of the health professional with respect to the hypersensitivity or intolerance as interpretation of the condition." />
+      <definition value="Indicates the conviction of the health professional with respect to the hypersensitivity/intolerance as interpretation of the condition." />
       <alias value="ZekerheidStatus" />
       <binding>
         <strength value="required" />
@@ -202,11 +202,6 @@
         <description value="In addition to a coding from this ValueSet, the corresponding coding from the FHIR base ValueSet SHALL be communicated. The ConceptMap &lt;http://nictiz.nl/fhir/ConceptMap/ZekerheidStatusCodelijst-to-AllergyIntoleranceVerificationStatus&gt; can be used to relate these two ValueSets." />
         <valueSet value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.26.11.15--20231120120828" />
       </binding>
-    </element>
-    <element id="AllergyIntolerance.type">
-      <path value="AllergyIntolerance.type" />
-      <comment value="Due to the required binding on this element it is not possible to use it to indicate that an AllergyIntolerance resource conforming to this profile represents an instance of the HypersensitivityIntolerance building block. Therefore the `.type` element from R5 (with a preferred binding) is implicitly pre-adopted via the [AllergyIntolerance-Type extension](http://nictiz.nl/fhir/StructureDefinition/ext-AllergyIntolerance-Type)." />
-      <max value="0" />
     </element>
     <element id="AllergyIntolerance.category">
       <path value="AllergyIntolerance.category" />
@@ -315,7 +310,7 @@
     <element id="AllergyIntolerance.code.text">
       <path value="AllergyIntolerance.code.text" />
       <short value="FurtherSpecificationDiagnosisName" />
-      <definition value="A more detailed description of the name of the hypersensitivity or intolerance in free text, when this detail is not available in the used code list." />
+      <definition value="A more detailed description of the name of the hypersensitivity/intolerance or reaction in free text, when this detail is not available in the used code list." />
       <alias value="NadereSpecificatieDiagnoseNaam" />
       <mapping>
         <identity value="cio-dataset-200-beta2-20231214" />
@@ -386,7 +381,7 @@
     <element id="AllergyIntolerance.note.text">
       <path value="AllergyIntolerance.note.text" />
       <short value="Comment" />
-      <definition value="Textual explanation of the hypersensitivity which cannot be entered in any of the other fields." />
+      <definition value="Textual explanation of the hypersensitivity/intolerance which cannot be entered in any of the other fields." />
       <alias value="Toelichting" />
       <mapping>
         <identity value="cio-dataset-200-beta2-20231214" />

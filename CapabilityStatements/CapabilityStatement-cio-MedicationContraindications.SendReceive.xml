@@ -4,7 +4,7 @@
   xsi:schemaLocation="http://hl7.org/fhir http://hl7.org/fhir/R4/capabilitystatement.xsd">
   <id value="cio-MedicationContraindications.SendReceive"/>
   <url value="http://nictiz.nl/fhir/CapabilityStatement/cio-MedicationContraindications.SendReceive"/>
-  <version value="1.0.0-beta.2" />
+  <version value="1.0.0-beta.3" />
   <name value="cio MedicationContraindications.SendReceive"/>
   <status value="active"/>
   <date value="2023-12-15"/>
@@ -36,7 +36,7 @@
     </resource>
     <resource>
       <type value="Provenance"/>
-      <supportedProfile value="http://nictiz.nl/fhir/StructureDefinition/cio-RegistrationData"/>
+      <supportedProfile value="http://nictiz.nl/fhir/StructureDefinition/cio-RegistrationInformation"/>
       <interaction>
         <code value="create"/>
       </interaction>
@@ -92,7 +92,7 @@
     </resource>
     <resource>
       <type value="Provenance"/>
-      <supportedProfile value="http://nictiz.nl/fhir/StructureDefinition/cio-RegistrationData"/>
+      <supportedProfile value="http://nictiz.nl/fhir/StructureDefinition/cio-RegistrationInformation"/>
       <interaction>
         <code value="create"/>
       </interaction>

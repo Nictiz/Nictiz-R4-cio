@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
-  <id value="ext-RelationMedicationAgreement" />
-  <url value="http://nictiz.nl/fhir/StructureDefinition/ext-RelationMedicationAgreement" />
+  <id value="ext-ProposalContraIndication.RelationMedicationAgreement" />
+  <url value="http://nictiz.nl/fhir/StructureDefinition/ext-ProposalContraIndication.RelationMedicationAgreement" />
   <version value="1.0.0-beta.3" />
-  <name value="ExtRelationMedicationAgreement" />
-  <title value="ext RelationMedicationAgreement" />
+  <name value="ExtProposalContraIndicationRelationMedicationAgreement" />
+  <title value="ext ProposalContraIndication.RelationMedicationAgreement" />
   <status value="draft" />
   <publisher value="Nictiz" />
   <contact>
@@ -40,10 +40,11 @@
     <element id="Extension.value[x]">
       <path value="Extension.value[x]" />
       <short value="RelationMedicationAgreement" />
-      <definition value="Relation to the medication agreement that caused the medication contraindication proposal." />
+      <definition value="Relation to the medication agreement that served as the basis of the medication contraindication proposal." />
       <alias value="RelatieMedicatieafspraak" />
       <type>
         <code value="Reference" />
+        <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/mp-MedicationAgreement" />
       </type>
     </element>
   </differential>

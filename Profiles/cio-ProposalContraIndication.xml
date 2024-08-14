@@ -16,7 +16,7 @@
     </telecom>
   </contact>
   <description value="A proposal for medication contraindication is a request from one healthcare provider to another to register, terminate, or modify the use of certain medicines that may not be used, or only used under certain conditions." />
-  <purpose value="This Flag resource represents the ProposalContraIndication building block for implementations following the information standard [CiO](https://informatiestandaarden.nictiz.nl/wiki/Landingspagina_Contra-indicaties_en_Overgevoeligheden). This profile is based on the Dutch zib ('Zorginformatiebouwsteen', i.e. Health and Care Information Model) Alert that will be part of the 2024 prepublication. Therefore it has no dependency on a corresponding nl-core profile and mappings to zib concepts are not defined. Instead mappings to the CiO data set have been added. It is the intention to derive this profile from a more general nl-core-Alert profile in the future." />
+  <purpose value="This Flag resource represents the ProposalContraIndication building block for implementations following the information standard [CiO](https://informatiestandaarden.nictiz.nl/wiki/Landingspagina_Contra-indicaties_en_Overgevoeligheden). This profile is based on the Dutch zib ('Zorginformatiebouwsteen', i.e. Health and Care Information Model) Alert that is part of the 2024 prepublication. Therefore it has no dependency on a corresponding nl-core profile and mappings to zib concepts are not defined. Instead mappings to the CiO data set have been added. It is the intention to derive this profile from a more general nl-core-Alert profile in the future." />
   <copyright value="Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise." />
   <fhirVersion value="4.0.1" />
   <mapping>
@@ -47,10 +47,6 @@
         <comment value="Alert" />
       </mapping>
     </element>
-    <element id="Flag.extension">
-      <path value="Flag.extension" />
-      <min value="1" />
-    </element>
     <element id="Flag.extension:proposalComment">
       <path value="Flag.extension" />
       <sliceName value="proposalComment" />
@@ -74,7 +70,6 @@
     <element id="Flag.extension:relationAlert">
       <path value="Flag.extension" />
       <sliceName value="relationAlert" />
-      <min value="1" />
       <type>
         <code value="Extension" />
         <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-MedicationContraIndication.RelationAlert" />
@@ -117,16 +112,12 @@
       <sliceName value="relationMedicationAgreement" />
       <type>
         <code value="Extension" />
-        <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-RelationMedicationAgreement" />
+        <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-ProposalContraIndication.RelationMedicationAgreement" />
       </type>
       <isModifier value="false" />
     </element>
     <element id="Flag.extension:relationMedicationAgreement.value[x]">
       <path value="Flag.extension.value[x]" />
-      <type>
-        <code value="Reference" />
-        <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/mp-MedicationAgreement" />
-      </type>
       <mapping>
         <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-938" />
@@ -206,7 +197,7 @@
       <type>
         <code value="Reference" />
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/Patient" />
-        <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-patient" />
+        <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient" />
       </type>
     </element>
     <element id="Flag.period">
