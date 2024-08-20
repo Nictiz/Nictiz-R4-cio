@@ -53,13 +53,13 @@
     </element>
     <element id="Provenance.recorded">
       <path value="Provenance.recorded" />
-      <short value="RegistrationDateTime" />
+      <short value="CreationDateTime" />
       <definition value="Date and time when the information about the patient was registered." />
-      <alias value="RegistratieDatumTijd" />
+      <alias value="OntstaansDatumTijd" />
       <mapping>
         <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-783" />
-        <comment value="RegistrationDateTime" />
+        <comment value="CreationDateTime" />
       </mapping>
     </element>
     <element id="Provenance.agent">

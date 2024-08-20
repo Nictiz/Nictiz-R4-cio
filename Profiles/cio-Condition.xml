@@ -24,6 +24,10 @@
     <uri value="https://decor.nictiz.nl/pub/cio/cio-html-20231214T100742/ds-2.16.840.1.113883.2.4.3.11.60.26.1.2-2020-04-02T000000.html" />
     <name value="ART-DECOR Dataset Contraindications and hypersensitivities 2.0.0-beta.3 20231214" />
   </mapping>
+  <mapping>
+    <identity value="cio-dataset-200-beta3-20240930" />
+    <name value="ART-DECOR Dataset Contraindications and hypersensitivities 2.0.0-beta.3 20240930" />
+  </mapping>
   <kind value="resource" />
   <abstract value="false" />
   <type value="Condition" />
@@ -33,7 +37,7 @@
     <element id="Condition">
       <path value="Condition" />
       <short value="Condition / HypersensitivityIntolerance / Reaction" />
-      <comment value="This profile is always used together with an instance conforming to either the [cio-HypersensitivityIntolerance](http://nictiz.nl/fhir/StructureDefinition/cio-HypersensitivityIntolerance) or [cio-Reaction](http://nictiz.nl/fhir/StructureDefinition/cio-Reaction) profile. These latter profiles contain more detailed information on the hypersensitivity intolerance reaction, while this Condition profile contains the underlying condition and diagnosis. Note however, that several concepts from the CiO data set are mapped to elements in both this profile and the cio-HypersensitivityIntolerance and cio-Reaction profiles, such as the Diagnostician or the RegistrationDateTime. This is done to populate all instances with as much relevant information as possible, hence making instances conforming to these three profiles more valuable to be considered in isolation. If such an overlapping element is present in one of the resources, it SHALL also be present in the other resource, having the same value. Moreover, both the AllergyIntolerance and Condition resources SHALL be linked via the same Provenance resource, as they functionally are considered as a single entity." />
+      <comment value="This profile is always used together with an instance conforming to either the [cio-HypersensitivityIntolerance](http://nictiz.nl/fhir/StructureDefinition/cio-HypersensitivityIntolerance) or [cio-Reaction](http://nictiz.nl/fhir/StructureDefinition/cio-Reaction) profile. These latter profiles contain more detailed information on the hypersensitivity/intolerance or reaction, while this Condition profile contains the underlying condition and diagnosis. Note however, that several concepts from the CiO data set are mapped to elements in both this profile and the cio-HypersensitivityIntolerance and cio-Reaction profiles, such as the Diagnostician or the CreationDateTime. This is done to populate all instances with as much relevant information as possible, hence making instances conforming to these three profiles more valuable to be considered in isolation. If such an overlapping element is present in one of the resources, it SHALL also be present in the other resource, having the same value. Moreover, both the AllergyIntolerance and Condition resources SHALL be linked via the same Provenance resource, as they functionally are considered as a single entity." />
       <alias value="Aandoening" />
       <alias value="Overgevoeligheid" />
       <alias value="Reactie" />
@@ -50,7 +54,7 @@
     </element>
     <element id="Condition.extension">
       <path value="Condition.extension" />
-      <min value="2" />
+      <min value="1" />
     </element>
     <element id="Condition.extension:diagnosticInsightDate">
       <path value="Condition.extension" />
@@ -81,7 +85,6 @@
       <path value="Condition.extension" />
       <sliceName value="periodPresent" />
       <alias value="PeriodeAanwezig" />
-      <min value="1" />
       <max value="1" />
       <type>
         <code value="Extension" />
@@ -97,21 +100,16 @@
     <element id="Condition.extension:periodPresent.value[x]">
       <path value="Condition.extension.value[x]" />
     </element>
-    <element id="Condition.extension:periodPresent.value[x].start">
-      <path value="Condition.extension.value[x].start" />
-      <min value="1" />
-      <mapping>
-        <identity value="cio-dataset-200-beta2-20231214" />
-        <map value="cio-dataelement-20-954" />
-        <comment value="startDateTime" />
-      </mapping>
+    <element id="Condition.extension:periodPresent.value[x].extension:duration">
+      <path value="Condition.extension.value[x].extension" />
+      <sliceName value="duration" />
     </element>
-    <element id="Condition.extension:periodPresent.value[x].end">
-      <path value="Condition.extension.value[x].end" />
+    <element id="Condition.extension:periodPresent.value[x].extension:duration.value[x]">
+      <path value="Condition.extension.value[x].extension.value[x]" />
       <mapping>
-        <identity value="cio-dataset-200-beta2-20231214" />
-        <map value="cio-dataelement-20-955" />
-        <comment value="endDateTime" />
+        <identity value="cio-dataset-200-beta3-20240930" />
+        <map value="cio-dataelement-20-956" />
+        <comment value="Duration" />
       </mapping>
     </element>
     <element id="Condition.extension:medicationHypersensitivityIdentifier">
@@ -172,7 +170,6 @@
       <definition value="The term with associated code that the health professional selects from the used code list. Represents the hypersensitivity/intolerances interpretation of the condition." />
       <comment value="Ideally, in the context of a HypersensitivityIntolerance or Reaction the DiagnosisName (cio-dataelement-20-796 and cio-dataelement-20-815, respectively) would be mapped on `AllergyIntolerance.code` (in the cio-HypersensitivityIntolerance and cio-Reaction profile, respectively) instead of including it in the Condition resource. However, the cardinality of `AllergyIntolerance.code` is `0..1`, and both Substance/CausativeSubstance (cio-dataelement-20-793/cio-dataelement-20-466) and DiagnosisName semantically map to that element in their respective profiles. Moreover these data elements describe the hypersensitivity/intolerance reaction from different points of view, namely from the substance that triggers a reaction upon exposure or has triggered a reaction (Substance/CausativeSubstance), and the underlying diagnosis of the hypersensitivity/intolerance reaction (DiagnosisName). Therefore they cannot be viewed as representations of the same concept with slightly different granularity and it is thus not allowed to include them both as different `AllergyIntolerance.code.coding`s. As Substance/CausativeSubstance contain more detailed information regarding the nature of the hypersensitivity/intolerance and reaction respectively, it has been chosen to map these directly to `AllergyIntolerance.code`, while DiagnosisName is mapped to `Condition.code` instead." />
       <alias value="DiagnoseNaam" />
-      <min value="1" />
       <binding>
         <strength value="required" />
         <valueSet value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.26.11.31--20231207101023" />
@@ -196,15 +193,44 @@
         <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient" />
       </type>
     </element>
+    <element id="Condition.onset[x]">
+      <path value="Condition.onset[x]" />
+      <short value="startDateTime" />
+      <definition value="The start date and time of the interval" />
+      <alias value="startDatumTijd" />
+      <min value="1" />
+      <type>
+        <code value="dateTime" />
+      </type>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
+        <map value="cio-dataelement-20-954" />
+        <comment value="startDateTime" />
+      </mapping>
+    </element>
+    <element id="Condition.abatement[x]">
+      <path value="Condition.abatement[x]" />
+      <short value="endDateTime" />
+      <definition value="The end date and time of the interval." />
+      <alias value="eindDatumTijd" />
+      <type>
+        <code value="dateTime" />
+      </type>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
+        <map value="cio-dataelement-20-955" />
+        <comment value="endDateTime" />
+      </mapping>
+    </element>
     <element id="Condition.recordedDate">
       <path value="Condition.recordedDate" />
-      <short value="RegistrationDateTime" />
+      <short value="CreationDateTime" />
       <definition value="Date and time when the information about the patient was registered." />
-      <alias value="RegistratieDatumTijd" />
+      <alias value="OntstaansDatumTijd" />
       <mapping>
         <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-783" />
-        <comment value="RegistrationDateTime" />
+        <comment value="CreationDateTime" />
       </mapping>
     </element>
     <element id="Condition.recorder">

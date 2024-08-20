@@ -129,10 +129,6 @@
       </type>
       <isModifier value="false" />
     </element>
-    <element id="AllergyIntolerance.extension:medicationHypersensitivityIdentifier.url">
-      <path value="AllergyIntolerance.extension.url" />
-      <fixedUri value="http://nictiz.nl/fhir/StructureDefinition/ext-MedicationHypersensitivityIdentifier" />
-    </element>
     <element id="AllergyIntolerance.extension:medicationHypersensitivityIdentifier.value[x]">
       <path value="AllergyIntolerance.extension.value[x]" />
       <mapping>
@@ -211,7 +207,7 @@
       <binding>
         <strength value="required" />
         <description value="Use ConceptMap OvergevoeligheidCategorieCodelijst_to_AllergyIntoleranceCategory to translate terminology from the functional model to profile terminology in ValueSet AllergyIntoleranceCategory." />
-        <valueSet value="http://hl7.org/fhir/ValueSet/allergy-intolerance-category|4.0.1">
+        <valueSet value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.26.11.7--20211028090253">
           <extension url="http://hl7.org/fhir/StructureDefinition/11179-permitted-value-conceptmap">
             <valueCanonical value="http://nictiz.nl/fhir/ConceptMap/OvergevoeligheidCategorieCodelijst-to-AllergyIntoleranceCategory" />
           </extension>
@@ -328,13 +324,13 @@
     </element>
     <element id="AllergyIntolerance.recordedDate">
       <path value="AllergyIntolerance.recordedDate" />
-      <short value="RegistrationDateTime" />
+      <short value="CreationDateTime" />
       <definition value="Date and time when the information about the patient was registered." />
-      <alias value="RegistratieDatumTijd" />
+      <alias value="OntstaansDatumTijd" />
       <mapping>
         <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-783" />
-        <comment value="RegistrationDateTime" />
+        <comment value="CreationDateTime" />
       </mapping>
     </element>
     <element id="AllergyIntolerance.recorder">

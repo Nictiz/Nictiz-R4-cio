@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="ext-StatusDate" />
+  <url value="http://nictiz.nl/fhir/StructureDefinition/ext-StatusDate" />
+  <version value="1.0.0-beta.2" />
+  <name value="ExtStatusDate" />
+  <title value="ext StatusDate" />
+  <status value="draft" />
+  <publisher value="Nictiz" />
+  <contact>
+    <name value="Nictiz" />
+    <telecom>
+      <system value="url" />
+      <value value="https://www.nictiz.nl" />
+      <use value="work" />
+    </telecom>
+  </contact>
+  <description value="The moment from when the data regarding the condition apply. It may be a vague moment.&#xD;&#xA;&#xD;&#xA;The StatusDate has some overlap with other concepts in this data set.&#xA;* For initial Hypersensitivities and Reactions, the StatusDate is always equal to the DiagnosticInsightDate.&#xA;* For updated Hypersensitivities and Reactions, the StatusDate is in most cases equal to the CreationDateTime." />
+  <purpose value="This extension represents the StatusDate concept for implementations following the information standard [CiO](https://informatiestandaarden.nictiz.nl/wiki/Landingspagina_Contra-indicaties_en_Overgevoeligheden)." />
+  <copyright value="Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise." />
+  <fhirVersion value="4.0.1" />
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <context>
+    <type value="element" />
+    <expression value="Condition" />
+  </context>
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension">
+      <path value="Extension" />
+      <max value="1" />
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="http://nictiz.nl/fhir/StructureDefinition/ext-StatusDate" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <short value="StatusDate" />
+      <definition value="The moment from when the data regarding the condition apply. It may be a vague moment.&#xD;&#xA;&#xD;&#xA;The StatusDate has some overlap with other concepts in this data set.&#xA;* For initial Hypersensitivities and Reactions, the StatusDate is always equal to the DiagnosticInsightDate.&#xA;* For updated Hypersensitivities and Reactions, the StatusDate is in most cases equal to the CreationDateTime." />
+      <comment value="Even though the StatusDate could have been (partly and implicitly) mapped to other elements/extensions within the Condition resource (e.g. on the [assertedDate core extension](http://hl7.org/fhir/StructureDefinition/condition-assertedDate), `.recordedDate` and `.abatement`), it has been chosen to include it separately via this extension to have a single source for conveying this information." />
+      <alias value="StatusDatum" />
+      <type>
+        <code value="dateTime" />
+      </type>
+    </element>
+  </differential>
+</StructureDefinition>

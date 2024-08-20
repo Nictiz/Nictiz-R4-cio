@@ -7,7 +7,7 @@
   <version value="1.0.0-beta.3" />
   <name value="cio MedicationHypersensitivities.RetrieveServe"/>
   <status value="active"/>
-  <date value="2023-12-15"/>
+  <date value="2024-09-30"/>
   <publisher value="Nictiz"/>
   <contact>
     <name value="Nictiz"/>
@@ -48,6 +48,11 @@
         <name value="date"/>
         <type value="date"/>
       </searchParam>
+      <searchParam>
+        <name value="medication-hypersensitivity-identifier"/>
+        <definition value="http://nictiz.nl/fhir/SearchParameter/medication-hypersensitivity-identifier"/>
+        <type value="token"/>
+      </searchParam>
     </resource>
     <resource>
       <type value="Provenance"/>
@@ -70,6 +75,14 @@
     <resource>
       <type value="Condition"/>
       <supportedProfile value="http://nictiz.nl/fhir/StructureDefinition/cio-Condition"/>
+      <documentation value="This resource needs to be resolvable by supporting a read interaction or explicitly including it in the Bundle. For a client support of the read interaction is mandatory."/>
+      <interaction>
+        <code value="read"/>
+      </interaction>
+    </resource>
+    <resource>
+      <type value="Observation"/>
+      <supportedProfile value="http://nictiz.nl/fhir/StructureDefinition/cio-Symptom"/>
       <documentation value="This resource needs to be resolvable by supporting a read interaction or explicitly including it in the Bundle. For a client support of the read interaction is mandatory."/>
       <interaction>
         <code value="read"/>
@@ -146,6 +159,11 @@
         <name value="date"/>
         <type value="date"/>
       </searchParam>
+      <searchParam>
+        <name value="medication-hypersensitivity-identifier"/>
+        <definition value="http://nictiz.nl/fhir/SearchParameter/medication-hypersensitivity-identifier"/>
+        <type value="token"/>
+      </searchParam>
     </resource>
     <resource>
       <type value="Provenance"/>
@@ -165,6 +183,11 @@
     <resource>
       <type value="Condition"/>
       <supportedProfile value="http://nictiz.nl/fhir/StructureDefinition/cio-Condition"/>
+      <documentation value="This resource needs to be resolvable by supporting a read interaction or explicitly including it in the Bundle."/>
+    </resource>
+    <resource>
+      <type value="Observation"/>
+      <supportedProfile value="http://nictiz.nl/fhir/StructureDefinition/cio-Symptom"/>
       <documentation value="This resource needs to be resolvable by supporting a read interaction or explicitly including it in the Bundle."/>
     </resource>
     <resource>

@@ -16,7 +16,7 @@
     </telecom>
   </contact>
   <description value="A proposal for medication contraindication is a request from one healthcare provider to another to register, terminate, or modify the use of certain medicines that may not be used, or only used under certain conditions." />
-  <purpose value="This Bundle resource represents the ProposalContraIndication building block for implementations following the information standard [CiO](https://informatiestandaarden.nictiz.nl/wiki/Landingspagina_Contra-indicaties_en_Overgevoeligheden). This profile does not rely on any Dutch zib ('Zorginformatiebouwsteen', i.e. Health and Care Information Model). Instead, it comprises a variety of data elements. Therefore it has no dependency on a corresponding nl-core profile and mappings to zib concepts are not defined. Instead mappings to the CiO data set have been added." />
+  <purpose value="This Bundle resource represents the ProposalContraIndication building block for implementations following the information standard [CiO](https://informatiestandaarden.nictiz.nl/wiki/Landingspagina_Contra-indicaties_en_Overgevoeligheden). This profile is not based on any Dutch zib ('Zorginformatiebouwsteen', i.e. Health and Care Information Model). Therefore it has no dependency on a corresponding nl-core profile and mappings to zib concepts are not defined. Instead mappings to the CiO data set have been added." />
   <copyright value="Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise." />
   <fhirVersion value="4.0.1" />
   <mapping>
@@ -84,6 +84,23 @@
         <system value="http://terminology.hl7.org/CodeSystem/common-tags" />
         <code value="actionable" />
       </patternCoding>
+    </element>
+    <element id="Bundle.entry:proposalContraIndication.resource.extension:proposalComment">
+      <path value="Bundle.entry.resource.extension" />
+      <sliceName value="proposalComment" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-ProposalContraIndication.Comment" />
+      </type>
+    </element>
+    <element id="Bundle.entry:proposalContraIndication.resource.extension:proposalComment.value[x]">
+      <path value="Bundle.entry.resource.extension.value[x]" />
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
+        <map value="cio-dataelement-20-940" />
+        <comment value="Comment" />
+      </mapping>
     </element>
     <element id="Bundle.entry:proposalContraIndication.resource.author">
       <path value="Bundle.entry.resource.author" />

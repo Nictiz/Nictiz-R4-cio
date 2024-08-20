@@ -41,6 +41,12 @@
         <human value="If Flag.period.end exists, Flag.extension:comment SHALL exist." />
         <expression value="period.end.exists() implies extension('http://nictiz.nl/fhir/StructureDefinition/ext-Comment').exists()" />
       </constraint>
+      <constraint>
+        <key value="cio-MedicationContraIndication-2" />
+        <severity value="error" />
+        <human value="When the medication contraindication is stopped (i.e. Flag.status is 'inactive'), a reference to the MedicationContraIndication that was active SHALL be present in Flag.extension:relationAlert." />
+        <expression value="(status = 'inactive') implies extension('http://nictiz.nl/fhir/StructureDefinition/ext-MedicationContraIndication.RelationAlert').exists()" />
+      </constraint>
       <mapping>
         <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-768" />
@@ -54,6 +60,7 @@
         <code value="Extension" />
         <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-MedicationContraIndication.RelationAlert" />
       </type>
+      <condition value="cio-MedicationContraIndication-2" />
     </element>
     <element id="Flag.extension:relationAlert.value[x]">
       <path value="Flag.extension.value[x]" />
