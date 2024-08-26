@@ -15,15 +15,10 @@
       <use value="work" />
     </telecom>
   </contact>
-  <description value="A reply to a proposal for medication contraindication is a response from one healthcare provider to another to accept or reject the proposal for medication contraindication of certain medicines that may not be used, or only used under certain conditions." />
-  <purpose value="This Communication resource represents the ReplyProposalContraIndication building block for implementations following the information standard [CiO](https://informatiestandaarden.nictiz.nl/wiki/Landingspagina_Contra-indicaties_en_Overgevoeligheden). This profile does not rely on any Dutch zib ('Zorginformatiebouwsteen', i.e. Health and Care Information Model). Instead, it comprises a variety of data elements. Therefore it has no dependency on a corresponding nl-core profile and mappings to zib concepts are not defined. Instead mappings to the CiO data set have been added." />
+  <description value="Profile on the Communication resource which represents the reply proposal contraindication conform information standard [CiO](https://informatiestandaarden.nictiz.nl/wiki/Landingspagina_Contra-indicaties_en_Overgevoeligheden)." />
+  <purpose value="To define the reply proposal contraindication as stated in the information standard CiO." />
   <copyright value="Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise." />
   <fhirVersion value="4.0.1" />
-  <mapping>
-    <identity value="cio-dataset-200-beta2-20231214" />
-    <uri value="https://decor.nictiz.nl/pub/cio/cio-html-20231214T100742/ds-2.16.840.1.113883.2.4.3.11.60.26.1.2-2020-04-02T000000.html" />
-    <name value="ART-DECOR Dataset Contraindications and hypersensitivities 2.0.0-beta.3 20231214" />
-  </mapping>
   <mapping>
     <identity value="cio-dataset-200-beta3-20240930" />
     <name value="ART-DECOR Dataset Contraindications and hypersensitivities 2.0.0-beta.3 20240930" />
@@ -34,14 +29,50 @@
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Communication" />
   <derivation value="constraint" />
   <differential>
+    <element id="Communication">
+      <path value="Communication" />
+      <short value="ReplyProposalContraIndication" />
+      <definition value="The response to the proposal for registering, retracting, or modifying a medication contraindication." />
+      <alias value="AntwoordVoorstelContraIndicatie" />
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
+        <map value="cio-dataelement-20-937" />
+        <comment value="ReplyProposalContraIndication" />
+      </mapping>
+    </element>
+    <element id="Communication.meta">
+      <path value="Communication.meta" />
+    </element>
+    <element id="Communication.meta.tag">
+      <path value="Communication.meta.tag" />
+      <slicing>
+        <discriminator>
+          <type value="pattern" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="1" />
+    </element>
+    <element id="Communication.meta.tag:actionable">
+      <path value="Communication.meta.tag" />
+      <sliceName value="actionable" />
+      <min value="1" />
+      <max value="1" />
+      <patternCoding>
+        <system value="http://terminology.hl7.org/CodeSystem/common-tags" />
+        <code value="actionable" />
+      </patternCoding>
+    </element>
     <element id="Communication.identifier">
       <path value="Communication.identifier" />
       <short value="IdentificationNumber" />
       <definition value="Globally unique number that identifies the instantiation of the information model. The number is composed of an identification of the issuer organization and a unique number assigned by this organization." />
       <alias value="Identificatienummer" />
       <min value="1" />
+      <max value="1" />
       <mapping>
-        <identity value="cio-dataset-200-beta2-20231214" />
+        <identity value="cio-dataset-200-beta3-20240930" />
         <map value="cio-dataelement-20-780" />
         <comment value="IdentificationNumber" />
       </mapping>
@@ -54,10 +85,11 @@
       <min value="1" />
       <type>
         <code value="Reference" />
-        <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/cio-ProposalContraIndication" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Resource" />
+        <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/cio-MedicationContraIndication" />
       </type>
       <mapping>
-        <identity value="cio-dataset-200-beta2-20231214" />
+        <identity value="cio-dataset-200-beta3-20240930" />
         <map value="cio-dataelement-20-945" />
         <comment value="RelationProposalContraIndication" />
       </mapping>
@@ -85,7 +117,7 @@
       <alias value="OntstaansDatumTijd" />
       <min value="1" />
       <mapping>
-        <identity value="cio-dataset-200-beta2-20231214" />
+        <identity value="cio-dataset-200-beta3-20240930" />
         <map value="cio-dataelement-20-783" />
         <comment value="CreationDateTime" />
       </mapping>
@@ -104,7 +136,7 @@
         <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole" />
       </type>
       <mapping>
-        <identity value="cio-dataset-200-beta2-20231214" />
+        <identity value="cio-dataset-200-beta3-20240930" />
         <map value="cio-dataelement-20-781" />
         <comment value="Author" />
       </mapping>
@@ -114,7 +146,7 @@
       <slicing>
         <discriminator>
           <type value="exists" />
-          <path value="content[x].extension(url='http://nictiz.nl/fhir/StructureDefinition/ext-Communication.Payload.ContentCodeableConcept')" />
+          <path value="content.extension(url='http://nictiz.nl/fhir/StructureDefinition/ext-Communication.Payload.ContentCodeableConcept')" />
         </discriminator>
         <rules value="open" />
       </slicing>
@@ -158,12 +190,12 @@
         <comment value="ResponseProposalContraIndication" />
       </mapping>
     </element>
-    <element id="Communication.payload:proposalContraIndicationComment">
+    <element id="Communication.payload:responseComment">
       <path value="Communication.payload" />
-      <sliceName value="proposalContraIndicationComment" />
+      <sliceName value="responseComment" />
       <max value="1" />
     </element>
-    <element id="Communication.payload:proposalContraIndicationComment.content[x]">
+    <element id="Communication.payload:responseComment.content[x]">
       <path value="Communication.payload.content[x]" />
       <short value="Comment" />
       <definition value="Textual explanation of the ResponseProposalContraIndication. This free text field can be used to provide the reason for rejecting the proposed medication contraindication." />

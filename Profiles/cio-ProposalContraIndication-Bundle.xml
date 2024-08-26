@@ -15,8 +15,8 @@
       <use value="work" />
     </telecom>
   </contact>
-  <description value="A proposal for medication contraindication is a request from one healthcare provider to another to register, terminate, or modify the use of certain medicines that may not be used, or only used under certain conditions." />
-  <purpose value="This Bundle resource represents the ProposalContraIndication building block for implementations following the information standard [CiO](https://informatiestandaarden.nictiz.nl/wiki/Landingspagina_Contra-indicaties_en_Overgevoeligheden). This profile is not based on any Dutch zib ('Zorginformatiebouwsteen', i.e. Health and Care Information Model). Therefore it has no dependency on a corresponding nl-core profile and mappings to zib concepts are not defined. Instead mappings to the CiO data set have been added." />
+  <description value="Profile on the Bundle resource which represents the structure of the Send ProposalContraIndication transaction conform information standard [CiO](https://informatiestandaarden.nictiz.nl/wiki/Landingspagina_Contra-indicaties_en_Overgevoeligheden)." />
+  <purpose value="To define the body of the Send ProposalContraIndication transaction." />
   <copyright value="Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise." />
   <fhirVersion value="4.0.1" />
   <mapping>
@@ -113,28 +113,6 @@
         <comment value="Author" />
       </mapping>
     </element>
-    <element id="Bundle.entry:patient">
-      <path value="Bundle.entry" />
-      <sliceName value="patient" />
-      <min value="1" />
-      <max value="1" />
-    </element>
-    <element id="Bundle.entry:patient.resource">
-      <path value="Bundle.entry.resource" />
-      <short value="Patient" />
-      <definition value="Demographics and other administrative information about an individual or animal receiving care or other health-related services." />
-      <min value="1" />
-      <type>
-        <code value="Resource" />
-        <profile value="http://hl7.org/fhir/StructureDefinition/Patient" />
-        <profile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient" />
-      </type>
-      <mapping>
-        <identity value="cio-dataset-200-beta3-20240930" />
-        <map value="cio-dataelement-20-302" />
-        <comment value="Patient" />
-      </mapping>
-    </element>
     <element id="Bundle.entry:proposalRegistrationInformation">
       <path value="Bundle.entry" />
       <sliceName value="proposalRegistrationInformation" />
@@ -155,63 +133,23 @@
         <comment value="RegistrationInformation" />
       </mapping>
     </element>
-    <element id="Bundle.entry:contact">
+    <element id="Bundle.entry:patient">
       <path value="Bundle.entry" />
-      <sliceName value="contact" />
+      <sliceName value="patient" />
+      <min value="1" />
       <max value="1" />
     </element>
-    <element id="Bundle.entry:contact.resource">
+    <element id="Bundle.entry:patient.resource">
       <path value="Bundle.entry.resource" />
-      <short value="Contact" />
-      <definition value="A contact is an interaction between a patient and health care provider(s) in the context of a problem." />
-      <alias value="Contactpersoon" />
       <min value="1" />
       <type>
         <code value="Resource" />
-        <profile value="http://hl7.org/fhir/StructureDefinition/RelatedPerson" />
-        <profile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-ContactPerson" />
+        <profile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient" />
       </type>
       <mapping>
         <identity value="cio-dataset-200-beta3-20240930" />
-        <map value="cio-dataelement-20-842" />
-        <comment value="Contact" />
-      </mapping>
-    </element>
-    <element id="Bundle.entry:healthProfessional-PractitionerRole">
-      <path value="Bundle.entry" />
-      <sliceName value="healthProfessional-PractitionerRole" />
-    </element>
-    <element id="Bundle.entry:healthProfessional-PractitionerRole.resource">
-      <path value="Bundle.entry.resource" />
-      <short value="HealthProfessionalRole" />
-      <definition value="The role the health professional fulfils in the healthcare process. For health professionals, this could be for example attender, referrer or performer." />
-      <alias value="ZorgverlenerRol" />
-      <min value="1" />
-      <type>
-        <code value="Resource" />
-        <profile value="http://hl7.org/fhir/StructureDefinition/PractitionerRole" />
-        <profile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole" />
-      </type>
-      <mapping>
-        <identity value="cio-dataset-200-beta3-20240930" />
-        <map value="cio-dataelement-20-630" />
-      </mapping>
-    </element>
-    <element id="Bundle.entry:healthcareProvider">
-      <path value="Bundle.entry" />
-      <sliceName value="healthcareProvider" />
-    </element>
-    <element id="Bundle.entry:healthcareProvider.resource">
-      <path value="Bundle.entry.resource" />
-      <definition value="A healthcare provider is an organization that offers and provides medical, paramedic and/or nursing care to patients/clients. Examples include: hospitals, nursing homes, doctor’s offices." />
-      <min value="1" />
-      <type>
-        <code value="Resource" />
-        <profile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization" />
-      </type>
-      <mapping>
-        <identity value="cio-dataset-200-beta3-20240930" />
-        <map value="cio-dataelement-20-632" />
+        <map value="cio-dataelement-20-302" />
+        <comment value="Patient" />
       </mapping>
     </element>
     <element id="Bundle.entry:medicationAgreement">
@@ -235,24 +173,76 @@
         <comment value="RelationMedicationAgreement" />
       </mapping>
     </element>
+    <element id="Bundle.entry:healthProfessional-PractitionerRole">
+      <path value="Bundle.entry" />
+      <sliceName value="healthProfessional-PractitionerRole" />
+    </element>
+    <element id="Bundle.entry:healthProfessional-PractitionerRole.resource">
+      <path value="Bundle.entry.resource" />
+      <short value="HealthProfessionalRole" />
+      <definition value="The role the health professional fulfils in the healthcare process. For health professionals, this could be for example attender, referrer or performer." />
+      <alias value="ZorgverlenerRol" />
+      <min value="1" />
+      <type>
+        <code value="Resource" />
+        <profile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole" />
+      </type>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
+        <map value="cio-dataelement-20-630" />
+      </mapping>
+    </element>
     <element id="Bundle.entry:healthProfessional-Practitioner">
       <path value="Bundle.entry" />
       <sliceName value="healthProfessional-Practitioner" />
     </element>
     <element id="Bundle.entry:healthProfessional-Practitioner.resource">
       <path value="Bundle.entry.resource" />
-      <short value="HealthProfessional" />
       <definition value="A health professional is a person who is authorized to perform actions in the field of individual healthcare. When referring to this information model the role the health professional fulfils in the healthcare process can be addressed additionally. For health professionals, this could be for example main practitioner or referrer." />
-      <alias value="Zorgverlener" />
       <min value="1" />
       <type>
         <code value="Resource" />
-        <profile value="http://hl7.org/fhir/StructureDefinition/Practitioner" />
         <profile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-Practitioner" />
       </type>
       <mapping>
         <identity value="cio-dataset-200-beta3-20240930" />
         <map value="cio-dataelement-20-591" />
+      </mapping>
+    </element>
+    <element id="Bundle.entry:healthcareProvider">
+      <path value="Bundle.entry" />
+      <sliceName value="healthcareProvider" />
+    </element>
+    <element id="Bundle.entry:healthcareProvider.resource">
+      <path value="Bundle.entry.resource" />
+      <definition value="A healthcare provider is an organization that offers and provides medical, paramedic and/or nursing care to patients/clients. Examples include: hospitals, nursing homes, doctor’s offices." />
+      <min value="1" />
+      <type>
+        <code value="Resource" />
+        <profile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization" />
+      </type>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
+        <map value="cio-dataelement-20-632" />
+      </mapping>
+    </element>
+    <element id="Bundle.entry:contactPerson">
+      <path value="Bundle.entry" />
+      <sliceName value="contactPerson" />
+      <max value="1" />
+    </element>
+    <element id="Bundle.entry:contactPerson.resource">
+      <path value="Bundle.entry.resource" />
+      <definition value="A contact is an interaction between a patient and health care provider(s) in the context of a problem." />
+      <min value="1" />
+      <type>
+        <code value="Resource" />
+        <profile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-ContactPerson" />
+      </type>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
+        <map value="cio-dataelement-20-842" />
+        <comment value="Contact" />
       </mapping>
     </element>
   </differential>
