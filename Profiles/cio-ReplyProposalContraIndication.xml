@@ -159,6 +159,12 @@
       <min value="1" />
       <max value="1" />
     </element>
+    <element id="Communication.payload:responseProposalContraIndication.content[x]">
+      <path value="Communication.payload.content[x]" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
     <element id="Communication.payload:responseProposalContraIndication.content[x].extension">
       <path value="Communication.payload.content[x].extension" />
       <min value="1" />
