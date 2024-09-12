@@ -99,6 +99,11 @@
         <comment value="Hypersensitivity" />
       </mapping>
       <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
+        <map value="cio-dataelement-20-765" />
+        <comment value="HypersensitivityIntolerance" />
+      </mapping>
+      <mapping>
         <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-766" />
         <comment value="Reaction" />

@@ -71,6 +71,11 @@
       <interaction>
         <code value="read"/>
       </interaction>
+      <searchParam>
+        <name value="medication-hypersensitivity-identifier"/>
+        <definition value="http://nictiz.nl/fhir/SearchParameter/medication-hypersensitivity-identifier"/>
+        <type value="token"/>
+      </searchParam>
     </resource>
     <resource>
       <type value="Condition"/>
@@ -79,6 +84,11 @@
       <interaction>
         <code value="read"/>
       </interaction>
+      <searchParam>
+        <name value="medication-hypersensitivity-identifier"/>
+        <definition value="http://nictiz.nl/fhir/SearchParameter/medication-hypersensitivity-identifier"/>
+        <type value="token"/>
+      </searchParam>
     </resource>
     <resource>
       <type value="Observation"/>
@@ -87,6 +97,11 @@
       <interaction>
         <code value="read"/>
       </interaction>
+      <searchParam>
+        <name value="medication-hypersensitivity-identifier"/>
+        <definition value="http://nictiz.nl/fhir/SearchParameter/medication-hypersensitivity-identifier"/>
+        <type value="token"/>
+      </searchParam>
     </resource>
     <resource>
       <type value="Patient"/>
@@ -179,16 +194,31 @@
       <supportedProfile value="http://nictiz.nl/fhir/StructureDefinition/cio-HypersensitivityIntolerance"/>
       <supportedProfile value="http://nictiz.nl/fhir/StructureDefinition/cio-Reaction"/>
       <documentation value="This resource needs to be resolvable by supporting a read interaction or explicitly including it in the Bundle."/>
+      <searchParam>
+        <name value="medication-hypersensitivity-identifier"/>
+        <definition value="http://nictiz.nl/fhir/SearchParameter/medication-hypersensitivity-identifier"/>
+        <type value="token"/>
+      </searchParam>
     </resource>
     <resource>
       <type value="Condition"/>
       <supportedProfile value="http://nictiz.nl/fhir/StructureDefinition/cio-Condition"/>
       <documentation value="This resource needs to be resolvable by supporting a read interaction or explicitly including it in the Bundle."/>
+      <searchParam>
+        <name value="medication-hypersensitivity-identifier"/>
+        <definition value="http://nictiz.nl/fhir/SearchParameter/medication-hypersensitivity-identifier"/>
+        <type value="token"/>
+      </searchParam>
     </resource>
     <resource>
       <type value="Observation"/>
       <supportedProfile value="http://nictiz.nl/fhir/StructureDefinition/cio-Symptom"/>
       <documentation value="This resource needs to be resolvable by supporting a read interaction or explicitly including it in the Bundle."/>
+      <searchParam>
+        <name value="medication-hypersensitivity-identifier"/>
+        <definition value="http://nictiz.nl/fhir/SearchParameter/medication-hypersensitivity-identifier"/>
+        <type value="token"/>
+      </searchParam>
     </resource>
     <resource>
       <type value="Patient"/>
