@@ -52,10 +52,6 @@
         <comment value="Reaction" />
       </mapping>
     </element>
-    <element id="Condition.extension">
-      <path value="Condition.extension" />
-      <min value="1" />
-    </element>
     <element id="Condition.extension:diagnosticInsightDate">
       <path value="Condition.extension" />
       <sliceName value="diagnosticInsightDate" />
@@ -71,45 +67,14 @@
       <definition value="Date (and time) at which the health professional obtained the diagnostic insight." />
       <alias value="DiagnostischInzichtDatum" />
       <mapping>
-        <identity value="cio-dataset-200-beta2-20231214" />
+        <identity value="cio-dataset-200-beta3-20231214" />
         <map value="cio-dataelement-20-799" />
         <comment value="DiagnosticInsightDate" />
       </mapping>
       <mapping>
-        <identity value="cio-dataset-200-beta2-20231214" />
+        <identity value="cio-dataset-200-beta3-20231214" />
         <map value="cio-dataelement-20-811" />
         <comment value="DiagnosticInsightDate" />
-      </mapping>
-    </element>
-    <element id="Condition.extension:periodPresent">
-      <path value="Condition.extension" />
-      <sliceName value="periodPresent" />
-      <alias value="PeriodeAanwezig" />
-      <max value="1" />
-      <type>
-        <code value="Extension" />
-        <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-PeriodPresent" />
-      </type>
-      <isModifier value="false" />
-      <mapping>
-        <identity value="cio-dataset-200-beta2-20231214" />
-        <map value="cio-dataelement-20-906" />
-        <comment value="PeriodPresent" />
-      </mapping>
-    </element>
-    <element id="Condition.extension:periodPresent.value[x]">
-      <path value="Condition.extension.value[x]" />
-    </element>
-    <element id="Condition.extension:periodPresent.value[x].extension:duration">
-      <path value="Condition.extension.value[x].extension" />
-      <sliceName value="duration" />
-    </element>
-    <element id="Condition.extension:periodPresent.value[x].extension:duration.value[x]">
-      <path value="Condition.extension.value[x].extension.value[x]" />
-      <mapping>
-        <identity value="cio-dataset-200-beta3-20240930" />
-        <map value="cio-dataelement-20-956" />
-        <comment value="Duration" />
       </mapping>
     </element>
     <element id="Condition.extension:medicationHypersensitivityIdentifier">
@@ -167,22 +132,39 @@
     <element id="Condition.code">
       <path value="Condition.code" />
       <short value="DiagnosisName" />
-      <definition value="The term with associated code that the health professional selects from the used code list. Represents the hypersensitivity/intolerances interpretation of the condition." />
-      <comment value="Ideally, in the context of a HypersensitivityIntolerance or Reaction the DiagnosisName (cio-dataelement-20-796 and cio-dataelement-20-815, respectively) would be mapped on `AllergyIntolerance.code` (in the cio-HypersensitivityIntolerance and cio-Reaction profile, respectively) instead of including it in the Condition resource. However, the cardinality of `AllergyIntolerance.code` is `0..1`, and both Substance/CausativeSubstance (cio-dataelement-20-793/cio-dataelement-20-466) and DiagnosisName semantically map to that element in their respective profiles. Moreover these data elements describe the hypersensitivity/intolerance reaction from different points of view, namely from the substance that triggers a reaction upon exposure or has triggered a reaction (Substance/CausativeSubstance), and the underlying diagnosis of the hypersensitivity/intolerance reaction (DiagnosisName). Therefore they cannot be viewed as representations of the same concept with slightly different granularity and it is thus not allowed to include them both as different `AllergyIntolerance.code.coding`s. As Substance/CausativeSubstance contain more detailed information regarding the nature of the hypersensitivity/intolerance and reaction respectively, it has been chosen to map these directly to `AllergyIntolerance.code`, while DiagnosisName is mapped to `Condition.code` instead." />
+      <definition value="The term with associated code that the health professional selects from the used code list. Represents the hypersensitivity as interpretation of the condition." />
+      <comment value="Ideally, in the context of a Hypersensitivity Intolerance or Reaction the DiagnosisName (cio-dataelement-20-796 and cio-dataelement-20-815, respectively) would be mapped on `AllergyIntolerance.code` (in the cio-Hypersensitivity and cio-Reaction profile, respectively) instead of including it in the Condition resource. However, the cardinality of `AllergyIntolerance.code` is 0..1, and both Substance/CausativeSubstance (cio-dataelement-20-793/cio-dataelement-20-466) and DiagnosisName semantically map to that element in their respective profiles. Moreover these data elements describe the hypersensitivity or reaction from different points of view, namely from the substance that triggers a reaction upon exposure or has triggered a reaction (Substance/CausativeSubstance), and the underlying diagnosis of the hypersensitivity or reaction (DiagnosisName). Therefore they cannot be viewed as representations of the same concept with slightly different granularity and it is thus not allowed to include them both as different `AllergyIntolerance.code.coding`s. As Substance/CausativeSubstance contain more detailed information regarding the nature of the hypersensitivity/reaction, it has been chosen to map these directly to `AllergyIntolerance.code`, while DiagnosisName is mapped to `Condition.code` instead." />
       <alias value="DiagnoseNaam" />
+      <min value="1" />
       <binding>
         <strength value="required" />
         <valueSet value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.26.11.31--20231207101023" />
       </binding>
       <mapping>
-        <identity value="cio-dataset-200-beta2-20231214" />
+        <identity value="cio-dataset-200-beta3-20231214" />
         <map value="cio-dataelement-20-796" />
         <comment value="DiagnosisName" />
       </mapping>
       <mapping>
-        <identity value="cio-dataset-200-beta2-20231214" />
+        <identity value="cio-dataset-200-beta3-20231214" />
         <map value="cio-dataelement-20-815" />
         <comment value="DiagnosisName" />
+      </mapping>
+    </element>
+    <element id="Condition.code.text">
+      <path value="Condition.code.text" />
+      <short value="FurtherSpecificationDiagnosisName" />
+      <definition value="A more detailed description of the name of the hypersensitivity or reaction in free text, when this detail is not available in the used code list." />
+      <alias value="NadereSpecificatieDiagnoseNaam" />
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20231214" />
+        <map value="cio-dataelement-20-797" />
+        <comment value="FurtherSpecificationDiagnosisName" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20231214" />
+        <map value="cio-dataelement-20-816" />
+        <comment value="FurtherSpecificationDiagnosisName" />
       </mapping>
     </element>
     <element id="Condition.subject">

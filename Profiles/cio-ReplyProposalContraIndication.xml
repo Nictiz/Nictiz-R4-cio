@@ -146,7 +146,7 @@
       <slicing>
         <discriminator>
           <type value="exists" />
-          <path value="content.extension(url='http://nictiz.nl/fhir/StructureDefinition/ext-Communication.Payload.ContentCodeableConcept')" />
+          <path value="content.extension(url='http://hl7.org/fhir/5.0/StructureDefinition/extension-Communication.payload.content')" />
         </discriminator>
         <rules value="open" />
       </slicing>
@@ -176,7 +176,7 @@
       <min value="1" />
       <type>
         <code value="Extension" />
-        <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-Communication.Payload.ContentCodeableConcept" />
+        <profile value="http://hl7.org/fhir/5.0/StructureDefinition/extension-Communication.payload.content" />
       </type>
     </element>
     <element id="Communication.payload:responseProposalContraIndication.content[x].extension:contentCodeableConcept.value[x]">

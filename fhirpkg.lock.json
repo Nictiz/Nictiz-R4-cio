@@ -1,9 +1,10 @@
 {
-  "updated": "2024-06-18T09:40:34.9244883+02:00",
+  "updated": "2024-09-02T10:36:42.7430977+02:00",
   "dependencies": {
     "hl7.fhir.r4.core": "4.0.1",
     "nictiz.fhir.nl.r4.nl-core": "0.10.0-beta.1",
-    "nictiz.fhir.nl.r4.zib2020": "0.10.0-beta.1"
+    "nictiz.fhir.nl.r4.zib2020": "0.10.0-beta.1",
+    "nictiz.fhir.nl.r4.medicationprocess9": "2.0.0-beta.5"
   },
   "missing": {}
 }

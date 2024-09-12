@@ -379,18 +379,6 @@
         <comment value="CausativeSubstance" />
       </mapping>
     </element>
-    <element id="AllergyIntolerance.reaction.manifestation.text">
-      <path value="AllergyIntolerance.reaction.manifestation.text" />
-      <short value="ReactionPhenomenon" />
-      <definition value="The substantive specifications of the reaction (symptoms) that occurs when the patient is exposed to the substance." />
-      <alias value="ReactieVerschijnsel" />
-      <min value="1" />
-      <mapping>
-        <identity value="cio-dataset-200-beta2-20231214" />
-        <map value="cio-dataelement-20-465" />
-        <comment value="ReactionPhenomenon" />
-      </mapping>
-    </element>
     <element id="AllergyIntolerance.reaction.exposureRoute">
       <path value="AllergyIntolerance.reaction.exposureRoute" />
       <short value="RouteOfExposure" />

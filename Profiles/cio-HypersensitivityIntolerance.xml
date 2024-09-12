@@ -199,6 +199,11 @@
         <valueSet value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.26.11.15--20231120120828" />
       </binding>
     </element>
+    <element id="AllergyIntolerance.type">
+      <path value="AllergyIntolerance.type" />
+      <comment value="Due to the required binding on this element it is not possible to use it to indicate that an AllergyIntolerance resource conforming to this profile represents an instance of the Hypersensitivity building block. Therefore the `.type` element from R5 (with a preferred binding) is implicitly pre-adopted via the [AllergyIntolerance-Type extension](http://nictiz.nl/fhir/StructureDefinition/ext-AllergyIntolerance-Type)." />
+      <max value="0" />
+    </element>
     <element id="AllergyIntolerance.category">
       <path value="AllergyIntolerance.category" />
       <short value="Category" />
@@ -321,6 +326,38 @@
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/Patient" />
         <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient" />
       </type>
+    </element>
+    <element id="AllergyIntolerance.onset[x]">
+      <path value="AllergyIntolerance.onset[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="1" />
+    </element>
+    <element id="AllergyIntolerance.onset[x]:onsetDateTime">
+      <path value="AllergyIntolerance.onset[x]" />
+      <sliceName value="onsetDateTime" />
+      <short value="StartDateTime" />
+      <definition value="Date and possibly time when the condition started. One will often use the start date of the first symptom. It may be a vague date." />
+      <alias value="StartDatumTijd" />
+      <min value="1" />
+      <type>
+        <code value="dateTime" />
+      </type>
+      <mapping>
+        <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-804" />
+        <comment value="ConditionStartDateTime" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
+        <map value="cio-dataelement-20-954" />
+        <comment value="startDateTime" />
+      </mapping>
     </element>
     <element id="AllergyIntolerance.recordedDate">
       <path value="AllergyIntolerance.recordedDate" />
