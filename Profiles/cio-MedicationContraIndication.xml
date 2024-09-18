@@ -51,11 +51,24 @@
         <human value="If the medication contraindication is stopped (i.e. Flag.status is 'inactive'), a reference to the previous active medication contraindication SHALL be present in Flag.extension:relationAlert." />
         <expression value="(status = 'inactive') implies extension('http://nictiz.nl/fhir/StructureDefinition/ext-MedicationContraIndication.RelationAlert').exists()" />
       </constraint>
+      <constraint>
+        <key value="cio-MedicationContraIndication-3" />
+        <severity value="error" />
+        <human value="If the medication contraindication is not a proposal, the Flag.period.start SHALL be present." />
+        <expression value="meta.tag.where(system = 'http://terminology.hl7.org/CodeSystem/common-tags' and code = 'actionable').exists().not() implies period.start.exists()" />
+      </constraint>
       <mapping>
         <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-768" />
         <comment value="Alert" />
       </mapping>
+    </element>
+    <element id="Flag.meta">
+      <path value="Flag.meta" />
+    </element>
+    <element id="Flag.meta.tag">
+      <path value="Flag.meta.tag" />
+      <condition value="cio-MedicationContraIndication-3" />
     </element>
     <element id="Flag.extension:relationAlert">
       <path value="Flag.extension" />
@@ -172,16 +185,12 @@
         <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient" />
       </type>
     </element>
-    <element id="Flag.period">
-      <path value="Flag.period" />
-      <min value="1" />
-    </element>
     <element id="Flag.period.start">
       <path value="Flag.period.start" />
       <short value="StartDateTime" />
       <definition value="The date and time at which the described condition was entered as a warning. This can be an exact date and time, or a rough indication of the date (such as only the year, or the month and the year)." />
       <alias value="BeginDatumTijd" />
-      <min value="1" />
+      <condition value="cio-MedicationContraIndication-3" />
       <mapping>
         <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-773" />
