@@ -22,7 +22,11 @@
   <mapping>
     <identity value="cio-dataset-200-beta2-20231214" />
     <uri value="https://decor.nictiz.nl/pub/cio/cio-html-20231214T100742/ds-2.16.840.1.113883.2.4.3.11.60.26.1.2-2020-04-02T000000.html" />
-    <name value="ART-DECOR Dataset Contraindications and hypersensitivities 2.0.0-beta.3 20231214" />
+    <name value="ART-DECOR Dataset Contraindications and hypersensitivities 2.0.0-beta.2 20231214" />
+  </mapping>
+  <mapping>
+    <identity value="cio-dataset-200-beta3-20240930" />
+    <name value="ART-DECOR Dataset Contraindications and hypersensitivities 2.0.0-beta.3 20240930" />
   </mapping>
   <kind value="resource" />
   <abstract value="false" />
@@ -44,7 +48,7 @@
       <constraint>
         <key value="cio-MedicationContraIndication-2" />
         <severity value="error" />
-        <human value="When the medication contraindication is stopped (i.e. Flag.status is 'inactive'), a reference to the MedicationContraIndication that was active SHALL be present in Flag.extension:relationAlert." />
+        <human value="If the medication contraindication is stopped (i.e. Flag.status is 'inactive'), a reference to the previous active medication contraindication SHALL be present in Flag.extension:relationAlert." />
         <expression value="(status = 'inactive') implies extension('http://nictiz.nl/fhir/StructureDefinition/ext-MedicationContraIndication.RelationAlert').exists()" />
       </constraint>
       <mapping>
@@ -106,6 +110,7 @@
     <element id="Flag.status">
       <path value="Flag.status" />
       <comment value="Sending systems that don't record an explicit status, SHOULD use the following guidance to infer a value from EndDateTime:&#xD;&#xA;&#xD;&#xA;* When EndDateTime is present and in the past, `.status` will be set to _inactive_.&#xD;&#xA;* When EndDateTime is absent, `.status` will be set to _active_.&#xD;&#xA;* When EndDateTime is present and in the future (which actually goes against both FHIR and zib definitions, but in a case where this might occur), `.status` will be set to _active_." />
+      <condition value="cio-MedicationContraIndication-2" />
       <mapping>
         <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-769" />
