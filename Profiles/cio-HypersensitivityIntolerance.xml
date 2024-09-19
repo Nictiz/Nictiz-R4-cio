@@ -145,6 +145,7 @@
       <short value="IdentificationNumber" />
       <definition value="Globally unique number that identifies the instantiation of the information model. The number is composed of an identification of the issuer organization and a unique number assigned by this organization." />
       <alias value="Identificatienummer" />
+      <min value="1" />
       <mapping>
         <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-780" />
@@ -311,17 +312,6 @@
         <comment value="Substance" />
       </mapping>
     </element>
-    <element id="AllergyIntolerance.code.text">
-      <path value="AllergyIntolerance.code.text" />
-      <short value="FurtherSpecificationDiagnosisName" />
-      <definition value="A more detailed description of the name of the hypersensitivity/intolerance or reaction in free text, when this detail is not available in the used code list." />
-      <alias value="NadereSpecificatieDiagnoseNaam" />
-      <mapping>
-        <identity value="cio-dataset-200-beta2-20231214" />
-        <map value="cio-dataelement-20-797" />
-        <comment value="FurtherSpecificationDiagnosisName" />
-      </mapping>
-    </element>
     <element id="AllergyIntolerance.patient">
       <path value="AllergyIntolerance.patient" />
       <type>
@@ -394,7 +384,7 @@
     <element id="AllergyIntolerance.asserter">
       <path value="AllergyIntolerance.asserter" />
       <short value="Diagnostician" />
-      <definition value="The health professional that acquired the diagnostic insight of the reaction. This can be a different individual than the person who recorded the diagnostic insight." />
+      <definition value="The health professional that acquired the diagnostic insight regarding the hypersensitivity or intolerance. This can be a different individual than the person who recorded the diagnostic insight." />
       <alias value="DiagnoseSteller" />
       <min value="1" />
       <type>

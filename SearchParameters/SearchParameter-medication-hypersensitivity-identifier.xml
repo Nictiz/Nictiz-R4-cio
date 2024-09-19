@@ -13,7 +13,7 @@
             <use value="work" />
         </telecom>
     </contact>
-    <description value="Searches on the value provided in the medication hypersensitivity identifier extension (http://nictiz.nl/fhir/StructureDefinition/ext-MedicationHypersensitivity.Identifier) in the following resources:&#xD;&#xA;* [Flag](http://hl7.org/fhir/r4/medicationrequest.html)&#xD;&#xA;* [AllergyIntolerance](http://hl7.org/fhir/r4/medicationdispense.html)&#xD;&#xA;* [Condition](http://hl7.org/fhir/r4/medicationstatement.html)&#xD;&#xA;* [Observation](http://hl7.org/fhir/r4/medicationadministration.html)" />
+    <description value="Searches on the value provided in the medication hypersensitivity identifier extension (http://nictiz.nl/fhir/StructureDefinition/ext-MedicationHypersensitivity.Identifier) in the following resources:&#xD;&#xA;* [Flag](http://hl7.org/fhir/r4/flag.html)&#xD;&#xA;* [AllergyIntolerance](http://hl7.org/fhir/r4/allergyintolerance.html)&#xD;&#xA;* [Condition](http://hl7.org/fhir/r4/condition.html)&#xD;&#xA;* [Observation](http://hl7.org/fhir/r4/observation.html)" />
     <purpose value="To select the Flag, AllergyIntolerance, Condition, and Observation resources based on a specific medication hypersensitivity identifier." />
     <code value="medication-hypersensitivity-identifier" />
     <base value="Flag" />

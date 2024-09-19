@@ -33,7 +33,7 @@
     <element id="Observation">
       <path value="Observation" />
       <short value="Symptom" />
-      <comment value="This profile is always used together with an instance conforming to [cio-Condition](http://nictiz.nl/fhir/StructureDefinition/cio-Condition) and [cio-Reaction](http://nictiz.nl/fhir/StructureDefinition/cio-Reaction). &#xD;&#xA;&#xD;&#xA;Note that the concept RelationCondition from the Symptom building block is not mapped within this profile. Instead, the relationship between Symptom and Condition is established through the `Condition.evidence.detail` element. Please refer to the [cio-Condition](http://nictiz.nl/fhir/StructureDefinition/cio-Condition) profile for more guidance." />
+      <comment value="This profile is always used together with an instance conforming to [cio-Condition](http://nictiz.nl/fhir/StructureDefinition/cio-Condition) and [cio-Reaction](http://nictiz.nl/fhir/StructureDefinition/cio-Reaction).&#xD;&#xA;&#xD;&#xA;Please note that on a functional level, the building block Symptom references the building block Condition, but in FHIR this direction is reversed. Therefore, the concept RelationCondition (cio-dataelement-20-921) is mapped on `Condition.evidence.detail` in profile the [cio-Condition](http://nictiz.nl/fhir/StructureDefinition/cio-Condition) instead of in this profile." />
       <alias value="Symptoom" />
       <mapping>
         <identity value="cio-dataset-200-beta3-20240930" />
@@ -43,25 +43,7 @@
     </element>
     <element id="Observation.extension">
       <path value="Observation.extension" />
-      <min value="2" />
-    </element>
-    <element id="Observation.extension:relationCondition">
-      <path value="Observation.extension" />
-      <sliceName value="relationCondition" />
       <min value="1" />
-      <type>
-        <code value="Extension" />
-        <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-RelationCondition" />
-      </type>
-    </element>
-    <element id="Observation.extension:relationCondition.value[x]">
-      <path value="Observation.extension.value[x]" />
-      <definition value="The condition of which the symptom is a manifestation." />
-      <mapping>
-        <identity value="cio-dataset-200-beta2-20231214" />
-        <map value="cio-dataelement-20-923" />
-        <comment value="RelationCondition" />
-      </mapping>
     </element>
     <element id="Observation.extension:medicationHypersensitivityIdentifier">
       <path value="Observation.extension" />
@@ -73,7 +55,7 @@
       </type>
     </element>
     <element id="Observation.extension:medicationHypersensitivityIdentifier.value[x]">
-      <path value="Observation.extension.value[x]"/>
+      <path value="Observation.extension.value[x]" />
       <mapping>
         <identity value="cio-dataset-200-beta3-20240930" />
         <map value="cio-dataelement-20-888" />
@@ -85,6 +67,7 @@
       <short value="IdentificationNumber" />
       <definition value="Globally unique number that identifies the instantiation of the information model. The number is composed of an identification of the issuer organization and a unique number assigned by this organization." />
       <alias value="Identificatienummer" />
+      <min value="1" />
       <mapping>
         <identity value="cio-dataset-200-beta3-20240930" />
         <map value="cio-dataelement-20-780" />
