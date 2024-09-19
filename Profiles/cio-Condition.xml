@@ -47,7 +47,7 @@
     </element>
     <element id="Condition.extension">
       <path value="Condition.extension" />
-      <min value="1" />
+      <min value="2" />
     </element>
     <element id="Condition.extension:diagnosticInsightDate">
       <path value="Condition.extension" />
@@ -77,11 +77,11 @@
     <element id="Condition.extension:medicationHypersensitivityIdentifier">
       <path value="Condition.extension" />
       <sliceName value="medicationHypersensitivityIdentifier" />
+      <min value="1" />
       <type>
         <code value="Extension" />
         <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-MedicationHypersensitivity.Identifier" />
       </type>
-      <isModifier value="false" />
     </element>
     <element id="Condition.extension:medicationHypersensitivityIdentifier.value[x]">
       <path value="Condition.extension.value[x]" />
@@ -130,7 +130,7 @@
       <path value="Condition.code" />
       <short value="DiagnosisName" />
       <definition value="The term with associated code that the health professional selects from the used code list. Represents the hypersensitivity as interpretation of the condition." />
-      <comment value="Ideally, in the context of a Hypersensitivity Intolerance or Reaction the DiagnosisName (cio-dataelement-20-796 and cio-dataelement-20-815, respectively) would be mapped on `AllergyIntolerance.code` (in the cio-Hypersensitivity and cio-Reaction profile, respectively) instead of including it in the Condition resource. However, the cardinality of `AllergyIntolerance.code` is 0..1, and both Substance/CausativeSubstance (cio-dataelement-20-793/cio-dataelement-20-466) and DiagnosisName semantically map to that element in their respective profiles. Moreover these data elements describe the hypersensitivity or reaction from different points of view, namely from the substance that triggers a reaction upon exposure or has triggered a reaction (Substance/CausativeSubstance), and the underlying diagnosis of the hypersensitivity or reaction (DiagnosisName). Therefore they cannot be viewed as representations of the same concept with slightly different granularity and it is thus not allowed to include them both as different `AllergyIntolerance.code.coding`s. As Substance/CausativeSubstance contain more detailed information regarding the nature of the hypersensitivity/reaction, it has been chosen to map these directly to `AllergyIntolerance.code`, while DiagnosisName is mapped to `Condition.code` instead." />
+      <comment value="Ideally, in the context of a hypersensitivity/intolerance or reaction the DiagnosisName (cio-dataelement-20-796 and cio-dataelement-20-815, respectively) would be mapped on `AllergyIntolerance.code` (in the cio-HypersensitivityIntolerance and cio-Reaction profile, respectively) instead of including it in the Condition resource. However, the cardinality of `AllergyIntolerance.code` is 0..1, and both Substance/CausativeSubstance (cio-dataelement-20-793/cio-dataelement-20-466) and DiagnosisName semantically map to that element in their respective profiles. Moreover these data elements describe the hypersensitivity/intolerance or reaction from different points of view, namely from the substance that triggers a reaction upon exposure or has triggered a reaction (Substance/CausativeSubstance), and the underlying diagnosis of the hypersensitivity/intolerance or reaction (DiagnosisName). Therefore they cannot be viewed as representations of the same concept with slightly different granularity and it is thus not allowed to include them both as different `AllergyIntolerance.code.coding`s. As Substance and CausativeSubstance contain more detailed information regarding the nature of the hypersensitivity/intolerance and reaction, respectively, it has been chosen to map these directly to `AllergyIntolerance.code`, while DiagnosisName is mapped to `Condition.code` instead." />
       <alias value="DiagnoseNaam" />
       <min value="1" />
       <binding>

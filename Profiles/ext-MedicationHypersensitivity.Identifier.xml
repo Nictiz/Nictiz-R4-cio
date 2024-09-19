@@ -15,8 +15,8 @@
       <use value="work" />
     </telecom>
   </contact>
-  <description value="An extension to provide a globally unique identifier that identifies a set of Medication Hypersensitivity building blocks that belong to one medication hypersensitivity. The identifier is composed of the system of an issuing organization and a unique identifier assigned by this organization." />
-  <purpose value="This extension represents the MedicationHypersensitivity.Identifier concept, as Medication Hypersensitivity lacks an explicit resource representation. It aligns with the implementations following the information standard [CiO](https://informatiestandaarden.nictiz.nl/wiki/Landingspagina_Contra-indicaties_en_Overgevoeligheden)." />
+  <description value="This extension provides an identifier to unambiguously identify the set of interdependent medication hypersensitivity building blocks that belong to one medication hypersensitivity." />
+  <purpose value="This extension represents the IdentificationGMO concept for implementations following the information standard [CiO](https://informatiestandaarden.nictiz.nl/wiki/Landingspagina_Contra-indicaties_en_Overgevoeligheden)." />
   <copyright value="Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise." />
   <fhirVersion value="4.0.1" />
   <kind value="complex-type" />
@@ -52,9 +52,10 @@
     <element id="Extension.value[x]">
       <path value="Extension.value[x]" />
       <short value="Medication Hypersensitivity Identifier" />
-      <definition value="The identifier of the medication hypensensitivity that this resource belongs to. This identifier is used to group the disparate resources that belong to a single medication hypersensitivity." />
-      <alias value="Geneesmiddelovergevoeligheid identificatie" />
+      <definition value="The identifier of the medication hypersensitivity that this resource belongs to. This identifier is used to group the disparate resources that belong to a single medication hypersensitivity." />
       <alias value="IdentificationGMO" />
+      <alias value="Geneesmiddelovergevoeligheid identificatie" />
+      <alias value="IdentificatieGMO" />
       <type>
         <code value="Identifier" />
       </type>

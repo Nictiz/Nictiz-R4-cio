@@ -48,7 +48,7 @@
     </element>
     <element id="AllergyIntolerance.extension">
       <path value="AllergyIntolerance.extension" />
-      <min value="3" />
+      <min value="4" />
     </element>
     <element id="AllergyIntolerance.extension:type">
       <path value="AllergyIntolerance.extension" />
@@ -116,9 +116,7 @@
     </element>
     <element id="AllergyIntolerance.extension:relationCondition.value[x]">
       <path value="AllergyIntolerance.extension.value[x]" />
-      <short value="RelationCondition" />
       <definition value="The condition of which the hypersensitivity or intolerance is the interpretation." />
-      <alias value="RelatieAandoeningOfGesteldheid" />
       <mapping>
         <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-932" />
@@ -128,11 +126,11 @@
     <element id="AllergyIntolerance.extension:medicationHypersensitivityIdentifier">
       <path value="AllergyIntolerance.extension" />
       <sliceName value="medicationHypersensitivityIdentifier" />
+      <min value="1" />
       <type>
         <code value="Extension" />
         <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-MedicationHypersensitivity.Identifier" />
       </type>
-      <isModifier value="false" />
     </element>
     <element id="AllergyIntolerance.extension:medicationHypersensitivityIdentifier.value[x]">
       <path value="AllergyIntolerance.extension.value[x]" />
@@ -165,7 +163,7 @@
     <element id="AllergyIntolerance.verificationStatus">
       <path value="AllergyIntolerance.verificationStatus" />
       <short value="CertaintyStatus" />
-      <definition value="Indicates the conviction of the health professional with respect to the hypersensitivity/intolerance as interpretation of the condition." />
+      <definition value="Indicates the conviction of the health professional with respect to the hypersensitivity or intolerance as interpretation of the condition." />
       <alias value="ZekerheidStatus" />
       <binding>
         <strength value="required" />
@@ -419,7 +417,7 @@
     <element id="AllergyIntolerance.note.text">
       <path value="AllergyIntolerance.note.text" />
       <short value="Comment" />
-      <definition value="Textual explanation of the hypersensitivity/intolerance which cannot be entered in any of the other fields." />
+      <definition value="Textual explanation of the hypersensitivity or intolerance which cannot be entered in any of the other fields." />
       <alias value="Toelichting" />
       <mapping>
         <identity value="cio-dataset-200-beta2-20231214" />

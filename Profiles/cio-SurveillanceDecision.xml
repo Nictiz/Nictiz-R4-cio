@@ -22,7 +22,11 @@
   <mapping>
     <identity value="cio-dataset-200-beta2-20231214" />
     <uri value="https://decor.nictiz.nl/pub/cio/cio-html-20231214T100742/ds-2.16.840.1.113883.2.4.3.11.60.26.1.2-2020-04-02T000000.html" />
-    <name value="ART-DECOR Dataset Contraindications and hypersensitivities 2.0.0-beta.3 20231214" />
+    <name value="ART-DECOR Dataset Contraindications and hypersensitivities 2.0.0-beta.2 20231214" />
+  </mapping>
+  <mapping>
+    <identity value="cio-dataset-200-beta3-20240930" />
+    <name value="ART-DECOR Dataset Contraindications and hypersensitivities 2.0.0-beta.3 20240930" />
   </mapping>
   <kind value="resource" />
   <abstract value="false" />
@@ -38,20 +42,20 @@
       <constraint>
         <key value="cio-SurveillanceDecision-1" />
         <severity value="error" />
-        <human value="When Flag.status is 'inactive', Flag.period.end SHALL exist." />
+        <human value="If Flag.status is 'inactive', Flag.period.end SHALL exist." />
         <expression value="(status = 'inactive') implies period.end.exists()" />
       </constraint>
       <constraint>
         <key value="cio-SurveillanceDecision-2" />
         <severity value="error" />
-        <human value="When the surveillance is stopped (i.e. Flag.status is 'inactive'), a reference to the SurveillanceDecision that was active SHALL be present in Flag.extension:relationSurveillanceDecision." />
+        <human value="If the surveillance is stopped (i.e. Flag.status is 'inactive'), a reference to the previous surveillance decision that was active SHALL be present in Flag.extension:relationSurveillanceDecision." />
         <expression value="(status = 'inactive') implies extension('http://nictiz.nl/fhir/StructureDefinition/ext-SurveillanceDecision.RelationSurveillanceDecision').exists()" />
       </constraint>
       <constraint>
         <key value="cio-SurveillanceDecision-3" />
         <severity value="error" />
-        <human value="A decision basis SHALL be given, either as a reference to a hypersensitivity/intolerance or reaction in Flag.extension:decisionBasis, or as text in Flag.extension:comment." />
-        <expression value="extension('http://hl7.org/fhir/StructureDefinition/flag-detail').exists() or extension('http://nictiz.nl/fhir/StructureDefinition/ext-Comment').exists()" />
+        <human value="A decision basis SHALL be given, either as a reference to a hypersensitivity/intolerance or reaction in Flag.extension:decisionBasisReference, or as text in Flag.extension:decisionBasisReason." />
+        <expression value="extension('http://hl7.org/fhir/StructureDefinition/flag-detail').exists() or extension('http://nictiz.nl/fhir/StructureDefinition/ext-SurveillanceDecision.SurveillanceDecision').exists()" />
       </constraint>
       <mapping>
         <identity value="cio-dataset-200-beta2-20231214" />
@@ -63,28 +67,21 @@
       <path value="Flag.extension" />
       <min value="1" />
     </element>
-    <element id="Flag.extension:decisionBasis">
+    <element id="Flag.extension:decisionBasisReference">
       <path value="Flag.extension" />
-      <sliceName value="decisionBasis" />
-      <alias value="BesluitGrond" />
-      <min value="1" />
+      <sliceName value="decisionBasisReference" />
       <max value="1" />
       <type>
         <code value="Extension" />
         <profile value="http://hl7.org/fhir/StructureDefinition/flag-detail" />
       </type>
       <condition value="cio-SurveillanceDecision-3" />
-      <mapping>
-        <identity value="cio-dataset-200-beta2-20231214" />
-        <map value="cio-dataelement-20-758" />
-        <comment value="DecisionBasis" />
-      </mapping>
     </element>
-    <element id="Flag.extension:decisionBasis.value[x]">
+    <element id="Flag.extension:decisionBasisReference.value[x]">
       <path value="Flag.extension.value[x]" />
       <short value="HypersensitivityIntolerance / Reaction" />
       <definition value="The hypersensitivity/intolerance or reaction in the patient as reason for the surveillance decision." />
-      <comment value="Whenever the surveillance decision has been taken on another basis than a hypersensitivity/intolerance or reaction, that basis SHALL be communicated via `.extension:comment`." />
+      <comment value="Whenever the surveillance decision has been taken on another basis than a hypersensitivity/intolerance or reaction, that basis SHALL be communicated via `.extension:decisionBasisReason`." />
       <alias value="Overgevoeligheid" />
       <alias value="Reactie" />
       <type>
@@ -96,7 +93,12 @@
       <mapping>
         <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-765" />
-        <comment value="Hypersensitivity" />
+        <comment value="Hypersensitivity [DEPRECATED]" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-766" />
+        <comment value="Reaction" />
       </mapping>
       <mapping>
         <identity value="cio-dataset-200-beta3-20240930" />
@@ -104,9 +106,28 @@
         <comment value="HypersensitivityIntolerance" />
       </mapping>
       <mapping>
-        <identity value="cio-dataset-200-beta2-20231214" />
+        <identity value="cio-dataset-200-beta3-20240930" />
         <map value="cio-dataelement-20-766" />
         <comment value="Reaction" />
+      </mapping>
+    </element>
+    <element id="Flag.extension:decisionBasisReason">
+      <path value="Flag.extension" />
+      <sliceName value="decisionBasisReason" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-SurveillanceDecision.SurveillanceDecision" />
+      </type>
+      <condition value="cio-SurveillanceDecision-3" />
+    </element>
+    <element id="Flag.extension:decisionBasisReason.value[x]">
+      <path value="Flag.extension.value[x]" />
+      <comment value="Whenever the surveillance decision has been taken on another basis than a hypersensitivity/intolerance or reaction, that basis SHALL be communicated via this element." />
+      <condition value="cio-SurveillanceDecision-3" />
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
+        <map value="cio-dataelement-20-916" />
+        <comment value="SurveillanceDecision" />
       </mapping>
     </element>
     <element id="Flag.extension:relationSurveillanceDecision">
@@ -135,15 +156,12 @@
         <code value="Extension" />
         <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-Comment" />
       </type>
-      <condition value="cio-SurveillanceDecision-3" />
     </element>
     <element id="Flag.extension:comment.value[x]">
       <path value="Flag.extension.value[x]" />
       <short value="Comment" />
       <definition value="Textual explanation of the surveillance decision which cannot be expressed in any of the other fields." />
-      <comment value="Whenever the surveillance decision has been taken on another basis than a hypersensitivity/intolerance or reaction, that basis SHALL be communicated via this element." />
       <alias value="Toelichting" />
-      <condition value="cio-SurveillanceDecision-3" />
       <mapping>
         <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-764" />
@@ -153,32 +171,18 @@
     <element id="Flag.extension:medicationHypersensitivityIdentifier">
       <path value="Flag.extension" />
       <sliceName value="medicationHypersensitivityIdentifier" />
+      <min value="1" />
       <type>
         <code value="Extension" />
         <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-MedicationHypersensitivity.Identifier" />
-      </type>
-      <isModifier value="false" />
+      </type>      
+    </element>
+    <element id="Flag.extension:medicationHypersensitivityIdentifier.value[x]">
+      <path value="Flag.extension.value[x]"/>
       <mapping>
-        <identity value="cio-dataset-200-beta2-20231214" />
+        <identity value="cio-dataset-200-beta3-20240930" />
         <map value="cio-dataelement-20-888" />
         <comment value="IdentificationGMO" />
-      </mapping>
-    </element>
-    <element id="Flag.extension:surveillanceDecision">
-      <path value="Flag.extension" />
-      <sliceName value="surveillanceDecision" />
-      <type>
-        <code value="Extension" />
-        <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-SurveillanceDecision.SurveillanceDecision" />
-      </type>
-      <isModifier value="false" />
-    </element>
-    <element id="Flag.extension:surveillanceDecision.value[x]">
-      <path value="Flag.extension.value[x]" />
-      <mapping>
-        <identity value="cio-dataset-200-beta2-20231214" />
-        <map value="cio-dataelement-20-916" />
-        <comment value="SurveillanceDecision" />
       </mapping>
     </element>
     <element id="Flag.identifier">

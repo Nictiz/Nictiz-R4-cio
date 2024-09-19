@@ -47,7 +47,7 @@
     </element>
     <element id="AllergyIntolerance.extension">
       <path value="AllergyIntolerance.extension" />
-      <min value="3" />
+      <min value="4" />
     </element>
     <element id="AllergyIntolerance.extension:type">
       <path value="AllergyIntolerance.extension" />
@@ -115,26 +115,24 @@
     </element>
     <element id="AllergyIntolerance.extension:relationCondition.value[x]">
       <path value="AllergyIntolerance.extension.value[x]" />
-      <short value="RelationCondition" />
       <definition value="The condition that the healthcare provider has identified as a reaction." />
-      <alias value="RelatieAandoeningOfGesteldheid" />
       <mapping>
         <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-923" />
         <comment value="RelationCondition" />
       </mapping>
     </element>
-    <element id="AllergyIntolerance.extension:RelationHypersensitivityIntolerance">
+    <element id="AllergyIntolerance.extension:relationHypersensitivityIntolerance">
       <path value="AllergyIntolerance.extension" />
-      <sliceName value="RelationHypersensitivityIntolerance" />
+      <sliceName value="relationHypersensitivityIntolerance" />
       <type>
         <code value="Extension" />
         <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-Reaction.RelationHypersensitivityIntolerance" />
       </type>
     </element>
-    <element id="AllergyIntolerance.extension:RelationHypersensitivityIntolerance.value[x]">
+    <element id="AllergyIntolerance.extension:relationHypersensitivityIntolerance.value[x]">
       <path value="AllergyIntolerance.extension.value[x]" />
-      <definition value="Relation to the Hypersensitivity or intolerance underlying the reaction." />
+      <definition value="Relation to the hypersensitivity or intolerance underlying the reaction." />
       <mapping>
         <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-823" />
@@ -149,11 +147,11 @@
     <element id="AllergyIntolerance.extension:medicationHypersensitivityIdentifier">
       <path value="AllergyIntolerance.extension" />
       <sliceName value="medicationHypersensitivityIdentifier" />
+      <min value="1" />
       <type>
         <code value="Extension" />
         <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-MedicationHypersensitivity.Identifier" />
       </type>
-      <isModifier value="false" />
     </element>
     <element id="AllergyIntolerance.extension:medicationHypersensitivityIdentifier.value[x]">
       <path value="AllergyIntolerance.extension.value[x]" />
@@ -326,7 +324,6 @@
         <code value="Extension" />
         <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-Reaction.LatencyTime" />
       </type>
-      <isModifier value="false" />
     </element>
     <element id="AllergyIntolerance.reaction.extension:latencyTime.value[x]">
       <path value="AllergyIntolerance.reaction.extension.value[x]" />

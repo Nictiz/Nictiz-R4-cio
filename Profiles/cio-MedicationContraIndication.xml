@@ -48,7 +48,7 @@
       <constraint>
         <key value="cio-MedicationContraIndication-2" />
         <severity value="error" />
-        <human value="If the medication contraindication is stopped (i.e. Flag.status is 'inactive'), a reference to the previous active medication contraindication SHALL be present in Flag.extension:relationAlert." />
+        <human value="If the medication contraindication is stopped (i.e. Flag.status is 'inactive'), a reference to the previous medication contraindication that was active SHALL be present in Flag.extension:relationAlert." />
         <expression value="(status = 'inactive') implies extension('http://nictiz.nl/fhir/StructureDefinition/ext-MedicationContraIndication.RelationAlert').exists()" />
       </constraint>
       <constraint>
@@ -81,6 +81,7 @@
     </element>
     <element id="Flag.extension:relationAlert.value[x]">
       <path value="Flag.extension.value[x]" />
+      <condition value="cio-MedicationContraIndication-2" />
       <mapping>
         <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-881" />
@@ -102,6 +103,7 @@
       <short value="Comment" />
       <definition value="Explanatory comments to the alert that can not be expressed in any of the other elements, e.g. reason for ending the alert." />
       <alias value="Toelichting" />
+      <condition value="cio-MedicationContraIndication-1" />
       <mapping>
         <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-775" />

@@ -15,8 +15,8 @@
       <use value="work" />
     </telecom>
   </contact>
-  <description value="An extension to provide a relation from a hypersensitivity intolerance to the hypersensitivity/intolerance which was used to create a new, modified registration (as a result of changing one or more data elements or inactivating the hypersensitivity intolerance), or from a reaction to the underlying hypersensitivity intolerance." />
-  <purpose value="This extension represents the Reaction.RelationHypersensitivityIntolerance concept for implementations following the information standard [CiO](https://informatiestandaarden.nictiz.nl/wiki/Landingspagina_Contra-indicaties_en_Overgevoeligheden)." />
+  <description value="An extension to provide a relation from a reaction to the underlying hypersensitivity or intolerance." />
+  <purpose value="This extension represents the RelationHypersensitivityIntolerance concept for implementations following the information standard [CiO](https://informatiestandaarden.nictiz.nl/wiki/Landingspagina_Contra-indicaties_en_Overgevoeligheden)." />
   <copyright value="Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise." />
   <fhirVersion value="4.0.1" />
   <kind value="complex-type" />
@@ -40,7 +40,7 @@
     <element id="Extension.value[x]">
       <path value="Extension.value[x]" />
       <short value="RelationHypersensitivityIntolerance" />
-      <definition value="Relation from a hypersensitivity intolerance to the hypersensitivity/intolerance which was used to create a new, modified registration (as a result of changing one or more data elements or inactivating the hypersensitivity intolerance), or from a reaction to the underlying hypersensitivity intolerance." />
+      <definition value="Relation from a reaction to the underlying hypersensitivity or intolerance." />
       <alias value="RelatieOvergevoeligheidIntolerantie" />
       <type>
         <code value="Reference" />

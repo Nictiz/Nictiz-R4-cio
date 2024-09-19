@@ -41,6 +41,10 @@
         <comment value="Symptom" />
       </mapping>
     </element>
+    <element id="Observation.extension">
+      <path value="Observation.extension" />
+      <min value="2" />
+    </element>
     <element id="Observation.extension:relationCondition">
       <path value="Observation.extension" />
       <sliceName value="relationCondition" />
@@ -52,9 +56,7 @@
     </element>
     <element id="Observation.extension:relationCondition.value[x]">
       <path value="Observation.extension.value[x]" />
-      <short value="RelationCondition" />
-      <definition value="The condition that the healthcare provider has identified as a reaction." />
-      <alias value="RelatieAandoeningOfGesteldheid" />
+      <definition value="The condition of which the symptom is a manifestation." />
       <mapping>
         <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-923" />
@@ -64,11 +66,19 @@
     <element id="Observation.extension:medicationHypersensitivityIdentifier">
       <path value="Observation.extension" />
       <sliceName value="medicationHypersensitivityIdentifier" />
+      <min value="1" />
       <type>
         <code value="Extension" />
         <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-MedicationHypersensitivity.Identifier" />
       </type>
-      <isModifier value="false" />
+    </element>
+    <element id="Observation.extension:medicationHypersensitivityIdentifier.value[x]">
+      <path value="Observation.extension.value[x]"/>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
+        <map value="cio-dataelement-20-888" />
+        <comment value="IdentificationGMO" />
+      </mapping>
     </element>
     <element id="Observation.identifier">
       <path value="Observation.identifier" />
