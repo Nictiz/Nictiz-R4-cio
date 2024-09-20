@@ -178,10 +178,20 @@
       <mapping>
         <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-796" />
-        <comment value="DiagnosisName" />
+        <comment value="DiagnosisName [DEPRECATED]" />
       </mapping>
       <mapping>
         <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-815" />
+        <comment value="DiagnosisName [DEPRECATED]" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
+        <map value="cio-dataelement-20-796" />
+        <comment value="DiagnosisName" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
         <map value="cio-dataelement-20-815" />
         <comment value="DiagnosisName" />
       </mapping>

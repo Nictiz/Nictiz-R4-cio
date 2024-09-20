@@ -1,0 +1,154 @@
+<CodeSystem xmlns="http://hl7.org/fhir">
+   <id value="2.16.840.1.113883.2.4.3.11.60.26.5.2"/>
+   <meta>
+      <profile value="http://hl7.org/fhir/StructureDefinition/shareablecodesystem"/>
+      <!--<profile value="http://hl7.org/fhir/4.0/StructureDefinition/CodeSystem"/>-->
+   </meta>
+   <language value="nl-NL"/>
+   <extension url="http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod">
+      <valuePeriod>
+         <start value="2024-09-09T07:42:32Z"/>
+      </valuePeriod>
+   </extension>
+   <url value="urn:oid:2.16.840.1.113883.2.4.3.11.60.26.5.2"/>
+   <identifier>
+      <use value="official"/>
+      <system value="urn:ietf:rfc:3986"/>
+      <value value="urn:oid:2.16.840.1.113883.2.4.3.11.60.26.5.2"/>
+   </identifier>
+   <version value="2024-09-09T07:42:32"/>
+   <name value="BewakingBesluitStopCodelijst"/>
+   <title value="CiO BewakingBesluit stopreden"/>
+   <status value="draft"/>
+   <experimental value="false"/>
+   <publisher value="Nictiz"/>
+   <description value="Het codesysteem voor de StopCodelijst in BewakingBesluit."/>
+   <caseSensitive value="false"/>
+   <content value="complete"/>
+   <count value="7"/>
+   <property>
+      <code value="status"/>
+      <uri value="http://hl7.org/fhir/concept-properties"/>
+      <description value="A code that indicates the status of the concept. Values found in this version of the code system are: draft"/>
+      <type value="code"/>
+   </property>
+   <concept>
+      <code value="code-1"/>
+      <display value="Risico op toekomstige ernstige reactie zeer laag"/>
+      <designation>
+         <language value="en-US"/>
+         <use>
+            <system value="http://snomed.info/sct"/>
+            <code value="900000000000003001"/>
+            <display value="Fully specified name"/>
+         </use>
+         <value value="Risk of future serious reaction very low"/>
+      </designation>
+      <property>
+         <code value="status"/>
+         <valueCode value="draft"/>
+      </property>
+   </concept>
+   <concept>
+      <code value="code-2"/>
+      <display value="Geen reactie na hernieuwd gebruik"/>
+      <designation>
+         <language value="en-US"/>
+         <use>
+            <system value="http://snomed.info/sct"/>
+            <code value="900000000000003001"/>
+            <display value="Fully specified name"/>
+         </use>
+         <value value="No response after renewed use"/>
+      </designation>
+      <property>
+         <code value="status"/>
+         <valueCode value="draft"/>
+      </property>
+   </concept>
+   <concept>
+      <code value="code-3"/>
+      <display value="Op basis van aanvullend onderzoek"/>
+      <designation>
+         <language value="en-US"/>
+         <use>
+            <system value="http://snomed.info/sct"/>
+            <code value="900000000000003001"/>
+            <display value="Fully specified name"/>
+         </use>
+         <value value="Based on additional research"/>
+      </designation>
+      <property>
+         <code value="status"/>
+         <valueCode value="draft"/>
+      </property>
+   </concept>
+   <concept>
+      <code value="code-4"/>
+      <display value="Bijwerking acceptabel"/>
+      <designation>
+         <language value="en-US"/>
+         <use>
+            <system value="http://snomed.info/sct"/>
+            <code value="900000000000003001"/>
+            <display value="Fully specified name"/>
+         </use>
+         <value value="Side effect acceptable"/>
+      </designation>
+      <property>
+         <code value="status"/>
+         <valueCode value="draft"/>
+      </property>
+   </concept>
+   <concept>
+      <code value="code-5"/>
+      <display value="De groep waarop bewaakt is breder of smaller dan nodig"/>
+      <designation>
+         <language value="en-US"/>
+         <use>
+            <system value="http://snomed.info/sct"/>
+            <code value="900000000000003001"/>
+            <display value="Fully specified name"/>
+         </use>
+         <value value="The group being surveillanced is wider or narrower than necessary"/>
+      </designation>
+      <property>
+         <code value="status"/>
+         <valueCode value="draft"/>
+      </property>
+   </concept>
+   <concept>
+      <code value="code-6"/>
+      <display value="Geen reden voor bewaking gevonden"/>
+      <designation>
+         <language value="en-US"/>
+         <use>
+            <system value="http://snomed.info/sct"/>
+            <code value="900000000000003001"/>
+            <display value="Fully specified name"/>
+         </use>
+         <value value="No reason for surveillance found"/>
+      </designation>
+      <property>
+         <code value="status"/>
+         <valueCode value="draft"/>
+      </property>
+   </concept>
+   <concept>
+      <code value="code-7"/>
+      <display value="Anders"/>
+      <designation>
+         <language value="en-US"/>
+         <use>
+            <system value="http://snomed.info/sct"/>
+            <code value="900000000000003001"/>
+            <display value="Fully specified name"/>
+         </use>
+         <value value="Other"/>
+      </designation>
+      <property>
+         <code value="status"/>
+         <valueCode value="draft"/>
+      </property>
+   </concept>
+</CodeSystem>

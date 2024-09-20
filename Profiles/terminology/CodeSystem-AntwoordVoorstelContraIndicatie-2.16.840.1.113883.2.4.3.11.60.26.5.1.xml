@@ -1,0 +1,51 @@
+<CodeSystem xmlns="http://hl7.org/fhir">
+   <id value="2.16.840.1.113883.2.4.3.11.60.26.5.1"/>
+   <meta>
+      <profile value="http://hl7.org/fhir/StructureDefinition/shareablecodesystem"/>
+      <!--<profile value="http://hl7.org/fhir/4.0/StructureDefinition/CodeSystem"/>-->
+   </meta>
+   <language value="nl-NL"/>
+   <extension url="http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod">
+      <valuePeriod>
+         <start value="2024-07-09T06:32:21Z"/>
+      </valuePeriod>
+   </extension>
+   <url value="urn:oid:2.16.840.1.113883.2.4.3.11.60.26.5.1"/>
+   <identifier>
+      <use value="official"/>
+      <system value="urn:ietf:rfc:3986"/>
+      <value value="urn:oid:2.16.840.1.113883.2.4.3.11.60.26.5.1"/>
+   </identifier>
+   <version value="2024-07-09T06:32:21"/>
+   <name value="AntwoordVoorstelContraIndicatie"/>
+   <title value="CiO VoorstelGegevens antwoord"/>
+   <status value="draft"/>
+   <experimental value="false"/>
+   <publisher value="Nictiz"/>
+   <description value="CiO VoorstelGegevens antwoord"/>
+   <caseSensitive value="false"/>
+   <content value="complete"/>
+   <count value="2"/>
+   <property>
+      <code value="status"/>
+      <uri value="http://hl7.org/fhir/concept-properties"/>
+      <description value="A code that indicates the status of the concept. Values found in this version of the code system are: draft"/>
+      <type value="code"/>
+   </property>
+   <concept>
+      <code value="code-1"/>
+      <display value="Ja, voorstel akkoord"/>
+      <property>
+         <code value="status"/>
+         <valueCode value="draft"/>
+      </property>
+   </concept>
+   <concept>
+      <code value="code-2"/>
+      <display value="Nee, voorstel afgewezen"/>
+      <property>
+         <code value="status"/>
+         <valueCode value="draft"/>
+      </property>
+   </concept>
+</CodeSystem>

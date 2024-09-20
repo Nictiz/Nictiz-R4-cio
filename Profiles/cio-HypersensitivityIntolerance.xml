@@ -24,6 +24,10 @@
     <uri value="https://decor.nictiz.nl/pub/cio/cio-html-20231214T100742/ds-2.16.840.1.113883.2.4.3.11.60.26.1.2-2020-04-02T000000.html" />
     <name value="ART-DECOR Dataset Contraindications and hypersensitivities 2.0.0-beta.3 20231214" />
   </mapping>
+  <mapping>
+    <identity value="cio-dataset-200-beta3-20240930" />
+    <name value="ART-DECOR Dataset Contraindications and hypersensitivities 2.0.0-beta.3 20240930" />
+  </mapping>
   <kind value="resource" />
   <abstract value="false" />
   <type value="AllergyIntolerance" />
@@ -102,6 +106,11 @@
       <mapping>
         <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-555" />
+        <comment value="WayOfDetermination [DEPRECATED]" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
+        <map value="cio-dataelement-20-555" />
         <comment value="WayOfDetermination" />
       </mapping>
     </element>
@@ -178,6 +187,11 @@
       <mapping>
         <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-794" />
+        <comment value="CertaintyStatus [DEPRECATED]" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
+        <map value="cio-dataelement-20-794" />
         <comment value="CertaintyStatus" />
       </mapping>
     </element>
@@ -215,7 +229,7 @@
       <alias value="Categorie" />
       <binding>
         <strength value="required" />
-        <description value="Use ConceptMap OvergevoeligheidCategorieCodelijst_to_AllergyIntoleranceCategory to translate terminology from the functional model to profile terminology in ValueSet AllergyIntoleranceCategory." />
+        <description value="Use ConceptMap CategorieCodelijst_to_AllergyIntoleranceCategory to translate terminology from the functional model to profile terminology in ValueSet AllergyIntoleranceCategory." />
         <valueSet value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.26.11.7--20211028090253">
           <extension url="http://hl7.org/fhir/StructureDefinition/11179-permitted-value-conceptmap">
             <valueCanonical value="http://nictiz.nl/fhir/ConceptMap/OvergevoeligheidCategorieCodelijst-to-AllergyIntoleranceCategory" />
@@ -225,23 +239,28 @@
       <mapping>
         <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-458" />
+        <comment value="HypersensitivityCategory [DEPRECATED]" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
+        <map value="cio-dataelement-20-458" />
         <comment value="Category" />
       </mapping>
     </element>
-    <element id="AllergyIntolerance.category.extension:hypersensitivityCategoryCodelist">
+    <element id="AllergyIntolerance.category.extension:categoryCodelist">
       <path value="AllergyIntolerance.category.extension" />
-      <sliceName value="hypersensitivityCategoryCodelist" />
+      <sliceName value="categoryCodelist" />
       <max value="1" />
       <type>
         <code value="Extension" />
         <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-CodeSpecification" />
       </type>
     </element>
-    <element id="AllergyIntolerance.category.extension:hypersensitivityCategoryCodelist.value[x]">
+    <element id="AllergyIntolerance.category.extension:categoryCodelist.value[x]">
       <path value="AllergyIntolerance.category.extension.value[x]" />
-      <short value="HypersensitivityCategory" />
-      <definition value="Identifies the hypersensitivity category such as medicines and nutritional substances." />
-      <alias value="OvergevoeligheidCategorie" />
+      <short value="Category" />
+      <definition value="Identifies the category of the agent to which the hypersensitivity or intolerance relates, such as medicines and nutritional substances." />
+      <alias value="Categorie" />
       <binding>
         <strength value="required" />
         <valueSet value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.26.11.7--20211028090253" />
@@ -249,7 +268,12 @@
       <mapping>
         <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-458" />
-        <comment value="HypersensitivityCategory" />
+        <comment value="HypersensitivityCategory [DEPRECATED]" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
+        <map value="cio-dataelement-20-458" />
+        <comment value="Category" />
       </mapping>
     </element>
     <element id="AllergyIntolerance.criticality">
@@ -268,6 +292,11 @@
       </binding>
       <mapping>
         <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-802" />
+        <comment value="ExpectedRiskUponExposure [DEPRECATED]" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
         <map value="cio-dataelement-20-802" />
         <comment value="ExpectedRiskUponExposure" />
       </mapping>
@@ -292,6 +321,11 @@
       </binding>
       <mapping>
         <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-802" />
+        <comment value="ExpectedRiskUponExposure [DEPRECATED]" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
         <map value="cio-dataelement-20-802" />
         <comment value="ExpectedRiskUponExposure" />
       </mapping>

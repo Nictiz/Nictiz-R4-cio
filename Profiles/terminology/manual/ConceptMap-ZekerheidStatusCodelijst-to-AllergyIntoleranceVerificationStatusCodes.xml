@@ -64,28 +64,5 @@
                 <comment value="'Unconfirmed' only states  that the condition is not yet confirmed, while 'Probably not present' indicates that the allergy/intolerance will likely be refuted in the future."/>
             </target>
         </element>
-        <element>
-            <code value="410516002"/>
-            <display value="Known absent"/>
-            <target>
-                <code value="refuted"/>
-                <display value="Refuted"/>
-                <equivalence value="equal"/>
-            </target>
-        </element>
-    </group>
-    <group>
-        <source value="http://terminology.hl7.org/CodeSystem/v3-NullFlavor"/>
-        <target value="http://terminology.hl7.org/CodeSystem/condition-ver-status"/>
-        <element>
-            <code value="UNK"/>
-            <display value="Unknown"/>
-            <target>
-                <code value="unconfirmed"/>
-                <display value="Unconfirmed"/>
-                <equivalence value="narrower"/>
-                <comment value="'Unknown' doesn't specify any relevant clinical information and means that nothing is known of the verificationStatus while 'unconfirmed' provides some clinical meaning, namely that the allergy/intolerance is not yet confirmed."/>
-            </target>
-        </element>
     </group>
 </ConceptMap>

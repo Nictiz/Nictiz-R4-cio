@@ -1,8 +1,13 @@
 <ValueSet xmlns="http://hl7.org/fhir">
    <id value="2.16.840.1.113883.2.4.3.11.60.26.11.30--20231129132424"/>
    <meta>
+      <source value="http://decor.nictiz.nl/fhir/4.0/cio-"/>
       <profile value="http://hl7.org/fhir/StructureDefinition/shareablevalueset"/>
       <!--<profile value="http://hl7.org/fhir/4.0/StructureDefinition/ValueSet"/>-->
+      <tag>
+         <system value="http://hl7.org/fhir/FHIR-version"/>
+         <code value="4.0.1"/>
+      </tag>
    </meta>
    <extension url="http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod">
       <valuePeriod>
@@ -21,7 +26,7 @@
    <status value="draft"/>
    <experimental value="false"/>
    <publisher value="Nictiz"/>
-   <description value="Value set combining the distinct value sets that the standard CiO binds to CausativeSubstance (cio-dataelement-20-466). This value set as such does not exist within the standard CiO but facilitates referencing all these value sets at the same time."/>
+   <description value="Value set combining the distinct value sets that the standard CiO binds to                     CausativeSubstance (cio-dataelement-20-466). This value set as such does not                     exist within the standard CiO but facilitates referencing all these value sets                     at the same time."/>
    <immutable value="false"/>
    <compose>
       <include>
