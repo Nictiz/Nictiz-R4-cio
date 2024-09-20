@@ -346,6 +346,33 @@
         <comment value="Diagnostician" />
       </mapping>
     </element>
+    <element id="Condition.evidence">
+      <path value="Condition.evidence" />
+      <slicing>
+        <discriminator>
+          <type value="profile" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Condition.evidence:symptom">
+      <path value="Condition.evidence" />
+      <sliceName value="symptom" />
+    </element>
+    <element id="Condition.evidence:symptom.detail">
+      <path value="Condition.evidence.detail" />
+      <short value="Symptom" />
+      <definition value="A reference to the phenomenon with which a condition in the patient presents itself." />
+      <comment value="Following the functional dataset, the relationship between the Symptom and Condition building blocks is expected to be defined through the Symptom. However, the Symptom building block has been mapped to an Observation resource which does not contain an existing element to reference to a Condition. To avoid the need of an extension, it has been chosen to create a link between the Symptom and Condition through the `Condition.evidence.detail` element." />
+      <alias value="Symptoom" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/cio-Symptom" />
+      </type>
+    </element>
     <element id="Condition.note">
       <path value="Condition.note" />
       <max value="1" />
