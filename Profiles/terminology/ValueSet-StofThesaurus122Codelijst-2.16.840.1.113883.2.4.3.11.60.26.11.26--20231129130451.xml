@@ -26,7 +26,7 @@
    <status value="draft"/>
    <experimental value="false"/>
    <publisher value="Nictiz"/>
-   <description value="G-standaard Ongewenste                 medicatiegroepen - Alle waarden"/>
+   <description value="G-standaard Ongewenste medicatiegroepen - Alle waarden"/>
    <immutable value="false"/>
    <compose>
       <include>

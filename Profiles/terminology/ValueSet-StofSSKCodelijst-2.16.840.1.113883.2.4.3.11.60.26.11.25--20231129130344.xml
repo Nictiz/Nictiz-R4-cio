@@ -26,7 +26,7 @@
    <status value="draft"/>
    <experimental value="false"/>
    <publisher value="Nictiz"/>
-   <description value="G-standaard Stofnaamcode                 i.c.m. toedieningsweg (SSK) - Alle waarden"/>
+   <description value="G-standaard Stofnaamcode i.c.m. toedieningsweg (SSK) - Alle waarden"/>
    <immutable value="false"/>
    <compose>
       <include>

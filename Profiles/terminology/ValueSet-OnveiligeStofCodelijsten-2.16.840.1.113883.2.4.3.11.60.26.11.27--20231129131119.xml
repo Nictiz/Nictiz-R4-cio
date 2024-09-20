@@ -26,7 +26,7 @@
    <status value="draft"/>
    <experimental value="false"/>
    <publisher value="Nictiz"/>
-   <description value="Value set combining the distinct value sets that the standard CiO binds to                     UnsafeSubstance (cio-dataelement-20-761). This value set as such does not exist                     within the standard CiO but facilitates referencing all these value sets at the                     same time."/>
+   <description value="Value set combining the distinct value sets that the standard CiO binds to UnsafeSubstance (cio-dataelement-20-761). This value set as such does not exist within the standard CiO but facilitates referencing all these value sets at the same time."/>
    <immutable value="false"/>
    <compose>
       <include>
