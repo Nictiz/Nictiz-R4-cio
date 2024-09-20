@@ -43,8 +43,12 @@
       <definition value="Reason for the surveillance decision: to start or end the surveillance." />
       <alias value="BesluitReden" />
       <type>
-        <code value="code" />
+        <code value="CodeableConcept" />
       </type>
+      <binding>
+        <strength value="required" />
+        <valueSet value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.26.11.42--20240919084718" />
+      </binding>
     </element>
   </differential>
 </StructureDefinition>

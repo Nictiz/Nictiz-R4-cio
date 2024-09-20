@@ -93,7 +93,7 @@
     <element id="Observation.code.text">
       <path value="Observation.code.text" />
       <short value="FurtherSpecificationSymptomName" />
-      <definition value="More detailed specification of the symptomName that has been selected from the code list, because that list does not (yet) contain the required level of detail." />
+      <definition value="More detailed specification of the symptom name that has been selected from the code list, because that list does not (yet) contain the required level of detail." />
       <alias value="NadereSpecificatieSymptoomNaam" />
       <mapping>
         <identity value="cio-dataset-200-beta3-20240930" />
@@ -106,6 +106,7 @@
       <min value="1" />
       <type>
         <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Patient" />
         <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient" />
       </type>
     </element>
