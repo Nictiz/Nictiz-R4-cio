@@ -77,16 +77,13 @@
     <element id="Extension.value[x]:valueQuantity">
       <path value="Extension.value[x]" />
       <sliceName value="valueQuantity" />
+      <short value="nominalValue" />
+      <definition value="The nominal value of the quantity. This element can not be used in combination with a minimum and maximum value." />
+      <alias value="nominaleWaarde" />
       <type>
         <code value="Quantity" />
         <profile value="http://hl7.org/fhir/StructureDefinition/SimpleQuantity" />
       </type>
-    </element>
-    <element id="Extension.value[x]:valueQuantity.value">
-      <path value="Extension.value[x].value" />
-      <short value="nominalValue" />
-      <definition value="The nominal value of the quantity. This element can not be used in combination with a minimum and maximum value." />
-      <alias value="nominaleWaarde" />
     </element>
   </differential>
 </StructureDefinition>
