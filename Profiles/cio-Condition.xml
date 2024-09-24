@@ -91,7 +91,17 @@
         <comment value="DiagnosticInsightDate" />
       </mapping>
       <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
+        <map value="cio-dataelement-20-799" />
+        <comment value="DiagnosticInsightDate" />
+      </mapping>
+      <mapping>
         <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-811" />
+        <comment value="DiagnosticInsightDate" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
         <map value="cio-dataelement-20-811" />
         <comment value="DiagnosticInsightDate" />
       </mapping>
@@ -108,7 +118,7 @@
     <element id="Condition.extension:medicationHypersensitivityIdentifier.value[x]">
       <path value="Condition.extension.value[x]" />
       <mapping>
-        <identity value="cio-dataset-200-beta2-20231214" />
+        <identity value="cio-dataset-200-beta3-20240930" />
         <map value="cio-dataelement-20-888" />
         <comment value="IdentificationGMO" />
       </mapping>
@@ -121,6 +131,11 @@
       <min value="1" />
       <mapping>
         <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-780" />
+        <comment value="IdentificationNumber" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
         <map value="cio-dataelement-20-780" />
         <comment value="IdentificationNumber" />
       </mapping>
@@ -207,7 +222,17 @@
         <comment value="FurtherSpecificationDiagnosisName" />
       </mapping>
       <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
+        <map value="cio-dataelement-20-797" />
+        <comment value="FurtherSpecificationDiagnosisName" />
+      </mapping>
+      <mapping>
         <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-816" />
+        <comment value="FurtherSpecificationDiagnosisName" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
         <map value="cio-dataelement-20-816" />
         <comment value="FurtherSpecificationDiagnosisName" />
       </mapping>
@@ -293,6 +318,11 @@
         <map value="cio-dataelement-20-781" />
         <comment value="Author" />
       </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
+        <map value="cio-dataelement-20-781" />
+        <comment value="Author" />
+      </mapping>
     </element>
     <element id="Condition.asserter">
       <path value="Condition.asserter" />
@@ -313,7 +343,17 @@
         <comment value="Diagnostician" />
       </mapping>
       <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
+        <map value="cio-dataelement-20-800" />
+        <comment value="Diagnostician" />
+      </mapping>
+      <mapping>
         <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-809" />
+        <comment value="Diagnostician" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
         <map value="cio-dataelement-20-809" />
         <comment value="Diagnostician" />
       </mapping>
@@ -361,6 +401,11 @@
       <alias value="Toelichting" />
       <mapping>
         <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-911" />
+        <comment value="Comment" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
         <map value="cio-dataelement-20-911" />
         <comment value="Comment" />
       </mapping>

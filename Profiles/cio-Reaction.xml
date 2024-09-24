@@ -44,6 +44,11 @@
         <map value="cio-dataelement-20-464" />
         <comment value="Reaction" />
       </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
+        <map value="cio-dataelement-20-464" />
+        <comment value="Reaction" />
+      </mapping>
     </element>
     <element id="AllergyIntolerance.extension">
       <path value="AllergyIntolerance.extension" />
@@ -86,6 +91,11 @@
         <map value="cio-dataelement-20-811" />
         <comment value="DiagnosticInsightDate" />
       </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
+        <map value="cio-dataelement-20-811" />
+        <comment value="DiagnosticInsightDate" />
+      </mapping>
     </element>
     <element id="AllergyIntolerance.extension:wayOfDetermination">
       <path value="AllergyIntolerance.extension" />
@@ -122,7 +132,7 @@
       <path value="AllergyIntolerance.extension.value[x]" />
       <definition value="The condition that the healthcare provider has identified as a reaction." />
       <mapping>
-        <identity value="cio-dataset-200-beta2-20231214" />
+        <identity value="cio-dataset-200-beta3-20240930" />
         <map value="cio-dataelement-20-923" />
         <comment value="RelationCondition" />
       </mapping>
@@ -176,6 +186,11 @@
         <map value="cio-dataelement-20-780" />
         <comment value="IdentificationNumber" />
       </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
+        <map value="cio-dataelement-20-780" />
+        <comment value="IdentificationNumber" />
+      </mapping>
     </element>
     <element id="AllergyIntolerance.clinicalStatus">
       <path value="AllergyIntolerance.clinicalStatus" />
@@ -211,6 +226,11 @@
       </binding>
       <mapping>
         <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-466" />
+        <comment value="CausativeSubstance" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
         <map value="cio-dataelement-20-466" />
         <comment value="CausativeSubstance" />
       </mapping>
@@ -257,6 +277,11 @@
         <map value="cio-dataelement-20-781" />
         <comment value="Author" />
       </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
+        <map value="cio-dataelement-20-781" />
+        <comment value="Author" />
+      </mapping>
     </element>
     <element id="AllergyIntolerance.asserter">
       <path value="AllergyIntolerance.asserter" />
@@ -273,6 +298,11 @@
       </type>
       <mapping>
         <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-809" />
+        <comment value="Diagnostician" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
         <map value="cio-dataelement-20-809" />
         <comment value="Diagnostician" />
       </mapping>
@@ -342,6 +372,11 @@
         <map value="cio-dataelement-20-466" />
         <comment value="CausativeSubstance" />
       </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
+        <map value="cio-dataelement-20-466" />
+        <comment value="CausativeSubstance" />
+      </mapping>
     </element>
     <element id="AllergyIntolerance.reaction.manifestation.text">
       <path value="AllergyIntolerance.reaction.manifestation.text" />
@@ -381,6 +416,11 @@
         <map value="cio-dataelement-20-469" />
         <comment value="RouteOfExposure" />
       </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
+        <map value="cio-dataelement-20-469" />
+        <comment value="RouteOfExposure" />
+      </mapping>
     </element>
     <element id="AllergyIntolerance.reaction.note">
       <path value="AllergyIntolerance.reaction.note" />
@@ -393,6 +433,11 @@
       <alias value="Toelichting" />
       <mapping>
         <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-818" />
+        <comment value="Comment" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
         <map value="cio-dataelement-20-818" />
         <comment value="Comment" />
       </mapping>

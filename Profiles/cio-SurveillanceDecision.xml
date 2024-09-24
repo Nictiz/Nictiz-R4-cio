@@ -62,6 +62,11 @@
         <map value="cio-dataelement-20-754" />
         <comment value="SurveillanceDecision" />
       </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
+        <map value="cio-dataelement-20-754" />
+        <comment value="SurveillanceDecision" />
+      </mapping>
     </element>
     <element id="Flag.extension">
       <path value="Flag.extension" />
@@ -96,14 +101,14 @@
         <comment value="Hypersensitivity [DEPRECATED]" />
       </mapping>
       <mapping>
-        <identity value="cio-dataset-200-beta2-20231214" />
-        <map value="cio-dataelement-20-766" />
-        <comment value="Reaction" />
-      </mapping>
-      <mapping>
         <identity value="cio-dataset-200-beta3-20240930" />
         <map value="cio-dataelement-20-765" />
         <comment value="HypersensitivityIntolerance" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-766" />
+        <comment value="Reaction" />
       </mapping>
       <mapping>
         <identity value="cio-dataset-200-beta3-20240930" />
@@ -147,6 +152,11 @@
         <map value="cio-dataelement-20-828" />
         <comment value="RelationSurveillanceDecision" />
       </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
+        <map value="cio-dataelement-20-828" />
+        <comment value="RelationSurveillanceDecision" />
+      </mapping>
     </element>
     <element id="Flag.extension:comment">
       <path value="Flag.extension" />
@@ -164,6 +174,11 @@
       <alias value="Toelichting" />
       <mapping>
         <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-764" />
+        <comment value="Comment" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
         <map value="cio-dataelement-20-764" />
         <comment value="Comment" />
       </mapping>
@@ -196,6 +211,11 @@
         <map value="cio-dataelement-20-780" />
         <comment value="IdentificationNumber" />
       </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
+        <map value="cio-dataelement-20-780" />
+        <comment value="IdentificationNumber" />
+      </mapping>
     </element>
     <element id="Flag.status">
       <path value="Flag.status" />
@@ -204,6 +224,11 @@
       <condition value="cio-SurveillanceDecision-2" />
       <mapping>
         <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-755" />
+        <comment value="DecisionType (implicit)" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
         <map value="cio-dataelement-20-755" />
         <comment value="DecisionType (implicit)" />
       </mapping>
@@ -246,6 +271,11 @@
         <map value="cio-dataelement-20-761" />
         <comment value="UnsafeSubstance" />
       </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
+        <map value="cio-dataelement-20-761" />
+        <comment value="UnsafeSubstance" />
+      </mapping>
     </element>
     <element id="Flag.code.extension:safeWithinUnsafeGroup">
       <path value="Flag.code.extension" />
@@ -262,12 +292,22 @@
         <map value="cio-dataelement-20-762" />
         <comment value="SafeWithinUnsafeGroup" />
       </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
+        <map value="cio-dataelement-20-762" />
+        <comment value="SafeWithinUnsafeGroup" />
+      </mapping>
     </element>
     <element id="Flag.code.text">
       <path value="Flag.code.text" />
       <comment value="For guidance on how to populate this element, see the comment on `.code`." />
       <mapping>
         <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-760" />
+        <comment value="SubstanceForSurveillance (implicit)" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
         <map value="cio-dataelement-20-760" />
         <comment value="SubstanceForSurveillance (implicit)" />
       </mapping>
@@ -296,6 +336,11 @@
         <map value="cio-dataelement-20-757" />
         <comment value="DecisionEffectiveDateTime" />
       </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
+        <map value="cio-dataelement-20-757" />
+        <comment value="DecisionEffectiveDateTime" />
+      </mapping>
     </element>
     <element id="Flag.period.end">
       <path value="Flag.period.end" />
@@ -306,6 +351,11 @@
       <condition value="cio-SurveillanceDecision-1" />
       <mapping>
         <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-757" />
+        <comment value="DecisionEffectiveDateTime" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
         <map value="cio-dataelement-20-757" />
         <comment value="DecisionEffectiveDateTime" />
       </mapping>
@@ -324,6 +374,11 @@
       </type>
       <mapping>
         <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-781" />
+        <comment value="Author" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
         <map value="cio-dataelement-20-781" />
         <comment value="Author" />
       </mapping>
