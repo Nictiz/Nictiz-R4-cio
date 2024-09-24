@@ -37,7 +37,7 @@
     <element id="Flag">
       <path value="Flag" />
       <short value="SurveillanceDecision" />
-      <comment value="Note that not all concepts within the SurveillanceDecision building block are mapped to elements within this profile. To convey the complete SurveillanceDecision building block, a Flag resource conforming to this profile SHOULD always be used together with an instance conforming to the [cio-RegistrationInformation](http://nictiz.nl/fhir/StructureDefinition/cio-RegistrationInformation) profile wherein `Provenance.target` refers to the Flag resource." />
+      <comment value="In order to convey the registration information of a SurveillanceDecision building block, this profile is used together with an instance conforming to the [cio-RegistrationInformation](http://nictiz.nl/fhir/StructureDefinition/cio-RegistrationInformation) profile wherein `Provenance.target` refers to the Flag resource.&#xD;&#xA;&#xD;&#xA;Note that not all concepts within the SurveillanceDecision building block are mapped to elements within this profile (e.g. DecisionMaker (cio-dataelement-20-763)). To convey the complete SurveillanceDecision building block, a Flag resource conforming to this profile SHOULD always be used together with an instance conforming to the cio-RegistrationInformation profile." />
       <alias value="BewakingBesluit" />
       <constraint>
         <key value="cio-SurveillanceDecision-1" />
@@ -175,7 +175,7 @@
       <type>
         <code value="Extension" />
         <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-MedicationHypersensitivity.Identifier" />
-      </type>      
+      </type>
     </element>
     <element id="Flag.extension:medicationHypersensitivityIdentifier.value[x]">
       <path value="Flag.extension.value[x]" />

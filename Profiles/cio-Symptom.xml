@@ -32,7 +32,7 @@
     <element id="Observation">
       <path value="Observation" />
       <short value="Symptom" />
-      <comment value="This profile is always used together with an instance conforming to [cio-Condition](http://nictiz.nl/fhir/StructureDefinition/cio-Condition) and [cio-Reaction](http://nictiz.nl/fhir/StructureDefinition/cio-Reaction).&#xD;&#xA;&#xD;&#xA;Please note that on a functional level, the building block Symptom references the building block Condition, but in FHIR this direction is reversed. Therefore, the concept RelationCondition (cio-dataelement-20-921) is mapped on `Condition.evidence.detail` in profile the [cio-Condition](http://nictiz.nl/fhir/StructureDefinition/cio-Condition) instead of in this profile." />
+      <comment value="In order to convey the registration information of a Symptom building block, this profile is used together with an instance conforming to the [cio-RegistrationInformation](http://nictiz.nl/fhir/StructureDefinition/cio-RegistrationInformation) profile wherein `Provenance.target` refers to the Observation resource.&#xD;&#xA;&#xD;&#xA;This profile is always used together with instances conforming to the [cio-Condition](http://nictiz.nl/fhir/StructureDefinition/cio-Condition) and [cio-Reaction](http://nictiz.nl/fhir/StructureDefinition/cio-Reaction) profiles.&#xD;&#xA;&#xD;&#xA;Please note that on a functional level, the building block Symptom references the building block Condition, but in FHIR this direction is reversed. Therefore, the concept RelationCondition (cio-dataelement-20-921) is mapped on `Condition.evidence.detail` in the cio-Condition profile instead of in this profile." />
       <alias value="Symptoom" />
       <mapping>
         <identity value="cio-dataset-200-beta3-20240930" />

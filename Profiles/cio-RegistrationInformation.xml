@@ -64,8 +64,49 @@
     </element>
     <element id="Provenance.target">
       <path value="Provenance.target" />
+      <comment value="Please note that on a functional level, the building blocks MedicationContraIndication, SurveillanceDecision, HypersensitivityIntolerance, Reaction, Symptom and Condition reference the building block RegistrationInformation, but in FHIR this direction is reversed." />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Resource" />
+        <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/cio-MedicationContraIndication" />
+        <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/cio-SurveillanceDecision" />
+        <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/cio-HypersensitivityIntolerance" />
+        <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/cio-Reaction" />
+        <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/cio-Symptom" />
+        <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/cio-Condition" />
+      </type>
       <condition value="cio-RegistrationInformation-1" />
       <condition value="cio-RegistrationInformation-2" />
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
+        <map value="cio-dataelement-20-883" />
+        <comment value="Reversed reference for MedicationContraIndication.RegistrationInformation" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
+        <map value="cio-dataelement-20-822" />
+        <comment value="Reversed reference for SurveillanceDecision.RegistrationInformation" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
+        <map value="cio-dataelement-20-798" />
+        <comment value="Reversed reference for HypersensitivityIntolerance.RegistrationInformation" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
+        <map value="cio-dataelement-20-819" />
+        <comment value="Reversed reference for Reaction.RegistrationInformation" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
+        <map value="cio-dataelement-20-934" />
+        <comment value="Reversed reference for Symptom.RegistrationInformation" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
+        <map value="cio-dataelement-20-920" />
+        <comment value="Reversed reference for Condition.RegistrationInformation" />
+      </mapping>
     </element>
     <element id="Provenance.recorded">
       <path value="Provenance.recorded" />

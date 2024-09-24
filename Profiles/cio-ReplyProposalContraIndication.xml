@@ -209,12 +209,12 @@
         <comment value="ResponseProposalContraIndication" />
       </mapping>
     </element>
-    <element id="Communication.payload:responseComment">
+    <element id="Communication.payload:comment">
       <path value="Communication.payload" />
-      <sliceName value="responseComment" />
+      <sliceName value="comment" />
       <max value="1" />
     </element>
-    <element id="Communication.payload:responseComment.content[x]">
+    <element id="Communication.payload:comment.content[x]">
       <path value="Communication.payload.content[x]" />
       <short value="Comment" />
       <definition value="Textual explanation of the response to the proposal contraindication. This free text field can be used to provide the reason for rejecting the proposed medication contraindication." />

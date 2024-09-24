@@ -15,7 +15,7 @@
     </telecom>
   </contact>
   <description value="An extension to provide textual explanation of the proposal contraindication." />
-  <purpose value="This extension represents the ProposalComment concept for implementations following the information standard [CiO](https://informatiestandaarden.nictiz.nl/wiki/Landingspagina_Contra-indicaties_en_Overgevoeligheden). This extension was created because the Comment concept in the alert building block and the ProposalComment differ in content." />
+  <purpose value="This extension represents the Comment concept (within the ProposalContraIndication building block) for implementations following the information standard [CiO](https://informatiestandaarden.nictiz.nl/wiki/Landingspagina_Contra-indicaties_en_Overgevoeligheden). The extension [ext-Comment](http://nictiz.nl/fhir/StructureDefinition/ext-Comment) cannot be used to represent that concept, since it is already used for the Comment concept in the MedicationContraIndication building block." />
   <copyright value="Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise." />
   <fhirVersion value="4.0.1" />
   <kind value="complex-type" />
