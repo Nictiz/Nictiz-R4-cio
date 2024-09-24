@@ -1,12 +1,21 @@
 {
-  "name": "resources",
-  "version": "0.1.0",
-  "description": "Put a description here",
+  "name": "nictiz.fhir.nl.r4.cio",
+  "version": "1.0.0-beta.3",
+  "description": "NL package of FHIR R4 conformance resources for CiO version 2.0.0-beta.3.",
+  "author": "Nictiz",
   "dependencies": {
-    "hl7.fhir.r4.core": "4.0.1",
-    "nictiz.fhir.nl.r4.nl-core": "0.10.0-beta.1"
+    "nictiz.fhir.nl.r4.nl-core": "0.10.0-beta.1",
+    "nictiz.fhir.nl.r4.medicationprocess9": "2.0.0-beta.5"
   },
+  "license": "CC0-1.0",
+  "homepage": "https://informatiestandaarden.nictiz.nl/wiki/Landingspagina_Contra-indicaties_en_Overgevoeligheden",
+  "title": "FHIR implementation of CiO",
   "fhirVersions": [
     "4.0.0"
+  ],
+  "maintainers": [
+    {
+      "name": "Nictiz"
+    }
   ]
 }

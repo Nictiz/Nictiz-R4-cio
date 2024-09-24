@@ -1,0 +1,17 @@
+<CodeSystem xmlns="http://hl7.org/fhir">
+   <id value="2.16.840.1.113883.2.4.3.120.5.1"/>
+   <language value="en-US"/>
+   <url value="urn:oid:2.16.840.1.113883.2.4.3.120.5.1"/>
+   <identifier>
+      <use value="official"/>
+      <system value="urn:ietf:rfc:3986"/>
+      <value value="urn:oid:2.16.840.1.113883.2.4.3.120.5.1"/>
+   </identifier>
+   <version value="2015-08-27"/>
+   <name value="DHD_Diagnosethesaurus"/>
+   <title value="DHD Diagnosethesaurus"/>
+   <status value="unknown"/>
+   <publisher value="ART-DECOR"/>
+   <description value="De diagnosethesaurus is een lijst met klinisch relevante diagnosetermen, gebaseerd op de internationale standaard SNOMED CT voor medische terminologie. De diagnosethesaurus ondersteunt medisch specialisten bij het gestandaardiseerd vastleggen van de diagnose in het elektronisch pati‰ntendossier (EPD). Medisch specialisten gebruiken de lijst via het EPD-systeem van het ziekenhuis. De diagnosetermen in de diagnosethesaurus zijn voorzien van een afleiding naar een of meerdere DBC-diagnosetyperingen en een afleiding naar een of meerdere ICD-10 codes."/>
+   <content value="not-present"/>
+</CodeSystem>

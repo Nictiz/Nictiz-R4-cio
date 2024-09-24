@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="cio-ReplyProposalContraIndication-Bundle" />
+  <url value="http://nictiz.nl/fhir/StructureDefinition/cio-ReplyProposalContraIndication-Bundle" />
+  <version value="1.0.0-beta.3" />
+  <name value="CioReplyProposalContraIndicationBundle" />
+  <title value="cio ReplyProposalContraIndication Bundle" />
+  <status value="draft" />
+  <publisher value="Nictiz" />
+  <contact>
+    <name value="Nictiz" />
+    <telecom>
+      <system value="url" />
+      <value value="https://www.nictiz.nl" />
+      <use value="work" />
+    </telecom>
+  </contact>
+  <description value="Profile on the Bundle resource which represents the structure of the Send ReplyProposalContraIndication transaction conform information standard [CiO](https://informatiestandaarden.nictiz.nl/wiki/Landingspagina_Contra-indicaties_en_Overgevoeligheden)." />
+  <purpose value="To define the body of the Send ReplyProposalContraIndication transaction." />
+  <copyright value="Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise." />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="cio-dataset-200-beta3-20240930" />
+    <name value="ART-DECOR Dataset Contraindications and hypersensitivities 2.0.0-beta.3 20240930" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Bundle" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Bundle" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Bundle.type">
+      <path value="Bundle.type" />
+      <fixedCode value="transaction" />
+    </element>
+    <element id="Bundle.entry">
+      <path value="Bundle.entry" />
+      <slicing>
+        <discriminator>
+          <type value="profile" />
+          <path value="resource" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="2" />
+    </element>
+    <element id="Bundle.entry:replyProposalContraIndication">
+      <path value="Bundle.entry" />
+      <sliceName value="replyProposalContraIndication" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Bundle.entry:replyProposalContraIndication.resource">
+      <path value="Bundle.entry.resource" />
+      <min value="1" />
+      <type>
+        <code value="Resource" />
+        <profile value="http://nictiz.nl/fhir/StructureDefinition/cio-ReplyProposalContraIndication" />
+      </type>
+    </element>
+    <element id="Bundle.entry:patient">
+      <path value="Bundle.entry" />
+      <sliceName value="patient" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Bundle.entry:patient.resource">
+      <path value="Bundle.entry.resource" />
+      <min value="1" />
+      <type>
+        <code value="Resource" />
+        <profile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient" />
+      </type>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
+        <map value="cio-dataelement-20-302" />
+        <comment value="Patient" />
+      </mapping>
+    </element>
+    <element id="Bundle.entry:healthProfessional-PractitionerRole">
+      <path value="Bundle.entry" />
+      <sliceName value="healthProfessional-PractitionerRole" />
+      <max value="1" />
+    </element>
+    <element id="Bundle.entry:healthProfessional-PractitionerRole.resource">
+      <path value="Bundle.entry.resource" />
+      <min value="1" />
+      <type>
+        <code value="Resource" />
+        <profile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole" />
+      </type>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
+        <map value="cio-dataelement-20-591" />
+        <comment value="HealthProfessional" />
+      </mapping>
+    </element>
+    <element id="Bundle.entry:healthProfessional-Practitioner">
+      <path value="Bundle.entry" />
+      <sliceName value="healthProfessional-Practitioner" />
+      <max value="1" />
+    </element>
+    <element id="Bundle.entry:healthProfessional-Practitioner.resource">
+      <path value="Bundle.entry.resource" />
+      <min value="1" />
+      <type>
+        <code value="Resource" />
+        <profile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-Practitioner" />
+      </type>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
+        <map value="cio-dataelement-20-591" />
+        <comment value="HealthProfessional" />
+      </mapping>
+    </element>
+    <element id="Bundle.entry:healthcareProvider">
+      <path value="Bundle.entry" />
+      <sliceName value="healthcareProvider" />
+      <max value="1" />
+    </element>
+    <element id="Bundle.entry:healthcareProvider.resource">
+      <path value="Bundle.entry.resource" />
+      <min value="1" />
+      <type>
+        <code value="Resource" />
+        <profile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider" />
+      </type>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
+        <map value="cio-dataelement-20-632" />
+        <comment value="HealthcareProvider" />
+      </mapping>
+    </element>
+    <element id="Bundle.entry:healthcareProvider-Organization">
+      <path value="Bundle.entry" />
+      <sliceName value="healthcareProvider-Organization" />
+      <max value="1" />
+    </element>
+    <element id="Bundle.entry:healthcareProvider-Organization.resource">
+      <path value="Bundle.entry.resource" />
+      <min value="1" />
+      <type>
+        <code value="Resource" />
+        <profile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization" />
+      </type>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
+        <map value="cio-dataelement-20-632" />
+        <comment value="HealthcareProvider" />
+      </mapping>
+    </element>
+  </differential>
+</StructureDefinition>

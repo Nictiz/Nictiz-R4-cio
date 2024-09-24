@@ -2,10 +2,10 @@
 <CapabilityStatement xmlns="http://hl7.org/fhir"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://hl7.org/fhir http://hl7.org/fhir/R4/capabilitystatement.xsd">
-  <id value="cio-MedicationHypersensitivities.SendReceive"/>
-  <url value="http://nictiz.nl/fhir/CapabilityStatement/cio-MedicationHypersensitivities.SendReceive"/>
+  <id value="cio-ProposalContraIndication"/>
+  <url value="http://nictiz.nl/fhir/CapabilityStatement/cio-ProposalContraIndication"/>
   <version value="1.0.0-beta.3" />
-  <name value="cio MedicationHypersensitivities.SendReceive"/>
+  <name value="cio ProposalContraIndication"/>
   <status value="active"/>
   <date value="2024-09-30"/>
   <publisher value="Nictiz"/>
@@ -17,7 +17,7 @@
       <use value="work"/>
     </telecom>
   </contact>
-  <description value="This CapabilityStatement describes the minimal requirements for a client/server to fulfill the 'Send/Receive medication hypersensitivities' transaction within CiO version 2.0.0. See [Landingspagina CiO](https://informatiestandaarden.nictiz.nl/wiki/cio:Landingspagina_Contra-indicaties_en_Overgevoeligheden) for additional information."/>
+  <description value="This CapabilityStatement describes the minimal requirements for a client/server to fulfill the 'Send/Receive proposal contraindication' transaction within CiO version 2.0.0. See [Landingspagina CiO](https://informatiestandaarden.nictiz.nl/wiki/cio:Landingspagina_Contra-indicaties_en_Overgevoeligheden) for additional information."/>
   <purpose value="This CapabilityStatement is informative in nature and does not represent the minimum or maximum set of capabilities the client or server should support. The aim is to design the CapabilityStatement as complete as possible, however for the exact set of capabilities the implementation guide of the corresponding information standard should be consulted."/>
   <copyright value="Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise."/>
   <kind value="requirements"/>
@@ -26,10 +26,14 @@
   <format value="json"/>
   <rest>
     <mode value="client"/>
-    <documentation value="Minimal requirements for a client to fulfill the 'Send medication hypersensitivities' transaction (system role: CIO-BBS)."/>
+    <documentation value="Minimal requirements for a client to fulfill the 'Send proposal contraindication' transaction (system role: CIO-VCIS)."/>
+    <resource>
+      <type value="Bundle"/>
+      <supportedProfile value="http://nictiz.nl/fhir/StructureDefinition/cio-ProposalContraIndication-Bundle"/>
+    </resource>
     <resource>
       <type value="Flag"/>
-      <supportedProfile value="http://nictiz.nl/fhir/StructureDefinition/cio-SurveillanceDecision"/>
+      <supportedProfile value="http://nictiz.nl/fhir/StructureDefinition/cio-MedicationContraIndication"/>
       <interaction>
         <code value="create"/>
       </interaction>
@@ -42,30 +46,15 @@
       </interaction>
     </resource>
     <resource>
-      <type value="AllergyIntolerance"/>
-      <supportedProfile value="http://nictiz.nl/fhir/StructureDefinition/cio-HypersensitivityIntolerance"/>
-      <supportedProfile value="http://nictiz.nl/fhir/StructureDefinition/cio-Reaction"/>
-      <interaction>
-        <code value="create"/>
-      </interaction>
-    </resource>
-    <resource>
-      <type value="Condition"/>
-      <supportedProfile value="http://nictiz.nl/fhir/StructureDefinition/cio-Condition"/>
-      <interaction>
-        <code value="create"/>
-      </interaction>
-    </resource>
-    <resource>
-      <type value="Observation"/>
-      <supportedProfile value="http://nictiz.nl/fhir/StructureDefinition/cio-Symptom"/>
-      <interaction>
-        <code value="create"/>
-      </interaction>
-    </resource>
-    <resource>
       <type value="Patient"/>
       <supportedProfile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient"/>
+      <interaction>
+        <code value="create"/>
+      </interaction>
+    </resource>
+    <resource>
+      <type value="MedicationRequest"/>
+      <supportedProfile value="http://nictiz.nl/fhir/StructureDefinition/mp-MedicationAgreement"/>
       <interaction>
         <code value="create"/>
       </interaction>
@@ -99,15 +88,19 @@
       </interaction>
     </resource>
     <interaction>
-      <code value="search-system"/>
+      <code value="transaction"/>
     </interaction>
   </rest>
   <rest>
     <mode value="server"/>
-    <documentation value="Minimal requirements for a server to fulfill the 'Receive medication hypersensitivities' transaction (system role: CIO-BBO)."/>
+    <documentation value="Minimal requirements for a server to fulfill the 'Receive proposal contraindication' transaction (system role: CIO-VCIO)."/>
+     <resource>
+      <type value="Bundle"/>
+      <supportedProfile value="http://nictiz.nl/fhir/StructureDefinition/cio-ProposalContraIndication-Bundle"/>
+    </resource>
     <resource>
       <type value="Flag"/>
-      <supportedProfile value="http://nictiz.nl/fhir/StructureDefinition/cio-SurveillanceDecision"/>
+      <supportedProfile value="http://nictiz.nl/fhir/StructureDefinition/cio-MedicationContraIndication"/>
       <interaction>
         <code value="create"/>
       </interaction>
@@ -120,30 +113,15 @@
       </interaction>
     </resource>
     <resource>
-      <type value="AllergyIntolerance"/>
-      <supportedProfile value="http://nictiz.nl/fhir/StructureDefinition/cio-HypersensitivityIntolerance"/>
-      <supportedProfile value="http://nictiz.nl/fhir/StructureDefinition/cio-Reaction"/>
-      <interaction>
-        <code value="create"/>
-      </interaction>
-    </resource>
-    <resource>
-      <type value="Condition"/>
-      <supportedProfile value="http://nictiz.nl/fhir/StructureDefinition/cio-Condition"/>
-      <interaction>
-        <code value="create"/>
-      </interaction>
-    </resource>
-    <resource>
-      <type value="Observation"/>
-      <supportedProfile value="http://nictiz.nl/fhir/StructureDefinition/cio-Symptom"/>
-      <interaction>
-        <code value="create"/>
-      </interaction>
-    </resource>
-    <resource>
       <type value="Patient"/>
       <supportedProfile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient"/>
+      <interaction>
+        <code value="create"/>
+      </interaction>
+    </resource>
+    <resource>
+      <type value="MedicationRequest"/>
+      <supportedProfile value="http://nictiz.nl/fhir/StructureDefinition/mp-MedicationAgreement"/>
       <interaction>
         <code value="create"/>
       </interaction>
@@ -177,7 +155,7 @@
       </interaction>
     </resource>
     <interaction>
-      <code value="search-system"/>
+      <code value="transaction"/>
     </interaction>
   </rest>
 </CapabilityStatement>

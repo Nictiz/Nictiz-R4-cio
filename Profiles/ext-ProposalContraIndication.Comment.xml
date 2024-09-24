@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
-  <id value="ext-RelationCondition" />
-  <url value="http://nictiz.nl/fhir/StructureDefinition/ext-RelationCondition" />
+  <id value="ext-ProposalContraIndication.Comment" />
+  <url value="http://nictiz.nl/fhir/StructureDefinition/ext-ProposalContraIndication.Comment" />
   <version value="1.0.0-beta.3" />
-  <name value="ExtRelationCondition" />
-  <title value="ext RelationCondition" />
+  <name value="ExtProposalContraIndicationComment" />
+  <title value="ext ProposalContraIndication.Comment" />
   <status value="draft" />
   <publisher value="Nictiz" />
   <contact>
@@ -12,39 +12,33 @@
     <telecom>
       <system value="url" />
       <value value="https://www.nictiz.nl" />
-      <use value="work" />
     </telecom>
   </contact>
-  <description value="An extension to provide the underlying condition and diagnosis of a hypersensitivity/intolerance or reaction." />
-  <purpose value="This extension represents the RelationCondition concept for implementations following the information standard [CiO](https://informatiestandaarden.nictiz.nl/wiki/Landingspagina_Contra-indicaties_en_Overgevoeligheden)." />
+  <description value="An extension to provide textual explanation of the proposal contraindication." />
+  <purpose value="This extension represents the Comment concept (within the ProposalContraIndication building block) for implementations following the information standard [CiO](https://informatiestandaarden.nictiz.nl/wiki/Landingspagina_Contra-indicaties_en_Overgevoeligheden). The extension [ext-Comment](http://nictiz.nl/fhir/StructureDefinition/ext-Comment) cannot be used to represent that concept, since it is already used for the Comment concept in the MedicationContraIndication building block." />
   <copyright value="Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise." />
   <fhirVersion value="4.0.1" />
   <kind value="complex-type" />
   <abstract value="false" />
   <context>
     <type value="element" />
-    <expression value="AllergyIntolerance" />
+    <expression value="Flag" />
   </context>
   <type value="Extension" />
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
   <derivation value="constraint" />
   <differential>
-    <element id="Extension">
-      <path value="Extension" />
-      <max value="1" />
-    </element>
     <element id="Extension.url">
       <path value="Extension.url" />
-      <fixedUri value="http://nictiz.nl/fhir/StructureDefinition/ext-RelationCondition" />
+      <fixedUri value="http://nictiz.nl/fhir/StructureDefinition/ext-ProposalContraIndication.Comment" />
     </element>
     <element id="Extension.value[x]">
       <path value="Extension.value[x]" />
-      <short value="RelationCondition" />
-      <definition value="The underlying condition and diagnosis of a hypersensitivity/intolerance or reaction." />
-      <alias value="RelatieAandoeningOfGesteldheid" />
+      <short value="Comment" />
+      <definition value="Textual explanation of the proposal contraindication." />
+      <alias value="Toelichting" />
       <type>
-        <code value="Reference" />
-        <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/cio-Condition" />
+        <code value="string" />
       </type>
     </element>
   </differential>
