@@ -33,11 +33,17 @@
       <path value="Communication" />
       <short value="ReplyProposalContraIndication" />
       <definition value="The response to the proposal for registering, retracting, or modifying a medication contraindication." />
+      <comment value="Since all concepts within the ReplyProposalContraIndication building block are mapped to elements within this profile, it is not necessary to use the [cio-RegistrationInformation](http://nictiz.nl/fhir/StructureDefinition/cio-RegistrationInformation) profile to convey the RegistrationInformation concepts." />
       <alias value="AntwoordVoorstelContraIndicatie" />
       <mapping>
         <identity value="cio-dataset-200-beta3-20240930" />
         <map value="cio-dataelement-20-937" />
         <comment value="ReplyProposalContraIndication" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
+        <map value="cio-dataelement-20-943" />
+        <comment value="RegistrationInformation" />
       </mapping>
     </element>
     <element id="Communication.meta">
@@ -80,7 +86,7 @@
     <element id="Communication.basedOn">
       <path value="Communication.basedOn" />
       <short value="RelationProposalContraIndication" />
-      <definition value="Relation to the proposal contraindication that caused the reply." />
+      <definition value="Relation to the proposal contraindication to which the reply is made." />
       <alias value="RelatieVoorstelContraIndicatie" />
       <min value="1" />
       <type>
@@ -97,7 +103,8 @@
     <element id="Communication.subject">
       <path value="Communication.subject" />
       <short value="Patient" />
-      <definition value="Demographics and other administrative information about an individual or animal receiving care or other health-related services." />
+      <definition value="The patient that was the focus of this communication." />
+      <alias value="Patient" />
       <min value="1" />
       <type>
         <code value="Reference" />
@@ -113,7 +120,7 @@
     <element id="Communication.sent">
       <path value="Communication.sent" />
       <short value="CreationDateTime" />
-      <definition value="Date and time when the information about the patient was registered." />
+      <definition value="Date and of the response to the proposal." />
       <alias value="OntstaansDatumTijd" />
       <min value="1" />
       <mapping>
@@ -125,7 +132,7 @@
     <element id="Communication.sender">
       <path value="Communication.sender" />
       <short value="Author" />
-      <definition value="The person who has registered or had someone else register the information in the patient record." />
+      <definition value="Author of the response to the proposal." />
       <alias value="Auteur" />
       <min value="1" />
       <type>
@@ -179,15 +186,21 @@
         <profile value="http://hl7.org/fhir/5.0/StructureDefinition/extension-Communication.payload.content" />
       </type>
     </element>
+    <element id="Communication.payload:responseProposalContraIndication.content[x].extension:contentCodeableConcept.url">
+      <path value="Communication.payload.content[x].extension.url" />
+      <fixedUri value="http://hl7.org/fhir/5.0/StructureDefinition/extension-Communication.payload.content" />
+    </element>
     <element id="Communication.payload:responseProposalContraIndication.content[x].extension:contentCodeableConcept.value[x]">
       <path value="Communication.payload.content[x].extension.value[x]" />
       <short value="ResponseProposalContraIndication" />
       <definition value="The response to the proposal for registering, retracting, or modifying a medication contraindication. The proposed medication contraindication is either accepted or rejected." />
       <alias value="BeantwoordingVoorstelContraIndicatie" />
       <min value="1" />
+      <type>
+        <code value="CodeableConcept" />
+      </type>
       <binding>
         <strength value="required" />
-        <description value="Response to the proposed contra indication." />
         <valueSet value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.26.11.38--20240709000000" />
       </binding>
       <mapping>
@@ -204,7 +217,7 @@
     <element id="Communication.payload:responseComment.content[x]">
       <path value="Communication.payload.content[x]" />
       <short value="Comment" />
-      <definition value="Textual explanation of the ResponseProposalContraIndication. This free text field can be used to provide the reason for rejecting the proposed medication contraindication." />
+      <definition value="Textual explanation of the response to the proposal contraindication. This free text field can be used to provide the reason for rejecting the proposed medication contraindication." />
       <alias value="Toelichting" />
       <type>
         <code value="string" />

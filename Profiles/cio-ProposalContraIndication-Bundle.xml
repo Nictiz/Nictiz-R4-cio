@@ -53,7 +53,7 @@
     <element id="Bundle.entry:proposalContraIndication.resource">
       <path value="Bundle.entry.resource" />
       <short value="ProposalContraIndication" />
-      <definition value="Data of the proposal contraindication." />
+      <definition value="Data of the proposal contraindication, i.e. a request from one health professional to another to register, retract, or modify a medication contraindication." />
       <alias value="VoorstelContraIndicatie" />
       <min value="1" />
       <type>
@@ -85,6 +85,30 @@
         <code value="actionable" />
       </patternCoding>
     </element>
+    <element id="Bundle.entry:proposalContraIndication.resource.extension:relationMedicationAgreement">
+      <path value="Bundle.entry.resource.extension" />
+      <sliceName value="relationMedicationAgreement" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/flag-detail" />
+      </type>
+    </element>
+    <element id="Bundle.entry:proposalContraIndication.resource.extension:relationMedicationAgreement.value[x]">
+      <path value="Bundle.entry.resource.extension.value[x]" />
+      <short value="RelationMedicationAgreement" />
+      <definition value="Relation to the medication agreement which served as the basis for initiating the proposal contraindication." />
+      <alias value="RelatieMedicatieafspraak" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/mp-MedicationAgreement" />
+      </type>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
+        <map value="cio-dataelement-20-938" />
+        <comment value="RelationMedicationAgreement" />
+      </mapping>
+    </element>
     <element id="Bundle.entry:proposalContraIndication.resource.extension:proposalComment">
       <path value="Bundle.entry.resource.extension" />
       <sliceName value="proposalComment" />
@@ -104,8 +128,7 @@
     </element>
     <element id="Bundle.entry:proposalContraIndication.resource.author">
       <path value="Bundle.entry.resource.author" />
-      <definition value="Author of the proposal." />
-      <comment value="The Prescriber (of the MedicationContraIndication building block) does not exist within the proposal. The fact that it is overwritten by the Author (of the proposal) here, therefore does not cause any issues." />
+      <definition value="Author of the proposal contraindication." />
       <min value="1" />
       <mapping>
         <identity value="cio-dataset-200-beta3-20240930" />
@@ -121,17 +144,29 @@
     </element>
     <element id="Bundle.entry:proposalRegistrationInformation.resource">
       <path value="Bundle.entry.resource" />
-      <definition value="RegistrationInformation contains the information that originates during the registration process of data in the patient record, such as, for instance, when and by whom the information was registered." />
+      <definition value="Registration information of the proposal contraindication, which coincides with the registration information of the medication contraindication building block that is included in this proposal." />
       <min value="1" />
       <type>
         <code value="Resource" />
         <profile value="http://nictiz.nl/fhir/StructureDefinition/cio-RegistrationInformation" />
       </type>
-      <mapping>
-        <identity value="cio-dataset-200-beta3-20240930" />
-        <map value="cio-dataelement-20-779" />
-        <comment value="RegistrationInformation" />
-      </mapping>
+    </element>
+    <element id="Bundle.entry:proposalRegistrationInformation.resource.target">
+      <path value="Bundle.entry.resource.target" />
+      <max value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/cio-MedicationContraIndication" />
+      </type>
+    </element>
+    <element id="Bundle.entry:proposalRegistrationInformation.resource.agent:author">
+      <path value="Bundle.entry.resource.agent" />
+      <sliceName value="author" />
+      <min value="1" />
+    </element>
+    <element id="Bundle.entry:proposalRegistrationInformation.resource.agent:author.who">
+      <path value="Bundle.entry.resource.agent.who" />
+      <definition value="Author of the proposal contraindication." />
     </element>
     <element id="Bundle.entry:patient">
       <path value="Bundle.entry" />
@@ -159,19 +194,12 @@
     </element>
     <element id="Bundle.entry:medicationAgreement.resource">
       <path value="Bundle.entry.resource" />
-      <short value="RelationMedicationAgreement" />
-      <definition value="Relation to the medication agreement that served as the basis of the medication contraindication proposal." />
-      <alias value="RelatieMedicatieafspraak" />
+      <definition value="The medication agreement which served as the basis for initiating the proposal contraindication." />
       <min value="1" />
       <type>
         <code value="Resource" />
         <profile value="http://nictiz.nl/fhir/StructureDefinition/mp-MedicationAgreement" />
       </type>
-      <mapping>
-        <identity value="cio-dataset-200-beta3-20240930" />
-        <map value="cio-dataelement-20-938" />
-        <comment value="RelationMedicationAgreement" />
-      </mapping>
     </element>
     <element id="Bundle.entry:healthProfessional-PractitionerRole">
       <path value="Bundle.entry" />
@@ -179,9 +207,6 @@
     </element>
     <element id="Bundle.entry:healthProfessional-PractitionerRole.resource">
       <path value="Bundle.entry.resource" />
-      <short value="HealthProfessionalRole" />
-      <definition value="The role the health professional fulfils in the healthcare process. For health professionals, this could be for example attender, referrer or performer." />
-      <alias value="ZorgverlenerRol" />
       <min value="1" />
       <type>
         <code value="Resource" />
@@ -189,7 +214,8 @@
       </type>
       <mapping>
         <identity value="cio-dataset-200-beta3-20240930" />
-        <map value="cio-dataelement-20-630" />
+        <map value="cio-dataelement-20-591" />
+        <comment value="HealthProfessional" />
       </mapping>
     </element>
     <element id="Bundle.entry:healthProfessional-Practitioner">
@@ -198,7 +224,6 @@
     </element>
     <element id="Bundle.entry:healthProfessional-Practitioner.resource">
       <path value="Bundle.entry.resource" />
-      <definition value="A health professional is a person who is authorized to perform actions in the field of individual healthcare. When referring to this information model the role the health professional fulfils in the healthcare process can be addressed additionally. For health professionals, this could be for example main practitioner or referrer." />
       <min value="1" />
       <type>
         <code value="Resource" />
@@ -207,6 +232,7 @@
       <mapping>
         <identity value="cio-dataset-200-beta3-20240930" />
         <map value="cio-dataelement-20-591" />
+        <comment value="HealthProfessional" />
       </mapping>
     </element>
     <element id="Bundle.entry:healthcareProvider">
@@ -215,7 +241,23 @@
     </element>
     <element id="Bundle.entry:healthcareProvider.resource">
       <path value="Bundle.entry.resource" />
-      <definition value="A healthcare provider is an organization that offers and provides medical, paramedic and/or nursing care to patients/clients. Examples include: hospitals, nursing homes, doctor’s offices." />
+      <min value="1" />
+      <type>
+        <code value="Resource" />
+        <profile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider" />
+      </type>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
+        <map value="cio-dataelement-20-632" />
+        <comment value="HealthcareProvider" />
+      </mapping>
+    </element>
+    <element id="Bundle.entry:healthcareProvider-Organization">
+      <path value="Bundle.entry" />
+      <sliceName value="healthcareProvider-Organization" />
+    </element>
+    <element id="Bundle.entry:healthcareProvider-Organization.resource">
+      <path value="Bundle.entry.resource" />
       <min value="1" />
       <type>
         <code value="Resource" />
@@ -224,6 +266,7 @@
       <mapping>
         <identity value="cio-dataset-200-beta3-20240930" />
         <map value="cio-dataelement-20-632" />
+        <comment value="HealthcareProvider" />
       </mapping>
     </element>
     <element id="Bundle.entry:contactPerson">
@@ -233,7 +276,6 @@
     </element>
     <element id="Bundle.entry:contactPerson.resource">
       <path value="Bundle.entry.resource" />
-      <definition value="A contact is an interaction between a patient and health care provider(s) in the context of a problem." />
       <min value="1" />
       <type>
         <code value="Resource" />
