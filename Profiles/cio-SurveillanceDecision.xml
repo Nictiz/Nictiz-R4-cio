@@ -175,7 +175,7 @@
       <mapping>
         <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-764" />
-        <comment value="Comment" />
+        <comment value="Comment [DEPRECATED]" />
       </mapping>
       <mapping>
         <identity value="cio-dataset-200-beta3-20240930" />

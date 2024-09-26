@@ -39,13 +39,6 @@
       </interaction>
     </resource>
     <resource>
-      <type value="Provenance"/>
-      <supportedProfile value="http://nictiz.nl/fhir/StructureDefinition/cio-RegistrationInformation"/>
-      <interaction>
-        <code value="create"/>
-      </interaction>
-    </resource>
-    <resource>
       <type value="Patient"/>
       <supportedProfile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient"/>
       <interaction>
@@ -87,13 +80,6 @@
      <resource>
       <type value="Communication"/>
       <supportedProfile value="http://nictiz.nl/fhir/StructureDefinition/cio-ReplyProposalContraIndication"/>
-      <interaction>
-        <code value="create"/>
-      </interaction>
-    </resource>
-    <resource>
-      <type value="Provenance"/>
-      <supportedProfile value="http://nictiz.nl/fhir/StructureDefinition/cio-RegistrationInformation"/>
       <interaction>
         <code value="create"/>
       </interaction>

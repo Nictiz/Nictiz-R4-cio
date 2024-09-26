@@ -22,7 +22,7 @@
   <mapping>
     <identity value="cio-dataset-200-beta2-20231214" />
     <uri value="https://decor.nictiz.nl/pub/cio/cio-html-20231214T100742/ds-2.16.840.1.113883.2.4.3.11.60.26.1.2-2020-04-02T000000.html" />
-    <name value="ART-DECOR Dataset Contraindications and hypersensitivities 2.0.0-beta.3 20231214" />
+    <name value="ART-DECOR Dataset Contraindications and hypersensitivities 2.0.0-beta.2 20231214" />
   </mapping>
   <mapping>
     <identity value="cio-dataset-200-beta3-20240930" />
@@ -42,24 +42,24 @@
       <alias value="OvergevoeligheidIntolerantie" />
       <alias value="Reactie" />
       <mapping>
-        <identity value="cio-dataset-200-beta2-20231214" />
-        <map value="cio-dataelement-20-456" />
-        <comment value="Hypersensitivity [DEPRECATED]" />
-      </mapping>
-      <mapping>
-        <identity value="cio-dataset-200-beta2-20231214" />
-        <map value="cio-dataelement-20-464" />
-        <comment value="Reaction" />
-      </mapping>
-      <mapping>
         <identity value="cio-dataset-200-beta3-20240930" />
         <map value="cio-dataelement-20-905" />
         <comment value="Condition" />
       </mapping>
       <mapping>
+        <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-456" />
+        <comment value="Hypersensitivity [DEPRECATED]" />
+      </mapping>
+      <mapping>
         <identity value="cio-dataset-200-beta3-20240930" />
         <map value="cio-dataelement-20-456" />
         <comment value="HypersensitivityIntolerance" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-464" />
+        <comment value="Reaction" />
       </mapping>
       <mapping>
         <identity value="cio-dataset-200-beta3-20240930" />
@@ -132,7 +132,7 @@
       <mapping>
         <identity value="cio-dataset-200-beta2-20231214" />
         <map value="cio-dataelement-20-780" />
-        <comment value="IdentificationNumber" />
+        <comment value="IdentificationNumber [DEPRECATED]" />
       </mapping>
       <mapping>
         <identity value="cio-dataset-200-beta3-20240930" />
@@ -196,14 +196,14 @@
         <comment value="DiagnosisName [DEPRECATED]" />
       </mapping>
       <mapping>
-        <identity value="cio-dataset-200-beta2-20231214" />
-        <map value="cio-dataelement-20-815" />
-        <comment value="DiagnosisName [DEPRECATED]" />
-      </mapping>
-      <mapping>
         <identity value="cio-dataset-200-beta3-20240930" />
         <map value="cio-dataelement-20-796" />
         <comment value="DiagnosisName" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-815" />
+        <comment value="DiagnosisName [DEPRECATED]" />
       </mapping>
       <mapping>
         <identity value="cio-dataset-200-beta3-20240930" />
@@ -247,6 +247,18 @@
     </element>
     <element id="Condition.onset[x]">
       <path value="Condition.onset[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="1" />
+    </element>
+    <element id="Condition.onset[x]:onsetDateTime">
+      <path value="Condition.onset[x]" />
+      <sliceName value="onsetDateTime" />
       <short value="startDateTime" />
       <definition value="The start date and time of the period in which the condition is/was present." />
       <alias value="startDatumTijd" />
@@ -272,6 +284,17 @@
     </element>
     <element id="Condition.abatement[x]">
       <path value="Condition.abatement[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Condition.abatement[x]:abatementDateTime">
+      <path value="Condition.abatement[x]" />
+      <sliceName value="abatementDateTime" />
       <short value="endDateTime" />
       <definition value="The end date and time of the of the period in which the condition was present." />
       <alias value="eindDatumTijd" />
@@ -399,11 +422,6 @@
       <short value="Comment" />
       <definition value="A comment in free text with respect to the condition, that is not represented by the other data elements in the information model." />
       <alias value="Toelichting" />
-      <mapping>
-        <identity value="cio-dataset-200-beta2-20231214" />
-        <map value="cio-dataelement-20-911" />
-        <comment value="Comment" />
-      </mapping>
       <mapping>
         <identity value="cio-dataset-200-beta3-20240930" />
         <map value="cio-dataelement-20-911" />

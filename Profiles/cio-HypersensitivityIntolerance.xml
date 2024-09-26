@@ -1,454 +1,454 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
-   <id value="cio-HypersensitivityIntolerance"/>
-   <url value="http://nictiz.nl/fhir/StructureDefinition/cio-HypersensitivityIntolerance"/>
-   <version value="1.0.0-beta.3"/>
-   <name value="CioHypersensitivityIntolerance"/>
-   <title value="cio HypersensitivityIntolerance"/>
-   <status value="draft"/>
-   <publisher value="Nictiz"/>
-   <contact>
-      <name value="Nictiz"/>
-      <telecom>
-         <system value="url"/>
-         <value value="https://www.nictiz.nl"/>
-         <use value="work"/>
-      </telecom>
-   </contact>
-   <description value="The tendency to develop an adverse physical reaction when exposed to a specific substance or group of substances."/>
-   <purpose value="This AllergyIntolerance resource represents the HypersensitivityIntolerance building block for implementations following the information standard [CiO](https://informatiestandaarden.nictiz.nl/wiki/Landingspagina_Contra-indicaties_en_Overgevoeligheden). This profile is based on the Dutch zib ('Zorginformatiebouwsteen', i.e. Health and Care Information Model) HypersensitivityIntolerance that is part of the 2024 prepublication. Therefore it has no dependency on a corresponding nl-core profile and mappings to zib concepts are not defined. Instead mappings to the CiO data set have been added. It is the intention to derive this profile from a more general nl-core-HypersensitivityIntolerance profile in the future."/>
-   <copyright value="Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise."/>
-   <fhirVersion value="4.0.1"/>
-   <mapping>
-      <identity value="cio-dataset-200-beta2-20231214"/>
-      <uri value="https://decor.nictiz.nl/pub/cio/cio-html-20231214T100742/ds-2.16.840.1.113883.2.4.3.11.60.26.1.2-2020-04-02T000000.html"/>
-      <name value="ART-DECOR Dataset Contraindications and hypersensitivities 2.0.0-beta.3 20231214"/>
-   </mapping>
-   <mapping>
-      <identity value="cio-dataset-200-beta3-20240930"/>
-      <name value="ART-DECOR Dataset Contraindications and hypersensitivities 2.0.0-beta.3 20240930"/>
-   </mapping>
-   <kind value="resource"/>
-   <abstract value="false"/>
-   <type value="AllergyIntolerance"/>
-   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/AllergyIntolerance"/>
-   <derivation value="constraint"/>
-   <differential>
-      <element id="AllergyIntolerance">
-         <path value="AllergyIntolerance"/>
-         <short value="HypersensitivityIntolerance"/>
-         <comment value="In order to convey the registration information of a HypersensitivityIntolerance building block, this profile is used together with an instance conforming to the [cio-RegistrationInformation](http://nictiz.nl/fhir/StructureDefinition/cio-RegistrationInformation) profile wherein `Provenance.target` refers to the AllergyIntolerance resource.&#xD;&#xA;&#xD;&#xA;Note that not all concepts within the HypersensitivityIntolerance building block are mapped to elements within this profile (e.g. DiagnosisName (cio-dataelement-20-796)). To convey the complete HypersensitivityIntolerance building block, an AllergyIntolerance resource conforming to this profile SHOULD always be used together with an instance conforming to the [cio-Condition](http://nictiz.nl/fhir/StructureDefinition/cio-Condition) profile. This profile contains more detailed information on the hypersensitivity/intolerance, while the cio-Condition profile contains the underlying condition and diagnosis. Note however, that several concepts from the CiO data set are mapped to elements in both this profile and the cio-Condition profile, such as the DiagnosticInsightDate (cio-dataelement-20-799) or the Diagnostician (cio-dataelement-20-800). This is done to populate all instances with as much relevant information as possible, hence making instances conforming to these two profiles more valuable to be considered in isolation. If such an overlapping element is present in one of the resources, it SHALL also be present in the other resource, having the same value."/>
-         <alias value="Overgevoeligheid"/>
-         <mapping>
-            <identity value="cio-dataset-200-beta2-20231214"/>
-            <map value="cio-dataelement-20-456"/>
-            <comment value="Hypersensitivity [DEPRECATED]"/>
-         </mapping>
-         <mapping>
-            <identity value="cio-dataset-200-beta3-20240930"/>
-            <map value="cio-dataelement-20-456"/>
-            <comment value="HypersensitivityIntolerance"/>
-         </mapping>
-      </element>
-      <element id="AllergyIntolerance.extension">
-         <path value="AllergyIntolerance.extension"/>
-         <min value="4"/>
-      </element>
-      <element id="AllergyIntolerance.extension:type">
-         <path value="AllergyIntolerance.extension"/>
-         <sliceName value="type"/>
-         <min value="1"/>
-         <type>
-            <code value="Extension"/>
-            <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-AllergyIntolerance-Type"/>
-         </type>
-      </element>
-      <element id="AllergyIntolerance.extension:type.value[x]">
-         <path value="AllergyIntolerance.extension.value[x]"/>
-         <patternCodeableConcept>
-            <coding>
-               <system value="http://snomed.info/sct"/>
-               <code value="420134006"/>
-            </coding>
-         </patternCodeableConcept>
-      </element>
-      <element id="AllergyIntolerance.extension:diagnosticInsightDate">
-         <path value="AllergyIntolerance.extension"/>
-         <sliceName value="diagnosticInsightDate"/>
-         <min value="1"/>
-         <type>
-            <code value="Extension"/>
-            <profile value="http://hl7.org/fhir/StructureDefinition/allergyintolerance-assertedDate"/>
-         </type>
-      </element>
-      <element id="AllergyIntolerance.extension:diagnosticInsightDate.value[x]">
-         <path value="AllergyIntolerance.extension.value[x]"/>
-         <short value="DiagnosticInsightDate"/>
-         <definition value="Date (and time) at which the health professional obtained the diagnostic insight."/>
-         <alias value="DiagnostischInzichtDatum"/>
-         <mapping>
-            <identity value="cio-dataset-200-beta2-20231214"/>
-            <map value="cio-dataelement-20-799"/>
-            <comment value="DiagnosticInsightDate"/>
-         </mapping>
-         <mapping>
-            <identity value="cio-dataset-200-beta3-20240930"/>
-            <map value="cio-dataelement-20-799"/>
-            <comment value="DiagnosticInsightDate"/>
-         </mapping>
-      </element>
-      <element id="AllergyIntolerance.extension:wayOfDetermination">
-         <path value="AllergyIntolerance.extension"/>
-         <sliceName value="wayOfDetermination"/>
-         <type>
-            <code value="Extension"/>
-            <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-WayOfDetermination"/>
-         </type>
-      </element>
-      <element id="AllergyIntolerance.extension:wayOfDetermination.value[x]">
-         <path value="AllergyIntolerance.extension.value[x]"/>
-         <definition value="The way in which the hypersensitivity or intolerance is determined."/>
-         <mapping>
-            <identity value="cio-dataset-200-beta2-20231214"/>
-            <map value="cio-dataelement-20-555"/>
-            <comment value="WayOfDetermination [DEPRECATED]"/>
-         </mapping>
-         <mapping>
-            <identity value="cio-dataset-200-beta3-20240930"/>
-            <map value="cio-dataelement-20-555"/>
-            <comment value="WayOfDetermination"/>
-         </mapping>
-      </element>
-      <element id="AllergyIntolerance.extension:relationCondition">
-         <path value="AllergyIntolerance.extension"/>
-         <sliceName value="relationCondition"/>
-         <min value="1"/>
-         <type>
-            <code value="Extension"/>
-            <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-RelationCondition"/>
-         </type>
-      </element>
-      <element id="AllergyIntolerance.extension:relationCondition.value[x]">
-         <path value="AllergyIntolerance.extension.value[x]"/>
-         <definition value="The condition of which the hypersensitivity or intolerance is the interpretation."/>
-         <mapping>
-            <identity value="cio-dataset-200-beta3-20240930"/>
-            <map value="cio-dataelement-20-932"/>
-            <comment value="RelationCondition"/>
-         </mapping>
-      </element>
-      <element id="AllergyIntolerance.extension:medicationHypersensitivityIdentifier">
-         <path value="AllergyIntolerance.extension"/>
-         <sliceName value="medicationHypersensitivityIdentifier"/>
-         <min value="1"/>
-         <type>
-            <code value="Extension"/>
-            <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-MedicationHypersensitivity.Identifier"/>
-         </type>
-      </element>
-      <element id="AllergyIntolerance.extension:medicationHypersensitivityIdentifier.value[x]">
-         <path value="AllergyIntolerance.extension.value[x]"/>
-         <mapping>
-            <identity value="cio-dataset-200-beta3-20240930"/>
-            <map value="cio-dataelement-20-888"/>
-            <comment value="IdentificationGMO"/>
-         </mapping>
-      </element>
-      <element id="AllergyIntolerance.identifier">
-         <path value="AllergyIntolerance.identifier"/>
-         <short value="IdentificationNumber"/>
-         <definition value="Globally unique number that identifies the instantiation of the information model. The number is composed of an identification of the issuer organization and a unique number assigned by this organization."/>
-         <alias value="Identificatienummer"/>
-         <min value="1"/>
-         <mapping>
-            <identity value="cio-dataset-200-beta2-20231214"/>
-            <map value="cio-dataelement-20-780"/>
-            <comment value="IdentificationNumber"/>
-         </mapping>
-         <mapping>
-            <identity value="cio-dataset-200-beta3-20240930"/>
-            <map value="cio-dataelement-20-780"/>
-            <comment value="IdentificationNumber"/>
-         </mapping>
-      </element>
-      <element id="AllergyIntolerance.clinicalStatus">
-         <path value="AllergyIntolerance.clinicalStatus"/>
-         <mapping>
-            <identity value="cio-dataset-200-beta2-20231214"/>
-            <map value="cio-dataelement-20-806"/>
-            <comment value="ConditionPresence [DEPRECATED]"/>
-         </mapping>
-      </element>
-      <element id="AllergyIntolerance.verificationStatus">
-         <path value="AllergyIntolerance.verificationStatus"/>
-         <mapping>
-            <identity value="cio-dataset-200-beta2-20231214"/>
-            <map value="cio-dataelement-20-794"/>
-            <comment value="CertaintyStatus [DEPRECATED]"/>
-         </mapping>
-      </element>
-      <element id="AllergyIntolerance.type">
-         <path value="AllergyIntolerance.type"/>
-         <comment value="Due to the required binding on this element it is not possible to use it to indicate that an AllergyIntolerance resource conforming to this profile represents an instance of the HypersensitivityIntolerance building block. Therefore the `.type` element from R5 (with a preferred binding) is implicitly pre-adopted via the [AllergyIntolerance-Type extension](http://nictiz.nl/fhir/StructureDefinition/ext-AllergyIntolerance-Type)."/>
-         <max value="0"/>
-      </element>
-      <element id="AllergyIntolerance.category">
-         <path value="AllergyIntolerance.category"/>
-         <short value="Category"/>
-         <definition value="Identifies the category of the agent to which the hypersensitivity or intolerance relates, such as medicines and nutritional substances."/>
-         <alias value="Categorie"/>
-         <max value="1"/>
-         <binding>
-            <strength value="required"/>
-            <description value="Use ConceptMap CategorieCodelijst_to_AllergyIntoleranceCategory to translate terminology from the functional model to profile terminology in ValueSet AllergyIntoleranceCategory."/>
-            <valueSet value="http://hl7.org/fhir/ValueSet/allergy-intolerance-category|4.0.1">
-               <extension url="http://hl7.org/fhir/StructureDefinition/11179-permitted-value-conceptmap">
-                  <valueCanonical value="http://nictiz.nl/fhir/ConceptMap/CategorieCodelijst-to-AllergyIntoleranceCategory"/>
-               </extension>
-            </valueSet>
-         </binding>
-         <mapping>
-            <identity value="cio-dataset-200-beta2-20231214"/>
-            <map value="cio-dataelement-20-458"/>
-            <comment value="HypersensitivityCategory [DEPRECATED]"/>
-         </mapping>
-         <mapping>
-            <identity value="cio-dataset-200-beta3-20240930"/>
-            <map value="cio-dataelement-20-458"/>
-            <comment value="Category"/>
-         </mapping>
-      </element>
-      <element id="AllergyIntolerance.category.extension:categoryCodelist">
-         <path value="AllergyIntolerance.category.extension"/>
-         <sliceName value="categoryCodelist"/>
-         <max value="1"/>
-         <type>
-            <code value="Extension"/>
-            <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-CodeSpecification"/>
-         </type>
-      </element>
-      <element id="AllergyIntolerance.category.extension:categoryCodelist.value[x]">
-         <path value="AllergyIntolerance.category.extension.value[x]"/>
-         <short value="Category"/>
-         <definition value="Identifies the category of the agent to which the hypersensitivity or intolerance relates, such as medicines and nutritional substances."/>
-         <alias value="Categorie"/>
-         <binding>
-            <strength value="required"/>
-            <valueSet value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.26.11.7--20211028090253"/>
-         </binding>
-         <mapping>
-            <identity value="cio-dataset-200-beta2-20231214"/>
-            <map value="cio-dataelement-20-458"/>
-            <comment value="HypersensitivityCategory [DEPRECATED]"/>
-         </mapping>
-         <mapping>
-            <identity value="cio-dataset-200-beta3-20240930"/>
-            <map value="cio-dataelement-20-458"/>
-            <comment value="Category"/>
-         </mapping>
-      </element>
-      <element id="AllergyIntolerance.criticality">
-         <path value="AllergyIntolerance.criticality"/>
-         <short value="ExpectedRiskUponExposure"/>
-         <definition value="The healthcare professional's assessment of the expected severity of the reaction upon future exposure to the substance or group of substances to which the patient is hypersensitive or intolerant."/>
-         <alias value="VerwachtRisicoBijBlootstelling"/>
-         <binding>
-            <strength value="required"/>
-            <description value="Use ConceptMap VerwachtRisicoBijBlootstelling_to_AllergyIntoleranceCriticality to translate terminology from the functional model to profile terminology in ValueSet AllergyIntoleranceCriticality."/>
-            <valueSet value="http://hl7.org/fhir/ValueSet/allergy-intolerance-criticality|4.0.1">
-               <extension url="http://hl7.org/fhir/StructureDefinition/11179-permitted-value-conceptmap">
-                  <valueCanonical value="http://nictiz.nl/fhir/ConceptMap/VerwachtRisicoBijBlootstelling-to-AllergyIntoleranceCriticality"/>
-               </extension>
-            </valueSet>
-         </binding>
-         <mapping>
-            <identity value="cio-dataset-200-beta2-20231214"/>
-            <map value="cio-dataelement-20-802"/>
-            <comment value="ExpectedRiskUponExposure [DEPRECATED]"/>
-         </mapping>
-         <mapping>
-            <identity value="cio-dataset-200-beta3-20240930"/>
-            <map value="cio-dataelement-20-802"/>
-            <comment value="ExpectedRiskUponExposure"/>
-         </mapping>
-      </element>
-      <element id="AllergyIntolerance.criticality.extension:expectedRiskUponExposureCodelist">
-         <path value="AllergyIntolerance.criticality.extension"/>
-         <sliceName value="expectedRiskUponExposureCodelist"/>
-         <max value="1"/>
-         <type>
-            <code value="Extension"/>
-            <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-CodeSpecification"/>
-         </type>
-      </element>
-      <element id="AllergyIntolerance.criticality.extension:expectedRiskUponExposureCodelist.value[x]">
-         <path value="AllergyIntolerance.criticality.extension.value[x]"/>
-         <short value="ExpectedRiskUponExposure"/>
-         <definition value="The health professional's assessment of the expected risk upon future exposure to the substance or group of substances to which the patient is hypersensitive."/>
-         <alias value="VerwachtRisicoBijBlootstelling"/>
-         <binding>
-            <strength value="required"/>
-            <valueSet value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.26.11.16--20231120123250"/>
-         </binding>
-         <mapping>
-            <identity value="cio-dataset-200-beta2-20231214"/>
-            <map value="cio-dataelement-20-802"/>
-            <comment value="ExpectedRiskUponExposure [DEPRECATED]"/>
-         </mapping>
-         <mapping>
-            <identity value="cio-dataset-200-beta3-20240930"/>
-            <map value="cio-dataelement-20-802"/>
-            <comment value="ExpectedRiskUponExposure"/>
-         </mapping>
-      </element>
-      <element id="AllergyIntolerance.code">
-         <path value="AllergyIntolerance.code"/>
-         <short value="Substance"/>
-         <definition value="The substance or group of substances that trigger a reaction in the patient upon exposure."/>
-         <alias value="Stof"/>
-         <min value="1"/>
-         <binding>
-            <strength value="required"/>
-            <valueSet value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.26.11.29--20231129132215"/>
-         </binding>
-         <mapping>
-            <identity value="cio-dataset-200-beta2-20231214"/>
-            <map value="cio-dataelement-20-793"/>
-            <comment value="Substance"/>
-         </mapping>
-         <mapping>
-            <identity value="cio-dataset-200-beta3-20240930"/>
-            <map value="cio-dataelement-20-793"/>
-            <comment value="Substance"/>
-         </mapping>
-      </element>
-      <element id="AllergyIntolerance.patient">
-         <path value="AllergyIntolerance.patient"/>
-         <type>
-            <code value="Reference"/>
-            <targetProfile value="http://hl7.org/fhir/StructureDefinition/Patient"/>
-            <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient"/>
-         </type>
-      </element>
-      <element id="AllergyIntolerance.onset[x]">
-         <path value="AllergyIntolerance.onset[x]"/>
-         <slicing>
-            <discriminator>
-               <type value="type"/>
-               <path value="$this"/>
-            </discriminator>
-            <rules value="open"/>
-         </slicing>
-         <min value="1"/>
-      </element>
-      <element id="AllergyIntolerance.onset[x]:onsetDateTime">
-         <path value="AllergyIntolerance.onset[x]"/>
-         <sliceName value="onsetDateTime"/>
-         <short value="startDateTime"/>
-         <definition value="The start date and time of the period in which the condition is/was present."/>
-         <alias value="startDatumTijd"/>
-         <min value="1"/>
-         <type>
-            <code value="dateTime"/>
-         </type>
-         <mapping>
-            <identity value="cio-dataset-200-beta2-20231214"/>
-            <map value="cio-dataelement-20-804"/>
-            <comment value="ConditionStartDateTime [DEPRECATED]"/>
-         </mapping>
-         <mapping>
-            <identity value="cio-dataset-200-beta3-20240930"/>
-            <map value="cio-dataelement-20-954"/>
-            <comment value="startDateTime"/>
-         </mapping>
-      </element>
-      <element id="AllergyIntolerance.recordedDate">
-         <path value="AllergyIntolerance.recordedDate"/>
-         <short value="CreationDateTime"/>
-         <definition value="Date and time when the information about the patient was registered."/>
-         <alias value="OntstaansDatumTijd"/>
-         <min value="1"/>
-         <mapping>
-            <identity value="cio-dataset-200-beta2-20231214"/>
-            <map value="cio-dataelement-20-783"/>
-            <comment value="RegistrationDateTime [DEPRECATED]"/>
-         </mapping>
-         <mapping>
-            <identity value="cio-dataset-200-beta3-20240930"/>
-            <map value="cio-dataelement-20-783"/>
-            <comment value="CreationDateTime"/>
-         </mapping>
-      </element>
-      <element id="AllergyIntolerance.recorder">
-         <path value="AllergyIntolerance.recorder"/>
-         <short value="Author"/>
-         <definition value="The person who has registered or had someone else register the information in the patient record."/>
-         <alias value="Auteur"/>
-         <type>
-            <code value="Reference"/>
-            <profile value="http://nictiz.nl/fhir/StructureDefinition/pattern-NlCoreHealthProfessionalReference"/>
-            <targetProfile value="http://hl7.org/fhir/StructureDefinition/Practitioner"/>
-            <targetProfile value="http://hl7.org/fhir/StructureDefinition/PractitionerRole"/>
-            <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole"/>
-         </type>
-         <mapping>
-            <identity value="cio-dataset-200-beta2-20231214"/>
-            <map value="cio-dataelement-20-781"/>
-            <comment value="Author"/>
-         </mapping>
-         <mapping>
-            <identity value="cio-dataset-200-beta3-20240930"/>
-            <map value="cio-dataelement-20-781"/>
-            <comment value="Author"/>
-         </mapping>
-      </element>
-      <element id="AllergyIntolerance.asserter">
-         <path value="AllergyIntolerance.asserter"/>
-         <short value="Diagnostician"/>
-         <definition value="The health professional that acquired the diagnostic insight regarding the hypersensitivity or intolerance. This can be a different individual than the person who recorded the diagnostic insight."/>
-         <alias value="DiagnoseSteller"/>
-         <min value="1"/>
-         <type>
-            <code value="Reference"/>
-            <profile value="http://nictiz.nl/fhir/StructureDefinition/pattern-NlCoreHealthProfessionalReference"/>
-            <targetProfile value="http://hl7.org/fhir/StructureDefinition/Practitioner"/>
-            <targetProfile value="http://hl7.org/fhir/StructureDefinition/PractitionerRole"/>
-            <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole"/>
-         </type>
-         <mapping>
-            <identity value="cio-dataset-200-beta2-20231214"/>
-            <map value="cio-dataelement-20-800"/>
-            <comment value="Diagnostician"/>
-         </mapping>
-         <mapping>
-            <identity value="cio-dataset-200-beta3-20240930"/>
-            <map value="cio-dataelement-20-800"/>
-            <comment value="Diagnostician"/>
-         </mapping>
-      </element>
-      <element id="AllergyIntolerance.note">
-         <path value="AllergyIntolerance.note"/>
-         <max value="1"/>
-      </element>
-      <element id="AllergyIntolerance.note.text">
-         <path value="AllergyIntolerance.note.text"/>
-         <short value="Comment"/>
-         <definition value="Textual explanation of the hypersensitivity or intolerance which cannot be entered in any of the other fields."/>
-         <alias value="Toelichting"/>
-         <mapping>
-            <identity value="cio-dataset-200-beta2-20231214"/>
-            <map value="cio-dataelement-20-463"/>
-            <comment value="Comment"/>
-         </mapping>
-         <mapping>
-            <identity value="cio-dataset-200-beta3-20240930"/>
-            <map value="cio-dataelement-20-463"/>
-            <comment value="Comment"/>
-         </mapping>
-      </element>
-      <element id="AllergyIntolerance.reaction">
-         <path value="AllergyIntolerance.reaction"/>
-         <max value="0"/>
-      </element>
-   </differential>
+  <id value="cio-HypersensitivityIntolerance" />
+  <url value="http://nictiz.nl/fhir/StructureDefinition/cio-HypersensitivityIntolerance" />
+  <version value="1.0.0-beta.3" />
+  <name value="CioHypersensitivityIntolerance" />
+  <title value="cio HypersensitivityIntolerance" />
+  <status value="draft" />
+  <publisher value="Nictiz" />
+  <contact>
+    <name value="Nictiz" />
+    <telecom>
+      <system value="url" />
+      <value value="https://www.nictiz.nl" />
+      <use value="work" />
+    </telecom>
+  </contact>
+  <description value="The tendency to develop an adverse physical reaction when exposed to a specific substance or group of substances." />
+  <purpose value="This AllergyIntolerance resource represents the HypersensitivityIntolerance building block for implementations following the information standard [CiO](https://informatiestandaarden.nictiz.nl/wiki/Landingspagina_Contra-indicaties_en_Overgevoeligheden). This profile is based on the Dutch zib ('Zorginformatiebouwsteen', i.e. Health and Care Information Model) HypersensitivityIntolerance that is part of the 2024 prepublication. Therefore it has no dependency on a corresponding nl-core profile and mappings to zib concepts are not defined. Instead mappings to the CiO data set have been added. It is the intention to derive this profile from a more general nl-core-HypersensitivityIntolerance profile in the future." />
+  <copyright value="Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise." />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="cio-dataset-200-beta2-20231214" />
+    <uri value="https://decor.nictiz.nl/pub/cio/cio-html-20231214T100742/ds-2.16.840.1.113883.2.4.3.11.60.26.1.2-2020-04-02T000000.html" />
+    <name value="ART-DECOR Dataset Contraindications and hypersensitivities 2.0.0-beta.2 20231214" />
+  </mapping>
+  <mapping>
+    <identity value="cio-dataset-200-beta3-20240930" />
+    <name value="ART-DECOR Dataset Contraindications and hypersensitivities 2.0.0-beta.3 20240930" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="AllergyIntolerance" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/AllergyIntolerance" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="AllergyIntolerance">
+      <path value="AllergyIntolerance" />
+      <short value="HypersensitivityIntolerance" />
+      <comment value="In order to convey the registration information of a HypersensitivityIntolerance building block, this profile is used together with an instance conforming to the [cio-RegistrationInformation](http://nictiz.nl/fhir/StructureDefinition/cio-RegistrationInformation) profile wherein `Provenance.target` refers to the AllergyIntolerance resource.&#xD;&#xA;&#xD;&#xA;Note that not all concepts within the HypersensitivityIntolerance building block are mapped to elements within this profile (e.g. DiagnosisName (cio-dataelement-20-796)). To convey the complete HypersensitivityIntolerance building block, an AllergyIntolerance resource conforming to this profile SHOULD always be used together with an instance conforming to the [cio-Condition](http://nictiz.nl/fhir/StructureDefinition/cio-Condition) profile. This profile contains more detailed information on the hypersensitivity/intolerance, while the cio-Condition profile contains the underlying condition and diagnosis. Note however, that several concepts from the CiO data set are mapped to elements in both this profile and the cio-Condition profile, such as the DiagnosticInsightDate (cio-dataelement-20-799) or the Diagnostician (cio-dataelement-20-800). This is done to populate all instances with as much relevant information as possible, hence making instances conforming to these two profiles more valuable to be considered in isolation. If such an overlapping element is present in one of the resources, it SHALL also be present in the other resource, having the same value." />
+      <alias value="Overgevoeligheid" />
+      <mapping>
+        <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-456" />
+        <comment value="Hypersensitivity [DEPRECATED]" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
+        <map value="cio-dataelement-20-456" />
+        <comment value="HypersensitivityIntolerance" />
+      </mapping>
+    </element>
+    <element id="AllergyIntolerance.extension">
+      <path value="AllergyIntolerance.extension" />
+      <min value="4" />
+    </element>
+    <element id="AllergyIntolerance.extension:type">
+      <path value="AllergyIntolerance.extension" />
+      <sliceName value="type" />
+      <min value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-AllergyIntolerance-Type" />
+      </type>
+    </element>
+    <element id="AllergyIntolerance.extension:type.value[x]">
+      <path value="AllergyIntolerance.extension.value[x]" />
+      <patternCodeableConcept>
+        <coding>
+          <system value="http://snomed.info/sct" />
+          <code value="420134006" />
+        </coding>
+      </patternCodeableConcept>
+    </element>
+    <element id="AllergyIntolerance.extension:diagnosticInsightDate">
+      <path value="AllergyIntolerance.extension" />
+      <sliceName value="diagnosticInsightDate" />
+      <min value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/allergyintolerance-assertedDate" />
+      </type>
+    </element>
+    <element id="AllergyIntolerance.extension:diagnosticInsightDate.value[x]">
+      <path value="AllergyIntolerance.extension.value[x]" />
+      <short value="DiagnosticInsightDate" />
+      <definition value="Date (and time) at which the health professional obtained the diagnostic insight." />
+      <alias value="DiagnostischInzichtDatum" />
+      <mapping>
+        <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-799" />
+        <comment value="DiagnosticInsightDate" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
+        <map value="cio-dataelement-20-799" />
+        <comment value="DiagnosticInsightDate" />
+      </mapping>
+    </element>
+    <element id="AllergyIntolerance.extension:wayOfDetermination">
+      <path value="AllergyIntolerance.extension" />
+      <sliceName value="wayOfDetermination" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-WayOfDetermination" />
+      </type>
+    </element>
+    <element id="AllergyIntolerance.extension:wayOfDetermination.value[x]">
+      <path value="AllergyIntolerance.extension.value[x]" />
+      <definition value="The way in which the hypersensitivity or intolerance is determined." />
+      <mapping>
+        <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-555" />
+        <comment value="WayOfDetermination [DEPRECATED]" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
+        <map value="cio-dataelement-20-555" />
+        <comment value="WayOfDetermination" />
+      </mapping>
+    </element>
+    <element id="AllergyIntolerance.extension:relationCondition">
+      <path value="AllergyIntolerance.extension" />
+      <sliceName value="relationCondition" />
+      <min value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-RelationCondition" />
+      </type>
+    </element>
+    <element id="AllergyIntolerance.extension:relationCondition.value[x]">
+      <path value="AllergyIntolerance.extension.value[x]" />
+      <definition value="The condition of which the hypersensitivity or intolerance is the interpretation." />
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
+        <map value="cio-dataelement-20-932" />
+        <comment value="RelationCondition" />
+      </mapping>
+    </element>
+    <element id="AllergyIntolerance.extension:medicationHypersensitivityIdentifier">
+      <path value="AllergyIntolerance.extension" />
+      <sliceName value="medicationHypersensitivityIdentifier" />
+      <min value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-MedicationHypersensitivity.Identifier" />
+      </type>
+    </element>
+    <element id="AllergyIntolerance.extension:medicationHypersensitivityIdentifier.value[x]">
+      <path value="AllergyIntolerance.extension.value[x]" />
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
+        <map value="cio-dataelement-20-888" />
+        <comment value="IdentificationGMO" />
+      </mapping>
+    </element>
+    <element id="AllergyIntolerance.identifier">
+      <path value="AllergyIntolerance.identifier" />
+      <short value="IdentificationNumber" />
+      <definition value="Globally unique number that identifies the instantiation of the information model. The number is composed of an identification of the issuer organization and a unique number assigned by this organization." />
+      <alias value="Identificatienummer" />
+      <min value="1" />
+      <mapping>
+        <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-780" />
+        <comment value="IdentificationNumber" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
+        <map value="cio-dataelement-20-780" />
+        <comment value="IdentificationNumber" />
+      </mapping>
+    </element>
+    <element id="AllergyIntolerance.clinicalStatus">
+      <path value="AllergyIntolerance.clinicalStatus" />
+      <mapping>
+        <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-806" />
+        <comment value="ConditionPresence [DEPRECATED]" />
+      </mapping>
+    </element>
+    <element id="AllergyIntolerance.verificationStatus">
+      <path value="AllergyIntolerance.verificationStatus" />
+      <mapping>
+        <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-794" />
+        <comment value="CertaintyStatus [DEPRECATED]" />
+      </mapping>
+    </element>
+    <element id="AllergyIntolerance.type">
+      <path value="AllergyIntolerance.type" />
+      <comment value="Due to the required binding on this element it is not possible to use it to indicate that an AllergyIntolerance resource conforming to this profile represents an instance of the HypersensitivityIntolerance building block. Therefore the `.type` element from R5 (with a preferred binding) is implicitly pre-adopted via the [AllergyIntolerance-Type extension](http://nictiz.nl/fhir/StructureDefinition/ext-AllergyIntolerance-Type)." />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.category">
+      <path value="AllergyIntolerance.category" />
+      <short value="Category" />
+      <definition value="Identifies the category of the agent to which the hypersensitivity or intolerance relates, such as medicines and nutritional substances." />
+      <alias value="Categorie" />
+      <max value="1" />
+      <binding>
+        <strength value="required" />
+        <description value="Use ConceptMap CategorieCodelijst_to_AllergyIntoleranceCategory to translate terminology from the functional model to profile terminology in ValueSet AllergyIntoleranceCategory." />
+        <valueSet value="http://hl7.org/fhir/ValueSet/allergy-intolerance-category|4.0.1">
+          <extension url="http://hl7.org/fhir/StructureDefinition/11179-permitted-value-conceptmap">
+            <valueCanonical value="http://nictiz.nl/fhir/ConceptMap/CategorieCodelijst-to-AllergyIntoleranceCategory" />
+          </extension>
+        </valueSet>
+      </binding>
+      <mapping>
+        <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-458" />
+        <comment value="HypersensitivityCategory [DEPRECATED]" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
+        <map value="cio-dataelement-20-458" />
+        <comment value="Category" />
+      </mapping>
+    </element>
+    <element id="AllergyIntolerance.category.extension:categoryCodelist">
+      <path value="AllergyIntolerance.category.extension" />
+      <sliceName value="categoryCodelist" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-CodeSpecification" />
+      </type>
+    </element>
+    <element id="AllergyIntolerance.category.extension:categoryCodelist.value[x]">
+      <path value="AllergyIntolerance.category.extension.value[x]" />
+      <short value="Category" />
+      <definition value="Identifies the category of the agent to which the hypersensitivity or intolerance relates, such as medicines and nutritional substances." />
+      <alias value="Categorie" />
+      <binding>
+        <strength value="required" />
+        <valueSet value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.26.11.7--20211028090253" />
+      </binding>
+      <mapping>
+        <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-458" />
+        <comment value="HypersensitivityCategory [DEPRECATED]" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
+        <map value="cio-dataelement-20-458" />
+        <comment value="Category" />
+      </mapping>
+    </element>
+    <element id="AllergyIntolerance.criticality">
+      <path value="AllergyIntolerance.criticality" />
+      <short value="ExpectedRiskUponExposure" />
+      <definition value="The healthcare professional's assessment of the expected severity of the reaction upon future exposure to the substance or group of substances to which the patient is hypersensitive or intolerant." />
+      <alias value="VerwachtRisicoBijBlootstelling" />
+      <binding>
+        <strength value="required" />
+        <description value="Use ConceptMap VerwachtRisicoBijBlootstelling_to_AllergyIntoleranceCriticality to translate terminology from the functional model to profile terminology in ValueSet AllergyIntoleranceCriticality." />
+        <valueSet value="http://hl7.org/fhir/ValueSet/allergy-intolerance-criticality|4.0.1">
+          <extension url="http://hl7.org/fhir/StructureDefinition/11179-permitted-value-conceptmap">
+            <valueCanonical value="http://nictiz.nl/fhir/ConceptMap/VerwachtRisicoBijBlootstelling-to-AllergyIntoleranceCriticality" />
+          </extension>
+        </valueSet>
+      </binding>
+      <mapping>
+        <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-802" />
+        <comment value="ExpectedRiskUponExposure [DEPRECATED]" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
+        <map value="cio-dataelement-20-802" />
+        <comment value="ExpectedRiskUponExposure" />
+      </mapping>
+    </element>
+    <element id="AllergyIntolerance.criticality.extension:expectedRiskUponExposureCodelist">
+      <path value="AllergyIntolerance.criticality.extension" />
+      <sliceName value="expectedRiskUponExposureCodelist" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-CodeSpecification" />
+      </type>
+    </element>
+    <element id="AllergyIntolerance.criticality.extension:expectedRiskUponExposureCodelist.value[x]">
+      <path value="AllergyIntolerance.criticality.extension.value[x]" />
+      <short value="ExpectedRiskUponExposure" />
+      <definition value="The health professional's assessment of the expected risk upon future exposure to the substance or group of substances to which the patient is hypersensitive." />
+      <alias value="VerwachtRisicoBijBlootstelling" />
+      <binding>
+        <strength value="required" />
+        <valueSet value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.26.11.16--20231120123250" />
+      </binding>
+      <mapping>
+        <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-802" />
+        <comment value="ExpectedRiskUponExposure [DEPRECATED]" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
+        <map value="cio-dataelement-20-802" />
+        <comment value="ExpectedRiskUponExposure" />
+      </mapping>
+    </element>
+    <element id="AllergyIntolerance.code">
+      <path value="AllergyIntolerance.code" />
+      <short value="Substance" />
+      <definition value="The substance or group of substances that trigger a reaction in the patient upon exposure." />
+      <alias value="Stof" />
+      <min value="1" />
+      <binding>
+        <strength value="required" />
+        <valueSet value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.26.11.29--20231129132215" />
+      </binding>
+      <mapping>
+        <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-793" />
+        <comment value="Substance" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
+        <map value="cio-dataelement-20-793" />
+        <comment value="Substance" />
+      </mapping>
+    </element>
+    <element id="AllergyIntolerance.patient">
+      <path value="AllergyIntolerance.patient" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Patient" />
+        <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient" />
+      </type>
+    </element>
+    <element id="AllergyIntolerance.onset[x]">
+      <path value="AllergyIntolerance.onset[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="1" />
+    </element>
+    <element id="AllergyIntolerance.onset[x]:onsetDateTime">
+      <path value="AllergyIntolerance.onset[x]" />
+      <sliceName value="onsetDateTime" />
+      <short value="startDateTime" />
+      <definition value="The start date and time of the period in which the condition is/was present." />
+      <alias value="startDatumTijd" />
+      <min value="1" />
+      <type>
+        <code value="dateTime" />
+      </type>
+      <mapping>
+        <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-804" />
+        <comment value="ConditionStartDateTime [DEPRECATED]" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
+        <map value="cio-dataelement-20-954" />
+        <comment value="startDateTime" />
+      </mapping>
+    </element>
+    <element id="AllergyIntolerance.recordedDate">
+      <path value="AllergyIntolerance.recordedDate" />
+      <short value="CreationDateTime" />
+      <definition value="Date and time when the information about the patient was registered." />
+      <alias value="OntstaansDatumTijd" />
+      <min value="1" />
+      <mapping>
+        <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-783" />
+        <comment value="RegistrationDateTime [DEPRECATED]" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
+        <map value="cio-dataelement-20-783" />
+        <comment value="CreationDateTime" />
+      </mapping>
+    </element>
+    <element id="AllergyIntolerance.recorder">
+      <path value="AllergyIntolerance.recorder" />
+      <short value="Author" />
+      <definition value="The person who has registered or had someone else register the information in the patient record." />
+      <alias value="Auteur" />
+      <type>
+        <code value="Reference" />
+        <profile value="http://nictiz.nl/fhir/StructureDefinition/pattern-NlCoreHealthProfessionalReference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Practitioner" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/PractitionerRole" />
+        <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole" />
+      </type>
+      <mapping>
+        <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-781" />
+        <comment value="Author" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
+        <map value="cio-dataelement-20-781" />
+        <comment value="Author" />
+      </mapping>
+    </element>
+    <element id="AllergyIntolerance.asserter">
+      <path value="AllergyIntolerance.asserter" />
+      <short value="Diagnostician" />
+      <definition value="The health professional that acquired the diagnostic insight regarding the hypersensitivity or intolerance. This can be a different individual than the person who recorded the diagnostic insight." />
+      <alias value="DiagnoseSteller" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <profile value="http://nictiz.nl/fhir/StructureDefinition/pattern-NlCoreHealthProfessionalReference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Practitioner" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/PractitionerRole" />
+        <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole" />
+      </type>
+      <mapping>
+        <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-800" />
+        <comment value="Diagnostician" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
+        <map value="cio-dataelement-20-800" />
+        <comment value="Diagnostician" />
+      </mapping>
+    </element>
+    <element id="AllergyIntolerance.note">
+      <path value="AllergyIntolerance.note" />
+      <max value="1" />
+    </element>
+    <element id="AllergyIntolerance.note.text">
+      <path value="AllergyIntolerance.note.text" />
+      <short value="Comment" />
+      <definition value="Textual explanation of the hypersensitivity or intolerance which cannot be entered in any of the other fields." />
+      <alias value="Toelichting" />
+      <mapping>
+        <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-463" />
+        <comment value="Comment" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
+        <map value="cio-dataelement-20-463" />
+        <comment value="Comment" />
+      </mapping>
+    </element>
+    <element id="AllergyIntolerance.reaction">
+      <path value="AllergyIntolerance.reaction" />
+      <max value="0" />
+    </element>
+  </differential>
 </StructureDefinition>

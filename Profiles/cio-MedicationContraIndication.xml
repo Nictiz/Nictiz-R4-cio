@@ -1,283 +1,288 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
-   <id value="cio-MedicationContraIndication"/>
-   <url value="http://nictiz.nl/fhir/StructureDefinition/cio-MedicationContraIndication"/>
-   <version value="1.0.0-beta.3"/>
-   <name value="CioMedicationContraIndication"/>
-   <title value="cio MedicationContraIndication"/>
-   <status value="draft"/>
-   <publisher value="Nictiz"/>
-   <contact>
-      <name value="Nictiz"/>
-      <telecom>
-         <system value="url"/>
-         <value value="https://www.nictiz.nl"/>
-         <use value="work"/>
-      </telecom>
-   </contact>
-   <description value="A contraindication for medication safety is a condition or characteristic of a patient in which certain medicines may not be used, or only used under certain conditions."/>
-   <purpose value="This Flag resource represents the MedicationContraIndication building block for implementations following the information standard [CiO](https://informatiestandaarden.nictiz.nl/wiki/Landingspagina_Contra-indicaties_en_Overgevoeligheden). This profile is based on the Dutch zib ('Zorginformatiebouwsteen', i.e. Health and Care Information Model) Alert that is part of the 2024 prepublication. Therefore it has no dependency on a corresponding nl-core profile and mappings to zib concepts are not defined. Instead mappings to the CiO data set have been added. It is the intention to derive this profile from a more general nl-core-Alert profile in the future."/>
-   <copyright value="Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise."/>
-   <fhirVersion value="4.0.1"/>
-   <mapping>
-      <identity value="cio-dataset-200-beta2-20231214"/>
-      <uri value="https://decor.nictiz.nl/pub/cio/cio-html-20231214T100742/ds-2.16.840.1.113883.2.4.3.11.60.26.1.2-2020-04-02T000000.html"/>
-      <name value="ART-DECOR Dataset Contraindications and hypersensitivities 2.0.0-beta.2 20231214"/>
-   </mapping>
-   <mapping>
-      <identity value="cio-dataset-200-beta3-20240930"/>
-      <name value="ART-DECOR Dataset Contraindications and hypersensitivities 2.0.0-beta.3 20240930"/>
-   </mapping>
-   <kind value="resource"/>
-   <abstract value="false"/>
-   <type value="Flag"/>
-   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Flag"/>
-   <derivation value="constraint"/>
-   <differential>
-      <element id="Flag">
-         <path value="Flag"/>
-         <short value="MedicationContraIndication / Alert"/>
-         <comment value="In order to convey the registration information of a MedicationContraIndication building block, this profile is used together with an instance conforming to the [cio-RegistrationInformation](http://nictiz.nl/fhir/StructureDefinition/cio-RegistrationInformation) profile wherein `Provenance.target` refers to the Flag resource.&#xD;&#xA;&#xD;&#xA;Note that not all concepts within the MedicationContraIndication building block are mapped to elements within this profile (e.g. DecisionMaker (cio-dataelement-20-776)). To convey the complete MedicationContraIndication building block, a Flag resource conforming to this profile SHOULD always be used together with an instance conforming to the cio-RegistrationInformation profile."/>
-         <alias value="MedicatieContraIndicatie"/>
-         <constraint>
-            <key value="cio-MedicationContraIndication-1"/>
-            <severity value="error"/>
-            <human value="If Flag.period.end exists, Flag.extension:comment SHALL exist."/>
-            <expression value="period.end.exists() implies extension('http://nictiz.nl/fhir/StructureDefinition/ext-Comment').exists()"/>
-         </constraint>
-         <constraint>
-            <key value="cio-MedicationContraIndication-2"/>
-            <severity value="error"/>
-            <human value="If the medication contraindication is stopped (i.e. Flag.status is 'inactive'), a reference to the previous medication contraindication that was active SHALL be present in Flag.extension:relationAlert."/>
-            <expression value="(status = 'inactive') implies extension('http://nictiz.nl/fhir/StructureDefinition/ext-MedicationContraIndication.RelationAlert').exists()"/>
-         </constraint>
-         <constraint>
-            <key value="cio-MedicationContraIndication-3"/>
-            <severity value="error"/>
-            <human value="If the medication contraindication is not a proposal, the Flag.period.start SHALL be present."/>
-            <expression value="meta.tag.where(system = 'http://terminology.hl7.org/CodeSystem/common-tags' and code = 'actionable').exists().not() implies period.start.exists()"/>
-         </constraint>
-         <mapping>
-            <identity value="cio-dataset-200-beta2-20231214"/>
-            <map value="cio-dataelement-20-768"/>
-            <comment value="Alert"/>
-         </mapping>
-         <mapping>
-            <identity value="cio-dataset-200-beta3-20240930"/>
-            <map value="cio-dataelement-20-821"/>
-            <comment value="MedicationContraIndication"/>
-         </mapping>
-      </element>
-      <element id="Flag.meta">
-         <path value="Flag.meta"/>
-      </element>
-      <element id="Flag.meta.tag">
-         <path value="Flag.meta.tag"/>
-         <condition value="cio-MedicationContraIndication-3"/>
-      </element>
-      <element id="Flag.extension:relationAlert">
-         <path value="Flag.extension"/>
-         <sliceName value="relationAlert"/>
-         <type>
-            <code value="Extension"/>
-            <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-MedicationContraIndication.RelationAlert"/>
-         </type>
-         <condition value="cio-MedicationContraIndication-2"/>
-      </element>
-      <element id="Flag.extension:relationAlert.value[x]">
-         <path value="Flag.extension.value[x]"/>
-         <condition value="cio-MedicationContraIndication-2"/>
-         <mapping>
-            <identity value="cio-dataset-200-beta2-20231214"/>
-            <map value="cio-dataelement-20-881"/>
-            <comment value="RelationAlert"/>
-         </mapping>
-         <mapping>
-            <identity value="cio-dataset-200-beta3-20240930"/>
-            <map value="cio-dataelement-20-881"/>
-            <comment value="RelationAlert"/>
-         </mapping>
-      </element>
-      <element id="Flag.extension:comment">
-         <path value="Flag.extension"/>
-         <sliceName value="comment"/>
-         <max value="1"/>
-         <type>
-            <code value="Extension"/>
-            <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-Comment"/>
-         </type>
-         <condition value="cio-MedicationContraIndication-1"/>
-      </element>
-      <element id="Flag.extension:comment.value[x]">
-         <path value="Flag.extension.value[x]"/>
-         <short value="Comment"/>
-         <definition value="Explanatory comments to the alert that can not be expressed in any of the other elements, e.g. reason for ending the alert."/>
-         <alias value="Toelichting"/>
-         <condition value="cio-MedicationContraIndication-1"/>
-         <mapping>
-            <identity value="cio-dataset-200-beta2-20231214"/>
-            <map value="cio-dataelement-20-775"/>
-            <comment value="Comment"/>
-         </mapping>
-         <mapping>
-            <identity value="cio-dataset-200-beta3-20240930"/>
-            <map value="cio-dataelement-20-775"/>
-            <comment value="Comment"/>
-         </mapping>
-      </element>
-      <element id="Flag.identifier">
-         <path value="Flag.identifier"/>
-         <short value="IdentificationNumber"/>
-         <definition value="Globally unique number that identifies the instantiation of the information model. The number is composed of an identification of the issuer organization and a unique number assigned by this organization."/>
-         <alias value="Identificatienummer"/>
-         <min value="1"/>
-         <mapping>
-            <identity value="cio-dataset-200-beta2-20231214"/>
-            <map value="cio-dataelement-20-780"/>
-            <comment value="IdentificationNumber"/>
-         </mapping>
-         <mapping>
-            <identity value="cio-dataset-200-beta3-20240930"/>
-            <map value="cio-dataelement-20-780"/>
-            <comment value="IdentificationNumber"/>
-         </mapping>
-      </element>
-      <element id="Flag.status">
-         <path value="Flag.status"/>
-         <comment value="Sending systems that don't record an explicit status, SHOULD use the following guidance to infer a value from EndDateTime:&#xD;&#xA;&#xD;&#xA;* When EndDateTime is present and in the past, `.status` will be set to _inactive_.&#xD;&#xA;* When EndDateTime is absent, `.status` will be set to _active_.&#xD;&#xA;* When EndDateTime is present and in the future (which actually goes against both FHIR and zib definitions, but in a case where this might occur), `.status` will be set to _active_."/>
-         <condition value="cio-MedicationContraIndication-2"/>
-         <mapping>
-            <identity value="cio-dataset-200-beta2-20231214"/>
-            <map value="cio-dataelement-20-769"/>
-            <comment value="EndDateTime (implicit, main mapping is on Flag.period.end)"/>
-         </mapping>
-         <mapping>
-            <identity value="cio-dataset-200-beta3-20240930"/>
-            <map value="cio-dataelement-20-769"/>
-            <comment value="EndDateTime (implicit, main mapping is on Flag.period.end)"/>
-         </mapping>
-      </element>
-      <element id="Flag.category">
-         <path value="Flag.category"/>
-         <slicing>
-            <discriminator>
-               <type value="value"/>
-               <path value="$this"/>
-            </discriminator>
-            <rules value="open"/>
-         </slicing>
-         <min value="1"/>
-      </element>
-      <element id="Flag.category:medicationContraIndicationCode">
-         <path value="Flag.category"/>
-         <sliceName value="medicationContraIndicationCode"/>
-         <short value="AlertType"/>
-         <definition value="Indicates the type of alert, meaning a rough description of the cause or origin of the warning."/>
-         <comment value="The concept AlertType is bound to a ValueSet consisting of a single code. Instead of specifying that ValueSet here as well, it has been chosen to add its only code as a pattern instead."/>
-         <alias value="AlertType"/>
-         <min value="1"/>
-         <max value="1"/>
-         <patternCodeableConcept>
-            <coding>
-               <system value="http://snomed.info/sct"/>
-               <code value="350241000146102"/>
-            </coding>
-         </patternCodeableConcept>
-         <mapping>
-            <identity value="cio-dataset-200-beta2-20231214"/>
-            <map value="cio-dataelement-20-774"/>
-            <comment value="AlertType"/>
-         </mapping>
-         <mapping>
-            <identity value="cio-dataset-200-beta3-20240930"/>
-            <map value="cio-dataelement-20-774"/>
-            <comment value="AlertType"/>
-         </mapping>
-      </element>
-      <element id="Flag.code">
-         <path value="Flag.code"/>
-         <short value="AlertName"/>
-         <definition value="A warning, other than a condition or problem. For example, a patient can be given an 'Aggressive patient' alert. The warning can be entered in code (there are codes for frequently used alerts), but seeing the dynamic nature of the warnings cf. SARS and Ebola, these alerts will often be entered as free text.&#xD;&#xA;&#xD;&#xA;Within the context of the information standard Contraindications and Hypersensitivities the AlertName will always be selected from the NCI list."/>
-         <alias value="AlertNaam"/>
-         <binding>
-            <strength value="required"/>
-            <valueSet value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.9.14.1--20200901000000"/>
-         </binding>
-         <mapping>
-            <identity value="cio-dataset-200-beta2-20231214"/>
-            <map value="cio-dataelement-20-772"/>
-            <comment value="AlertName"/>
-         </mapping>
-         <mapping>
-            <identity value="cio-dataset-200-beta3-20240930"/>
-            <map value="cio-dataelement-20-772"/>
-            <comment value="AlertName"/>
-         </mapping>
-      </element>
-      <element id="Flag.subject">
-         <path value="Flag.subject"/>
-         <type>
-            <code value="Reference"/>
-            <targetProfile value="http://hl7.org/fhir/StructureDefinition/Patient"/>
-            <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient"/>
-         </type>
-      </element>
-      <element id="Flag.period.start">
-         <path value="Flag.period.start"/>
-         <short value="StartDateTime"/>
-         <definition value="The date and time at which the described condition was entered as a warning. This can be an exact date and time, or a rough indication of the date (such as only the year, or the month and the year)."/>
-         <alias value="BeginDatumTijd"/>
-         <condition value="cio-MedicationContraIndication-3"/>
-         <mapping>
-            <identity value="cio-dataset-200-beta2-20231214"/>
-            <map value="cio-dataelement-20-773"/>
-            <comment value="StartDateTime"/>
-         </mapping>
-         <mapping>
-            <identity value="cio-dataset-200-beta3-20240930"/>
-            <map value="cio-dataelement-20-773"/>
-            <comment value="StartDateTime"/>
-         </mapping>
-      </element>
-      <element id="Flag.period.end">
-         <path value="Flag.period.end"/>
-         <short value="EndDateTime"/>
-         <definition value="The date and time at which the described condition was retracted as a warning. This can be an exact date and time, or a rough indication of the date (such as only the year, or the month and the year)."/>
-         <alias value="EindDatumTijd"/>
-         <condition value="cio-MedicationContraIndication-1"/>
-         <mapping>
-            <identity value="cio-dataset-200-beta2-20231214"/>
-            <map value="cio-dataelement-20-769"/>
-            <comment value="EndDateTime"/>
-         </mapping>
-         <mapping>
-            <identity value="cio-dataset-200-beta3-20240930"/>
-            <map value="cio-dataelement-20-769"/>
-            <comment value="EndDateTime"/>
-         </mapping>
-      </element>
-      <element id="Flag.author">
-         <path value="Flag.author"/>
-         <short value="Author"/>
-         <definition value="The person who has registered or had someone else register the information in the patient record."/>
-         <alias value="Auteur"/>
-         <type>
-            <code value="Reference"/>
-            <profile value="http://nictiz.nl/fhir/StructureDefinition/pattern-NlCoreHealthProfessionalReference"/>
-            <targetProfile value="http://hl7.org/fhir/StructureDefinition/Practitioner"/>
-            <targetProfile value="http://hl7.org/fhir/StructureDefinition/PractitionerRole"/>
-            <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole"/>
-         </type>
-         <mapping>
-            <identity value="cio-dataset-200-beta2-20231214"/>
-            <map value="cio-dataelement-20-781"/>
-            <comment value="Author"/>
-         </mapping>
-         <mapping>
-            <identity value="cio-dataset-200-beta3-20240930"/>
-            <map value="cio-dataelement-20-781"/>
-            <comment value="Author"/>
-         </mapping>
-      </element>
-   </differential>
+  <id value="cio-MedicationContraIndication" />
+  <url value="http://nictiz.nl/fhir/StructureDefinition/cio-MedicationContraIndication" />
+  <version value="1.0.0-beta.3" />
+  <name value="CioMedicationContraIndication" />
+  <title value="cio MedicationContraIndication" />
+  <status value="draft" />
+  <publisher value="Nictiz" />
+  <contact>
+    <name value="Nictiz" />
+    <telecom>
+      <system value="url" />
+      <value value="https://www.nictiz.nl" />
+      <use value="work" />
+    </telecom>
+  </contact>
+  <description value="A contraindication for medication safety is a condition or characteristic of a patient in which certain medicines may not be used, or only used under certain conditions." />
+  <purpose value="This Flag resource represents the MedicationContraIndication building block for implementations following the information standard [CiO](https://informatiestandaarden.nictiz.nl/wiki/Landingspagina_Contra-indicaties_en_Overgevoeligheden). This profile is based on the Dutch zib ('Zorginformatiebouwsteen', i.e. Health and Care Information Model) Alert that is part of the 2024 prepublication. Therefore it has no dependency on a corresponding nl-core profile and mappings to zib concepts are not defined. Instead mappings to the CiO data set have been added. It is the intention to derive this profile from a more general nl-core-Alert profile in the future." />
+  <copyright value="Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise." />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="cio-dataset-200-beta2-20231214" />
+    <uri value="https://decor.nictiz.nl/pub/cio/cio-html-20231214T100742/ds-2.16.840.1.113883.2.4.3.11.60.26.1.2-2020-04-02T000000.html" />
+    <name value="ART-DECOR Dataset Contraindications and hypersensitivities 2.0.0-beta.2 20231214" />
+  </mapping>
+  <mapping>
+    <identity value="cio-dataset-200-beta3-20240930" />
+    <name value="ART-DECOR Dataset Contraindications and hypersensitivities 2.0.0-beta.3 20240930" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Flag" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Flag" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Flag">
+      <path value="Flag" />
+      <short value="MedicationContraIndication / Alert" />
+      <comment value="In order to convey the registration information of a MedicationContraIndication building block, this profile is used together with an instance conforming to the [cio-RegistrationInformation](http://nictiz.nl/fhir/StructureDefinition/cio-RegistrationInformation) profile wherein `Provenance.target` refers to the Flag resource.&#xD;&#xA;&#xD;&#xA;Note that not all concepts within the MedicationContraIndication building block are mapped to elements within this profile (e.g. DecisionMaker (cio-dataelement-20-776)). To convey the complete MedicationContraIndication building block, a Flag resource conforming to this profile SHOULD always be used together with an instance conforming to the cio-RegistrationInformation profile." />
+      <alias value="MedicatieContraIndicatie" />
+      <constraint>
+        <key value="cio-MedicationContraIndication-1" />
+        <severity value="error" />
+        <human value="If Flag.period.end exists, Flag.extension:comment SHALL exist." />
+        <expression value="period.end.exists() implies extension('http://nictiz.nl/fhir/StructureDefinition/ext-Comment').exists()" />
+      </constraint>
+      <constraint>
+        <key value="cio-MedicationContraIndication-2" />
+        <severity value="error" />
+        <human value="If the medication contraindication is stopped (i.e. Flag.status is 'inactive'), a reference to the previous medication contraindication that was active SHALL be present in Flag.extension:relationAlert." />
+        <expression value="(status = 'inactive') implies extension('http://nictiz.nl/fhir/StructureDefinition/ext-MedicationContraIndication.RelationAlert').exists()" />
+      </constraint>
+      <constraint>
+        <key value="cio-MedicationContraIndication-3" />
+        <severity value="error" />
+        <human value="If the medication contraindication is not a proposal, the Flag.period.start SHALL be present." />
+        <expression value="meta.tag.where(system = 'http://terminology.hl7.org/CodeSystem/common-tags' and code = 'actionable').exists().not() implies period.start.exists()" />
+      </constraint>
+      <mapping>
+        <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-768" />
+        <comment value="Alert" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
+        <map value="cio-dataelement-20-821" />
+        <comment value="MedicationContraIndication" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
+        <map value="cio-dataelement-20-768" />
+        <comment value="Alert" />
+      </mapping>
+    </element>
+    <element id="Flag.meta">
+      <path value="Flag.meta" />
+    </element>
+    <element id="Flag.meta.tag">
+      <path value="Flag.meta.tag" />
+      <condition value="cio-MedicationContraIndication-3" />
+    </element>
+    <element id="Flag.extension:relationAlert">
+      <path value="Flag.extension" />
+      <sliceName value="relationAlert" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-MedicationContraIndication.RelationAlert" />
+      </type>
+      <condition value="cio-MedicationContraIndication-2" />
+    </element>
+    <element id="Flag.extension:relationAlert.value[x]">
+      <path value="Flag.extension.value[x]" />
+      <condition value="cio-MedicationContraIndication-2" />
+      <mapping>
+        <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-881" />
+        <comment value="RelationAlert [DEPRECATED]" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
+        <map value="cio-dataelement-20-881" />
+        <comment value="RelationAlert" />
+      </mapping>
+    </element>
+    <element id="Flag.extension:comment">
+      <path value="Flag.extension" />
+      <sliceName value="comment" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-Comment" />
+      </type>
+      <condition value="cio-MedicationContraIndication-1" />
+    </element>
+    <element id="Flag.extension:comment.value[x]">
+      <path value="Flag.extension.value[x]" />
+      <short value="Comment" />
+      <definition value="Explanatory comments to the alert that can not be expressed in any of the other elements, e.g. reason for ending the alert." />
+      <alias value="Toelichting" />
+      <condition value="cio-MedicationContraIndication-1" />
+      <mapping>
+        <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-775" />
+        <comment value="Comment [DEPRECATED]" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
+        <map value="cio-dataelement-20-775" />
+        <comment value="Comment" />
+      </mapping>
+    </element>
+    <element id="Flag.identifier">
+      <path value="Flag.identifier" />
+      <short value="IdentificationNumber" />
+      <definition value="Globally unique number that identifies the instantiation of the information model. The number is composed of an identification of the issuer organization and a unique number assigned by this organization." />
+      <alias value="Identificatienummer" />
+      <min value="1" />
+      <mapping>
+        <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-780" />
+        <comment value="IdentificationNumber" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
+        <map value="cio-dataelement-20-780" />
+        <comment value="IdentificationNumber" />
+      </mapping>
+    </element>
+    <element id="Flag.status">
+      <path value="Flag.status" />
+      <comment value="Sending systems that don't record an explicit status, SHOULD use the following guidance to infer a value from EndDateTime:&#xD;&#xA;&#xD;&#xA;* When EndDateTime is present and in the past, `.status` will be set to _inactive_.&#xD;&#xA;* When EndDateTime is absent, `.status` will be set to _active_.&#xD;&#xA;* When EndDateTime is present and in the future (which actually goes against both FHIR and zib definitions, but in a case where this might occur), `.status` will be set to _active_." />
+      <condition value="cio-MedicationContraIndication-2" />
+      <mapping>
+        <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-769" />
+        <comment value="EndDateTime (implicit, main mapping is on Flag.period.end)" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
+        <map value="cio-dataelement-20-769" />
+        <comment value="EndDateTime (implicit, main mapping is on Flag.period.end)" />
+      </mapping>
+    </element>
+    <element id="Flag.category">
+      <path value="Flag.category" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="1" />
+    </element>
+    <element id="Flag.category:medicationContraIndicationCode">
+      <path value="Flag.category" />
+      <sliceName value="medicationContraIndicationCode" />
+      <short value="AlertType" />
+      <definition value="Indicates the type of alert, meaning a rough description of the cause or origin of the warning." />
+      <comment value="The concept AlertType is bound to a ValueSet consisting of a single code. Instead of specifying that ValueSet here as well, it has been chosen to add its only code as a pattern instead." />
+      <alias value="AlertType" />
+      <min value="1" />
+      <max value="1" />
+      <patternCodeableConcept>
+        <coding>
+          <system value="http://snomed.info/sct" />
+          <code value="350241000146102" />
+        </coding>
+      </patternCodeableConcept>
+      <mapping>
+        <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-774" />
+        <comment value="AlertType" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
+        <map value="cio-dataelement-20-774" />
+        <comment value="AlertType" />
+      </mapping>
+    </element>
+    <element id="Flag.code">
+      <path value="Flag.code" />
+      <short value="AlertName" />
+      <definition value="A warning, other than a condition or problem. For example, a patient can be given an 'Aggressive patient' alert. The warning can be entered in code (there are codes for frequently used alerts), but seeing the dynamic nature of the warnings cf. SARS and Ebola, these alerts will often be entered as free text.&#xD;&#xA;&#xD;&#xA;Within the context of the information standard Contraindications and Hypersensitivities the AlertName will always be selected from the NCI list." />
+      <alias value="AlertNaam" />
+      <binding>
+        <strength value="required" />
+        <valueSet value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.9.14.1--20200901000000" />
+      </binding>
+      <mapping>
+        <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-772" />
+        <comment value="AlertName" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
+        <map value="cio-dataelement-20-772" />
+        <comment value="AlertName" />
+      </mapping>
+    </element>
+    <element id="Flag.subject">
+      <path value="Flag.subject" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Patient" />
+        <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient" />
+      </type>
+    </element>
+    <element id="Flag.period.start">
+      <path value="Flag.period.start" />
+      <short value="StartDateTime" />
+      <definition value="The date and time at which the described condition was entered as a warning. This can be an exact date and time, or a rough indication of the date (such as only the year, or the month and the year)." />
+      <alias value="BeginDatumTijd" />
+      <condition value="cio-MedicationContraIndication-3" />
+      <mapping>
+        <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-773" />
+        <comment value="StartDateTime [DEPRECATED]" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
+        <map value="cio-dataelement-20-773" />
+        <comment value="StartDateTime" />
+      </mapping>
+    </element>
+    <element id="Flag.period.end">
+      <path value="Flag.period.end" />
+      <short value="EndDateTime" />
+      <definition value="The date and time at which the described condition was retracted as a warning. This can be an exact date and time, or a rough indication of the date (such as only the year, or the month and the year)." />
+      <alias value="EindDatumTijd" />
+      <condition value="cio-MedicationContraIndication-1" />
+      <mapping>
+        <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-769" />
+        <comment value="EndDateTime" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
+        <map value="cio-dataelement-20-769" />
+        <comment value="EndDateTime" />
+      </mapping>
+    </element>
+    <element id="Flag.author">
+      <path value="Flag.author" />
+      <short value="Author" />
+      <definition value="The person who has registered or had someone else register the information in the patient record." />
+      <alias value="Auteur" />
+      <type>
+        <code value="Reference" />
+        <profile value="http://nictiz.nl/fhir/StructureDefinition/pattern-NlCoreHealthProfessionalReference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Practitioner" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/PractitionerRole" />
+        <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole" />
+      </type>
+      <mapping>
+        <identity value="cio-dataset-200-beta2-20231214" />
+        <map value="cio-dataelement-20-781" />
+        <comment value="Author" />
+      </mapping>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
+        <map value="cio-dataelement-20-781" />
+        <comment value="Author" />
+      </mapping>
+    </element>
+  </differential>
 </StructureDefinition>

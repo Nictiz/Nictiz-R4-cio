@@ -60,6 +60,11 @@
         <code value="Resource" />
         <profile value="http://nictiz.nl/fhir/StructureDefinition/cio-MedicationContraIndication" />
       </type>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20240930" />
+        <map value="cio-dataelement-20-936" />
+        <comment value="ProposalContraIndication" />
+      </mapping>
     </element>
     <element id="Bundle.entry:proposalContraIndication.resource.meta">
       <path value="Bundle.entry.resource.meta" />
@@ -130,11 +135,6 @@
       <path value="Bundle.entry.resource.author" />
       <definition value="Author of the proposal contraindication." />
       <min value="1" />
-      <mapping>
-        <identity value="cio-dataset-200-beta3-20240930" />
-        <map value="cio-dataelement-20-781" />
-        <comment value="Author" />
-      </mapping>
     </element>
     <element id="Bundle.entry:proposalRegistrationInformation">
       <path value="Bundle.entry" />
