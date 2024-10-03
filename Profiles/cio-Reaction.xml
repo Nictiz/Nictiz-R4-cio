@@ -60,7 +60,7 @@
       <min value="1" />
       <type>
         <code value="Extension" />
-        <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-AllergyIntolerance-Type" />
+        <profile value="http://nictiz.nl/fhir/5.0/StructureDefinition/extension-AllergyIntolerance.type" />
       </type>
     </element>
     <element id="AllergyIntolerance.extension:type.value[x]">
@@ -210,7 +210,7 @@
     </element>
     <element id="AllergyIntolerance.type">
       <path value="AllergyIntolerance.type" />
-      <comment value="Due to the required binding on this element it is not possible to use it to indicate that an AllergyIntolerance resource conforming to this profile represents an instance of the Reaction building block. Therefore the `.type` element from R5 (with a preferred binding) is implicitly pre-adopted via the [AllergyIntolerance-Type extension](http://nictiz.nl/fhir/StructureDefinition/ext-AllergyIntolerance-Type)." />
+      <comment value="Due to the required binding on this element it is not possible to use it to indicate that an AllergyIntolerance resource conforming to this profile represents an instance of the Reaction building block. Therefore the `.type` element from R5 (with a preferred binding) is implicitly pre-adopted via the [AllergyIntolerance-Type extension](http://nictiz.nl/fhir/5.0/StructureDefinition/extension-AllergyIntolerance.type)." />
       <max value="0" />
     </element>
     <element id="AllergyIntolerance.code">
