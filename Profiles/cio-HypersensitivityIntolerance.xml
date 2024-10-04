@@ -58,6 +58,7 @@
     <element id="AllergyIntolerance.extension:type">
       <path value="AllergyIntolerance.extension" />
       <sliceName value="type" />
+      <comment value="This is a pre-adopt of R5 in which the _required_ binding on `AllergyIntolerance.type` is changed to _preferred_." />
       <min value="1" />
       <type>
         <code value="Extension" />
@@ -190,7 +191,7 @@
     </element>
     <element id="AllergyIntolerance.type">
       <path value="AllergyIntolerance.type" />
-      <comment value="Due to the required binding on this element it is not possible to use it to indicate that an AllergyIntolerance resource conforming to this profile represents an instance of the HypersensitivityIntolerance building block. Therefore the `.type` element from R5 (with a preferred binding) is implicitly pre-adopted via the [AllergyIntolerance-Type extension](http://nictiz.nl/fhir/5.0/StructureDefinition/extension-AllergyIntolerance.type)." />
+      <comment value="Due to the _required_ binding on this element it is not possible to use it to indicate that an AllergyIntolerance resource conforming to this profile represents an instance of the HypersensitivityIntolerance building block. Therefore the `.type` element from R5 (with a _preferred_ binding) is pre-adopted via the [AllergyIntolerance.type extension](http://nictiz.nl/fhir/5.0/StructureDefinition/extension-AllergyIntolerance.type)." />
       <max value="0" />
     </element>
     <element id="AllergyIntolerance.category">
