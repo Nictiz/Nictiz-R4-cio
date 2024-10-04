@@ -21,6 +21,7 @@
   <fhirVersion value="4.0.1" />
   <mapping>
     <identity value="cio-dataset-200-beta3-20240930" />
+    <uri value="https://decor.nictiz.nl/pub/cio/cio-html-20240930T195718/ds-2.16.840.1.113883.2.4.3.11.60.26.1.2-2020-04-02T000000.html" />
     <name value="ART-DECOR Dataset Contraindications and hypersensitivities 2.0.0-beta.3 20240930" />
   </mapping>
   <kind value="resource" />
