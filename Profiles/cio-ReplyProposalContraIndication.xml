@@ -187,19 +187,12 @@
         <profile value="http://nictiz.nl/fhir/5.0/StructureDefinition/extension-Communication.payload.content%5Bx%5D:contentCodeableConcept" />
       </type>
     </element>
-    <element id="Communication.payload:responseProposalContraIndication.content[x].extension:contentCodeableConcept.url">
-      <path value="Communication.payload.content[x].extension.url" />
-      <fixedUri value="http://nictiz.nl/fhir/5.0/StructureDefinition/extension-Communication.payload.content%5Bx%5D:contentCodeableConcept" />
-    </element>
     <element id="Communication.payload:responseProposalContraIndication.content[x].extension:contentCodeableConcept.value[x]">
       <path value="Communication.payload.content[x].extension.value[x]" />
       <short value="ResponseProposalContraIndication" />
       <definition value="The response to the proposal for registering, retracting, or modifying a medication contraindication. The proposed medication contraindication is either accepted or rejected." />
       <alias value="BeantwoordingVoorstelContraIndicatie" />
       <min value="1" />
-      <type>
-        <code value="CodeableConcept" />
-      </type>
       <binding>
         <strength value="required" />
         <valueSet value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.26.11.38--20240709000000" />
