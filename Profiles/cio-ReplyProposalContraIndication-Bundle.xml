@@ -20,9 +20,9 @@
   <copyright value="Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise." />
   <fhirVersion value="4.0.1" />
   <mapping>
-    <identity value="cio-dataset-200-beta3-20240930" />
-    <uri value="https://decor.nictiz.nl/pub/cio/cio-html-20240930T195718/ds-2.16.840.1.113883.2.4.3.11.60.26.1.2-2020-04-02T000000.html" />
-    <name value="ART-DECOR Dataset Contraindications and hypersensitivities 2.0.0-beta.3 20240930" />
+    <identity value="cio-dataset-200-beta3-20241014" />
+    <uri value="https://decor.nictiz.nl/pub/cio/cio-html-20241014T185248/ds-2.16.840.1.113883.2.4.3.11.60.26.1.2-2020-04-02T000000.html" />
+    <name value="ART-DECOR Dataset Contraindications and hypersensitivities 2.0.0-beta.3 20241014" />
   </mapping>
   <kind value="resource" />
   <abstract value="false" />
@@ -73,7 +73,7 @@
         <profile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient" />
       </type>
       <mapping>
-        <identity value="cio-dataset-200-beta3-20240930" />
+        <identity value="cio-dataset-200-beta3-20241014" />
         <map value="cio-dataelement-20-302" />
         <comment value="Patient" />
       </mapping>
@@ -91,7 +91,7 @@
         <profile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole" />
       </type>
       <mapping>
-        <identity value="cio-dataset-200-beta3-20240930" />
+        <identity value="cio-dataset-200-beta3-20241014" />
         <map value="cio-dataelement-20-591" />
         <comment value="HealthProfessional" />
       </mapping>
@@ -109,7 +109,7 @@
         <profile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-Practitioner" />
       </type>
       <mapping>
-        <identity value="cio-dataset-200-beta3-20240930" />
+        <identity value="cio-dataset-200-beta3-20241014" />
         <map value="cio-dataelement-20-591" />
         <comment value="HealthProfessional" />
       </mapping>
@@ -127,7 +127,7 @@
         <profile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider" />
       </type>
       <mapping>
-        <identity value="cio-dataset-200-beta3-20240930" />
+        <identity value="cio-dataset-200-beta3-20241014" />
         <map value="cio-dataelement-20-632" />
         <comment value="HealthcareProvider" />
       </mapping>
@@ -145,7 +145,7 @@
         <profile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization" />
       </type>
       <mapping>
-        <identity value="cio-dataset-200-beta3-20240930" />
+        <identity value="cio-dataset-200-beta3-20241014" />
         <map value="cio-dataelement-20-632" />
         <comment value="HealthcareProvider" />
       </mapping>
