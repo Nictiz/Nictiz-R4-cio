@@ -4,10 +4,10 @@
   xsi:schemaLocation="http://hl7.org/fhir http://hl7.org/fhir/R4/capabilitystatement.xsd">
   <id value="cio-MedicationContraindications.RetrieveServe"/>
   <url value="http://nictiz.nl/fhir/CapabilityStatement/cio-MedicationContraindications.RetrieveServe"/>
-  <version value="1.0.0-beta.2" />
+  <version value="1.0.0-beta.3" />
   <name value="cio MedicationContraindications.RetrieveServe"/>
   <status value="active"/>
-  <date value="2023-12-15"/>
+  <date value="2024-09-30"/>
   <publisher value="Nictiz"/>
   <contact>
     <name value="Nictiz"/>
@@ -51,7 +51,7 @@
     </resource>
     <resource>
       <type value="Provenance"/>
-      <supportedProfile value="http://nictiz.nl/fhir/StructureDefinition/cio-RegistrationData"/>
+      <supportedProfile value="http://nictiz.nl/fhir/StructureDefinition/cio-RegistrationInformation"/>
       <searchParam>
         <name value="target"/>
         <type value="reference"/>
@@ -132,7 +132,7 @@
     </resource>
     <resource>
       <type value="Provenance"/>
-      <supportedProfile value="http://nictiz.nl/fhir/StructureDefinition/cio-RegistrationData"/>
+      <supportedProfile value="http://nictiz.nl/fhir/StructureDefinition/cio-RegistrationInformation"/>
       <searchParam>
         <name value="target"/>
         <type value="reference"/>

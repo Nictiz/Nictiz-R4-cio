@@ -1,0 +1,63 @@
+<ValueSet xmlns="http://hl7.org/fhir">
+   <id value="2.16.840.1.113883.2.4.3.11.60.26.11.38--20240709000000"/>
+   <meta>
+      <lastUpdated value="2024-07-09T08:56:57Z"/>
+      <source value="http://decor.nictiz.nl/fhir/4.0/cio-"/>
+      <profile value="http://hl7.org/fhir/StructureDefinition/shareablevalueset"/>
+      <!--<profile value="http://hl7.org/fhir/4.0/StructureDefinition/ValueSet"/>-->
+      <tag>
+         <system value="http://hl7.org/fhir/FHIR-version"/>
+         <code value="4.0.1"/>
+      </tag>
+   </meta>
+   <extension url="http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod">
+      <valuePeriod>
+         <start value="2024-07-09T00:00:00Z"/>
+      </valuePeriod>
+   </extension>
+   <url value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.26.11.38--20240709000000"/>
+   <identifier>
+      <use value="official"/>
+      <system value="urn:ietf:rfc:3986"/>
+      <value value="urn:oid:2.16.840.1.113883.2.4.3.11.60.26.11.38"/>
+   </identifier>
+   <version value="2024-07-09T00:00:00"/>
+   <name value="BeantwoordingVoorstelContraIndicatie"/>
+   <title value="BeantwoordingVoorstelContraIndicatie"/>
+   <status value="draft"/>
+   <experimental value="false"/>
+   <publisher value="Nictiz"/>
+   <description value="BeantwoordingVoorstelContraIndicatie"/>
+   <immutable value="false"/>
+   <compose>
+      <include>
+         <system value="urn:oid:2.16.840.1.113883.2.4.3.11.60.26.5.1"/>
+         <concept>
+            <code value="code-1"/>
+            <display value="Ja, voorstel akkoord"/>
+            <designation>
+               <language value="nl-NL"/>
+               <use>
+                  <system value="http://snomed.info/sct"/>
+                  <code value="900000000000013009"/>
+                  <display value="Synonym"/>
+               </use>
+               <value value="Ja, voorstel akkoord"/>
+            </designation>
+         </concept>
+         <concept>
+            <code value="code-2"/>
+            <display value="Nee, voorstel afgewezen"/>
+            <designation>
+               <language value="nl-NL"/>
+               <use>
+                  <system value="http://snomed.info/sct"/>
+                  <code value="900000000000013009"/>
+                  <display value="Synonym"/>
+               </use>
+               <value value="Nee, voorstel afgewezen"/>
+            </designation>
+         </concept>
+      </include>
+   </compose>
+</ValueSet>

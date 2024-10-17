@@ -1,0 +1,61 @@
+<ValueSet xmlns="http://hl7.org/fhir">
+   <id value="2.16.840.1.113883.2.4.3.11.60.26.11.14--20231120120019"/>
+   <meta>
+      <lastUpdated value="2024-08-13T13:24:59Z"/>
+      <source value="http://decor.nictiz.nl/fhir/4.0/cio-"/>
+      <profile value="http://hl7.org/fhir/StructureDefinition/shareablevalueset"/>
+      <!--<profile value="http://hl7.org/fhir/4.0/StructureDefinition/ValueSet"/>-->
+      <tag>
+         <system value="http://hl7.org/fhir/FHIR-version"/>
+         <code value="4.0.1"/>
+      </tag>
+   </meta>
+   <extension url="http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod">
+      <valuePeriod>
+         <start value="2023-11-20T12:00:19Z"/>
+      </valuePeriod>
+   </extension>
+   <url value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.26.11.14--20231120120019"/>
+   <identifier>
+      <use value="official"/>
+      <system value="urn:ietf:rfc:3986"/>
+      <value value="urn:oid:2.16.840.1.113883.2.4.3.11.60.26.11.14"/>
+   </identifier>
+   <version value="2023-11-20T12:00:19"/>
+   <name value="WijzeVanVaststellenCodelijst"/>
+   <title value="WijzeVanVaststellenCodelijst"/>
+   <status value="draft"/>
+   <experimental value="false"/>
+   <publisher value="Nictiz"/>
+   <description value="WijzeVanVaststellenCodelijst"/>
+   <immutable value="false"/>
+   <copyright value="This artefact includes content from SNOMED Clinical Terms® (SNOMED CT®) which is copyright of the International Health Terminology Standards Development Organisation (IHTSDO). Implementers of these artefacts must have the appropriate SNOMED CT Affiliate license - for more information contact http://www.snomed.org/snomed-ct/getsnomed-ct or info@snomed.org."/>
+   <compose>
+      <include>
+         <system value="http://terminology.hl7.org/CodeSystem/v3-NullFlavor"/>
+         <concept>
+            <code value="OTH"/>
+            <display value="other"/>
+         </concept>
+      </include>
+      <include>
+         <system value="http://snomed.info/sct"/>
+         <concept>
+            <code value="84100007"/>
+            <display value="History taking (procedure)"/>
+         </concept>
+         <concept>
+            <code value="63332003"/>
+            <display value="History AND physical examination (procedure)"/>
+         </concept>
+         <concept>
+            <code value="14736009"/>
+            <display value="History and physical examination with evaluation and management of patient (procedure)"/>
+         </concept>
+         <concept>
+            <code value="117131000146104"/>
+            <display value="Obtaining healthcare information from previous practitioner for clinical alignment (procedure)"/>
+         </concept>
+      </include>
+   </compose>
+</ValueSet>

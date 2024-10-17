@@ -1,0 +1,68 @@
+<ValueSet xmlns="http://hl7.org/fhir">
+   <id value="2.16.840.1.113883.2.4.3.11.60.26.11.40--20240909075522"/>
+   <meta>
+      <lastUpdated value="2024-09-09T07:55:22Z"/>
+      <source value="http://decor.nictiz.nl/fhir/4.0/cio-"/>
+      <profile value="http://hl7.org/fhir/StructureDefinition/shareablevalueset"/>
+      <!--<profile value="http://hl7.org/fhir/4.0/StructureDefinition/ValueSet"/>-->
+      <tag>
+         <system value="http://hl7.org/fhir/FHIR-version"/>
+         <code value="4.0.1"/>
+      </tag>
+   </meta>
+   <extension url="http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod">
+      <valuePeriod>
+         <start value="2024-09-09T07:55:22Z"/>
+      </valuePeriod>
+   </extension>
+   <url value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.26.11.40--20240909075522"/>
+   <identifier>
+      <use value="official"/>
+      <system value="urn:ietf:rfc:3986"/>
+      <value value="urn:oid:2.16.840.1.113883.2.4.3.11.60.26.11.40"/>
+   </identifier>
+   <version value="2024-09-09T07:55:22"/>
+   <name value="StopRedenCodelijst"/>
+   <title value="StopRedenCodelijst"/>
+   <status value="draft"/>
+   <experimental value="false"/>
+   <publisher value="Nictiz"/>
+   <description value="StopRedenCodelijst"/>
+   <immutable value="false"/>
+   <compose>
+      <include>
+         <system value="http://terminology.hl7.org/CodeSystem/v3-NullFlavor"/>
+         <concept>
+            <code value="OTH"/>
+            <display value="other"/>
+         </concept>
+      </include>
+      <include>
+         <system value="urn:oid:2.16.840.1.113883.2.4.3.11.60.26.5.2"/>
+         <concept>
+            <code value="code-1"/>
+            <display value="Risk of future serious reaction very low"/>
+         </concept>
+         <concept>
+            <code value="code-2"/>
+            <display value="No response after renewed use"/>
+         </concept>
+         <concept>
+            <code value="code-3"/>
+            <display value="Based on additional research"/>
+         </concept>
+         <concept>
+            <code value="code-4"/>
+            <display value="Side effect acceptable"/>
+         </concept>
+         <concept>
+            <code value="code-5"/>
+            <display value="The group being surveillanced is wider or narrower than necessary"/>
+         </concept>
+         <concept>
+            <code value="code-6"/>
+            <display value="No reason for surveillance found"/>
+         </concept>
+      </include>
+   </compose>
+</ValueSet>
