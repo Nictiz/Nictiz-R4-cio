@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="cio-Symptom" />
+  <url value="http://nictiz.nl/fhir/StructureDefinition/cio-Symptom" />
+  <version value="1.0.0-beta.3" />
+  <name value="CioSymptom" />
+  <title value="cio Symptom" />
+  <status value="draft" />
+  <publisher value="Nictiz" />
+  <contact>
+    <name value="Nictiz" />
+    <telecom>
+      <system value="url" />
+      <value value="https://www.nictiz.nl" />
+      <use value="work" />
+    </telecom>
+  </contact>
+  <description value="A symptom is a phenomenon with which a condition in the patient presents itself. This also includes a complaint or a finding, but not additional research, such as laboratory tests, function tests and imaging studies." />
+  <purpose value="This Observation resource represents the Symptom building block for implementations following the information standard [CiO](https://informatiestandaarden.nictiz.nl/wiki/Landingspagina_Contra-indicaties_en_Overgevoeligheden). This profile is based on the Dutch zib ('Zorginformatiebouwsteen', i.e. Health and Care Information Model) Symptom that is part of the 2024 prepublication. Therefore it has no dependency on a corresponding nl-core profile and mappings to zib concepts are not defined. Instead mappings to the CiO data set have been added. It is the intention to derive this profile from a more general nl-core-Symptom profile in the future." />
+  <copyright value="Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise." />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="cio-dataset-200-beta3-20241023" />
+    <uri value="https://decor.nictiz.nl/pub/cio/cio-html-20241014T185248/ds-2.16.840.1.113883.2.4.3.11.60.26.1.2-2020-04-02T000000.html" />
+    <name value="ART-DECOR Dataset Contraindications and hypersensitivities 2.0.0-beta.3 20241014" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Observation" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Observation" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Observation">
+      <path value="Observation" />
+      <short value="Symptom" />
+      <comment value="In order to convey the registration information of a Symptom building block, this profile is used together with an instance conforming to the [cio-RegistrationInformation](http://nictiz.nl/fhir/StructureDefinition/cio-RegistrationInformation) profile wherein `Provenance.target` refers to the Observation resource.&#xD;&#xA;&#xD;&#xA;This profile is always used together with instances conforming to the [cio-Condition](http://nictiz.nl/fhir/StructureDefinition/cio-Condition) and [cio-Reaction](http://nictiz.nl/fhir/StructureDefinition/cio-Reaction) profiles.&#xD;&#xA;&#xD;&#xA;Please note that on a functional level, the building block Symptom references the building block Condition, but in FHIR this direction is reversed. Therefore, the concept RelationCondition (cio-dataelement-20-921) is mapped on `Condition.evidence.detail` in the cio-Condition profile instead of in this profile." />
+      <alias value="Symptoom" />
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20241023" />
+        <map value="cio-dataelement-20-890" />
+        <comment value="Symptom" />
+      </mapping>
+    </element>
+    <element id="Observation.extension">
+      <path value="Observation.extension" />
+      <min value="1" />
+    </element>
+    <element id="Observation.extension:medicationHypersensitivityIdentifier">
+      <path value="Observation.extension" />
+      <sliceName value="medicationHypersensitivityIdentifier" />
+      <min value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://nictiz.nl/fhir/StructureDefinition/ext-MedicationHypersensitivity.Identifier" />
+      </type>
+    </element>
+    <element id="Observation.extension:medicationHypersensitivityIdentifier.value[x]">
+      <path value="Observation.extension.value[x]" />
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20241023" />
+        <map value="cio-dataelement-20-888" />
+        <comment value="IdentificationGMO" />
+      </mapping>
+    </element>
+    <element id="Observation.identifier">
+      <path value="Observation.identifier" />
+      <short value="IdentificationNumber" />
+      <definition value="Globally unique number that identifies the instantiation of the information model. The number is composed of an identification of the issuer organization and a unique number assigned by this organization." />
+      <alias value="Identificatienummer" />
+      <min value="1" />
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20241023" />
+        <map value="cio-dataelement-20-780" />
+        <comment value="IdentificationNumber" />
+      </mapping>
+    </element>
+    <element id="Observation.code">
+      <path value="Observation.code" />
+      <short value="SymptomName" />
+      <definition value="Name and code of the symptom via selection from a code list, based on a standardised coding system." />
+      <alias value="SymptoomNaam" />
+      <binding>
+        <strength value="required" />
+        <description value="Identification of the symptom." />
+        <valueSet value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.26.11.35--20240501114333" />
+      </binding>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20241023" />
+        <map value="cio-dataelement-20-901" />
+        <comment value="SymptomName" />
+      </mapping>
+    </element>
+    <element id="Observation.code.text">
+      <path value="Observation.code.text" />
+      <short value="FurtherSpecificationSymptomName" />
+      <definition value="More detailed specification of the symptom name that has been selected from the code list, because that list does not (yet) contain the required level of detail." />
+      <alias value="NadereSpecificatieSymptoomNaam" />
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20241023" />
+        <map value="cio-dataelement-20-902" />
+        <comment value="FurtherSpecificationSymptomName" />
+      </mapping>
+    </element>
+    <element id="Observation.subject">
+      <path value="Observation.subject" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Patient" />
+        <targetProfile value="http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient" />
+      </type>
+    </element>
+    <element id="Observation.component">
+      <path value="Observation.component" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="code" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Observation.component:severity">
+      <path value="Observation.component" />
+      <sliceName value="severity" />
+      <max value="1" />
+    </element>
+    <element id="Observation.component:severity.code">
+      <path value="Observation.component.code" />
+      <patternCodeableConcept>
+        <coding>
+          <system value="http://snomed.info/sct" />
+          <code value="246112005" />
+        </coding>
+      </patternCodeableConcept>
+    </element>
+    <element id="Observation.component:severity.value[x]">
+      <path value="Observation.component.value[x]" />
+      <short value="SymptomSeverity" />
+      <definition value="Indicates the degree of severity of the symptom at the moment of the CreationDateTime (cio-dataelement-20-783)." />
+      <alias value="SymptoomErnst" />
+      <type>
+        <code value="CodeableConcept" />
+      </type>
+      <binding>
+        <strength value="required" />
+        <valueSet value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.26.11.34--20240501114150" />
+      </binding>
+      <mapping>
+        <identity value="cio-dataset-200-beta3-20241023" />
+        <map value="cio-dataelement-20-898" />
+        <comment value="SymptomSeverity" />
+      </mapping>
+    </element>
+  </differential>
+</StructureDefinition>

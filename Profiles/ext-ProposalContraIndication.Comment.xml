@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="ext-ProposalContraIndication.Comment" />
+  <url value="http://nictiz.nl/fhir/StructureDefinition/ext-ProposalContraIndication.Comment" />
+  <version value="1.0.0-beta.3" />
+  <name value="ExtProposalContraIndicationComment" />
+  <title value="ext ProposalContraIndication.Comment" />
+  <status value="draft" />
+  <publisher value="Nictiz" />
+  <contact>
+    <name value="Nictiz" />
+    <telecom>
+      <system value="url" />
+      <value value="https://www.nictiz.nl" />
+    </telecom>
+  </contact>
+  <description value="An extension to provide textual explanation of the proposal contraindication." />
+  <purpose value="This extension represents the Comment concept (within the ProposalContraIndication building block) for implementations following the information standard [CiO](https://informatiestandaarden.nictiz.nl/wiki/Landingspagina_Contra-indicaties_en_Overgevoeligheden). The extension [ext-Comment](http://nictiz.nl/fhir/StructureDefinition/ext-Comment) cannot be used to represent that concept, since it is already used for the Comment concept in the MedicationContraIndication building block." />
+  <copyright value="Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise." />
+  <fhirVersion value="4.0.1" />
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <context>
+    <type value="element" />
+    <expression value="Flag" />
+  </context>
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="http://nictiz.nl/fhir/StructureDefinition/ext-ProposalContraIndication.Comment" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <short value="Comment" />
+      <definition value="Textual explanation of the proposal contraindication." />
+      <alias value="Toelichting" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+  </differential>
+</StructureDefinition>
