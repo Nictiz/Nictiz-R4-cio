@@ -25,7 +25,7 @@
     <name value="ART-DECOR Dataset Contraindications and hypersensitivities 2.0.0-beta.2 20231214" />
   </mapping>
   <mapping>
-    <identity value="cio-dataset-200-beta3-20241014" />
+    <identity value="cio-dataset-200-beta3-20241023" />
     <uri value="https://decor.nictiz.nl/pub/cio/cio-html-20241014T185248/ds-2.16.840.1.113883.2.4.3.11.60.26.1.2-2020-04-02T000000.html" />
     <name value="ART-DECOR Dataset Contraindications and hypersensitivities 2.0.0-beta.3 20241014" />
   </mapping>
@@ -64,7 +64,7 @@
         <comment value="SurveillanceDecision" />
       </mapping>
       <mapping>
-        <identity value="cio-dataset-200-beta3-20241014" />
+        <identity value="cio-dataset-200-beta3-20241023" />
         <map value="cio-dataelement-20-754" />
         <comment value="SurveillanceDecision" />
       </mapping>
@@ -102,7 +102,7 @@
         <comment value="Hypersensitivity [DEPRECATED]" />
       </mapping>
       <mapping>
-        <identity value="cio-dataset-200-beta3-20241014" />
+        <identity value="cio-dataset-200-beta3-20241023" />
         <map value="cio-dataelement-20-765" />
         <comment value="HypersensitivityIntolerance" />
       </mapping>
@@ -112,7 +112,7 @@
         <comment value="Reaction" />
       </mapping>
       <mapping>
-        <identity value="cio-dataset-200-beta3-20241014" />
+        <identity value="cio-dataset-200-beta3-20241023" />
         <map value="cio-dataelement-20-766" />
         <comment value="Reaction" />
       </mapping>
@@ -131,7 +131,7 @@
       <comment value="Whenever the surveillance decision has been taken on another basis than a hypersensitivity/intolerance or reaction, that basis SHALL be communicated via this element." />
       <condition value="cio-SurveillanceDecision-3" />
       <mapping>
-        <identity value="cio-dataset-200-beta3-20241014" />
+        <identity value="cio-dataset-200-beta3-20241023" />
         <map value="cio-dataelement-20-916" />
         <comment value="SurveillanceDecision" />
       </mapping>
@@ -154,7 +154,7 @@
         <comment value="RelationSurveillanceDecision" />
       </mapping>
       <mapping>
-        <identity value="cio-dataset-200-beta3-20241014" />
+        <identity value="cio-dataset-200-beta3-20241023" />
         <map value="cio-dataelement-20-828" />
         <comment value="RelationSurveillanceDecision" />
       </mapping>
@@ -179,7 +179,7 @@
         <comment value="Comment [DEPRECATED]" />
       </mapping>
       <mapping>
-        <identity value="cio-dataset-200-beta3-20241014" />
+        <identity value="cio-dataset-200-beta3-20241023" />
         <map value="cio-dataelement-20-764" />
         <comment value="Comment" />
       </mapping>
@@ -196,7 +196,7 @@
     <element id="Flag.extension:medicationHypersensitivityIdentifier.value[x]">
       <path value="Flag.extension.value[x]" />
       <mapping>
-        <identity value="cio-dataset-200-beta3-20241014" />
+        <identity value="cio-dataset-200-beta3-20241023" />
         <map value="cio-dataelement-20-888" />
         <comment value="IdentificationGMO" />
       </mapping>
@@ -213,7 +213,7 @@
         <comment value="IdentificationNumber" />
       </mapping>
       <mapping>
-        <identity value="cio-dataset-200-beta3-20241014" />
+        <identity value="cio-dataset-200-beta3-20241023" />
         <map value="cio-dataelement-20-780" />
         <comment value="IdentificationNumber" />
       </mapping>
@@ -229,7 +229,7 @@
         <comment value="DecisionType (implicit)" />
       </mapping>
       <mapping>
-        <identity value="cio-dataset-200-beta3-20241014" />
+        <identity value="cio-dataset-200-beta3-20241023" />
         <map value="cio-dataelement-20-755" />
         <comment value="DecisionType (implicit)" />
       </mapping>
@@ -273,7 +273,7 @@
         <comment value="UnsafeSubstance" />
       </mapping>
       <mapping>
-        <identity value="cio-dataset-200-beta3-20241014" />
+        <identity value="cio-dataset-200-beta3-20241023" />
         <map value="cio-dataelement-20-761" />
         <comment value="UnsafeSubstance" />
       </mapping>
@@ -294,7 +294,7 @@
         <comment value="SafeWithinUnsafeGroup" />
       </mapping>
       <mapping>
-        <identity value="cio-dataset-200-beta3-20241014" />
+        <identity value="cio-dataset-200-beta3-20241023" />
         <map value="cio-dataelement-20-762" />
         <comment value="SafeWithinUnsafeGroup" />
       </mapping>
@@ -308,7 +308,7 @@
         <comment value="SubstanceForSurveillance (implicit)" />
       </mapping>
       <mapping>
-        <identity value="cio-dataset-200-beta3-20241014" />
+        <identity value="cio-dataset-200-beta3-20241023" />
         <map value="cio-dataelement-20-760" />
         <comment value="SubstanceForSurveillance (implicit)" />
       </mapping>
@@ -338,7 +338,7 @@
         <comment value="DecisionEffectiveDateTime" />
       </mapping>
       <mapping>
-        <identity value="cio-dataset-200-beta3-20241014" />
+        <identity value="cio-dataset-200-beta3-20241023" />
         <map value="cio-dataelement-20-757" />
         <comment value="DecisionEffectiveDateTime" />
       </mapping>
@@ -356,7 +356,7 @@
         <comment value="DecisionEffectiveDateTime" />
       </mapping>
       <mapping>
-        <identity value="cio-dataset-200-beta3-20241014" />
+        <identity value="cio-dataset-200-beta3-20241023" />
         <map value="cio-dataelement-20-757" />
         <comment value="DecisionEffectiveDateTime" />
       </mapping>
@@ -379,7 +379,7 @@
         <comment value="Author" />
       </mapping>
       <mapping>
-        <identity value="cio-dataset-200-beta3-20241014" />
+        <identity value="cio-dataset-200-beta3-20241023" />
         <map value="cio-dataelement-20-781" />
         <comment value="Author" />
       </mapping>
