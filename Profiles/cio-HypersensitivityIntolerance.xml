@@ -2,7 +2,7 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="cio-HypersensitivityIntolerance" />
   <url value="http://nictiz.nl/fhir/StructureDefinition/cio-HypersensitivityIntolerance" />
-  <version value="1.0.0-beta.3" />
+  <version value="1.0.0-beta.5" />
   <name value="CioHypersensitivityIntolerance" />
   <title value="cio HypersensitivityIntolerance" />
   <status value="draft" />

@@ -2,7 +2,7 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="ext-ProposalContraIndication.Comment" />
   <url value="http://nictiz.nl/fhir/StructureDefinition/ext-ProposalContraIndication.Comment" />
-  <version value="1.0.0-beta.3" />
+  <version value="1.0.0-beta.5" />
   <name value="ExtProposalContraIndicationComment" />
   <title value="ext ProposalContraIndication.Comment" />
   <status value="draft" />

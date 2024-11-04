@@ -1,6 +1,6 @@
 {
   "name": "nictiz.fhir.nl.r4.cio",
-  "version": "1.0.0-beta.3",
+  "version": "1.0.0-beta.5",
   "description": "NL package of FHIR R4 conformance resources for CiO version 2.0.0-beta.3.",
   "author": "Nictiz",
   "dependencies": {

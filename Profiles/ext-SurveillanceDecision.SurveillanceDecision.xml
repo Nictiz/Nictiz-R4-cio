@@ -2,7 +2,7 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="ext-SurveillanceDecision.SurveillanceDecision" />
   <url value="http://nictiz.nl/fhir/StructureDefinition/ext-SurveillanceDecision.SurveillanceDecision" />
-  <version value="1.0.0-beta.3" />
+  <version value="1.0.0-beta.5" />
   <name value="ExtSurveillanceDecisionSurveillanceDecision" />
   <title value="ext SurveillanceDecision.SurveillanceDecision" />
   <status value="draft" />

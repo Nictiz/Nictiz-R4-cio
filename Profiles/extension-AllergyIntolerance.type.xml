@@ -2,7 +2,7 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="extension-AllergyIntolerance.type" />
   <url value="http://nictiz.nl/fhir/5.0/StructureDefinition/extension-AllergyIntolerance.type" />
-  <version value="1.0.0-beta.3" />
+  <version value="1.0.0-beta.5" />
   <name value="ExtensionAllergyIntoleranceType" />
   <title value="extension AllergyIntolerance.type" />
   <status value="draft" />

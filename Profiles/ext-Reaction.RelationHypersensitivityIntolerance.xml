@@ -2,7 +2,7 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="ext-Reaction.RelationHypersensitivityIntolerance" />
   <url value="http://nictiz.nl/fhir/StructureDefinition/ext-Reaction.RelationHypersensitivityIntolerance" />
-  <version value="1.0.0-beta.3" />
+  <version value="1.0.0-beta.5" />
   <name value="ExtReactionRelationHypersensitivityIntolerance" />
   <title value="ext Reaction.RelationHypersensitivityIntolerance" />
   <status value="draft" />
